@@ -109,7 +109,7 @@ include 'site.php';
 	</nav>
 	
 	<section id="cart" class="panel panel-default" 
-	data-paypalid="cmeter-facilitator@googlemail.com"
+	data-paypalid="cmeter-facilitator_api1.googlemail.com"
 	data-usesandbox="1"
 	data-logo=""
 	data-currency="EUR"
