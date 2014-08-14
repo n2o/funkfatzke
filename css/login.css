@@ -1,0 +1,271 @@
+html{
+    overflow: auto;
+}
+
+.content{
+	text-align: center;
+	padding: 50px 20px;
+}
+
+#create-confirmation{
+	display: none;
+}
+
+body .content h1{
+	font-family: "Roboto Condensed", sans-serif;
+	font-size: 45px;
+	padding-bottom: 25px;
+    color: #777;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+body .content h2.title{
+	position: relative;
+	border: 1px solid #f8f8f8;
+	font-size: 15px;
+	color: #fff;
+	padding: 15px;
+	color: #aaa;
+	text-transform: uppercase;
+	margin-bottom: 25px;
+	text-align: left;
+	margin-top: 25px;
+}
+
+	body .content h2.title .step{
+		display: inline-block;
+		background-color: #81b841;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		color: #fff;
+		margin-right: 25px;
+		border-radius: 50%;
+	}
+	
+	body .content h2.title a{
+		position: absolute;
+		top: 28px;
+		right: 15px;
+	}
+	
+body .content .col-md-12{
+	text-align: left;
+}
+
+	body .content .col-md-12 .image-list{
+		margin: 0;
+	}
+
+body .content p{
+	font-family: "Roboto", sans-serif;
+	font-size: 16px;
+	text-align: center;
+	margin-bottom: 35px;
+	color: #aaa;
+	
+}
+
+.advanced{
+	display: none;
+}
+
+.future h2{
+	background-color: #f0f0f0;
+}
+
+.future .container-fluid{
+	display: block;
+}
+
+	.future h2.title .step{
+		background-color: #aaa !important;
+	}
+
+fieldset{
+	max-width: 900px;
+	text-align: center;
+	border-bottom: none;
+	margin: 0 auto;
+	padding: 0;
+}
+
+fieldset.login, fieldset.forgot, fieldset.reset{
+	max-width: 400px;
+}
+
+	.content fieldset p{
+		text-align: left;
+	}
+	
+	body .content fieldset label{
+		color: #808080;
+		font-size: 14px;
+	}
+
+body .form-group{
+	position: relative;
+	margin: 0 0 25px 0;
+}
+
+body .divider{
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #ddd;
+}
+
+	body .spacer{
+		padding-bottom: 40px;
+	}
+
+	.actions{
+		display: block;
+		text-align: right;
+	}
+
+	body p.alternate{
+		margin-top: 35px;
+		text-transform: uppercase;
+		font-size: 14px;
+	}
+	
+	body .forgot-link{
+		float: right;
+	}
+
+.content fieldset label{
+	width: 100%;
+	text-align: left;
+	font-size: 15px;
+}
+
+.actions{
+	margin-top: 25px;	
+    display: block;
+    width: 100%;
+}
+
+	.actions button i{
+		display: inline-block;
+		margin-left: 5px;
+		margin-right: -10px;
+		margin-top: -2px;
+		font-size: 13px;
+		background-color: #fff;
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		text-align: center;
+		border-radius: 50%;	
+		color: #3299bb;
+	}
+
+small{
+	text-transform: uppercase;
+	margin-top: 50px;
+	padding-bottom: 50px;
+    color: #aaa;
+    display: block;
+    text-align: center;
+}
+
+.demo b{
+	display: inline-block;
+	color: #fff;
+}
+
+.footer{
+	margin: 100px auto;
+	text-align: center;
+}
+
+body p.site-name{
+	margin-top: 5px;
+	font-size: 14px;
+	color: #bbb;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	height: 25px;
+	line-height: 25px;
+	display: none;
+}
+
+	body p.site-name span{
+		font-weight: bold;
+		display: inline-block;
+		padding: 0;
+		margin: 0 0 0 2px;
+		color: #3299bb;
+	}
+	
+/* create styles */
+.validating, .valid, .invalid{
+	position: absolute;
+	top: 37px;
+	right: 10px;
+	background-color: #3299bb;
+	color: #fff;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	border-radius: 50%;
+	margin-left: 5px;
+	display: none;
+}
+
+	.valid{
+		background-color: #7ec57e;
+	}
+	
+	.invalid{
+		background-color: #A4110A;
+	}
+	
+	.validating.visible, .valid.visible, .invalid.visible{
+		display: inline-block;
+	}
+
+/* test styles */
+table.test{
+    width: 500px;
+    margin: 25px auto 50px auto;
+    text-align: left;
+}
+
+    table.test tr{
+        border-bottom: 1px solid #ddd;
+    }
+    
+    table.test tr:last-child{
+        border-bottom: none;
+    }
+    
+    table.test td{
+        padding: 15px;
+    }
+
+    table.test td.test{
+        width: 80%;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+
+    table.test td.result{
+        width: 20%;
+        text-align: right;
+    }
+
+    table.test i{
+        font-size: 30px;
+    }
+
+/* brand */
+.brand img{
+	max-height: 75px;
+}
+
+
+
