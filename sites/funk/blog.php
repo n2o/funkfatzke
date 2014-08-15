@@ -79,13 +79,13 @@ include 'site.php';
 	      <span class="icon-bar"></span>
 	    </button>
         
-        <a class="navbar-brand" href="//n2o.local/funkfatzke/sites/funk"><img src="files/sample-logo.png"></a>
+        <a class="navbar-brand" href="//n2o.local/funkfatzke/sites/funk"><img src="themes/advanced/resources/images/funk_logo_100px.png"></a>
 	  </div>
 	  <!-- /.navbar-header -->
 	
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
-	    <ul class="nav navbar-nav navbar-right">
+	    <ul class="nav navbar-nav navbar-right nav-pills">
 			<li><a href="index">Home</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li class="active"><a href="blog">Blog</a></li><li><a href="page/about">About</a></li><li><a href="page/contact">Contact</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">

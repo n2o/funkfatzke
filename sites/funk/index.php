@@ -87,7 +87,7 @@ include 'site.php';
 	
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
-	    <ul class="nav navbar-nav navbar-right">
+	    <ul class="nav navbar-nav navbar-right nav-pills">
 			<li class="active"><a href="index">Home</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="blog">Blog</a></li><li><a href="page/about">About</a></li><li><a href="page/contact">Contact</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">

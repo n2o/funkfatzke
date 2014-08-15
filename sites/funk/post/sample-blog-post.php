@@ -225,7 +225,7 @@ include '../site.php';
         
         <?php print _("Last modified by"); ?>
         <span class="author">Christian Meter</span>
-        <span class="last-modified-date">Thu, Aug 14 14 07:21 pm</span>
+        <span class="last-modified-date">Thu, Aug 14 14 12:21 pm</span>
       </p>
     </div> 
 </div>

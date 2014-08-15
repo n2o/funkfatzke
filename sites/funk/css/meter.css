@@ -104,6 +104,9 @@ header {
   }
 }
 .form-control {
-  width: 30%;
   padding: 6px;
+}
+span.shelf-quantity > input,
+span.shelf-duration > input {
+  width: 60%;
 }

@@ -156,7 +156,7 @@ class TransactionPaypalResource extends Tonic\Resource {
 					$item_quantity = $request['quantity'.$x];
 					$item_duration = $request['duration'.$x];
 					$item_total = $request['mc_gross_'.$x];
-					$item_price = floatval($item_total) / intval($item_quantity);
+					$item_price = floatval($item_total) / (intval($item_quantity) * intval($item_duration));
 				
 			    	$item = array(
 	                    'SKU' => $item_sku,
@@ -184,14 +184,13 @@ class TransactionPaypalResource extends Tonic\Resource {
 		                $item_price = '$'.$item_price;
 	                }
 	                
-	                $line_items .= '<tr style="border-bottom: 1px solid #f0f0f0;"><td>'.$item_name.'<br><small>'.$item_sku.'</small>'.$download_link.'</td><td align="right">'.$item_price.'</td><td align="right">'.$item_quantity.'</td><td align="right">'.$item_total.'</td></tr>';
+	                $line_items .= '<tr style="border-bottom: 1px solid #f0f0f0;"><td>HAAAAAAAAALLLLOOOOOO'.$item_name.'<br><small>'.$item_sku.'</small>'.$download_link.'</td><td align="right">'.$item_price.'</td><td align="right">'.$item_quantity.'</td><td align="right">'.$item_duration.'</td><td align="right">'.$item_total.'</td></tr>';
 	                
 				    array_push($items, $item);
 			    }
 			    
 			    
 		    }
-		    
 		    $items_json = json_encode($items);
 		    
 		    $data_json = json_encode($_POST);
