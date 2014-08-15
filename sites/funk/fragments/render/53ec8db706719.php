@@ -1,12 +1,10 @@
-<div id="block-1" class="block row">
-	<div class="col col-md-12">
-		<div id="list1" class="respond-list" data-bind="foreach: list1" 
+<div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><div id="list1" class="respond-list" data-bind="foreach: list1" 
 	data-display="blog" 
 	data-label="posts" 
 	data-pagetypeid="53ec8db708399" 
 	data-length="10" 
 	data-orderby="Created" 
-	data-category="">
+	data-category="undefined">
 		<div class="content" data-bind="html:content"></div>
         <div class="blog-meta">
 			<p>
@@ -23,6 +21,4 @@
 	<div class="page-results">
 		<button id="pager-list1" class="btn btn-default" data-id="list1"><?php print _("Older posts"); ?></button>
 	</div>
-
-	</div>
-</div>
+</div></div>

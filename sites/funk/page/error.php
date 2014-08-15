@@ -191,12 +191,7 @@ include '../site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="error-1" class="block row">
-    <div class="col col-md-12">
-      <h1 id="h1-1342578154"><?php print _("Error"); ?></h1>
-      <p><?php print _("Placeholder for the Error page."); ?></p>
-    </div>
-</div>  
+    <div id="error-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1342578154"><?php print _("Error"); ?></h1><p id="p-1408092354"><?php print _("Placeholder for the Error page."); ?></p></div></div>
 </div>
 
 <footer role="contentinfo">
