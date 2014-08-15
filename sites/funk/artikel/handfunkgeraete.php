@@ -5,7 +5,7 @@ $pageUrl="artikel/handfunkgeraete";
 $isSecure=false;
 $siteUniqId="53ec8db6e654f";
 $siteFriendlyId="funk";
-$pageUniqId="53ec8f0bba532";
+$pageUniqId="53edb1749d401";
 $pageFriendlyId="handfunkgeraete";
 $pageTypeUniqId="53ec8ee686b46";
 $language="de";
@@ -38,7 +38,7 @@ include '../site.php';
     
 </head>
 
-<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53ec8f0bba532" data-pagefriendlyid="handfunkgeraete" data-pagetypeuniqid="53ec8ee686b46" data-api="http://n2o.local/funkfatzke" id="handfunkgeraete">
+<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53edb1749d401" data-pagefriendlyid="handfunkgeraete" data-pagetypeuniqid="53ec8ee686b46" data-api="http://n2o.local/funkfatzke" id="handfunkgeraete">
 
 <section class="settings">
 	
@@ -79,14 +79,14 @@ include '../site.php';
 	      <span class="icon-bar"></span>
 	    </button>
         
-        <a class="navbar-brand" href="//n2o.local/funkfatzke/sites/funk"><img src="../files/sample-logo.png"></a>
+        <a class="navbar-brand" href="//n2o.local/funkfatzke/sites/funk"><img src="../themes/advanced/resources/images/funk_logo_100px.png"></a>
 	  </div>
 	  <!-- /.navbar-header -->
 	
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right">
-			<li><a href="../index">Home</a></li><li class="active"><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../artikel/test">test</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
+			<li><a href="../index">Home</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -150,27 +150,27 @@ include '../site.php';
 	<!-- /.cart-items -->
 	
 	<div class="subtotal">
-		<label><?php print _("Subtotal:"); ?></label>
+		<label><?php print _("Zwischensumme:"); ?></label>
 		<strong data-bind="text:subtotalFriendly"></strong> 
 	</div>
 	
 	<div class="weight" data-bind="visible: totalWeight() > 0">
-		<label><?php print _("Total Weight:"); ?></label>
+		<label><?php print _("Gesamtgewicht:"); ?></label>
 		<strong data-bind="text:totalWeightFriendly"></strong> 
 	</div>
 	
 	<div class="shipping" data-bind="visible: shipping() > 0">
-		<label><?php print _("Shipping:"); ?></label>
+		<label><?php print _("Versandkosten:"); ?></label>
 		<strong data-bind="text:shippingFriendly"></strong> 
 	</div>
 	
 	<div class="tax" data-bind="visible: tax() > 0">
-		<label><?php print _("Tax:"); ?></label>
+		<label><?php print _("MwSt.:"); ?></label>
 		<strong data-bind="text:taxFriendly"></strong> 
 	</div>
 	
 	<div class="total">
-		<label><?php print _("Total:"); ?></label>
+		<label><?php print _("Gesamtsumme inkl. MwSt.:"); ?></label>
 		<strong data-bind="text:totalFriendly"></strong> 
 	</div>
 	
@@ -191,7 +191,7 @@ include '../site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1408012046"><?php print _("Handfunkgeräte"); ?></h1><p id="p-1408012046"></p><div class="shelf"><div class="shelf-item"><div class="shelf-group1"><span class="shelf-description"><?php print _("Stimmt"); ?></span><span class="shelf-sku">Krasses Teil</span></div><div class="shelf-group2"><span class="shelf-price" data-currency="EUR" data-price="42">42 EUR</span><span class="shelf-shipping" data-type="shipped" data-weight="42" data-unit="undefined"><?php print _("shipped"); ?></span></div><div class="shelf-group3"><span class="shelf-quantity"><input type="number" value="1" class="form-control"></span><span class="shelf-add"><button class="btn btn-default"><i class="fa fa-shopping-cart"></i> <span><?php print _("In den Warenkorb"); ?></span></button></span></div></div><div class="shelf-item"><div class="shelf-group1"><span class="shelf-description"><?php print _("Schweres Teil"); ?></span><span class="shelf-sku">Schweres Teil</span></div><div class="shelf-group2"><span class="shelf-price" data-currency="EUR" data-price="21">21 EUR</span><span class="shelf-shipping" data-type="shipped" data-weight="100" data-unit="undefined"><?php print _("shipped"); ?></span></div><div class="shelf-group3"><span class="shelf-quantity"><input type="number" value="1" class="form-control"></span><span class="shelf-add"><button class="btn btn-default"><i class="fa fa-shopping-cart"></i> <span><?php print _("In den Warenkorb"); ?></span></button></span></div></div><div class="shelf-item"><div class="shelf-group1"><span class="shelf-description"><?php print _("..."); ?></span><span class="shelf-sku">Noch so ein Teil</span></div><div class="shelf-group2"><span class="shelf-price" data-currency="EUR" data-price="100">100 EUR</span><span class="shelf-shipping" data-type="shipped" data-weight="10" data-unit="undefined"><?php print _("shipped"); ?></span></div><div class="shelf-group3"><span class="shelf-quantity"><input type="number" value="1" class="form-control"></span><span class="shelf-add"><button class="btn btn-default"><i class="fa fa-shopping-cart"></i> <span><?php print _("In den Warenkorb"); ?></span></button></span></div></div></div></div></div>
+    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1408086390"><?php print _("Handfunkgeräte"); ?></h1></div></div><div id="handfunkgeraete-block-2" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-6"><div class="shelf"><div id="shelf-item-0" class="shelf-item"><div class="shelf-group1"><span class="shelf-description"><?php print _("Digital Handfunkgerät"); ?></span><span class="shelf-sku">PD605</span><span class="shelf-quantity"><label for="quantity">Anzahl: </label><input type="number" value="1" class="form-control" size="5"></span></div><div class="shelf-group2"><span class="shelf-price" data-currency="USD" data-price="6.75">$6.75 USD</span><span class="shelf-shipping" data-type="shipped" data-weight="0.3" data-unit="undefined"><?php print _("shipped"); ?></span><span class="shelf-duration"><label for="duration">Tage: </label><input type="number" value="1" class="form-control" size="5"></span></div><div class="shelf-group3"><span class="shelf-add"><button class="btn btn-default"><i class="fa fa-shopping-cart"></i> <span><?php print _("In den Warenkorb"); ?></span></button></span></div></div></div></div><div class="col col-md-6"><div class="shelf"><div id="shelf-item-1" class="shelf-item"><div class="shelf-group1"><span class="shelf-description"><?php print _("Digital Handfunkgerät"); ?></span><span class="shelf-sku">PD785</span><span class="shelf-quantity"><label for="quantity">Anzahl: </label><input type="number" value="1" class="form-control" size="5"></span></div><div class="shelf-group2"><span class="shelf-price" data-currency="USD" data-price="13">$13 USD</span><span class="shelf-shipping" data-type="shipped" data-weight="0.3" data-unit="undefined"><?php print _("shipped"); ?></span><span class="shelf-duration"><label for="duration">Tage: </label><input type="number" value="1" class="form-control" size="5"></span></div><div class="shelf-group3"><span class="shelf-add"><button class="btn btn-default"><i class="fa fa-shopping-cart"></i> <span><?php print _("In den Warenkorb"); ?></span></button></span></div></div></div></div></div>
 </div>
 
 <footer role="contentinfo">
@@ -238,7 +238,7 @@ include '../site.php';
               
               <ul>
                 <li><?php print _("Menu:"); ?></li>
-                <li><a href="../index">Home</a></li><li class="active"><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../artikel/test">test</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
+                <li><a href="../index">Home</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
               </ul>
               
           </div>

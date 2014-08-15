@@ -81,14 +81,14 @@ include 'site.php';
 	      <span class="icon-bar"></span>
 	    </button>
         
-        <a class="navbar-brand" href="//n2o.local/funkfatzke/sites/funk"><img src="files/sample-logo.png"></a>
+        <a class="navbar-brand" href="//n2o.local/funkfatzke/sites/funk"><img src="themes/advanced/resources/images/funk_logo_100px.png"></a>
 	  </div>
 	  <!-- /.navbar-header -->
 	
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right">
-			<li class="active"><a href="index">Home</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="artikel/test">test</a></li><li><a href="blog">Blog</a></li><li><a href="page/about">About</a></li><li><a href="page/contact">Contact</a></li>
+			<li class="active"><a href="index">Home</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="blog">Blog</a></li><li><a href="page/about">About</a></li><li><a href="page/contact">Contact</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -152,27 +152,27 @@ include 'site.php';
 	<!-- /.cart-items -->
 	
 	<div class="subtotal">
-		<label><?php print _("Subtotal:"); ?></label>
+		<label><?php print _("Zwischensumme:"); ?></label>
 		<strong data-bind="text:subtotalFriendly"></strong> 
 	</div>
 	
 	<div class="weight" data-bind="visible: totalWeight() > 0">
-		<label><?php print _("Total Weight:"); ?></label>
+		<label><?php print _("Gesamtgewicht:"); ?></label>
 		<strong data-bind="text:totalWeightFriendly"></strong> 
 	</div>
 	
 	<div class="shipping" data-bind="visible: shipping() > 0">
-		<label><?php print _("Shipping:"); ?></label>
+		<label><?php print _("Versandkosten:"); ?></label>
 		<strong data-bind="text:shippingFriendly"></strong> 
 	</div>
 	
 	<div class="tax" data-bind="visible: tax() > 0">
-		<label><?php print _("Tax:"); ?></label>
+		<label><?php print _("MwSt.:"); ?></label>
 		<strong data-bind="text:taxFriendly"></strong> 
 	</div>
 	
 	<div class="total">
-		<label><?php print _("Total:"); ?></label>
+		<label><?php print _("Gesamtsumme inkl. MwSt.:"); ?></label>
 		<strong data-bind="text:totalFriendly"></strong> 
 	</div>
 	
@@ -269,7 +269,7 @@ include 'site.php';
               
               <ul>
                 <li><?php print _("Menu:"); ?></li>
-                <li class="active"><a href="index">Home</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="artikel/test">test</a></li><li><a href="blog">Blog</a></li><li><a href="page/about">About</a></li><li><a href="page/contact">Contact</a></li>
+                <li class="active"><a href="index">Home</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="blog">Blog</a></li><li><a href="page/about">About</a></li><li><a href="page/contact">Contact</a></li>
               </ul>
               
           </div>

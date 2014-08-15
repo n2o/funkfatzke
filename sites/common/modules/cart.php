@@ -40,27 +40,27 @@
 	<!-- /.cart-items -->
 	
 	<div class="subtotal">
-		<label><?php print _("Subtotal:"); ?></label>
+		<label><?php print _("Zwischensumme:"); ?></label>
 		<strong data-bind="text:subtotalFriendly"></strong> 
 	</div>
 	
 	<div class="weight" data-bind="visible: totalWeight() > 0">
-		<label><?php print _("Total Weight:"); ?></label>
+		<label><?php print _("Gesamtgewicht:"); ?></label>
 		<strong data-bind="text:totalWeightFriendly"></strong> 
 	</div>
 	
 	<div class="shipping" data-bind="visible: shipping() > 0">
-		<label><?php print _("Shipping:"); ?></label>
+		<label><?php print _("Versandkosten:"); ?></label>
 		<strong data-bind="text:shippingFriendly"></strong> 
 	</div>
 	
 	<div class="tax" data-bind="visible: tax() > 0">
-		<label><?php print _("Tax:"); ?></label>
+		<label><?php print _("MwSt.:"); ?></label>
 		<strong data-bind="text:taxFriendly"></strong> 
 	</div>
 	
 	<div class="total">
-		<label><?php print _("Total:"); ?></label>
+		<label><?php print _("Gesamtsumme inkl. MwSt.:"); ?></label>
 		<strong data-bind="text:totalFriendly"></strong> 
 	</div>
 	

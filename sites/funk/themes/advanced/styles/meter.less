@@ -1,3 +1,150 @@
+@background: #d5d5d5;
+@color1: #355e00;	/* Darkgreen */
+@color2: #579d1c;	/* Midgreen */
+@color3: #aecf00;	/* Lightgreen */
+@color4: #ffd320;	/* Yellow */
+@color5: #4c1900;	/* Brown */
+@footer-link: #fff;
+@container-background: #fff;
+@rounded: 3px;
+
+/* Slideshow */
+#slideshow {
+	margin-bottom: 1em;
+}
+
+html, body {
+  	min-height:100%;
+    margin:0;
+}
+
+h1, h2 {
+	color: @color1;
+}
+
+/* Content */
+body {
+	background-color: @background;
+}
+
+#content a, #content a:hover{
+	color: @color1;
+}
+
+.container-white {
+    box-shadow: 0 1px 2px #aaa;
+    background: @container-background;
+    border-radius: @rounded;
+  	-moz-border-radius: @rounded;
+  	padding: 1em;
+  	margin-top: 1em;
+}
+
+.container-white-top {
+    box-shadow: 0 1px 2px #aaa;
+    background: @container-background;
+  	-moz-border-radius: @rounded @rounded 0 0;
+	border-radius: @rounded @rounded 0 0;
+  	padding: 1em 1em 0 1em;
+  	margin-top: 1em;
+}
+
+.container-white-mid {
+    box-shadow: 0 1px 2px #aaa;
+	background-color: @container-background;
+  	padding: 0 1em 0 1em;
+}
+
+.container-white-bottom {
+    box-shadow: 0 1px 2px #aaa;
+    background-color: @container-background;
+   	-moz-border-radius: 0 0 @rounded @rounded;
+	border-radius: 0 0 @rounded @rounded;
+  	padding: 0 1em 1em 1em;
+}
+
+/* /Content */
+
+/* Footer */
+footer {
+    background-color: @color1;
+    color: lightgrey;
+}
+
+footer a, footer a:hover {
+    color: @footer-link;
+}
+
+/* /Footer */
+
+/* Separator between navigation elements */
+.navbar .divider-vertical {
+	height: 50px;
+	margin: 0 9px;
+	border-right: 1px solid #ffffff;
+	border-left: 1px solid #f2f2f2;
+}
+
+.navbar-inverse .divider-vertical {
+	border-right-color: #222222;
+	border-left-color: #111111;
+}
+
+@media (max-width: 767px) {
+.navbar-collapse .nav > .divider-vertical {
+    display: none;
+  }
+}
+
+/* Remove borders from all images */
+div.o-image img {
+  	border: 0;
+}
+
+/* Move header to the top */
+header {
+  	margin: 0;
+}
+
+/* Modify navbar */
+.navbar {
+	background-color: white;
+	border-radius: 0;
+   	-moz-border-radius: 0;
+  	border: 0;
+}
+
+@media (min-width: 993px) {
+  .navbar {
+      height: 85px;
+	  padding: 0 1em 1em 1em;
+  }
+  
+  .navbar-brand img {
+      max-height: 80px;
+      margin-top: 0.125em;
+  }
+  
+  .navbar-nav li {
+      height: 50px;
+      padding-top: 16px;
+  }
+  
+  .navbar-header {
+      height: 85px;
+  }
+  
+  nav > div.collapse.navbar-collapse.navbar-ex1-collapse > ul > li.nav-search.dropdown > form {
+      margin-top: 11px;
+  }
+
+  nav > div.collapse.navbar-collapse.navbar-ex1-collapse > ul > li.dropdown.open > ul > a {
+  	  line-height: 50px;
+  }
+
+}
+
 .form-control {
 	width: 30%;
+  	padding: 6px;
 }

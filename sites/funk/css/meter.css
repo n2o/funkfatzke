@@ -1,3 +1,109 @@
+#slideshow {
+  margin-bottom: 1em;
+}
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+h1,
+h2 {
+  color: #355e00;
+}
+body {
+  background-color: #d5d5d5;
+}
+#content a,
+#content a:hover {
+  color: #355e00;
+}
+.container-white {
+  box-shadow: 0 1px 2px #aaa;
+  background: #fff;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  padding: 1em;
+  margin-top: 1em;
+}
+.container-white-top {
+  box-shadow: 0 1px 2px #aaa;
+  background: #fff;
+  -moz-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+  padding: 1em 1em 0 1em;
+  margin-top: 1em;
+}
+.container-white-mid {
+  box-shadow: 0 1px 2px #aaa;
+  background-color: #fff;
+  padding: 0 1em 0 1em;
+}
+.container-white-bottom {
+  box-shadow: 0 1px 2px #aaa;
+  background-color: #fff;
+  -moz-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  padding: 0 1em 1em 1em;
+}
+footer {
+  background-color: #355e00;
+  color: lightgrey;
+}
+footer a,
+footer a:hover {
+  color: #fff;
+}
+.navbar .divider-vertical {
+  height: 50px;
+  margin: 0 9px;
+  border-right: 1px solid #ffffff;
+  border-left: 1px solid #f2f2f2;
+}
+.navbar-inverse .divider-vertical {
+  border-right-color: #222222;
+  border-left-color: #111111;
+}
+@media (max-width: 767px) {
+  .navbar-collapse .nav > .divider-vertical {
+    display: none;
+  }
+}
+div.o-image img {
+  border: 0;
+}
+header {
+  margin: 0;
+}
+.navbar {
+  background-color: white;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  border: 0;
+}
+@media (min-width: 993px) {
+  .navbar {
+    height: 85px;
+    padding: 0 1em 1em 1em;
+  }
+  .navbar-brand img {
+    max-height: 80px;
+    margin-top: 0.125em;
+  }
+  .navbar-nav li {
+    height: 50px;
+    padding-top: 16px;
+  }
+  .navbar-header {
+    height: 85px;
+  }
+  nav > div.collapse.navbar-collapse.navbar-ex1-collapse > ul > li.nav-search.dropdown > form {
+    margin-top: 11px;
+  }
+  nav > div.collapse.navbar-collapse.navbar-ex1-collapse > ul > li.dropdown.open > ul > a {
+    line-height: 50px;
+  }
+}
 .form-control {
   width: 30%;
+  padding: 6px;
 }
