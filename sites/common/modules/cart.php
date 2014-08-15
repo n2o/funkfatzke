@@ -23,7 +23,8 @@
 					<i class="fa fa-truck"></i> <?php print _("Shipped"); ?>
 				</span>
 			</div><div class="cart-group3">
-				<span class="cart-quantity"><input type="number" class="form-control" data-bind="value: quantity, event:{change: $parent.updateQuantity}"></span>
+				<span class="cart-quantity"><label for="quantity">Anzahl: &nbsp;</label><input type="number" class="form-control" data-bind="value: quantity, event:{change: $parent.updateQuantity}"></span>
+				<span class="cart-duration"><label for="duration">Tage: &nbsp;</label><input type="number" class="form-control" data-bind="value: duration, event:{change: $parent.updateDuration}"></span>
 				<span class="cart-add">
 					<button class="btn btn-default" data-bind="click: $parent.removeFromCart">
 						<i class="fa fa-minus-circle"></i> <span><?php print _("Remove"); ?></span>

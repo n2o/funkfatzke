@@ -1,17 +1,17 @@
 <?php 
-$rootPrefix="";
+$rootPrefix="../";
 $formPublicId="";
-$pageUrl="thank-you";
+$pageUrl="artikel/test";
 $isSecure=false;
 $siteUniqId="53ec8db6e654f";
 $siteFriendlyId="funk";
-$pageUniqId="53ec92efaa556";
-$pageFriendlyId="thank-you";
-$pageTypeUniqId="-1";
+$pageUniqId="53ed0169835db";
+$pageFriendlyId="test";
+$pageTypeUniqId="53ec8ee686b46";
 $language="de";
-include '../../libs/Utilities.php';
-include 'libs/SiteAuthUser.php';
-include 'site.php';
+include '../../../libs/Utilities.php';
+include '../libs/SiteAuthUser.php';
+include '../site.php';
 ?><!doctype html>
 
 <html lang="<?php print $language; ?>">
@@ -19,7 +19,7 @@ include 'site.php';
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Funkfatzke - Transaktion erfolgreich!</title>
+<title>Funkfatzke - test</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="callout" content="">
@@ -30,15 +30,15 @@ include 'site.php';
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- css -->
-<link href="css/content.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
+<link href="../css/content.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
 <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" type="text/css" rel="stylesheet" media="screen">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="css/prettify.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
+<link href="../css/prettify.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
 
     
 </head>
 
-<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53ec92efaa556" data-pagefriendlyid="thank-you" data-pagetypeuniqid="-1" data-api="http://n2o.local/funkfatzke" id="thank-you">
+<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53ed0169835db" data-pagefriendlyid="test" data-pagetypeuniqid="53ec8ee686b46" data-api="http://n2o.local/funkfatzke" id="test">
 
 <section class="settings">
 	
@@ -79,14 +79,14 @@ include 'site.php';
 	      <span class="icon-bar"></span>
 	    </button>
         
-        <a class="navbar-brand" href="//n2o.local/funkfatzke/sites/funk"><img src="files/sample-logo.png"></a>
+        <a class="navbar-brand" href="//n2o.local/funkfatzke/sites/funk"><img src="../files/sample-logo.png"></a>
 	  </div>
 	  <!-- /.navbar-header -->
 	
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right">
-			<li><a href="index">Home</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="artikel/test">test</a></li><li><a href="blog">Blog</a></li><li><a href="page/about">About</a></li><li><a href="page/contact">Contact</a></li>
+			<li><a href="../index">Home</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../artikel/test">test</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -191,7 +191,7 @@ include 'site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1408013042"><?php print _("Transaktion erfolgreich!"); ?></h1><p id="p-1408013042"><?php print _("Vielen Dank für Ihre Transaktion. Wir werden die Bestellung schnellstmöglich bearbeiten!"); ?></p></div></div>
+    <div id="block-1" class="block row" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1408041450"><?php print _("test"); ?></h1><p id="p-1408041450"></p><div class="shelf"><div id="shelf-item-0" class="shelf-item"><div class="shelf-group1"><span class="shelf-description"><?php print _("baaaaar"); ?></span><span class="shelf-sku">fooooo</span><span class="shelf-quantity"><label for="quantity">Anzahl: </label><input type="number" value="1" class="form-control" size="5"></span></div><div class="shelf-group2"><span class="shelf-price" data-currency="EUR" data-price="27">27 EUR</span><span class="shelf-shipping" data-type="shipped" data-weight="10" data-unit="undefined"><?php print _("shipped"); ?></span><span class="shelf-duration"><label for="duration">Tage: </label><input type="number" value="1" class="form-control" size="5"></span></div><div class="shelf-group3"><span class="shelf-add"><button class="btn btn-default"><i class="fa fa-shopping-cart"></i> <span><?php print _("In den Warenkorb"); ?></span></button></span></div></div></div></div></div>
 </div>
 
 <footer role="contentinfo">
@@ -205,7 +205,7 @@ include 'site.php';
             <h4><?php print _("Contact"); ?></h4>
             
             <p>
-              <?php print _("Call us at (555) 555-5555 or reach out via the website:"); ?> <a href="page/contact"><?php print _("Contact"); ?></a>
+              <?php print _("Call us at (555) 555-5555 or reach out via the website:"); ?> <a href="../page/contact"><?php print _("Contact"); ?></a>
             </p>
             
             <p class="social">
@@ -238,7 +238,7 @@ include 'site.php';
               
               <ul>
                 <li><?php print _("Menu:"); ?></li>
-                <li><a href="index">Home</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="artikel/test">test</a></li><li><a href="blog">Blog</a></li><li><a href="page/about">About</a></li><li><a href="page/contact">Contact</a></li>
+                <li><a href="../index">Home</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../artikel/test">test</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
               </ul>
               
           </div>
@@ -256,19 +256,19 @@ include 'site.php';
 <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment-with-langs.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
-<script type="text/javascript" src="js/respond.Map.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Form.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Calendar.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.List.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Featured.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Login.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Registration.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Search.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/pageModel.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/prettify.js"></script>
-<script type="text/javascript" src="js/cartModel.js"></script>
+<script type="text/javascript" src="../js/respond.Map.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Form.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Calendar.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.List.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Featured.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Login.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Registration.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Search.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/pageModel.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/prettify.js"></script>
+<script type="text/javascript" src="../js/cartModel.js"></script>
 
-<script type="text/javascript" src="themes/advanced/resources/advanced.js"></script>
+<script type="text/javascript" src="../themes/advanced/resources/advanced.js"></script>
 
 
 

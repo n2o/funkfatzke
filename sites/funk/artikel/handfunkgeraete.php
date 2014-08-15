@@ -86,7 +86,7 @@ include '../site.php';
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right">
-			<li><a href="../index">Home</a></li><li class="active"><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
+			<li><a href="../index">Home</a></li><li class="active"><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../artikel/test">test</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -109,14 +109,14 @@ include '../site.php';
 	</nav>
 
 	<section id="cart" class="panel panel-default" 
-	data-paypalid="cmeter-facilitator_api1.googlemail.com"
+	data-paypalid="cmeter-facilitator@googlemail.com"
 	data-usesandbox="1"
 	data-logo=""
 	data-currency="EUR"
 	data-weightunit="kgs"
 	data-taxrate="0.19000"
-	data-shippingcalculation="free"
-	data-shippingrate="0.00"
+	data-shippingcalculation="flat-rate"
+	data-shippingrate="4.90"
 	data-shippingtiers="">
 
 	<div class="panel-heading"><?php print _("Shopping Cart"); ?> <span class="badge" data-bind="text:count"></span></div>
@@ -133,7 +133,8 @@ include '../site.php';
 					<i class="fa fa-truck"></i> <?php print _("Shipped"); ?>
 				</span>
 			</div><div class="cart-group3">
-				<span class="cart-quantity"><input type="number" class="form-control" data-bind="value: quantity, event:{change: $parent.updateQuantity}"></span>
+				<span class="cart-quantity"><label for="quantity">Anzahl: &nbsp;</label><input type="number" class="form-control" data-bind="value: quantity, event:{change: $parent.updateQuantity}"></span>
+				<span class="cart-duration"><label for="duration">Tage: &nbsp;</label><input type="number" class="form-control" data-bind="value: duration, event:{change: $parent.updateDuration}"></span>
 				<span class="cart-add">
 					<button class="btn btn-default" data-bind="click: $parent.removeFromCart">
 						<i class="fa fa-minus-circle"></i> <span><?php print _("Remove"); ?></span>
@@ -190,7 +191,7 @@ include '../site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1408012046"><?php print _("Handfunkgeräte"); ?></h1><p id="p-1408012046"></p><div class="shelf"><div id="shelf-item-0" class="shelf-item"><div class="shelf-group1"><span class="shelf-description"><?php print _("Tolle Beschreibung"); ?></span><span class="shelf-sku">PD785 digital Handfunkgerät</span></div><div class="shelf-group2"><span class="shelf-price" data-currency="USD" data-price="11.25">$11.25 USD</span><span class="shelf-shipping" data-type="not shipped" data-weight="" data-unit="undefined"><?php print _("not shipped"); ?></span></div><div class="shelf-group3"><span class="shelf-quantity"><input type="number" value="1" class="form-control"></span><span class="shelf-add"><button class="btn btn-default"><i class="fa fa-shopping-cart"></i> <span><?php print _("Add to Cart"); ?></span></button></span></div></div></div></div></div>
+    <div id="block-1" class="block row" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1408012046"><?php print _("Handfunkgeräte"); ?></h1><p id="p-1408012046"></p><div class="shelf"><div class="shelf-item"><div class="shelf-group1"><span class="shelf-description"><?php print _("Stimmt"); ?></span><span class="shelf-sku">Krasses Teil</span></div><div class="shelf-group2"><span class="shelf-price" data-currency="EUR" data-price="42">42 EUR</span><span class="shelf-shipping" data-type="shipped" data-weight="42" data-unit="undefined"><?php print _("shipped"); ?></span></div><div class="shelf-group3"><span class="shelf-quantity"><input type="number" value="1" class="form-control"></span><span class="shelf-add"><button class="btn btn-default"><i class="fa fa-shopping-cart"></i> <span><?php print _("In den Warenkorb"); ?></span></button></span></div></div><div class="shelf-item"><div class="shelf-group1"><span class="shelf-description"><?php print _("Schweres Teil"); ?></span><span class="shelf-sku">Schweres Teil</span></div><div class="shelf-group2"><span class="shelf-price" data-currency="EUR" data-price="21">21 EUR</span><span class="shelf-shipping" data-type="shipped" data-weight="100" data-unit="undefined"><?php print _("shipped"); ?></span></div><div class="shelf-group3"><span class="shelf-quantity"><input type="number" value="1" class="form-control"></span><span class="shelf-add"><button class="btn btn-default"><i class="fa fa-shopping-cart"></i> <span><?php print _("In den Warenkorb"); ?></span></button></span></div></div><div class="shelf-item"><div class="shelf-group1"><span class="shelf-description"><?php print _("..."); ?></span><span class="shelf-sku">Noch so ein Teil</span></div><div class="shelf-group2"><span class="shelf-price" data-currency="EUR" data-price="100">100 EUR</span><span class="shelf-shipping" data-type="shipped" data-weight="10" data-unit="undefined"><?php print _("shipped"); ?></span></div><div class="shelf-group3"><span class="shelf-quantity"><input type="number" value="1" class="form-control"></span><span class="shelf-add"><button class="btn btn-default"><i class="fa fa-shopping-cart"></i> <span><?php print _("In den Warenkorb"); ?></span></button></span></div></div></div></div></div>
 </div>
 
 <footer role="contentinfo">
@@ -237,7 +238,7 @@ include '../site.php';
               
               <ul>
                 <li><?php print _("Menu:"); ?></li>
-                <li><a href="../index">Home</a></li><li class="active"><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
+                <li><a href="../index">Home</a></li><li class="active"><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../artikel/test">test</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
               </ul>
               
           </div>

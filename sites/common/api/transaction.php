@@ -154,6 +154,7 @@ class TransactionPaypalResource extends Tonic\Resource {
 					$item_name = iconv("ISO-8859-1","UTF-8", $item_name);
 					
 					$item_quantity = $request['quantity'.$x];
+					$item_duration = $request['duration'.$x];
 					$item_total = $request['mc_gross_'.$x];
 					$item_price = floatval($item_total) / intval($item_quantity);
 				
@@ -161,7 +162,8 @@ class TransactionPaypalResource extends Tonic\Resource {
 	                    'SKU' => $item_sku,
 	                    'Name'  => $item_name,
 	                    'ShippingType' => $item_shipping_type,
-	                    'Quantity' => $item_quantity,
+                      'Quantity' => $item_quantity,
+                      'Duration' => $item_duration,
 	                    'Price' => $item_price,
 	                    'Total' => $item_total,
 	                );

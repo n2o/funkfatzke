@@ -1,5 +1,5 @@
 // models a cart item
-var CartItem = function(description, sku, price, shippingType, weight, quantity){
+var CartItem = function(description, sku, price, shippingType, weight, quantity, duration){
 	
 	var self = this;
 	self.description = ko.observable(description);
@@ -7,9 +7,11 @@ var CartItem = function(description, sku, price, shippingType, weight, quantity)
 	self.price = ko.observable(price);
 	self.shippingType = ko.observable(shippingType);
 	self.weight = ko.observable(weight);
-	self.quantity = ko.observable(quantity);	
-	
-	self.priceFriendly = ko.computed(function(){
+	self.quantity = ko.observable(quantity);
+  self.duration = 1
+  self.duration = ko.observable(duration);
+
+  self.priceFriendly = ko.computed(function(){
 		var p = self.price() + ' ' + cartModel.currency;
 		
 		if(cartModel.currency == 'USD'){
@@ -30,15 +32,15 @@ var CartItem = function(description, sku, price, shippingType, weight, quantity)
 	// total price for line item
 	self.total = ko.computed(function(){
 	
-		var total = parseFloat(self.price()) * parseInt(self.quantity());
-		
+		var total = parseFloat(self.price()) * parseInt(self.quantity()) * parseInt(self.duration());
+    window.alert("Foo " + total)
 		return Number(total);
 	});
 	
 	// total price for line item (formatted)
 	self.totalFriendly = ko.computed(function(){
 	
-		var total = parseFloat(self.price()) * parseInt(self.quantity());
+		var total = parseFloat(self.price()) * parseInt(self.quantity()) * parseInt(self.duration());
 	
 		var p = Number(total).toFixed(2) + ' ' + cartModel.currency;
 		
@@ -56,8 +58,8 @@ var cartModel = {
    	payPalId: '',
    	logo: '',
    	useSandbox: false,
-   	currency: 'USD',
-   	weightUnit: 'kgs',
+   	currency: 'EUR',
+   	weightUnit: 'kg',
    	taxRate: 0,
    	returnUrl: 'return',
    	calculation: 'free',
@@ -133,9 +135,11 @@ var cartModel = {
     
     	// grab cart from localStorage
     	cartModel.updateCart();
-    	
-        // apply bindings
-        ko.applyBindings(cartModel, $('#cart').get(0));
+    
+      console.log($('#cart').get(0));
+
+      // apply bindings
+      ko.applyBindings(cartModel, $('#cart').get(0));
 
 	},
 	
@@ -179,23 +183,31 @@ var cartModel = {
 			// get quantity
 			var quantity = Number($(shelfItem).find('.shelf-quantity input').val());
     	
-	    	// handle error (set default quantity to 1)
-	    	if(isNaN(quantity)){
-	    		quantity = 1;
-	    	}
+      // get duration
+      var duration = Number($(shelfItem).find('.shelf-duration input').val());
+
+      // handle error (set default quantity and duration to 1)
+      if(isNaN(quantity)){
+        quantity = 1;
+      }
+      if(isNaN(duration)){
+        duration = 1;
+      }
 			
 			// create new cart item
-			var item = new CartItem(description, sku, price, type, weight, quantity);
+			var item = new CartItem(description, sku, price, type, weight, quantity, duration);
 			
 			// check for match
 			var match = false;
 			match = ko.utils.arrayFirst(cartModel.items(), function (curr) {
                             if(curr.sku().toUpperCase() == item.sku().toUpperCase()){
-                            	// get new quantity
+                            	// get new quantity and duration
                             	var q = parseInt(curr.quantity()) + parseInt(quantity);
+                            	var d = parseInt(curr.duration()) + parseInt(duration);
                             	
-                            	// update quantity
+                            	// update quantity and duration
                             	curr.quantity(q);
+                              curr.duration(d);
                             	
                             	return true;
                             }
@@ -231,7 +243,7 @@ var cartModel = {
 			var storedItems = eval(str);
 			
 			for(x=0; x<storedItems.length; x++){
-				// #debug console.log(storedItems[x]);
+				console.log(storedItems[x]);
 				
 				var description = storedItems[x].description;
 				var sku = storedItems[x].sku;
@@ -239,9 +251,10 @@ var cartModel = {
 				var type = storedItems[x].shippingType;
 				var weight = Number(storedItems[x].weight);
 				var quantity = Number(storedItems[x].quantity);
+				var duration = Number(storedItems[x].duration);
 			
 				// create new cart item
-				var item = new CartItem(description, sku, price, type, weight, quantity);
+				var item = new CartItem(description, sku, price, type, weight, quantity, duration);
 				
 				// push item to model
 				cartModel.items.push(item);
@@ -287,6 +300,23 @@ var cartModel = {
 		cartModel.saveCart();
 		
 	},
+  
+  // Update duration in cart
+  updateDuration:function(o, e){
+		var q = parseInt($(e.target).val());
+		
+		if(q <= 0){
+			cartModel.items.remove(o);
+		} else {
+			o.duration(q);
+		}
+		
+		// update external references and save the cart
+		cartModel.updateExternal();
+		cartModel.saveCart();
+		
+	},
+
 	
 	// removes an item from a cart
 	removeFromCart:function(o, e){
@@ -336,6 +366,7 @@ var cartModel = {
 			
 			data['item_name_'+c] = item.description();
 			data['quantity_'+c] = item.quantity();
+      data['duration_'+c] = item.duration();
 			data['amount_'+c] = item.price().toFixed(2);
 			data['item_number_'+c] = item.sku() + '-' + item.shippingType().toUpperCase();
 			

@@ -86,7 +86,7 @@ include '../site.php';
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right">
-			<li><a href="../index">Home</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
+			<li><a href="../index">Home</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../artikel/test">test</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -109,14 +109,14 @@ include '../site.php';
 	</nav>
 
 	<section id="cart" class="panel panel-default" 
-	data-paypalid="cmeter-facilitator_api1.googlemail.com"
+	data-paypalid="cmeter-facilitator@googlemail.com"
 	data-usesandbox="1"
 	data-logo=""
 	data-currency="EUR"
 	data-weightunit="kgs"
 	data-taxrate="0.19000"
-	data-shippingcalculation="free"
-	data-shippingrate="0.00"
+	data-shippingcalculation="flat-rate"
+	data-shippingrate="4.90"
 	data-shippingtiers="">
 
 	<div class="panel-heading"><?php print _("Shopping Cart"); ?> <span class="badge" data-bind="text:count"></span></div>
@@ -133,7 +133,8 @@ include '../site.php';
 					<i class="fa fa-truck"></i> <?php print _("Shipped"); ?>
 				</span>
 			</div><div class="cart-group3">
-				<span class="cart-quantity"><input type="number" class="form-control" data-bind="value: quantity, event:{change: $parent.updateQuantity}"></span>
+				<span class="cart-quantity"><label for="quantity">Anzahl: &nbsp;</label><input type="number" class="form-control" data-bind="value: quantity, event:{change: $parent.updateQuantity}"></span>
+				<span class="cart-duration"><label for="duration">Tage: &nbsp;</label><input type="number" class="form-control" data-bind="value: duration, event:{change: $parent.updateDuration}"></span>
 				<span class="cart-add">
 					<button class="btn btn-default" data-bind="click: $parent.removeFromCart">
 						<i class="fa fa-minus-circle"></i> <span><?php print _("Remove"); ?></span>
@@ -242,7 +243,7 @@ include '../site.php';
               
               <ul>
                 <li><?php print _("Menu:"); ?></li>
-                <li><a href="../index">Home</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
+                <li><a href="../index">Home</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../artikel/test">test</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
               </ul>
               
           </div>
