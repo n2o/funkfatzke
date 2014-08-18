@@ -181,16 +181,16 @@ var cartModel = {
             // get quantity
             var quantity = Number($(shelfItem).find('.shelf-quantity input').val());
 
-            // get duration
-            var duration = Number($(shelfItem).find('.shelf-duration input').val());
+      // get duration
+      var duration = Number($(shelfItem).find('.shelf-duration input').val());
 
-            // handle error (set default quantity and duration to 1)
-            if(isNaN(quantity)){
-              quantity = 1;
-            }
-            if(isNaN(duration)){
-              duration = 1;
-            }
+      // handle error (set default quantity and duration to 1)
+      if(isNaN(quantity)){
+        quantity = 1;
+      }
+      if(isNaN(duration)){
+        duration = 1;
+      }
 
             // create new cart item
             var item = new CartItem(description, sku, price, type, weight, quantity, duration);
@@ -201,9 +201,11 @@ var cartModel = {
                             if(curr.sku().toUpperCase() == item.sku().toUpperCase()){
                                 // get new quantity and duration
                                 var q = parseInt(curr.quantity()) + parseInt(quantity);
+                                var d = parseInt(curr.duration()) + parseInt(duration);
 
                                 // update quantity and duration
                                 curr.quantity(q);
+                              curr.duration(d);
 
                                 return true;
                             }
@@ -360,11 +362,10 @@ var cartModel = {
 
             var item = cartModel.items()[x];
 
-            data['item_name_'+c] = 'Artikelpreis = Grundpreis * Tage -- ' + item.description();
+            data['item_name_'+c] = item.description();
             data['quantity_'+c] = item.quantity();
-            // Amount = price * days 
-            data['amount_'+c] = item.price().toFixed(2) * item.duration();
-            data['custom_'+c] = 'Artikelpreis = Grundpreis * Tage'
+      data['duration_'+c] = item.duration();
+            data['amount_'+c] = item.price().toFixed(2);
             data['item_number_'+c] = item.sku() + '-' + item.shippingType().toUpperCase();
 
             if(item.shippingType() == 'shipped'){

@@ -184,7 +184,7 @@ class TransactionPaypalResource extends Tonic\Resource {
 		                $item_price = '$'.$item_price;
 	                }
 	                
-	                $line_items .= '<tr style="border-bottom: 1px solid #f0f0f0;"><td>HAAAAAAAAALLLLOOOOOO'.$item_name.'<br><small>'.$item_sku.'</small>'.$download_link.'</td><td align="right">'.$item_price.'</td><td align="right">'.$item_quantity.'</td><td align="right">'.$item_duration.'</td><td align="right">'.$item_total.'</td></tr>';
+	                $line_items .= '<tr style="border-bottom: 1px solid #f0f0f0;"><td>'.$item_name.'<br><small>'.$item_sku.'</small>'.$download_link.'</td><td align="right">'.$item_price.'</td><td align="right">'.$item_quantity.'</td><td align="right">'.$item_duration.'</td><td align="right">'.$item_total.'</td></tr>';
 	                
 				    array_push($items, $item);
 			    }
