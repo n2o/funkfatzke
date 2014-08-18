@@ -199,13 +199,11 @@ var cartModel = {
             var match = false;
             match = ko.utils.arrayFirst(cartModel.items(), function (curr) {
                             if(curr.sku().toUpperCase() == item.sku().toUpperCase()){
-                                // get new quantity and duration
+                                // get new quantity 
                                 var q = parseInt(curr.quantity()) + parseInt(quantity);
-                                var d = parseInt(curr.duration()) + parseInt(duration);
 
-                                // update quantity and duration
+                                // update quantity 
                                 curr.quantity(q);
-                              curr.duration(d);
 
                                 return true;
                             }
@@ -588,3 +586,4 @@ cartModel.totalFriendly = ko.computed(function() {
 
 // init model
 $(document).ready(function(){cartModel.init();});
+
