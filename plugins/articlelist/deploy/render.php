@@ -76,5 +76,5 @@ $(document).ready(function() {
     });
     $( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
   });
-  </script>
+</script>
 
