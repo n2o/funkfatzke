@@ -93,7 +93,7 @@
             }
 
         });
-
+        $('form').trigger('reset');
     });
    });
 </script>
