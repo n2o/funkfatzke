@@ -1,4 +1,7 @@
 <script type="text/javascript" src="<?php print JQUERY_JS; ?>"></script>
+<script type="text/javascript" src="<?php print JQUERY_TABLESORTER; ?>"></script>
+<script type="text/javascript" src="<?php print JQUERYUI_JS; ?>"></script>
+<link href="<?php print JQUERYUI_CSS; ?>" rel="stylesheet">
 <script type="text/javascript" src="<?php print BOOTSTRAP_JS; ?>"></script>
 <script type="text/javascript" src="<?php print KNOCKOUT_JS; ?>"></script>
 <script type="text/javascript" src="<?php print MOMENT_JS; ?>"></script>

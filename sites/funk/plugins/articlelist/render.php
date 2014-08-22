@@ -12,12 +12,24 @@
   $articles = $res->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<div class="row">
+  <div class="col">
+    <div class="col-md-4">
+      <p>
+      <label for="amount">Minimum number of bedrooms:</label>
+      <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+      </p>
+      <div id="slider"></div>
+    </div>
+  </div>
+</div>
+
 <table id="articles" class="table table-striped table-hover table-condensed tablesorter">
   <thead>
     <tr>
       <th></th>
       <th>Name</th>
-      <th>Channel</th>
+      <th>Kanäle</th>
       <th>Preis</th>
       <th>Anzahl</th>
     </tr>
@@ -43,10 +55,24 @@
 </table>
 
 <!-- Make tables sortable -->
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.17.5/js/jquery.tablesorter.min.js"></script>
 <script>
-$(document).ready(function() { 
-  $("#articles").tablesorter(); 
-} 
-); 
+$(function() {
+    $( "#slider-range-max" ).slider({
+      range: "max",
+      min: 1,
+      max: 10,
+      value: 2,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( ui.value );
+      }
+    });
+    $( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
+  });
 </script>
+
+<script>
+$(function() {
+  $( "#slider" ).slider();
+});
+</script>
+
