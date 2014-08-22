@@ -1,13 +1,16 @@
-<h3>Sample Plugin (rendered when published)</h3>
-
 <?php 
     include "../../app.php";
     $db = DB::get();
-    $res = $db->query('SELECT * FROM `Articles`');
+    if (isset($var1) and $var1 != '') {
+      # Sanitize input
+      $res = $db->prepare('SELECT * FROM `Articles` WHERE `Category` LIKE :category ORDER BY Name');
+      $res->bindParam(':category', $var1, PDO::PARAM_STR, strlen($var1));
+      $res->execute();
+    } else {
+      $res = $db->query('SELECT * FROM `Articles` ORDER BY Name');
+    }
     $articles = $res->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
-<h4>Here are some passed variables:</h4>
 
 <table class="table table-striped table-bordered">
     <tbody>
@@ -19,6 +22,7 @@
             print("<td>" . $value . "</td>");
             print("</tr>");
         }
+        print("<tr><td colspan='2'>&nbsp;</td></tr>");
     }
 ?>
 	</tbody>

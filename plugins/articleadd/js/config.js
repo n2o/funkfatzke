@@ -3,8 +3,8 @@ if(typeof plugin == "undefined" || !plugin) {
 	var plugin = {};
 }
 
-// the type of plugin must match the JS singleton (e.g. samplert) name
-plugin.samplert = {
+// the type of plugin must match the JS singleton (e.g. articleadd) name
+plugin.articleadd = {
 
 	showUpdate:true, // shows/hides the submit button
 	pageUniqId:null,
@@ -13,20 +13,17 @@ plugin.samplert = {
 	// initialize plugin
 	init:function(pageUniqId, pluginUniqId){
 
-		plugin.samplert.pageUniqId = pageUniqId;
-		plugin.samplert.pluginUniqId = pluginUniqId;
+		plugin.articleadd.pageUniqId = pageUniqId;
+		plugin.articleadd.pluginUniqId = pluginUniqId;
 
-		$('#samplert-var1').val($('#'+plugin.samplert.pluginUniqId).data('var1'));
-		$('#samplert-var2').val($('#'+plugin.samplert.pluginUniqId).data('var2'));
-
+		$('#articleadd-var1').val($('#'+plugin.articleadd.pluginUniqId).data('var1'));
 	},
 
 	// handles the click of the submit button
 	update:function(el){
 		
 		// an easy way to pass data to your plugin is to set data-[var] attributes
-		$('#'+plugin.samplert.pluginUniqId).data('var1', $('#samplert-var1').val());
-		$('#'+plugin.samplert.pluginUniqId).data('var2', $('#samplert-var2').val());
+		$('#'+plugin.articleadd.pluginUniqId).data('var1', $('#articleadd-var1').val());
 
 		// show a success message when you are done
 		message.showMessage('success', 'Plugin updated successfully');

@@ -7,9 +7,16 @@
     "config":"true"
   },
   {
-    "type":"samplert",
-    "name":"Sample Runtime",
-    "desc":"A simple sample that demonstates plugins rendered at run time.",
+    "type":"articlelist",
+    "name":"Artikelliste",
+    "desc":"Auflistung aller Artikel. Ein Filter über die Kategorie kann definiert werden.",
+    "render":"runtime",
+    "config":"true"
+  },
+  {
+    "type":"articleadd",
+    "name":"Artikel hinzufügen",
+    "desc":"Erstelle neuen Artikel.",
     "render":"runtime",
     "config":"true"
   }

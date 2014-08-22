@@ -1,0 +1,9 @@
+{
+  "articleadd":{
+    "type":"articleadd",
+    "name":"Artikel hinzufügen",
+    "desc":"Erstelle neuen Artikel.",
+    "render":"runtime",
+    "config":"false"
+  }
+}

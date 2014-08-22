@@ -14,7 +14,7 @@ class DB{
     		$dbuser = DB_USER;
     		$dbpass = DB_PASSWORD;
             
-            self::$pdo = new PDO("mysql:host=$host;dbname=$dbname", $dbuser, $dbpass);
+            self::$pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbuser, $dbpass);
             self::$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );  
 
         }

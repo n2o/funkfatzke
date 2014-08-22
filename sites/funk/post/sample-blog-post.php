@@ -222,7 +222,7 @@ include '../site.php';
 <div class="container" role="main">  
   <div class="blog-meta">
       <p>
-        
+        <span class="photo" style="background-image: url(../files/funk_logo_100px.png)"></span>
         <?php print _("Last modified by"); ?>
         <span class="author">Christian Meter</span>
         <span class="last-modified-date">Thu, Aug 14 14 07:21 pm</span>
