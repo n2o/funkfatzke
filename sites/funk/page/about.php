@@ -101,7 +101,7 @@ include '../site.php';
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right nav-pills">
-			<li><a href="../index">Home</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../blog">Blog</a></li><li class="active"><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
+			<li><a href="../index">Home</a></li><li><a href="../artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../blog">Blog</a></li><li class="active"><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -253,7 +253,7 @@ include '../site.php';
               
               <ul>
                 <li><?php print _("Menu:"); ?></li>
-                <li><a href="../index">Home</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../blog">Blog</a></li><li class="active"><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
+                <li><a href="../index">Home</a></li><li><a href="../artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../blog">Blog</a></li><li class="active"><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
               </ul>
               
           </div>

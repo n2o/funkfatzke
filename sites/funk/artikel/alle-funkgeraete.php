@@ -1,12 +1,12 @@
 <?php 
 $rootPrefix="../";
 $formPublicId="";
-$pageUrl="artikel/datenbank";
+$pageUrl="artikel/alle-funkgeraete";
 $isSecure=false;
 $siteUniqId="53ec8db6e654f";
 $siteFriendlyId="funk";
-$pageUniqId="53f779ff4e3fc";
-$pageFriendlyId="datenbank";
+$pageUniqId="53f7abaf6c773";
+$pageFriendlyId="alle-funkgeraete";
 $pageTypeUniqId="53ec8ee686b46";
 $language="de";
 include '../../../libs/Utilities.php';
@@ -19,7 +19,7 @@ include '../site.php';
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Funkfatzke - Datenbank</title>
+<title>Funkfatzke - Alle Funkgeräte</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="callout" content="">
@@ -53,7 +53,7 @@ include '../site.php';
     
 </head>
 
-<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53f779ff4e3fc" data-pagefriendlyid="datenbank" data-pagetypeuniqid="53ec8ee686b46" data-api="http://n2o.local/funkfatzke" id="datenbank">
+<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53f7abaf6c773" data-pagefriendlyid="alle-funkgeraete" data-pagetypeuniqid="53ec8ee686b46" data-api="http://n2o.local/funkfatzke" id="alle-funkgeraete">
 
 <section class="settings">
 	
@@ -101,7 +101,7 @@ include '../site.php';
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right nav-pills">
-			<li><a href="../index">Home</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
+			<li><a href="../index">Home</a></li><li class="active"><a href="../artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -206,12 +206,7 @@ include '../site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="datenbank-block-1" class="block row" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12">
-
-<p class="file">
-	<i class="fa fa-picture-o"></i>
-	<a href="../files/funk_logo_100px.png"><?php print _("Download funk_logo_100px.png"); ?></a>
-</p></div></div>
+    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1408740273"><?php print _("Alle Funkgeräte"); ?></h1><?php $id="p-1408740281";$var1="";$type="articlelist";$name="Artikelliste";$render="runtime";$config="true";include "../plugins/articlelist/render.php"; ?></div></div>
 </div>
 
 <footer role="contentinfo">
@@ -258,7 +253,7 @@ include '../site.php';
               
               <ul>
                 <li><?php print _("Menu:"); ?></li>
-                <li><a href="../index">Home</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
+                <li><a href="../index">Home</a></li><li class="active"><a href="../artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../blog">Blog</a></li><li><a href="../page/about">About</a></li><li><a href="../page/contact">Contact</a></li>
               </ul>
               
           </div>

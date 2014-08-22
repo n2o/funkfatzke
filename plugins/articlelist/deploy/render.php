@@ -1,5 +1,5 @@
 <?php 
-  include "../../app.php";
+  include("../../../app.php");
   $db = DB::get();
   if (isset($var1) and $var1 != '') {
     # Sanitize input
@@ -12,18 +12,41 @@
   $articles = $res->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<table class="table table-striped table-bordered">
+<table id="articles" class="table table-striped table-hover tablesorter">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Channel</th>
+      <th>Preis</th>
+      <th>Anzahl</th>
+    </tr>
+  </thead>
   <tbody>
 <?php
   foreach ($articles as $article) {
-    foreach ($article as $key => $value) {
-        print("<tr>");
-        print("<td>" . $key . "</td>");
-        print("<td>" . $value . "</td>");
-        print("</tr>");
+    print("<tr>");
+    
+    if (!empty($article['PhotoURL'])) {
+      print("<td width='100px'><img style='width:100px;' src='../files/t-".$article['PhotoURL']."'></td>");
+    } else {
+      print("<td></td>");
     }
-    print("<tr><td colspan='2'>&nbsp;</td></tr>");
+    print("<td><strong>".$article['Name']."</strong><br>".$article['Description']."</td>");
+    print("<td>".$article['Channel']."</td>");
+    print("<td>".$article['Price']." €</td>");
+    print("<td>".$article['Quantity']."</td>");
+    print("</tr>");
   }
 ?>
   </tbody>
 </table>
+
+<!-- Make tables sortable -->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.17.5/js/jquery.tablesorter.min.js"></script>
+<script>
+$(document).ready(function() { 
+  $("#articles").tablesorter(); 
+} 
+); 
+</script>

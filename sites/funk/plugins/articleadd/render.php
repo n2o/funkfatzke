@@ -1,4 +1,4 @@
-
+<!-- Changes in this form affect the JS below and the file todb.php -->
 <form id="myForm" class="form-horizontal" role="form">
   <div class="form-group">
     <label for="name" class="col-sm-2 control-label">Name *</label>
@@ -28,6 +28,12 @@
     <label for="subcategory" class="col-sm-2 control-label">Unterkategorie</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" id="subcategory" placeholder="Unterkategorie">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="photo" class="col-sm-2 control-label">Foto URL</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="photo" placeholder="krasses_funkgeraet.png">
     </div>
   </div>
   <div class="form-group">
@@ -62,7 +68,7 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="button" id="button" class="btn btn-default" value="Artikel hinzufügen">Artikel hinzufügen</button>
+      <input type="button" id="button" class="btn btn-default" value="Artikel hinzufügen">
     </div>
   </div>
 </form>
@@ -79,6 +85,7 @@
         var transmission = $("#transmission").val();
         var category = $("#category").val();
         var subcategory = $("#subcategory").val();
+        var photo = $("#photo").val();       
         var weight = $("#weight").val();
         var channel = $("#channel").val();
         var price = $("#price").val();
@@ -87,7 +94,7 @@
         $.ajax({
             type:"post",
             url:"../../plugins/articleadd/deploy/todb.php",
-            data:"name="+name+"&description="+description+"&transmission="+transmission+"&category="+category+"&subcategory="+subcategory+"&weight="+weight+"&channel="+channel+"&price="+price+"&quantity="+quantity,
+            data:"name="+name+"&description="+description+"&transmission="+transmission+"&category="+category+"&subcategory="+subcategory+"&photo="+photo+"&weight="+weight+"&channel="+channel+"&price="+price+"&quantity="+quantity,
             success:function(data){
                $("#info").html(data);
             }

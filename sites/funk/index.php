@@ -103,7 +103,7 @@ include 'site.php';
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right nav-pills">
-			<li class="active"><a href="index">Home</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="blog">Blog</a></li><li><a href="page/about">About</a></li><li><a href="page/contact">Contact</a></li>
+			<li class="active"><a href="index">Home</a></li><li><a href="artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="blog">Blog</a></li><li><a href="page/about">About</a></li><li><a href="page/contact">Contact</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -208,7 +208,7 @@ include 'site.php';
 </header>
 
 <div id="content" class="container" role="main">
-	<div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-2"><?php print _("Welcome to Respond!"); ?></h1><p id="paragraph-2"><?php print _("This is the starter theme for <a href=\"http://respondcms.com\">Respond</a>. Respond is a responsive content management system that you can use to build responsive websites. Use it as a starting point to create your own site."); ?></p></div></div><div id="block-4" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="index-h1-2"><?php print _("Artikel hinzufügen"); ?></h1><?php $id="p-1408734051";$type="articleadd";$name="Artikel hinzufügen";$render="runtime";$config="true";include "plugins/articleadd/render.php"; ?></div></div><div id="index-block-3" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h2 id="index-h2-1"><?php print _("Liste aller Artikel"); ?></h2><?php $id="p-1408721571";$type="articlelist";$name="Artikelliste";$render="runtime";$config="true";$var1="";include "plugins/articlelist/render.php"; ?><h2 id="index-h2-2"><?php print _("Liste aller Handfunkgeräte"); ?></h2><?php $id="p-1408721590";$type="articlelist";$name="Artikelliste";$render="runtime";$config="true";$var1="Handfunkgerät";include "plugins/articlelist/render.php"; ?></div></div>
+	<div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-2"><?php print _("Welcome to Respond!"); ?></h1><p id="paragraph-2"><?php print _("This is the starter theme for <a href=\"http://respondcms.com\">Respond</a>. Respond is a responsive content management system that you can use to build responsive websites. Use it as a starting point to create your own site."); ?></p></div></div><div id="block-4" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="index-h1-2"><?php print _("Artikel hinzufügen"); ?></h1><?php $id="p-1408734051";$type="articleadd";$name="Artikel hinzufügen";$render="runtime";$config="true";include "plugins/articleadd/render.php"; ?></div></div>
 </div>
 
 <footer role="contentinfo">
@@ -255,7 +255,7 @@ include 'site.php';
               
               <ul>
                 <li><?php print _("Menu:"); ?></li>
-                <li class="active"><a href="index">Home</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="blog">Blog</a></li><li><a href="page/about">About</a></li><li><a href="page/contact">Contact</a></li>
+                <li class="active"><a href="index">Home</a></li><li><a href="artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="blog">Blog</a></li><li><a href="page/about">About</a></li><li><a href="page/contact">Contact</a></li>
               </ul>
               
           </div>

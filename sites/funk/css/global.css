@@ -403,3 +403,12 @@ span.shelf-quantity > input,
 span.shelf-duration > input {
   width: 60%;
 }
+.form-control::-moz-placeholder {
+  color: lightgrey;
+}
+.form-control:-ms-input-placeholder {
+  color: lightgrey;
+}
+.form-control::-webkit-input-placeholder {
+  color: lightgrey;
+}
