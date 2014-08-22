@@ -62,7 +62,7 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <input type="button" id="button" class="btn btn-default" value="Wow">
+      <input type="button" id="button" class="btn btn-default" value="Artikel hinzufügen">
     </div>
   </div>
 </form>
