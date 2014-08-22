@@ -29,6 +29,21 @@ include '../site.php';
   
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment-with-langs.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
+<script type="text/javascript" src="../js/respond.Map.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Form.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Calendar.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.List.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Featured.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Login.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Registration.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Search.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/pageModel.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/prettify.js"></script>
 <!-- css -->
 <link href="../css/content.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
 <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" type="text/css" rel="stylesheet" media="screen">
@@ -272,26 +287,12 @@ include '../site.php';
   
 </footer>
 
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment-with-langs.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
-<script type="text/javascript" src="../js/respond.Map.js?v=2.11.3"></script>
-<script type="text/javascript" src="../js/respond.Form.js?v=2.11.3"></script>
-<script type="text/javascript" src="../js/respond.Calendar.js?v=2.11.3"></script>
-<script type="text/javascript" src="../js/respond.List.js?v=2.11.3"></script>
-<script type="text/javascript" src="../js/respond.Featured.js?v=2.11.3"></script>
-<script type="text/javascript" src="../js/respond.Login.js?v=2.11.3"></script>
-<script type="text/javascript" src="../js/respond.Registration.js?v=2.11.3"></script>
-<script type="text/javascript" src="../js/respond.Search.js?v=2.11.3"></script>
-<script type="text/javascript" src="../js/pageModel.js?v=2.11.3"></script>
-<script type="text/javascript" src="../js/prettify.js"></script>
 <script type="text/javascript" src="../js/cartModel.js"></script>
 
 <script type="text/javascript" src="../themes/advanced/resources/advanced.js"></script>
 
 
+  <?php include "../fragments/snippets/add_article_to_db.php"; ?>
 
 </body>
 

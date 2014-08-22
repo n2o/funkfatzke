@@ -1,13 +1,13 @@
 <?php 
 $rootPrefix="../";
 $formPublicId="";
-$pageUrl="page/error";
+$pageUrl="artikel/hinzufuegen";
 $isSecure=false;
 $siteUniqId="53ec8db6e654f";
 $siteFriendlyId="funk";
-$pageUniqId="53ec8db70acea";
-$pageFriendlyId="error";
-$pageTypeUniqId="53ec8db708eef";
+$pageUniqId="53f776e77f818";
+$pageFriendlyId="hinzufuegen";
+$pageTypeUniqId="53ec8ee686b46";
 $language="de";
 include '../../../libs/Utilities.php';
 include '../libs/SiteAuthUser.php';
@@ -19,8 +19,8 @@ include '../site.php';
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Funkfatzke - Page Not Found</title>
-<meta name="description" content="<?php print _("A simple error page that is displayed when content cannot be found"); ?>">
+<title>Funkfatzke - Hinzufügen</title>
+<meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="callout" content="">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -53,7 +53,7 @@ include '../site.php';
     
 </head>
 
-<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53ec8db70acea" data-pagefriendlyid="error" data-pagetypeuniqid="53ec8db708eef" data-api="http://n2o.local/funkfatzke" id="error">
+<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53f776e77f818" data-pagefriendlyid="hinzufuegen" data-pagetypeuniqid="53ec8ee686b46" data-api="http://n2o.local/funkfatzke" id="hinzufuegen">
 
 <section class="settings">
 	
@@ -206,7 +206,10 @@ include '../site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="error-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1342578154"><?php print _("Error"); ?></h1><p id="p-1408092354"><?php print _("Placeholder for the Error page."); ?></p></div></div>
+    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1408726761"><?php print _("Hinzufügen"); ?></h1><form id="hinzufuegen-form-1" role="form" action="datenbank" type="post">
+	<div class="alert alert-success"><?php print _("Form submitted successfully!"); ?></div><div class="alert alert-danger"><?php print _("You are missing required fields."); ?></div><div class="form-group" data-type="text" data-required="true"><label for="name"><?php print _("Name"); ?></label><input id="name" name="name" type="text" class="form-control" placeholder="Name"></div><button type="submit" class="btn btn-default btn-lg"><?php print _("Submit"); ?> <i class="fa fa-spinner fa-spin icon-spinner"></i></button></form>
+
+</div></div>
 </div>
 
 <footer role="contentinfo">

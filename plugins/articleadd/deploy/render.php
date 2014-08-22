@@ -1,67 +1,99 @@
-<form class="form-horizontal" role="form" method="post" action="todb.php">
+
+<form id="myForm" class="form-horizontal" role="form">
   <div class="form-group">
-    <label for="Name" class="col-sm-2 control-label">Name *</label>
+    <label for="name" class="col-sm-2 control-label">Name *</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="Name" placeholder="Name" required>
+      <input type="text" class="form-control" id="name" placeholder="Name" required>
     </div>
   </div>
   <div class="form-group">
-    <label for="Description" class="col-sm-2 control-label">Beschreibung *</label>
+    <label for="description" class="col-sm-2 control-label">Beschreibung *</label>
     <div class="col-sm-10">
-      <textarea class="form-control" id="Description" placeholder="Beschreibung" required></textarea>
+      <textarea class="form-control" id="description" placeholder="Beschreibung" required></textarea>
     </div>
   </div>
   <div class="form-group">
-    <label for="Transmission" class="col-sm-2 control-label">Übertragung</label>
+    <label for="transmission" class="col-sm-2 control-label">Übertragung</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="Transmission" placeholder="DMR digital">
+      <input type="text" class="form-control" id="transmission" placeholder="DMR digital">
     </div>
   </div>
   <div class="form-group">
-    <label for="Category" class="col-sm-2 control-label">Kategorie</label>
+    <label for="category" class="col-sm-2 control-label">Kategorie</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="Category" placeholder="Kategorie">
+      <input type="text" class="form-control" id="category" placeholder="Kategorie">
     </div>
   </div>
   <div class="form-group">
-    <label for="Subcategory" class="col-sm-2 control-label">Unterkategorie</label>
+    <label for="subcategory" class="col-sm-2 control-label">Unterkategorie</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="Subcategory" placeholder="Unterkategorie">
+      <input type="text" class="form-control" id="subcategory" placeholder="Unterkategorie">
     </div>
   </div>
   <div class="form-group">
-    <label for="Weight" class="col-sm-2 control-label">Gewicht</label>
+    <label for="weight" class="col-sm-2 control-label">Gewicht</label>
     <div class="col-sm-10">
       <div class="input-group">
-        <input type="number" class="form-control" id="Weight" placeholder="290">
+        <input type="number" class="form-control" id="weight" placeholder="290">
         <span class="input-group-addon">g</span>
       </div>
     </div>
   </div>
   <div class="form-group">
-    <label for="Channel" class="col-sm-2 control-label">Kanäle, mit Komma getrennt</label>
+    <label for="channel" class="col-sm-2 control-label">Kanäle, mit Komma getrennt</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="Channel" placeholder="136 - 174 MHz, 400 - 527 MHz">
+      <input type="text" class="form-control" id="channel" placeholder="136 - 174 MHz, 400 - 527 MHz">
     </div>
   </div>
   <div class="form-group">
-    <label for="Price" class="col-sm-2 control-label">Grundpreis</label>
+    <label for="price" class="col-sm-2 control-label">Grundpreis</label>
     <div class="col-sm-10">
       <div class="input-group">
-        <input type="text" class="form-control" id="Price" placeholder="6,75">
+        <input type="text" class="form-control" id="price" placeholder="6,75">
         <span class="input-group-addon">€</span>
       </div>
     </div>
   </div>
   <div class="form-group">
-    <label for="Quantity" class="col-sm-2 control-label">Anzahl der Geräte</label>
+    <label for="quantity" class="col-sm-2 control-label">Anzahl der Geräte</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="Quantity" placeholder="10">
+      <input type="text" class="form-control" id="quantity" placeholder="10">
     </div>
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Artikel erstellen</button>
+      <input type="button" id="button" class="btn btn-default" value="Wow">
     </div>
   </div>
 </form>
+
+<div id="info"></div>
+
+<script type="text/javascript">
+   $(document).ready(function(){
+      $("#button").click(function(){
+
+        // Get values from form
+        var name = $("#name").val();
+        var description = $("#description").val();
+        var transmission = $("#transmission").val();
+        var category = $("#category").val();
+        var subcategory = $("#subcategory").val();
+        var weight = $("#weight").val();
+        var channel = $("#channel").val();
+        var price = $("#price").val();
+        var quantity = $("#quantity").val();
+
+        $.ajax({
+            type:"post",
+            url:"../../plugins/articleadd/deploy/todb.php",
+            data:"name="+name+"&description="+description+"&transmission="+transmission+"&category="+category+"&subcategory="+subcategory+"&weight="+weight+"&channel="+channel+"&price="+price+"&quantity="+quantity,
+            success:function(data){
+               $("#info").html(data);
+            }
+
+        });
+
+    });
+   });
+</script>

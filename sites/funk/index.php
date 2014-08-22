@@ -31,6 +31,21 @@ include 'site.php';
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment-with-langs.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
+<script type="text/javascript" src="js/respond.Map.js?v=2.11.3"></script>
+<script type="text/javascript" src="js/respond.Form.js?v=2.11.3"></script>
+<script type="text/javascript" src="js/respond.Calendar.js?v=2.11.3"></script>
+<script type="text/javascript" src="js/respond.List.js?v=2.11.3"></script>
+<script type="text/javascript" src="js/respond.Featured.js?v=2.11.3"></script>
+<script type="text/javascript" src="js/respond.Login.js?v=2.11.3"></script>
+<script type="text/javascript" src="js/respond.Registration.js?v=2.11.3"></script>
+<script type="text/javascript" src="js/respond.Search.js?v=2.11.3"></script>
+<script type="text/javascript" src="js/pageModel.js?v=2.11.3"></script>
+<script type="text/javascript" src="js/prettify.js"></script>
 <!-- css -->
 <link href="css/home.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
 <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" type="text/css" rel="stylesheet" media="screen">
@@ -193,7 +208,7 @@ include 'site.php';
 </header>
 
 <div id="content" class="container" role="main">
-	<div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-2"><?php print _("Welcome to Respond!"); ?></h1><p id="paragraph-2"><?php print _("This is the starter theme for <a href=\"http://respondcms.com\">Respond</a>. Respond is a responsive content management system that you can use to build responsive websites. Use it as a starting point to create your own site."); ?></p></div></div><div id="index-block-3" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h2 id="index-h2-3"><?php print _("Artikel hinzufügen"); ?></h2><?php $id="p-1408721614";$type="articleadd";$name="Artikel hinzufügen";$render="runtime";$config="true";include "plugins/articleadd/render.php"; ?><h2 id="index-h2-1"><?php print _("Liste aller Artikel"); ?></h2><?php $id="p-1408721571";$var1="";$type="articlelist";$name="Artikelliste";$render="runtime";$config="true";include "plugins/articlelist/render.php"; ?><h2 id="index-h2-2"><?php print _("Liste aller Handfunkgeräte"); ?></h2><?php $id="p-1408721590";$var1="Handfunkgerät";$type="articlelist";$name="Artikelliste";$render="runtime";$config="true";include "plugins/articlelist/render.php"; ?></div></div>
+	<div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-2"><?php print _("Welcome to Respond!"); ?></h1><p id="paragraph-2"><?php print _("This is the starter theme for <a href=\"http://respondcms.com\">Respond</a>. Respond is a responsive content management system that you can use to build responsive websites. Use it as a starting point to create your own site."); ?></p></div></div><div id="block-4" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="index-h1-2"><?php print _("Artikel hinzufügen"); ?></h1><?php $id="p-1408734051";$type="articleadd";$name="Artikel hinzufügen";$render="runtime";$config="true";include "plugins/articleadd/render.php"; ?></div></div><div id="index-block-3" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h2 id="index-h2-1"><?php print _("Liste aller Artikel"); ?></h2><?php $id="p-1408721571";$type="articlelist";$name="Artikelliste";$render="runtime";$config="true";$var1="";include "plugins/articlelist/render.php"; ?><h2 id="index-h2-2"><?php print _("Liste aller Handfunkgeräte"); ?></h2><?php $id="p-1408721590";$type="articlelist";$name="Artikelliste";$render="runtime";$config="true";$var1="Handfunkgerät";include "plugins/articlelist/render.php"; ?></div></div>
 </div>
 
 <footer role="contentinfo">
@@ -253,21 +268,6 @@ include 'site.php';
   
 </footer>
   
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment-with-langs.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
-<script type="text/javascript" src="js/respond.Map.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Form.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Calendar.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.List.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Featured.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Login.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Registration.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Search.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/pageModel.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/prettify.js"></script>
 <script type="text/javascript" src="js/cartModel.js"></script>
 
 <script type="text/javascript" src="themes/advanced/resources/advanced.js"></script>
