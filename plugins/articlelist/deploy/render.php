@@ -16,10 +16,10 @@
   <div class="col">
     <div class="col-md-4">
       <p>
-      <label for="amount">Minimum number of bedrooms:</label>
-      <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+        <label for="amount" class="control-label">Anzahl der Miettage:</label>
+        <input type="text" id="amount" readonly class0"form-control" style="border:0; font-weight:bold;">
       </p>
-      <div id="slider"></div>
+      <div id="slider-range-max"></div>
     </div>
   </div>
 </div>
@@ -56,23 +56,25 @@
 
 <!-- Make tables sortable -->
 <script>
-$(function() {
+$(document).ready(function() { 
+  $("#articles").tablesorter(); 
+} 
+); 
+</script>
+
+<!-- Configure Slider -->
+<script>
+  $(function() {
     $( "#slider-range-max" ).slider({
       range: "max",
       min: 1,
-      max: 10,
-      value: 2,
+      max: 30,
+      value: 1,
       slide: function( event, ui ) {
         $( "#amount" ).val( ui.value );
       }
     });
     $( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
   });
-</script>
-
-<script>
-$(function() {
-  $( "#slider" ).slider();
-});
-</script>
+  </script>
 
