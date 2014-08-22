@@ -12,7 +12,7 @@
   $articles = $res->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<table id="articles" class="table table-striped table-hover tablesorter">
+<table id="articles" class="table table-striped table-hover table-condensed tablesorter">
   <thead>
     <tr>
       <th></th>
@@ -28,7 +28,7 @@
     print("<tr>");
     
     if (!empty($article['PhotoURL'])) {
-      print("<td width='100px'><img style='width:100px;' src='../files/t-".$article['PhotoURL']."'></td>");
+      print("<td class='articlelist'><img class='articlelist' src='../files/t-".$article['PhotoURL']."'></td>");
     } else {
       print("<td></td>");
     }
