@@ -12,6 +12,8 @@
   $articles = $res->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<script src="../../../js/calcPrices.js" type="text/javascript"></script>
+
 <div class="row">
   <div class="col">
     <div class="col-md-4">
@@ -53,59 +55,3 @@
 </table>
 
 <p>* Alle Preise gelten pro Gerät pro Tag, zzgl. MwSt. und evtl. anfallenden Transportkosten.</p>
-
-<!-- Make tables sortable -->
-<script>
-//$(document).ready(function() { 
-//    $("#articles").tablesorter(); 
-//}); 
-</script>
-
-<!-- Configure Slider -->
-<script>
-$(function() {
-    var discount = 5;     // give x % discount on values
-    var values = new Array();
-    var discountValues = new Array();
-
-    $(".price").each(function(index) {
-        var current = parseFloat($(this).text().slice(0, -2)).toFixed(2);
-        $(this).html(current + " €");
-
-        // Calculate all values first
-        discountValues[index] = new Array();
-        discountValues[index][0] = current;
-
-        var temp = 0;
-
-        for(i = 1; i < 30; i++) {
-            if(i == 5) {
-                discount = discount / 1.5;
-            }
-            temp = discountValues[index][i-1] * (1 - discount/100);
-            discountValues[index][i] = temp.toFixed(2)
-        }
-    });
-
-    console.log(discountValues);
-    $("#slider-range-max").slider({
-        range: "max",
-        min: 1,
-        max: 30,
-        value: 1,
-        slide: function( event, ui ) {    // on change do:
-            if(ui.value == 1) {
-                $("#amount").val(ui.value + " Tag");
-            } else {
-                $("#amount").val(ui.value + " Tage");
-            }
-          
-            $(".price").each(function(index) {
-                $(this).html(discountValues[index][ui.value-1] + " €")
-            });
-        }
-    });
-    $("#amount").val( $( "#slider-range-max" ).slider( "value" ) + " Tag"); // write initial value
-});
-</script>
-
