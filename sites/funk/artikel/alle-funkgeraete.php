@@ -143,23 +143,23 @@ include '../site.php';
 	<div class="cart-items" data-bind="foreach:items">
 	
 		<div class="cart-item">
-			<div class="cart-group1">
-				<span class="cart-description" data-bind="text:description"></span>
-        <span class="cart-sku" data-bind="text:sku"></span>
-        <span class="cart-add">
+            <div class="cart-group1">
+                <span class="cart-add" style="float:left;">
 					<button class="btn btn-default" data-bind="click: $parent.removeFromCart">
-						<i class="fa fa-minus-circle"></i> <span><?php print _("Entfernen"); ?></span>
+						<i class="fa fa-minus-circle"></i> <span><?php print _(""); ?></span>
 					</button>
 				</span>
-			</div><div class="cart-group2">
+                <span class="cart-sku" data-bind="text:sku"></span>
+				<span class="cart-description" data-bind="text:description"></span>
+   			</div><div class="cart-group2">
 				<span class="cart-price" data-bind="text:priceFriendly, attr:{'data-price':price}"></span>
 				<span class="cart-shipping" data-bind="attr:{'data-type':shippingType}, visible: shippingType()=='shipped'">
 					<i class="fa fa-truck"></i> <?php print _("Versand"); ?>
 				</span>
 			</div><div class="cart-group3">
 				<span class="cart-quantity"><label for="quantity">Anzahl: &nbsp;</label><input type="number" class="form-control" data-bind="value: quantity, event:{change: $parent.updateQuantity}"></span>
-				<span class="cart-duration"><label for="duration">Tage: &nbsp;</label><input type="number" class="form-control" data-bind="value: duration, event:{change: $parent.updateDuration}"></span>
-      </div><div class="cart-group4">
+				<span class="cart-duration"><label for="duration">Tage: &nbsp;</label><input type="number" class="form-control" data-bind="value: duration" style="border:0;background:0;" disabled></span>
+            </div><div class="cart-group4">
 				<span class="cart-subtotal" data-bind="text:totalFriendly"></span>
 			</div>
 		</div>
@@ -210,7 +210,7 @@ include '../site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1408740273"><?php print _("Alle Funkgeräte"); ?></h1><?php $id="p-1408740281";$type="articlelist";$name="Artikelliste";$render="runtime";$config="true";$var1="";include "../plugins/articlelist/render.php"; ?><div class="shelf"><div id="shelf-item-0" class="shelf-item"><div class="shelf-group1"><span class="shelf-description"><?php print _("Bar"); ?></span><span class="shelf-sku">Foo</span><span class="shelf-quantity"><label for="quantity">Anzahl: </label><input type="number" value="1" class="form-control" size="5"></span></div><div class="shelf-group2"><span class="shelf-price" data-currency="EUR" data-price="11111">11111 EUR</span><span class="shelf-shipping" data-type="not shipped" data-weight="" data-unit="undefined"><?php print _("not shipped"); ?></span><span class="shelf-duration"><label for="duration">Tage: </label><input type="number" value="1" class="form-control" size="5"></span></div><div class="shelf-group3"><span class="shelf-add"><button class="btn btn-default"><i class="fa fa-shopping-cart"></i> <span><?php print _("In den Warenkorb"); ?></span></button></span></div></div></div></div></div>
+    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1408740273"><?php print _("Alle Funkgeräte"); ?></h1><?php $id="p-1408740281";$type="articlelist";$name="Artikelliste";$render="runtime";$config="true";$var1="";include "../plugins/articlelist/render.php"; ?></div></div>
 </div>
 
 <footer role="contentinfo">

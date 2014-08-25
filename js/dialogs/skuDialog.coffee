@@ -3,11 +3,10 @@ skuDialog =
     shelfId: -1
     product: null
     toBeEdited: null
-    currency: "EUR" # default for now (will be set at site level)
+    currency: "€" # default for now (will be set at site level)
     init: ->
         skuDialog.dialog = $("#skuDialog")
         $("#add-sku").click ->
-            alert "Click"
             currency = $("#skuDialog").attr("data-currency")
 
             # validate currency

@@ -137,6 +137,9 @@
 .cart-group4 {
   text-align: right;
 }
+.cart-add {
+  padding-right: 1em;
+}
 .shelf-sku,
 .cart-sku {
   display: block;

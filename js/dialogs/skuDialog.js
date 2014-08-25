@@ -7,12 +7,11 @@
     shelfId: -1,
     product: null,
     toBeEdited: null,
-    currency: "EUR",
+    currency: "€",
     init: function() {
       skuDialog.dialog = $("#skuDialog");
       $("#add-sku").click(function() {
         var currency, desc, item, itemId, pageUniqId, price, priceReadable, shippingType, sku, unit, weight;
-        alert("Click");
         currency = $("#skuDialog").attr("data-currency");
         if (currency !== "" && (currency != null)) {
           skuDialog.currency = currency;

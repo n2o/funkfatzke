@@ -134,8 +134,6 @@ var cartModel = {
         // grab cart from localStorage
         cartModel.updateCart();
 
-      console.log($('#cart').get(0));
-
       // apply bindings
       ko.applyBindings(cartModel, $('#cart').get(0));
 
@@ -239,8 +237,6 @@ var cartModel = {
             var storedItems = eval(str);
 
             for(x=0; x<storedItems.length; x++){
-                console.log(storedItems[x]);
-
                 var description = storedItems[x].description;
                 var sku = storedItems[x].sku;
                 var price = Number(storedItems[x].price);
@@ -536,8 +532,6 @@ cartModel.shipping = ko.computed(function() {
         // determine if rate falls between to and from
         if(stop > from && stop <= to){
             var rate = Number(tiers[x].rate);
-
-            console.log('rate='+rate);
 
             // return rate
             if(!isNaN(rate)){
