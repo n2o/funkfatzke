@@ -43,7 +43,7 @@
         });
       }
     });
-    return $("#amount").val($("#slider-range-max").slider("value") + " Tag");
+    return $("#amount").val($("#slider").slider("value") + " Tag");
   });
 
   return;
