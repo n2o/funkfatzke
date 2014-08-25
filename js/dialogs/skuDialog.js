@@ -7,11 +7,12 @@
     shelfId: -1,
     product: null,
     toBeEdited: null,
-    currency: "EUR,
+    currency: "EUR",
     init: function() {
       skuDialog.dialog = $("#skuDialog");
       $("#add-sku").click(function() {
         var currency, desc, item, itemId, pageUniqId, price, priceReadable, shippingType, sku, unit, weight;
+        alert("Click");
         currency = $("#skuDialog").attr("data-currency");
         if (currency !== "" && (currency != null)) {
           skuDialog.currency = currency;
@@ -28,7 +29,7 @@
         if (skuDialog.currency === "USD") {
           priceReadable = "$" + priceReadable;
         }
-        item = "<div id=\"" + itemId + "\" class=\"shelf-item\">" + respond.defaults.elementMenuShelf + "<div class=\"shelf-group1\">" + "<span class=\"shelf-description\">" + desc + "</span>" + "<span class=\"shelf-sku\">" + sku + "</span>" + "<span class=\"shelf-quantity\"><label for=\"quantity\">Anzahl: </label><input type=\"number\" value=\"1\" class=\"form-control\" size=\"5\"></span>" + "</div>" + "<div class=\"shelf-group2\">" + "<span class=\"shelf-price\" data-currency=\"" + skuDialog.currency + "\" data-price=\"" + price + "\">" + priceReadable + "</span>" + "<span class=\"shelf-shipping\" data-type=\"" + shippingType + "\" data-weight=\"" + weight + "\" data-unit=\"" + unit + "\">" + shippingType + "</span>" + "<span class=\"shelf-duration\"><label for=\"duration\">Tage: </label><input type=\"number\" value=\"1\" class=\"form-control\" size=\"5\"></span>" + "</div>" + "<div class=\"shelf-group3\">" + "<span class=\"shelf-add\"><button class=\"btn btn-default\"><i class=\"fa fa-shopping-cart\"></i> <span>In den Warenkorb</span></button></span>" + "</div></div>";
+        item = "<div id=\"" + itemId + "\" class=\"shelf-item\">" + respond.defaults.elementMenuShelf + "<div class=\"shelf-group1\">" + "<span class=\"shelf-description\">" + desc + "</span>" + "<span class=\"shelf-sku\">" + sku + "</span>" + "<span class=\"shelf-quantity\"><label for=\"quantity\">Anzahl: </label><input type=\"number\" value=\"1\" class=\"form-control\" size=\"5\"></span>" + "</div>" + "<div class=\"shelf-group2\">" + "<span class=\"shelf-price\" data-currency=\"" + skuDialog.currency + "\" data-price=\"" + price + "\">" + priceReadable + "</span>" + "<span class=\"shelf-shipping\" data-type=\"" + shippingType + "\" data-weight=\"" + weight + "\" data-unit=\"" + unit + "\">" + shippingType + "</span>" + "<span class=\"shelf-duration\"><label for=\"duration\">Tage: </label><input type=\"number\" value=\"1\" class=\"form-control\" size=\"5\"></span>" + "</div>" + "<div class=\"shelf-group3\">" + "<span class=\"shelf-add\"><button class=\"btn btn-default\"><i class=\"fa fa-shopping-cart\"></i> <span>In den Waaaaarenkorb</span></button></span>" + "</div></div>";
         $("#" + skuDialog.shelfId).find(".shelf-items").append(item);
         $("#skuDialog").modal("hide");
         return false;
@@ -112,7 +113,9 @@
   };
 
   $(document).ready(function() {
-    skuDialog.init();
+    return skuDialog.init();
   });
+
+  return;
 
 }).call(this);

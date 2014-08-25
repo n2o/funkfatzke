@@ -41,7 +41,7 @@ include 'site.php';
 <body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53ec8db706719" data-pagefriendlyid="blog" data-pagetypeuniqid="-1" data-api="http://n2o.local/funkfatzke" id="blog">
 
 <section class="settings">
-	
+  
 	<?php
 	if(isset($_SESSION[$siteFriendlyId.'.UserId'])){ ?>
 <span class="welcome-message">
