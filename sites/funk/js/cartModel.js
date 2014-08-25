@@ -1,6 +1,5 @@
 // models a cart item
 var CartItem = function(description, sku, price, shippingType, weight, quantity, duration){
-
     var self = this;
     self.description = ko.observable(description);
     self.sku = ko.observable(sku);
