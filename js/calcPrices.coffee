@@ -1,12 +1,12 @@
 $ ->
-    discount = 5 # give x % discount on values  
-    values = new Array()
+    discount = 5 # give x % discount on values
+
+# Initial calc prices of articles
     discountValues = new Array()
-    $(".price").each (index) ->
+    $(".shelf-price").each (index) ->
         current = parseFloat($(this).text().slice(0, -2)).toFixed(2)
         $(this).html current + " €"
 
-        # Calculate all values first
         discountValues[index] = new Array()
         discountValues[index][0] = current
         temp = 0
@@ -29,9 +29,16 @@ $ ->
                 $("#amount").val ui.value + " Tag"
             else
                 $("#amount").val ui.value + " Tage"
-            $(".price").each (index) ->
-                $(this).html discountValues[index][ui.value - 1] + " €"
+
+            $(".shelf-price").each (index) ->
+                price = discountValues[index][ui.value - 1]
+                $(this).html price + " €"
+                $(this).attr "data-price", price
                 return
+
+            $(".shelf-duration").each (index) ->
+                $(this).find("input").val(ui.value)
+
             return
 
     $("#amount").val $("#slider-range-max").slider("value") + " Tag" # write initial value

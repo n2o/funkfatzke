@@ -1,5 +1,6 @@
 // models a cart item
 var CartItem = function(description, sku, price, shippingType, weight, quantity, duration){
+
     var self = this;
     self.description = ko.observable(description);
     self.sku = ko.observable(sku);
@@ -55,7 +56,7 @@ var cartModel = {
     payPalId: '',
     logo: '',
     useSandbox: false,
-    currency: 'EUR',
+    currency: '€',
     weightUnit: 'kg',
     taxRate: 0,
     returnUrl: 'return',
@@ -195,23 +196,23 @@ var cartModel = {
             var item = new CartItem(description, sku, price, type, weight, quantity, duration);
 
             // check for match
-            var match = false;
-            match = ko.utils.arrayFirst(cartModel.items(), function (curr) {
-                            if(curr.sku().toUpperCase() == item.sku().toUpperCase()){
-                                // get new quantity 
-                                var q = parseInt(curr.quantity()) + parseInt(quantity);
+            //var match = false;
+            //match = ko.utils.arrayFirst(cartModel.items(), function (curr) {
+            //                if(curr.sku().toUpperCase() == item.sku().toUpperCase()){
+            //                    // get new quantity 
+            //                    var q = parseInt(curr.quantity()) + parseInt(quantity);
 
-                                // update quantity 
-                                curr.quantity(q);
+            //                    // update quantity 
+            //                    curr.quantity(q);
 
-                                return true;
-                            }
-                        });
+            //                    return true;
+            //                }
+            //            });
 
-            // if match is not found, push item to the cart, or else +1 to quantity of existing item
-            if(!match){
+            //// if match is not found, push item to the cart, or else +1 to quantity of existing item
+            //if(!match){
                 cartModel.items.push(item);
-            }
+            //}
 
             // update external references and save the cart
             cartModel.updateExternal();
@@ -585,4 +586,5 @@ cartModel.totalFriendly = ko.computed(function() {
 
 // init model
 $(document).ready(function(){cartModel.init();});
+
 
