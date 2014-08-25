@@ -33,6 +33,8 @@
       <th>Name</th>
       <th>Kanäle</th>
       <th>Preis *</th>
+      <th>Anzahl</th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
@@ -48,6 +50,8 @@
     print("<td><strong>".$article['Name']."</strong><br>".$article['Description']."</td>");
     print("<td>".$article['Channel']."</td>");
     print("<td class='price'>".$article['Price']." €</td>");
+    print("<td><input type='number' class='form-control' min='0' max='100' size='3' width='15px;'></td>");
+    print("<td><span class='shelf-add'><button class='btn btn-default'><i class='fa fa-shopping-cart'></i> <span>In den Warenkorb</span></button></span></td>");
     print("</tr>");
   }
 ?>
