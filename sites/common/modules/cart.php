@@ -68,8 +68,7 @@
 		<button 
 			class="btn btn-default" 
 			data-email="{{email}}"
-			data-bind="click:checkoutWithPayPal"><?php print _("Mit PayPal bezahlen"); ?></button>
-	
+			data-bind="click:checkoutWithPayPal"><?php print _("Angebot anfragen"); ?></button>
 	</div>
 	
 </section>

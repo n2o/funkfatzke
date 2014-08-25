@@ -197,8 +197,7 @@ include '../site.php';
 		<button 
 			class="btn btn-default" 
 			data-email="cmeter@googlemail.com"
-			data-bind="click:checkoutWithPayPal"><?php print _("Mit PayPal bezahlen"); ?></button>
-	
+			data-bind="click:checkoutWithPayPal"><?php print _("Angebot anfragen"); ?></button>
 	</div>
 	
 </section>
@@ -275,7 +274,6 @@ include '../site.php';
 <script type="text/javascript" src="../themes/advanced/resources/advanced.js"></script>
 
 
-  <?php include "../fragments/snippets/add_article_to_db.php"; ?>
 
 </body>
 

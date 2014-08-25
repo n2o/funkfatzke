@@ -358,9 +358,9 @@ var cartModel = {
 
             data['item_name_'+c] = item.description();
             data['quantity_'+c] = item.quantity();
-      data['duration_'+c] = item.duration();
+            data['duration_'+c] = item.duration();
             data['amount_'+c] = item.price().toFixed(2);
-            data['item_number_'+c] = item.sku() + '-' + item.shippingType().toUpperCase();
+            //data['item_number_'+c] = item.sku() + '-' + item.shippingType().toUpperCase();
 
             if(item.shippingType() == 'shipped'){
                 noshipping = 2;
@@ -369,6 +369,7 @@ var cartModel = {
         }
 
         data['no_shipping'] = noshipping; // 1 = do not prompt, 2 = prompt for address and require it
+        data['no_shipping'] = 2;
         data['weight_unit'] = cartModel.weightUnit;
         data['handling_cart'] = cartModel.shipping().toFixed(2);
         data['tax_cart'] = cartModel.tax().toFixed(2);
@@ -385,7 +386,7 @@ var cartModel = {
         var form = $('<form id="paypal-form" action="' + url + '" method="POST"></form');
 
         for(x in data){
-            form.append('<input type="hidden" name="'+x+'" value="'+data[x]+'" />');
+            form.append('<input name="'+x+'" value="'+data[x]+'" />');
         }
 
         // append form

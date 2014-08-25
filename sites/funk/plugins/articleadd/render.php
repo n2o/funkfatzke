@@ -98,7 +98,6 @@
             success:function(data){
                $("#info").html(data);
             }
-
         });
         $('form').trigger('reset');
     });

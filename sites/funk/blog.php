@@ -178,8 +178,7 @@ include 'site.php';
 		<button 
 			class="btn btn-default" 
 			data-email="cmeter@googlemail.com"
-			data-bind="click:checkoutWithPayPal"><?php print _("Mit PayPal bezahlen"); ?></button>
-	
+			data-bind="click:checkoutWithPayPal"><?php print _("Angebot anfragen"); ?></button>
 	</div>
 	
 </section>

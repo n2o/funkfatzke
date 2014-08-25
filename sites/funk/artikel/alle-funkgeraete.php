@@ -197,8 +197,7 @@ include '../site.php';
 		<button 
 			class="btn btn-default" 
 			data-email="cmeter@googlemail.com"
-			data-bind="click:checkoutWithPayPal"><?php print _("Mit PayPal bezahlen"); ?></button>
-	
+			data-bind="click:checkoutWithPayPal"><?php print _("Angebot anfragen"); ?></button>
 	</div>
 	
 </section>
@@ -210,7 +209,7 @@ include '../site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1408740273"><?php print _("Alle Funkgeräte"); ?></h1><?php $id="p-1408740281";$type="articlelist";$name="Artikelliste";$render="runtime";$config="true";$var1="";include "../plugins/articlelist/render.php"; ?></div></div>
+    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1408740273"><?php print _("Alle Funkgeräte"); ?></h1><?php $id="p-1408740281";$type="articlelist";$name="Artikelliste";$render="runtime";$config="true";$var1="";include "../plugins/articlelist/render.php"; ?><div class="shelf"><div id="shelf-item-0" class="shelf-item"><div class="shelf-group1"><span class="shelf-description"><?php print _("Bar"); ?></span><span class="shelf-sku">Foo</span><span class="shelf-quantity"><label for="quantity">Anzahl: </label><input type="number" value="1" class="form-control" size="5"></span></div><div class="shelf-group2"><span class="shelf-price" data-currency="EUR" data-price="42">42 EUR</span><span class="shelf-shipping" data-type="not shipped" data-weight="" data-unit="undefined"><?php print _("not shipped"); ?></span><span class="shelf-duration"><label for="duration">Tage: </label><input type="number" value="1" class="form-control" size="5"></span></div><div class="shelf-group3"><span class="shelf-add"><button class="btn btn-default"><i class="fa fa-shopping-cart"></i> <span><?php print _("In den Warenkorb"); ?></span></button></span></div></div></div></div></div>
 </div>
 
 <footer role="contentinfo">
@@ -275,7 +274,6 @@ include '../site.php';
 <script type="text/javascript" src="../themes/advanced/resources/advanced.js"></script>
 
 
-  <?php include "../fragments/snippets/add_article_to_db.php"; ?>
 
 </body>
 
