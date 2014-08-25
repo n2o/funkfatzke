@@ -10,6 +10,18 @@
     $res = $db->query('SELECT * FROM `Articles` ORDER BY Name');
   }
   $articles = $res->fetchAll(PDO::FETCH_ASSOC);
+
+  function seoUrl($string) {
+    //Lower case everything
+    $string = strtolower($string);
+    //Make alphanumeric (removes all other characters)
+    $string = preg_replace("/[^a-z0-9_\s-]/", "", $string);
+    //Clean up multiple dashes or whitespaces
+    $string = preg_replace("/[\s-]+/", " ", $string);
+    //Convert whitespaces and underscore to dash
+    $string = preg_replace("/[\s_]/", "-", $string);
+    return $string;
+  }
 ?>
 
 <script src="../../../js/calcPrices.js" type="text/javascript"></script>
@@ -39,6 +51,7 @@
   <tbody>
 <?php
   foreach($articles as $article) {
+    $link = seoURL($article['Name']);
     print("<tr class='shelf-item'>");
 
     if(!empty($article['PhotoURL'])) {
@@ -46,7 +59,7 @@
     } else {
       print("<td><span class='shelf-duration' style='display:none;'><input type='number' value='1'></span></td>");
     }
-    print("<td><strong><span class='shelf-sku'>".$article['Name']."</span></strong><br><span class='shelf-description'>".$article['Description']."</span></td>");
+    print("<td><strong><span class='shelf-sku'><a href='".$link."'>".$article['Name']."</a></span></strong><br><span class='shelf-description'>".$article['Description']."</span></td>");
     print("<td class='shelf-price' data-currency='€' data-price='".$article['Price']."'>".$article['Price']." €</td>");
     print("<td class='shelf-quantity'><input type='number' class='form-control' min='0' max='100' placeholder='1' value='1'></td>");
     print("<td><span class='shelf-add'><button class='btn btn-default'><i class='fa fa-shopping-cart'></i></button></span></td>");

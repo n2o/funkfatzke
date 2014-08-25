@@ -6,6 +6,8 @@ Artikel werden in der Tabelle `Articles` abgespeichert.
 
 Der Rabatt pro Tag wird aktuell in `plugins/articlelist/deploy/render.php` gespeichert.
 
+Konvention: Die Artikelseiten müssen SEO freundlich so genannt werden, wie es das Framework automatisch generieren
+würde, wenn man den Namen des Produkts als Titel wählt.
 ## SQL Query
 
 ```

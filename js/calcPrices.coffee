@@ -41,6 +41,7 @@ $ ->
 
             return
 
-    $("#amount").val $("#slider-range-max").slider("value") + " Tag" # write initial value
-    return
+    $("#amount").val $("#slider-range-max").slider("value") + " Tag"   # write initial value
+
+return
 
