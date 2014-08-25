@@ -1,17 +1,17 @@
 <?php 
-$rootPrefix="";
+$rootPrefix="../";
 $formPublicId="";
-$pageUrl="blog";
-$isSecure=false;
+$pageUrl="verwaltung/artikel-hinzufuegen";
+$isSecure=true;
 $siteUniqId="53ec8db6e654f";
 $siteFriendlyId="funk";
-$pageUniqId="53ec8db706719";
-$pageFriendlyId="blog";
-$pageTypeUniqId="-1";
+$pageUniqId="53fb83e48010b";
+$pageFriendlyId="artikel-hinzufuegen";
+$pageTypeUniqId="53fb83d43ecaa";
 $language="de";
-include '../../libs/Utilities.php';
-include 'libs/SiteAuthUser.php';
-include 'site.php';
+include '../../../libs/Utilities.php';
+include '../libs/SiteAuthUser.php';
+include '../site.php';
 ?><!doctype html>
 
 <html lang="<?php print $language; ?>">
@@ -19,29 +19,48 @@ include 'site.php';
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Funkfatzke - Blog</title>
-<meta name="description" content="<?php print _("Your blog contains a list of your blog posts"); ?>">
+<title>Funkfatzke - Artikel hinzufügen</title>
+<meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="callout" content="">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+  
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.17.5/js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+<link href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment-with-langs.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
+<script type="text/javascript" src="../js/respond.Map.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Form.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Calendar.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.List.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Featured.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Login.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Registration.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Search.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/pageModel.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/prettify.js"></script>
+
 <!-- css -->
-<link href="css/content.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
+<link href="../css/content.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
 <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" type="text/css" rel="stylesheet" media="screen">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="css/prettify.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
+<link href="../css/prettify.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
 
-
+    
 </head>
 
-<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53ec8db706719" data-pagefriendlyid="blog" data-pagetypeuniqid="-1" data-api="http://n2o.local/funkfatzke" id="blog">
+<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53fb83e48010b" data-pagefriendlyid="artikel-hinzufuegen" data-pagetypeuniqid="53fb83d43ecaa" data-api="http://n2o.local/funkfatzke" id="artikel-hinzufuegen">
 
 <section class="settings">
-  
+	
 	<?php
 	if(isset($_SESSION[$siteFriendlyId.'.UserId'])){ ?>
 <span class="welcome-message">
@@ -57,7 +76,7 @@ include 'site.php';
 	} ?>
 
 
-
+	
 	<ul class="respond-select-language">
 		<li><?php print _("Language:"); ?></li>
 		<li><a data-lang="en-us">English</a></li>
@@ -79,14 +98,14 @@ include 'site.php';
 	      <span class="icon-bar"></span>
 	    </button>
         
-        <a class="navbar-brand" href="//n2o.local/funkfatzke/sites/funk"><img src="themes/advanced/resources/images/funk_logo_100px.png"></a>
+        <a class="navbar-brand" href="//n2o.local/funkfatzke/sites/funk"><img src="../themes/advanced/resources/images/funk_logo_100px.png"></a>
 	  </div>
 	  <!-- /.navbar-header -->
 	
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right nav-pills">
-			<li><a href="index">Home</a></li><li><a href="artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="verwaltung/artikel-hinzufuegen">Artikel hinzufügen</a></li>
+			<li><a href="../index">Home</a></li><li><a href="../artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li class="active"><a href="../verwaltung/artikel-hinzufuegen">Artikel hinzufügen</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -107,7 +126,7 @@ include 'site.php';
 	  <!-- /.navbar-collapse -->
       
 	</nav>
-	
+
 	<section id="cart" class="panel panel-default" 
 	data-paypalid="cmeter-facilitator@googlemail.com"
 	data-usesandbox="1"
@@ -190,30 +209,7 @@ include 'site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><div id="list1" class="respond-list" data-bind="foreach: list1" 
-	data-display="blog" 
-	data-label="posts" 
-	data-pagetypeid="53ec8db708399" 
-	data-length="10" 
-	data-orderby="Created" 
-	data-category="undefined">
-		<div class="content" data-bind="html:content"></div>
-        <div class="blog-meta">
-			<p>
-				<span data-bind="visible:hasPhoto"><span class="photo" data-bind="attr:{'style': 'background-image: url('+photo+')'}"></span></span>
-                <?php print _("Last modified by"); ?> <span class="author" data-bind="text:author"></span>
-                <span data-bind="text:lastModifiedReadable" class="last-modified-date"></span>
-                <a data-bind="attr:{'href':url}"><?php print _("Permanent Link"); ?></a>
-			</p>
-        </div>
-</div>
-
-<p data-bind="visible: list1Loading()" class="list-loading"><i class="fa fa-spinner fa-spin"></i> Loading...</p>
-
-	<div class="page-results">
-		<button id="pager-list1" class="btn btn-default" data-id="list1"><?php print _("Older posts"); ?></button>
-	</div>
-</div></div>
+    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1408992230"><?php print _("Artikel hinzufügen"); ?></h1><?php $id="p-1408992240";$type="articleadd";$name="Artikel hinzufügen";$render="runtime";$config="true";include "../plugins/articleadd/render.php"; ?></div></div>
 </div>
 
 <footer role="contentinfo">
@@ -227,7 +223,7 @@ include 'site.php';
             <h4><?php print _("Contact"); ?></h4>
             
             <p>
-              <?php print _("Call us at (555) 555-5555 or reach out via the website:"); ?> <a href="page/contact"><?php print _("Contact"); ?></a>
+              <?php print _("Call us at (555) 555-5555 or reach out via the website:"); ?> <a href="../page/contact"><?php print _("Contact"); ?></a>
             </p>
             
             <p class="social">
@@ -260,7 +256,7 @@ include 'site.php';
               
               <ul>
                 <li><?php print _("Menu:"); ?></li>
-                <li><a href="index">Home</a></li><li><a href="artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="verwaltung/artikel-hinzufuegen">Artikel hinzufügen</a></li>
+                <li><a href="../index">Home</a></li><li><a href="../artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li class="active"><a href="../verwaltung/artikel-hinzufuegen">Artikel hinzufügen</a></li>
               </ul>
               
           </div>
@@ -273,28 +269,9 @@ include 'site.php';
   
 </footer>
 
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.17.5/js/jquery.tablesorter.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-<link href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
-<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment-with-langs.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
-<script type="text/javascript" src="js/respond.Map.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Form.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Calendar.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.List.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Featured.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Login.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Registration.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Search.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/pageModel.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/prettify.js"></script>
+<script type="text/javascript" src="../js/cartModel.js"></script>
 
-<script type="text/javascript" src="js/cartModel.js"></script>
-
-<script type="text/javascript" src="themes/advanced/resources/advanced.js"></script>
+<script type="text/javascript" src="../themes/advanced/resources/advanced.js"></script>
 
 
 

@@ -26,14 +26,14 @@
 
 <script src="../../../js/calcPrices.js" type="text/javascript"></script>
 
-<div class="row">
+<div class="row" style="padding-bottom:1em;">
   <div class="col">
     <div class="col-md-4">
       <p>
         <label for="amount" class="control-label shelf-duration">Anzahl der Miettage:</label>
-        <input type="text" id="amount" readonly class0"form-control" style="border:0; font-weight:bold;">
+        <input type="text" id="amount" readonly style="border:0; font-weight:bold;">
       </p>
-      <div id="slider-range-max"></div>
+      <div id="slider"></div>
     </div>
   </div>
 </div>

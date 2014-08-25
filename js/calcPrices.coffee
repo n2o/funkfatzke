@@ -19,7 +19,7 @@ $ ->
             i++
         return
 
-    $("#slider-range-max").slider
+    $("#slider").slider
         range: "max"
         min: 1
         max: 30

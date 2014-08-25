@@ -29,7 +29,7 @@
 				</span>
 			</div><div class="cart-group3">
 				<span class="cart-quantity"><label for="quantity">Anzahl: &nbsp;</label><input type="number" class="form-control" data-bind="value: quantity, event:{change: $parent.updateQuantity}"></span>
-				<span class="cart-duration"><label for="duration">Tage: &nbsp;</label><input type="number" class="form-control" data-bind="value: duration" style="border:0;background:0;" disabled></span>
+				<span class="cart-duration"><label for="duration">Tage: &nbsp;</label><input type="number" class="form-control" data-bind="value: duration" style="border:0;background:0;" readonly></span>
             </div><div class="cart-group4">
 				<span class="cart-subtotal" data-bind="text:totalFriendly"></span>
 			</div>
