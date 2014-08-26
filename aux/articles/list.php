@@ -25,23 +25,28 @@ $articles = $res->fetchAll(PDO::FETCH_ASSOC);
           <th>Name</th>
           <th>Preis *</th>
           <th>Geräte</th>
+          <th>&nbsp;</th>
         </tr>
       </thead>
       <tbody>
 <?php
-  foreach($articles as $article) {
-    print("<tr class='shelf-item'>");
+foreach($articles as $article) {
+  print("<tr class='shelf-item'>");
 
-    if(!empty($article['PhotoURL'])) {
-      print("<td class='articlelist'><img class='articlelist' src='sites/funk/files/t-".$article['PhotoURL']."'><span class='shelf-duration' style='display:none;'><input type='number' value='1'></span></td>");
-    } else {
-      print("<td><span class='shelf-duration' style='display:none;'><input type='number' value='1'></span></td>");
-    }
-    print("<td><strong><span class='shelf-sku'>".$article['Name']."</span></strong><br><span class='shelf-description'>".$article['Description']."</span></td>");
-    print("<td class='shelf-price' data-currency='€' data-price='".$article['Price']."'>".$article['Price']." €</td>");
-    print("<td class='shelf-quantity'>".$article['Quantity']."</td>");
-    print("</tr>");
+  if(!empty($article['PhotoURL'])) {
+    print("<td class='articlelist'><img class='articlelist' src='sites/funk/files/t-".$article['PhotoURL']."'><span class='shelf-duration' style='display:none;'><input type='number' value='1'></span></td>");
+  } else {
+    print("<td><span class='shelf-duration' style='display:none;'><input type='number' value='1'></span></td>");
   }
+  print("<td><strong><span class='shelf-sku'>".$article['Name']."</span></strong><br><span class='shelf-description'>".$article['Description']."</span></td>");
+  print("<td class='shelf-price' data-currency='€' data-price='".$article['Price']."'>".$article['Price']." €</td>");
+  print("<td class='shelf-quantity'>".$article['Quantity']."</td>");
+  print("<td>
+    <a class='edit'><i class='fa fa-pencil fa-lg'></i></a>
+    <a class='remove'><i class='fa fa-minus-circle fa-lg'></i></a>    
+    </td>");
+  print("</tr>");
+}
 ?>
       </tbody>
     </table>

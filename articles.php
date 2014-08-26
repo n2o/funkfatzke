@@ -48,7 +48,7 @@
 
 <script>
 $(function() {
-  $( "#tabs" ).tabs();
+  $("#tabs").tabs();
 });
 </script>
 
@@ -91,6 +91,7 @@ $(function() {
 <script type="text/javascript" src="js/helper/dropzone.js?v=<?php print VERSION; ?>"></script>
 <script type="text/javascript" src="js/viewModels/models.js?v=<?php print VERSION; ?>"></script>
 <script type="text/javascript" src="js/viewModels/filesModel.js?v=<?php print VERSION; ?>"></script>
+<script type="text/javascript" src="js/articles/add-edit.js"></script>
 </body>
 
 </html>
