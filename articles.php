@@ -133,7 +133,7 @@
             </div>
           </div>
 
-          <div id="info" style="padding-bottom: 1em;"></div>
+          <div id="info" style="padding-bottom: 1em;"></div><br>
   
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
@@ -189,14 +189,12 @@
             $('#dialog-message').dialog('close');
             $('#show-photo img').attr('src', 'sites/funk/files/t-'+clicked);
             $('#show-photo a').attr('href', 'sites/funk/files/'+clicked);
-
           }
         </script>
 
         <div id="dialog-message" class="" data-bind="foreach: files">
           <div class="listItem" data-bind="css: {'has-thumb': isImage==true}">
             <span class="image" data-bind="if: isImage"><img height="75" width="75" data-bind="attr:{'src':thumbUrl}"></span>
-            <!--<h2><a data-bind="text:filename, attr: { 'href': fullUrl }"></a></h2>-->
             <h2><a id="4" class="photo-url" data-bind="text:filename" onclick="dialogClickEvent(event); return false;"></a></h2>
           </div>
           <!-- /.listItem -->
@@ -226,16 +224,20 @@
             price = price.replace(/,/g, '.');
             var quantity = $("#quantity").val();
 
-            // Pass it to the database
-            $.ajax({
-                type:"post",
-                url:"article-functions/todb.php",
-                data:"name="+name+"&description="+description+"&transmission="+transmission+"&category="+category+"&subcategory="+subcategory+"&photo="+photo+"&weight="+weight+"&channel="+channel+"&price="+price+"&quantity="+quantity,
-                success:function(data){
-                   $("#info").html(data);
-                }
-            });
-            $('form').trigger('reset');
+            if(name == "" || description == "") {
+              $('#info').attr('class', 'alert alert-danger');
+              $('#info').html("Bitte alle benötigten Felder ausfüllen.");
+            } else {
+              // Pass it to the database
+              $.ajax({
+                  type:"post",
+                  url:"article-functions/todb.php",
+                  data:"name="+name+"&description="+description+"&transmission="+transmission+"&category="+category+"&subcategory="+subcategory+"&photo="+photo+"&weight="+weight+"&channel="+channel+"&price="+price+"&quantity="+quantity,
+              });
+              $('form').trigger('reset');
+              $('#info').attr('class', 'alert alert-success');
+              $('#info').html("Artikel erfolgreich hinzugefügt.");
+            }
         });
        });
     </script>
