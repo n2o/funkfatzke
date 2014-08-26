@@ -30,7 +30,7 @@
 	<ul class="menu">
 		<li class="menu-pages"><a href="<?php print $path_prefix; ?>pages"><i class="fa fa-file"></i> <?php print _("Pages"); ?></a></li>
     	<li class="menu-menu"><a href="<?php print $path_prefix; ?>menus"><i class="fa fa-bars"></i> <?php print _("Menus"); ?></a></li>
-    	<li class="menu-articles"><a href="<?php print $path_prefix; ?>articles"><i class="fa fa-barcode"></i> <?php print _("Articles"); ?></a></li>
+    	<li class="menu-articles"><a href="<?php print $path_prefix; ?>articles"><i class="fa fa-barcode"></i> <?php print("Artikel"); ?></a></li>
 		<li class="menu-theme"><a href="<?php print $path_prefix; ?>theme"><i class="fa fa-desktop"></i> <?php print _("Theme"); ?></a></li>
     	<li class="menu-branding"><a href="<?php print $path_prefix; ?>branding"><i class="fa fa-certificate"></i> <?php print _("Branding"); ?></a></li>
 		<li class="menu-transactions"><a href="<?php print $path_prefix; ?>transactions"><i class="fa fa-money"></i> <?php print _("Transactions"); ?></a></li>

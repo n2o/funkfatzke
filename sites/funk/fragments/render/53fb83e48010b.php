@@ -1,1 +1,0 @@
-<div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1408992230">Artikel hinzufügen</h1><?php $id="p-1408992240";$type="articleadd";$name="Artikel hinzufügen";$render="runtime";$config="true";include "../plugins/articleadd/render.php"; ?></div></div>
