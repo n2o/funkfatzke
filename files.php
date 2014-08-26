@@ -36,12 +36,10 @@
 
     <nav>
         <a class="show-menu"><i class="fa fa-bars fa-lg"></i></a>
-    
         <ul>
     	    <li class="static active"><a><?php print _("Files"); ?></a></li>
         </ul>
     </nav>
-    
     
     <div id="drop" class="dropzone dark">
         <span class="dz-message">

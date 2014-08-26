@@ -391,38 +391,6 @@ var usersModel = {
             }
         });
 
-    },
-
-    uploadImageAndGetUrl: function(o, e) {
-
-        usersModel.toBeEdited = o;
-
-        $('#imagesDialog').modal('show');
-
-        usersModel.images.removeAll();
-        usersModel.imagesLoading(true);
-
-        $.ajax({
-            url: 'api/image/list/all',
-            type: 'GET',
-            data: {},
-            dataType: 'json',
-            success: function(data) {
-                for (x in data) {
-                    var image = {
-                        'filename': data[x].filename,
-                        'fullUrl': data[x].fullUrl,
-                        'thumbUrl': data[x].thumbUrl,
-                        'extension': data[x].extension,
-                        'mimetype': data[x].mimetype,
-                        'isImage': data[x].isImage,
-                        'width': data[x].width,
-                        'height': data[x].height
-                    };
-                    //usersModel.images.push(image);
-                }
-            }
-        });
     }
 }
 

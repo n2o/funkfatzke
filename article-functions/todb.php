@@ -11,6 +11,8 @@ $channel = $_POST['channel'];
 $price = $_POST['price'];
 $quantity = $_POST['quantity'];
 
+print($price);
+
 # Check for required fields
 if (empty($name) OR empty($description)) {
   print("<div class='alert alert-danger' role='alert'>Bitte alle erforderlichen Felder ausfüllen.</div>");

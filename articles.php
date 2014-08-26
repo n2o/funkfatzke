@@ -22,57 +22,47 @@
 <link type="text/css" href="css/dropzone.css?v=<?php print VERSION; ?>" rel="stylesheet">
 
 <?php include 'modules/js.php'; ?>
+
+<style type="text/css">
+/* Color of placeholder text */
+.form-control::-moz-placeholder {
+ 	 color: lightgrey;
+}
+.form-control:-ms-input-placeholder {
+	 color: lightgrey;
+}
+.form-control::-webkit-input-placeholder {
+	 color: lightgrey;
+}
+.ui-dialog-content::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 11px;
+  height: 11px;
+}
+.ui-dialog-content::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white; /* should match background, can't be transparent */
+  background-color: rgba(0, 0, 0, .5);
+}
+</style>
 </head>
 
 <body id="profile-page" data-currpage="profile" data-sitefriendlyid="<?php print $authUser->SiteFriendlyId; ?>">
 	
 <?php include 'modules/menu.php'; ?>
 
-<!-- messages -->
-<input id="msg-all-required" value="<?php print _("All fields are required"); ?>" type="hidden">
-<input id="msg-match" value="<?php print _("The password must match the retype field"); ?>" type="hidden">
-<input id="msg-adding" value="<?php print _("Adding..."); ?>" type="hidden">
-<input id="msg-added" value="<?php print _("User successfully added"); ?>" type="hidden">
-<input id="msg-updating" value="<?php print _("Updating..."); ?>" type="hidden">
-<input id="msg-updated" value="<?php print _("User successfully updated"); ?>" type="hidden">
-<input id="msg-removing" value="<?php print _("Removing..."); ?>" type="hidden">
-<input id="msg-removed" value="<?php print _("User successfully removed"); ?>" type="hidden">
-
 <section class="main">
 
     <nav>
         <a class="show-menu"><i class="fa fa-bars fa-lg"></i></a>
-    
         <ul>
             <li class="static active"><a><?php print("Artikel"); ?></a></li>
         </ul>
-        
     </nav>
     <!-- /nav -->
     
-    
-    <div class="profile-view" data-bind="with: user">
-    
-    	<button class="update-photo" data-bind="click: $parent.showImagesDialog, css:{'has-photo':hasPhotoUrl}, attr:{'style':'background-image: url(sites/<?php print $authUser->SiteFriendlyId; ?>/files/'+photoUrl() +')'}"><span><?php print _("Update Photo"); ?></span></button>
-    	
-    	<div class="profile-readable">
-    	
-    	<h2><span data-bind="text: firstName"></span> <span data-bind="text: lastName"></span></h2>
-    	
-    	<p>
-    		<span data-bind="text: email"></span>
-    	</p>
-    	
-    	<p>
-    		<a data-bind="click: $parent.showEditDialog">Edit Profile</a>
-    	</p>
-    	
-    	</div>
-				
-    </div>
-    <!-- /.form-horizontal -->
     <div class="row">
-      <div class="col col-md-10 col-md-offset-1"
+      <div class="col col-md-6 col-md-offset-1">
         <!-- Changes in this form affect the JS below and the file todb.php -->
         <h1>Artikel hinzufügen</h1>
         <form id="myForm" class="form-horizontal" role="form">
@@ -153,8 +143,71 @@
         </form>
 
       </div> <!-- /col -->
-    </div> <!-- /row -->
+      <div class="col col-md-5">
+        <h1>&nbsp;</h1>
+        <button id="open-dialog" type="button" class="btn btn-default">Bild auswählen</button>
+        <br><br>
+        <span id="show-photo"><a href=""><img src=""></a></span>
+        
 
+        <div id="drop" class="dropzone dark" style="min-height:170px;">
+          <span class="dz-message">
+            <i class="fa fa-cloud-upload fa-4x"></i> <?php print _("Drag file here or click to upload"); ?></span>
+          </span>
+        </div>
+
+        <script>
+          $(function() {
+            // Initial picture if image is available
+            var photoUrl = $('#photo').val();
+            
+            if(photoUrl) {
+              $('#show-photo img').attr('src', 'sites/funk/files/t-'+photoUrl);
+              $('#show-photo a').attr('href', 'sites/funk/files/'+photoUrl);
+            };
+
+            // Listener to open dialog on button click    
+            $('#open-dialog').click(function() {
+              $('#dialog-message').dialog('open');
+              return false;
+            });
+
+            // Define the dialog
+            $("#dialog-message").dialog({
+              height: 600,
+              width: 800,
+              autoOpen: false,
+              resizable: true,
+              modal: true,
+            });
+          });
+
+          // What to do if an item from the dialog was clicked
+          function dialogClickEvent(event) {
+            var clicked = event.target.innerHTML;
+            $('#photo').val(clicked);
+            $('#dialog-message').dialog('close');
+            $('#show-photo img').attr('src', 'sites/funk/files/t-'+clicked);
+            $('#show-photo a').attr('href', 'sites/funk/files/'+clicked);
+
+          }
+        </script>
+
+        <div id="dialog-message" class="" data-bind="foreach: files">
+          <div class="listItem" data-bind="css: {'has-thumb': isImage==true}">
+            <span class="image" data-bind="if: isImage"><img height="75" width="75" data-bind="attr:{'src':thumbUrl}"></span>
+            <!--<h2><a data-bind="text:filename, attr: { 'href': fullUrl }"></a></h2>-->
+            <h2><a id="4" class="photo-url" data-bind="text:filename" onclick="dialogClickEvent(event); return false;"></a></h2>
+          </div>
+          <!-- /.listItem -->
+        </div>
+        <!-- /.list -->
+
+        <p data-bind="visible: filesLoading()" class="list-loading"><i class="fa fa-spinner fa fa-spin"></i> <?php print _("Loading..."); ?></p>
+        <p data-bind="visible: filesLoading()==false && files().length < 1" class="list-none"><?php print _("No files here. Click Upload File to get started."); ?></p>
+
+      </div>
+    </div> <!-- /row -->
 
     <script type="text/javascript">
        $(document).ready(function(){
@@ -170,8 +223,10 @@
             var weight = $("#weight").val();
             var channel = $("#channel").val();
             var price = $("#price").val();
+            price = price.replace(/,/g, '.');
             var quantity = $("#quantity").val();
 
+            // Pass it to the database
             $.ajax({
                 type:"post",
                 url:"article-functions/todb.php",
@@ -185,91 +240,15 @@
        });
     </script>
     
+<hr>
 
-	
 </section>
 <!-- /.main -->
-
-<?php include 'modules/dialogs/imagesDialog.php'; ?>
-
-<div class="modal fade" id="editDialog" data-bind="with: user">
-
-	<div class="modal-dialog">
-	
-		<div class="modal-content">
-
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">x</button>
-				<h3 class="edit"><?php print _("Update User"); ?></h3>
-			</div>
-			<!-- /.modal-header -->
-
-			<div class="modal-body">
-			
-				<div class="form-group">
-					<label for="firstName"><?php print _("First Name:"); ?></label>
-					<input id="firstName" type="text" class="form-control" data-bind="value: firstName">
-				</div>
-				
-				<div class="form-group">
-					<label for="lastName"><?php print _("Last Name:"); ?></label>
-					<input id="lastName" type="text" class="form-control" data-bind="value: lastName">
-				</div>
-				
-				<div class="form-group">
-					<label for="language"><?php print _("Language:"); ?></label>
-					<select id="language" class="form-control" data-bind="
-					    options: $parent.languages,
-					    optionsText: 'text',
-					    optionsValue: 'code',
-					    value: language">
-					    <option value="en">English</option>
-				    </select>
-				</div>
-				
-				<div class="form-group">
-					<label for="email"><?php print _("Email:"); ?></label>
-					<input id="email" type="text" class="form-control" data-bind="value: email">
-					<span class="help-block"><?php print _("Also used as the login"); ?></span>
-				</div>
-				
-				<div class="form-group">
-					<label for="password"><?php print _("Password:"); ?></label>
-					<input id="password" type="password" class="form-control" value="temppassword">
-					<span class="help-block"><?php print _("More than 5 characters, 1 letter and 1 special character"); ?></span>
-				</div>
-				
-				<div class="form-group">
-					<label for="retype"><?php print _("Re-type Password:"); ?></label>
-					<input id="retype" type="password" class="form-control">
-				</div>
-			
-			</div>
-			<!-- /.modal-body -->
-
-			<div class="modal-footer">
-				<button class="secondary-button" data-dismiss="modal"><?php print _("Close"); ?></button>
-				<button class="primary-button edit" type="button" data-bind="click: $parent.editUser"><?php print _("Update User"); ?></button>
-			</div>
-			<!-- /.modal-footer -->
-		
-		</div>
-		<!-- /.modal-content -->
-		
-	</div>
-	<!-- /.modal-dialog -->
-
-  </div>
-  <!-- /.modal-body -->
-
-</div>
-<!-- /.modal -->
 
 <!-- include js -->
 <script type="text/javascript" src="js/helper/dropzone.js?v=<?php print VERSION; ?>"></script>
 <script type="text/javascript" src="js/viewModels/models.js?v=<?php print VERSION; ?>"></script>
-<script type="text/javascript" src="js/viewModels/profileModel.js?v=<?php print VERSION; ?>"></script>
-
+<script type="text/javascript" src="js/viewModels/filesModel.js?v=<?php print VERSION; ?>"></script>
 </body>
 
 </html>
