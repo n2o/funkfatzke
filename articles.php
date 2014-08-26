@@ -22,6 +22,18 @@
 <link type="text/css" href="css/dropzone.css?v=<?php print VERSION; ?>" rel="stylesheet">
 
 <?php include 'modules/js.php'; ?>
+<script type="text/javascript" src="js/articles/add-edit.js"></script>
+
+<script>
+var dialogClickEvent = function(event) {
+    var clicked;
+    clicked = event.target.innerHTML;
+    $("#photo").val(clicked);
+    $("#dialog-message").dialog("close");
+    $("#show-photo img").attr("src", "sites/funk/files/t-" + clicked);
+    $("#show-photo a").attr("href", "sites/funk/files/" + clicked);
+};
+</script>
 
 <style type="text/css">
 /* Color of placeholder text */
@@ -59,7 +71,6 @@ $(function() {
 <?php include 'modules/menu.php'; ?>
 
 <section class="main">
-
     <nav>
         <a class="show-menu"><i class="fa fa-bars fa-lg"></i></a>
         <ul>
@@ -91,7 +102,6 @@ $(function() {
 <script type="text/javascript" src="js/helper/dropzone.js?v=<?php print VERSION; ?>"></script>
 <script type="text/javascript" src="js/viewModels/models.js?v=<?php print VERSION; ?>"></script>
 <script type="text/javascript" src="js/viewModels/filesModel.js?v=<?php print VERSION; ?>"></script>
-<script type="text/javascript" src="js/articles/add-edit.js"></script>
 </body>
 
 </html>

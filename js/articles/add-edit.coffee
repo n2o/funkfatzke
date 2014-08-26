@@ -11,13 +11,6 @@ $(document).ready ->
     # Define the dialog
     
     # What to do if an item from the dialog was clicked
-    dialogClickEvent = (event) ->
-        clicked = event.target.innerHTML
-        $("#photo").val clicked
-        $("#dialog-message").dialog "close"
-        $("#show-photo img").attr "src", "sites/funk/files/t-" + clicked
-        $("#show-photo a").attr "href", "sites/funk/files/" + clicked
-        return
     $("#button").click ->
         name = $("#name").val()
         description = $("#description").val()
