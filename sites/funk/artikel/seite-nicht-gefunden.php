@@ -1,13 +1,13 @@
 <?php 
 $rootPrefix="../";
 $formPublicId="";
-$pageUrl="page/contact";
+$pageUrl="artikel/seite-nicht-gefunden";
 $isSecure=false;
 $siteUniqId="53ec8db6e654f";
 $siteFriendlyId="funk";
-$pageUniqId="53ec8db70a27c";
-$pageFriendlyId="contact";
-$pageTypeUniqId="53ec8db708eef";
+$pageUniqId="53fc364969786";
+$pageFriendlyId="seite-nicht-gefunden";
+$pageTypeUniqId="53ec8ee686b46";
 $language="de";
 include '../../../libs/Utilities.php';
 include '../libs/SiteAuthUser.php';
@@ -19,8 +19,8 @@ include '../site.php';
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Funkfatzke - Contact</title>
-<meta name="description" content="<?php print _("A contact us form is a great way for others to get in touch"); ?>">
+<title>Funkfatzke - Seite nicht gefunden</title>
+<meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="callout" content="">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -57,7 +57,7 @@ include '../site.php';
     
 </head>
 
-<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53ec8db70a27c" data-pagefriendlyid="contact" data-pagetypeuniqid="53ec8db708eef" data-api="http://n2o.local/funkfatzke" id="contact">
+<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53fc364969786" data-pagefriendlyid="seite-nicht-gefunden" data-pagetypeuniqid="53ec8ee686b46" data-api="http://n2o.local/funkfatzke" id="seite-nicht-gefunden">
 
 <section class="settings">
 	
@@ -209,28 +209,7 @@ include '../site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1"><?php print _("Contact Us"); ?></h1><p id="paragraph-1"><?php print _("Placeholder for the Contact Us page."); ?></p><form id="form-2" role="form" class="respond-form">
-	<div class="alert alert-success"><?php print _("Form submitted successfully!"); ?></div><div class="alert alert-danger"><?php print _("You are missing required fields."); ?></div><div class="form-group" data-type="text" data-required="true">
-				<label for="first-name"><?php print _("First Name"); ?></label>
-				<input id="first-name" type="text" class="form-control">
-			</div><div class="form-group" data-type="text" data-required="true">
-				<label for="last-name"><?php print _("Last Name"); ?></label>
-				<input id="last-name" type="text" class="form-control">
-			</div><div class="form-group" data-type="text" data-required="true">
-				<label for="email"><?php print _("Email"); ?></label>
-				<input id="email" type="text" class="form-control">
-			</div><div class="form-group" data-type="radiolist">
-				<label for="preferred-contact-method"><?php print _("Preferred Contact Method"); ?></label>
-				<span class="list">
-					<label class="radio"><input type="radio" value="Email" name="preferred-contact-method"><?php print _("Email"); ?></label>
-					<label class="radio"><input type="radio" value="Phone" name="preferred-contact-method"><?php print _("Phone"); ?></label>
-				</span>
-			</div><div class="form-group" data-type="textarea">
-				<label for="additional-information" class="control-label"><?php print _("Additional Information"); ?></label>
-				<div class="controls"><textarea id="additional-information" class="form-control"></textarea></div>
-			</div><button type="submit" class="btn btn-default btn-lg"><?php print _("Submit"); ?> <i class="fa fa-spinner fa-spin icon-spinner"></i></button></form>
-
-</div></div>
+    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1409037899"><?php print _("Seite nicht gefunden"); ?></h1><p id="p-1409037899"><?php print _("Die angeforderte Seite existiert nicht oder wird noch erstellt."); ?></p></div></div>
 </div>
 
 <footer role="contentinfo">

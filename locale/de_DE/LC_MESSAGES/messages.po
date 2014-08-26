@@ -54,7 +54,7 @@ msgstr "Zugriff Verweigert"
 msgid "Access denied"
 msgstr "Zugriff verweigert"
 
-#: account.php:14 account.php:56 account.php:54 menu.php:39
+#: account.php:14 account.php:56 account.php:54 menu.php:41
 msgid "Account"
 msgstr "Account"
 
@@ -319,7 +319,7 @@ msgstr "Administrator"
 msgid "Advanced"
 msgstr "Erweitert"
 
-#: menu.php:44
+#: menu.php:46
 msgid "Advanced Configurations"
 msgstr "Erweiterte Konfiguration"
 
@@ -430,7 +430,7 @@ msgstr "fettgedruckter Text (Text erst auswählen)"
 msgid "Bookmark these links for easy access."
 msgstr "Setze ein Lesezeichen für einfacheren Zugang."
 
-#: branding.php:14 branding.php:47 branding.php:42 menu.php:34
+#: branding.php:14 branding.php:47 branding.php:42 menu.php:35
 msgid "Branding"
 msgstr "Logo"
 
@@ -778,7 +778,7 @@ msgstr "Dateibeschreibung"
 msgid "File Name:"
 msgstr "Dateiname:"
 
-#: files.php:14 files.php:45 files.php:41 menu.php:36
+#: files.php:14 files.php:45 files.php:41 menu.php:38
 msgid "Files"
 msgstr "Dateien"
 
@@ -935,7 +935,7 @@ msgstr "Zuletzt aktualisiert"
 msgid "Latitude:"
 msgstr "Breitengrad:"
 
-#: layout.php:14 menu.php:50
+#: layout.php:14 menu.php:52
 msgid "Layout"
 msgstr "Layout"
 
@@ -1211,6 +1211,10 @@ msgstr "Seitentyp erfolgreich aktulaisiert"
 msgid "Pages"
 msgstr "Seiten"
 
+#: menu.php:33
+msgid "Articles"
+msgstr "Artikel"
+
 #: admin.php:206 create.php:181 admin.php:202 create.php:184
 msgid "Passcode:"
 msgstr "Passcode:"
@@ -1395,7 +1399,7 @@ msgstr "Erneuerungsdatum"
 msgid "Renewal Date:"
 msgstr "Erneuerungsdatum:"
 
-#: menu.php:45
+#: menu.php:47
 msgid "Republish"
 msgstr "Neu veröffentlichen"
 
@@ -1475,7 +1479,7 @@ msgstr "Skript erfolgreich hinzugefügt"
 msgid "Script successfully removed"
 msgstr "Skript erfolgreich entfernt"
 
-#: scripts.php:14 menu.php:53
+#: scripts.php:14 menu.php:55
 msgid "Scripts"
 msgstr "Skripte"
 
@@ -1528,7 +1532,7 @@ msgid "Separate each option with a comma"
 msgstr "Trenne jede Option mit einem Komma"
 
 #: blockConfigDialog.php:9 elementConfigDialog.php:9 settings.php:14
-#: settings.php:47 settings.php:43 menu.php:54
+#: settings.php:47 settings.php:43 menu.php:56
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -1568,7 +1572,7 @@ msgstr "Abmelden"
 msgid "Site"
 msgstr "Seite"
 
-#: menu.php:57
+#: menu.php:59
 msgid "Site Admin"
 msgstr "Seiten-Admin"
 
@@ -1609,7 +1613,7 @@ msgstr "Snippet erfolgreich hinzugefügt"
 msgid "Snippet successfully removed"
 msgstr "Snippet erfolgreich entfernt"
 
-#: snippets.php:14 menu.php:51
+#: snippets.php:14 menu.php:53
 msgid "Snippets"
 msgstr "Snippets"
 
@@ -1645,7 +1649,7 @@ msgstr "Status"
 msgid "Strike Text (select text first)"
 msgstr "durchgestrichener Text (Text erst auswählen)"
 
-#: menu.php:52
+#: menu.php:54
 msgid "Styles"
 msgstr "Styles"
 
@@ -1794,7 +1798,7 @@ msgstr "Die Passwörter müssen übereinstimmen"
 msgid "The password must match the retype field"
 msgstr "Das Passwörter müssen übereinstimmen"
 
-#: menu.php:33
+#: menu.php:34
 msgid "Theme"
 msgstr "Theme"
 
@@ -2064,7 +2068,7 @@ msgstr "Benutzer erfolgreich entfernt"
 msgid "User successfully updated"
 msgstr "Benutzer erfolgreich aktualisiert"
 
-#: users.php:14 users.php:48 users.php:46 menu.php:38
+#: users.php:14 users.php:48 users.php:46 menu.php:40
 msgid "Users"
 msgstr "Benutzer"
 

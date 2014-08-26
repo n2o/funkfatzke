@@ -77,11 +77,11 @@ include '../site.php';
 
 
 	
-	<ul class="respond-select-language">
+	<!--<ul class="respond-select-language">
 		<li><?php print _("Language:"); ?></li>
 		<li><a data-lang="en-us">English</a></li>
 		<li><a data-lang="es-es">Español</a></li>
-	</ul>
+	</ul>-->
 
 </section>
 <!-- /.settings -->  

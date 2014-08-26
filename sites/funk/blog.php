@@ -208,7 +208,7 @@ include 'site.php';
         </div>
 </div>
 
-<p data-bind="visible: list1Loading()" class="list-loading"><i class="fa fa-spinner fa-spin"></i> Loading...</p>
+<p data-bind="visible: list1Loading()" class="list-loading"><i class="fa fa-spinner fa-spin"></i> Lade...</p>
 
 	<div class="page-results">
 		<button id="pager-list1" class="btn btn-default" data-id="list1"><?php print _("Older posts"); ?></button>
