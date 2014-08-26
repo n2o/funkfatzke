@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col col-md-6 col-md-offset-1">
+  <div class="col col-md-7">
     <!-- Changes in this form affect the JS below and the file todb.php -->
     <h1>Artikel hinzufügen</h1>
     <form id="myForm" class="form-horizontal" role="form">
