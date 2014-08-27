@@ -46,6 +46,6 @@ $ ->
     $("#open-dialog").click ->
         $("#dialog-message").dialog "open"
         false
-    return
+        return
 
-return
+    return

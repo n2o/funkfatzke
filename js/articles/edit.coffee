@@ -9,6 +9,7 @@ $ ->
 
     $("#button-edit").click ->
         # Get values from form
+        id = $("#id-edit").val()
         name = $("#name-edit").val()
         description = $("#description-edit").val()
         transmission = $("#transmission-edit").val()
@@ -28,12 +29,12 @@ $ ->
             # Pass it to the database
             $.ajax
                 type: "post"
-                url: "aux/articles/update.php"
-                data: "name=" + name + "&description=" + description + "&transmission=" + transmission + "&category=" + category + "&subcategory=" + subcategory + "&photo=" + photo + "&weight=" + weight + "&channel=" + channel + "&price=" + price + "&quantity=" + quantity
-
-            $("#myForm-edit").trigger "reset"
-            $("#info-edit").attr "class", "alert alert-success"
-            $("#info-edit").html "Artikel erfolgreich hinzugefügt."
+                url: "aux/articles/sql-update.php"
+                data: "id=" + id + "&name=" + name + "&description=" + description + "&transmission=" + transmission + "&category=" + category + "&subcategory=" + subcategory + "&photo=" + photo + "&weight=" + weight + "&channel=" + channel + "&price=" + price + "&quantity=" + quantity
+                success: ->
+                    $("#myForm-edit").trigger "reset"
+                    $("#info-edit").attr "class", "alert alert-success"
+                    $("#info-edit").html "Artikel erfolgreich hinzugefügt."
         return
 
     # Initial picture if image is available
@@ -46,7 +47,7 @@ $ ->
     $("#open-dialog-edit").click ->
         $("#dialog-message-edit").dialog "open"
         false
-    return
+        return
 
-return
+    return
 

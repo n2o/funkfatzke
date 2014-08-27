@@ -16,6 +16,12 @@ function dialogClickEventEdit(event) {
     <h1>Artikel bearbeiten</h1>
     <form id="myForm-edit" class="form-horizontal" role="form">
       <div class="form-group">
+        <label for="id-edit" class="col-sm-2 control-label">Id</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="id-edit" placeholder="-1" readonly>
+        </div>
+      </div>
+      <div class="form-group">
         <label for="name-edit" class="col-sm-2 control-label">Name *</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="name-edit" placeholder="Name" required>
@@ -79,6 +85,18 @@ function dialogClickEventEdit(event) {
         <label for="quantity-edit" class="col-sm-2 control-label">Anzahl der Geräte</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="quantity-edit" placeholder="10">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="created-edit" class="col-sm-2 control-label">Erstellt am</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="created-edit" placeholder="" readonly>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="modified-edit" class="col-sm-2 control-label">Zuletzt geändert am</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="modified-edit" placeholder="" readonly>
         </div>
       </div>
 

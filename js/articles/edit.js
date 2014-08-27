@@ -10,7 +10,8 @@
       modal: true
     });
     $("#button-edit").click(function() {
-      var category, channel, description, name, photo, price, quantity, subcategory, transmission, weight;
+      var category, channel, description, id, name, photo, price, quantity, subcategory, transmission, weight;
+      id = $("#id-edit").val();
       name = $("#name-edit").val();
       description = $("#description-edit").val();
       transmission = $("#transmission-edit").val();
@@ -28,12 +29,14 @@
       } else {
         $.ajax({
           type: "post",
-          url: "aux/articles/update.php",
-          data: "name=" + name + "&description=" + description + "&transmission=" + transmission + "&category=" + category + "&subcategory=" + subcategory + "&photo=" + photo + "&weight=" + weight + "&channel=" + channel + "&price=" + price + "&quantity=" + quantity
+          url: "aux/articles/sql-update.php",
+          data: "id=" + id + "&name=" + name + "&description=" + description + "&transmission=" + transmission + "&category=" + category + "&subcategory=" + subcategory + "&photo=" + photo + "&weight=" + weight + "&channel=" + channel + "&price=" + price + "&quantity=" + quantity,
+          success: function() {
+            $("#myForm-edit").trigger("reset");
+            $("#info-edit").attr("class", "alert alert-success");
+            return $("#info-edit").html("Artikel erfolgreich hinzugefügt.");
+          }
         });
-        $("#myForm-edit").trigger("reset");
-        $("#info-edit").attr("class", "alert alert-success");
-        $("#info-edit").html("Artikel erfolgreich hinzugefügt.");
       }
     });
     photoUrl = $("#photo-edit").val();
@@ -43,10 +46,8 @@
     }
     $("#open-dialog-edit").click(function() {
       $("#dialog-message-edit").dialog("open");
-      return false;
+      false;
     });
   });
-
-  return;
 
 }).call(this);

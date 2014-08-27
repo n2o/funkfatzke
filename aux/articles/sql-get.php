@@ -7,5 +7,6 @@ include("../../app.php");
 
 $db = DB::get();
 $res = $db->query('SELECT * FROM `Articles` WHERE id = '.$id);
-echo $res->fetchAll(PDO::FETCH_ASSOC);
+$article = $res->fetchAll(PDO::FETCH_ASSOC);
+echo json_encode($article);
 ?>

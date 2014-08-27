@@ -43,10 +43,8 @@
     }
     $("#open-dialog").click(function() {
       $("#dialog-message").dialog("open");
-      return false;
+      false;
     });
   });
-
-  return;
 
 }).call(this);
