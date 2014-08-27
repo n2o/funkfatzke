@@ -24,43 +24,33 @@
 <?php include 'modules/js.php'; ?>
 <script type="text/javascript" src="js/articles/add-edit.js"></script>
 
-<script>
-var dialogClickEvent = function(event) {
-    var clicked;
-    clicked = event.target.innerHTML;
-    $("#photo").val(clicked);
-    $("#dialog-message").dialog("close");
-    $("#show-photo img").attr("src", "sites/funk/files/t-" + clicked);
-    $("#show-photo a").attr("href", "sites/funk/files/" + clicked);
-};
+<script type="text/javascript">
+// What to do if an item from the dialog was clicked
+function dialogClickEvent(event) {
+    var clicked = event.target.innerHTML;
+    $('#photo').val(clicked);
+    $('#dialog-message').dialog('close');
+    $('#show-photo img').attr('src', 'sites/funk/files/t-' + clicked);
+    $('#show-photo a').attr('href', 'sites/funk/files/' + clicked);
+}
 </script>
 
 <style type="text/css">
 /* Color of placeholder text */
 .form-control::-moz-placeholder {
- 	 color: lightgrey;
+    color: lightgrey;
 }
 .form-control:-ms-input-placeholder {
-	 color: lightgrey;
+    color: lightgrey;
 }
 .form-control::-webkit-input-placeholder {
-	 color: lightgrey;
-}
-.ui-dialog-content::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 11px;
-  height: 11px;
-}
-.ui-dialog-content::-webkit-scrollbar-thumb {
-  border-radius: 8px;
-  border: 2px solid white; /* should match background, can't be transparent */
-  background-color: rgba(0, 0, 0, .5);
+	color: lightgrey;
 }
 </style>
 
 <script>
 $(function() {
-  $("#tabs").tabs();
+    $("#tabs").tabs();
 });
 </script>
 
@@ -78,10 +68,12 @@ $(function() {
         </ul>
     </nav>
     <!-- /nav -->
+    
     <div id="tabs">
       <ul>
         <li><a href="#tabs-1">Hinzufügen</a></li>
         <li><a href="#tabs-2">Anzeigen</a></li>
+        <li><a href="#tabs-3">Bearbeiten</a></li>
       </ul>
 
       <div id="tabs-1">
@@ -91,9 +83,11 @@ $(function() {
       <div id="tabs-2">
         <?php include('aux/articles/list.php'); ?>
       </div> <!-- /tabs-2 -->
+
+      <div id="tabs-3">
+        <?php include('aux/articles/edit.php'); ?>
+      </div> <!-- /tabs-3 --> 
     </div>
-
-
 
 </section>
 <!-- /.main -->

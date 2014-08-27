@@ -1,17 +1,6 @@
 $(document).ready ->
-    
-    # Get values from form
-    
-    # Pass it to the database
-    
-    # Initial picture if image is available
-    
-    # Listener to open dialog on button click    
-    
-    # Define the dialog
-    
-    # What to do if an item from the dialog was clicked
     $("#button").click ->
+        # Get values from form
         name = $("#name").val()
         description = $("#description").val()
         transmission = $("#transmission").val()
@@ -23,10 +12,12 @@ $(document).ready ->
         price = $("#price").val()
         price = price.replace(/,/g, ".")
         quantity = $("#quantity").val()
+        
         if name is "" or description is ""
             $("#info").attr "class", "alert alert-danger"
             $("#info").html "Bitte alle benötigten Felder ausfüllen."
         else
+            # Pass it to the database
             $.ajax
                 type: "post"
                 url: "aux/articles/todb.php"
@@ -37,22 +28,27 @@ $(document).ready ->
             $("#info").html "Artikel erfolgreich hinzugefügt."
         return
 
+    # Initial picture if image is available
     photoUrl = $("#photo").val()
+    
     if photoUrl
         $("#show-photo img").attr "src", "sites/funk/files/t-" + photoUrl
         $("#show-photo a").attr "href", "sites/funk/files/" + photoUrl
+    
+    # Listener to open dialog on button click    
     $("#open-dialog").click ->
         $("#dialog-message").dialog "open"
         false
 
+    # Define the dialog
     $("#dialog-message").dialog
         height: 600
         width: 800
         autoOpen: false
         resizable: true
         modal: true
-
     return
+return
 
 #$(document).ready(function() {
 #    $("#button").click(function() {

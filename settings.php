@@ -63,7 +63,7 @@
 	</ul>
 	<!-- /.segmented-control -->
 	
-	<form class="form-vertical" data-bind="with: site">
+    <form class="form-vertical" data-bind="with: site">
 	
 		<div class="section-site">
 	
