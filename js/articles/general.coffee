@@ -2,27 +2,31 @@ root = exports ? this
 root.selected = -1
 
 updateForm = (data) ->
+    photo = data.PhotoURL
     $('#id-edit').val(data.id)
     $('#name-edit').val(data.Name)
     $('#description-edit').val(data.Description)
     $('#transmission-edit').val(data.Transmission)
     $('#category-edit').val(data.Category)
     $('#subcategory-edit').val(data.Subcategory)
-    $('#photo-edit').val(data.PhotoURL)
+    $('#photo-edit').val(photo)
     $('#weight-edit').val(data.Weight)
     $('#channel-edit').val(data.Channel)
     $('#price-edit').val(data.Price)
     $('#quantity-edit').val(data.Quantity)
     $('#created-edit').val(data.Created)
     $('#modified-edit').val(data.Modified)
-    console.log data.PhotoURL
-    if data.PhotoURL isnt null
-        $("#show-photo-edit img").attr "src", "sites/funk/files/t-" + data.PhotoURL
-        $("#show-photo-edit a").attr "href", "sites/funk/files/" + data.PhotoURL
+    
+    if photo isnt null and photo isnt ""
+        $("#show-photo-edit img").attr "src", "sites/funk/files/t-" + photo
+        $("#show-photo-edit a").attr "href", "sites/funk/files/" + photo
 
 $ ->
     $("#tabs").tabs show:
         effect: "fade"
+        
+    # Deactivate Edit function until an article was selected
+    $("#tabs").tabs "option", "disabled", [2]
 
     # Listen on tab change
     $("#tabs").on "tabsactivate", (event, ui) ->

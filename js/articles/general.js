@@ -7,23 +7,24 @@
   root.selected = -1;
 
   updateForm = function(data) {
+    var photo;
+    photo = data.PhotoURL;
     $('#id-edit').val(data.id);
     $('#name-edit').val(data.Name);
     $('#description-edit').val(data.Description);
     $('#transmission-edit').val(data.Transmission);
     $('#category-edit').val(data.Category);
     $('#subcategory-edit').val(data.Subcategory);
-    $('#photo-edit').val(data.PhotoURL);
+    $('#photo-edit').val(photo);
     $('#weight-edit').val(data.Weight);
     $('#channel-edit').val(data.Channel);
     $('#price-edit').val(data.Price);
     $('#quantity-edit').val(data.Quantity);
     $('#created-edit').val(data.Created);
     $('#modified-edit').val(data.Modified);
-    console.log(data.PhotoURL);
-    if (data.PhotoURL !== null) {
-      $("#show-photo-edit img").attr("src", "sites/funk/files/t-" + data.PhotoURL);
-      return $("#show-photo-edit a").attr("href", "sites/funk/files/" + data.PhotoURL);
+    if (photo !== null && photo !== "") {
+      $("#show-photo-edit img").attr("src", "sites/funk/files/t-" + photo);
+      return $("#show-photo-edit a").attr("href", "sites/funk/files/" + photo);
     }
   };
 
@@ -33,6 +34,7 @@
         effect: "fade"
       }
     });
+    $("#tabs").tabs("option", "disabled", [2]);
     $("#tabs").on("tabsactivate", function(event, ui) {
       var newIndex;
       newIndex = ui.newTab.index();

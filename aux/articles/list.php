@@ -59,6 +59,7 @@ foreach($articles as $article) {
 // What to do if an item from the dialog was clicked
 function editSelectedArticle(event) {
     selected = event.target.nextSibling.innerText;
+    $('#tabs').tabs('enable');
     $("#tabs").tabs("option", "active", "2");
     return false;
 }

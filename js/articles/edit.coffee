@@ -34,7 +34,7 @@ $ ->
                 success: ->
                     $("#myForm-edit").trigger "reset"
                     $("#info-edit").attr "class", "alert alert-success"
-                    $("#info-edit").html "Artikel erfolgreich hinzugefügt."
+                    $("#info-edit").html "Artikel erfolgreich bearbeitet."
         return
 
     # Initial picture if image is available

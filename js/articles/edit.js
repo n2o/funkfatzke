@@ -34,7 +34,7 @@
           success: function() {
             $("#myForm-edit").trigger("reset");
             $("#info-edit").attr("class", "alert alert-success");
-            return $("#info-edit").html("Artikel erfolgreich hinzugefügt.");
+            return $("#info-edit").html("Artikel erfolgreich bearbeitet.");
           }
         });
       }

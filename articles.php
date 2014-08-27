@@ -54,19 +54,19 @@
     
     <div id="tabs">
       <ul>
-        <li><a href="#add">Hinzufügen</a></li>
         <li><a href="#list">Anzeigen</a></li>
+        <li><a href="#add">Hinzufügen</a></li>
         <li><a href="#edit">Bearbeiten</a></li>
       </ul>
+
+      <div id="list">
+        <?php include('aux/articles/list.php'); ?>
+      </div> <!-- /tabs-2 -->
 
       <div id="add">
         <?php include('aux/articles/add.php'); ?>
       </div><!-- /tabs-1 -->
       
-      <div id="list">
-        <?php include('aux/articles/list.php'); ?>
-      </div> <!-- /tabs-2 -->
-
       <div id="edit">
         <?php include('aux/articles/edit.php'); ?>
       </div> <!-- /tabs-3 --> 
