@@ -1,4 +1,4 @@
-$(document).ready ->
+$ ->
     # Define the dialog
     $("#dialog-message").dialog
         height: 600

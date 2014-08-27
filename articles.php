@@ -24,12 +24,6 @@
 <?php include 'modules/js.php'; ?>
 <script type="text/javascript" src="js/articles/general.js"></script>
 
-<script type="text/javascript">
-$(function() {
-    $("#tabs").tabs();
-});
-</script>
-
 <style type="text/css">
 /* Color of placeholder text */
 .form-control::-moz-placeholder {
@@ -60,20 +54,20 @@ $(function() {
     
     <div id="tabs">
       <ul>
-        <li><a href="#tabs-1">Hinzufügen</a></li>
-        <li><a href="#tabs-2">Anzeigen</a></li>
-        <li><a href="#tabs-3">Bearbeiten</a></li>
+        <li><a href="#add">Hinzufügen</a></li>
+        <li><a href="#list">Anzeigen</a></li>
+        <li><a href="#edit">Bearbeiten</a></li>
       </ul>
 
-      <div id="tabs-1">
+      <div id="add">
         <?php include('aux/articles/add.php'); ?>
       </div><!-- /tabs-1 -->
       
-      <div id="tabs-2">
+      <div id="list">
         <?php include('aux/articles/list.php'); ?>
       </div> <!-- /tabs-2 -->
 
-      <div id="tabs-3">
+      <div id="edit">
         <?php include('aux/articles/edit.php'); ?>
       </div> <!-- /tabs-3 --> 
     </div>
