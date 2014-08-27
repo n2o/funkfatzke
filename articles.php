@@ -22,17 +22,12 @@
 <link type="text/css" href="css/dropzone.css?v=<?php print VERSION; ?>" rel="stylesheet">
 
 <?php include 'modules/js.php'; ?>
-<script type="text/javascript" src="js/articles/add-edit.js"></script>
+<script type="text/javascript" src="js/articles/general.js"></script>
 
 <script type="text/javascript">
-// What to do if an item from the dialog was clicked
-function dialogClickEvent(event) {
-    var clicked = event.target.innerHTML;
-    $('#photo').val(clicked);
-    $('#dialog-message').dialog('close');
-    $('#show-photo img').attr('src', 'sites/funk/files/t-' + clicked);
-    $('#show-photo a').attr('href', 'sites/funk/files/' + clicked);
-}
+$(function() {
+    $("#tabs").tabs();
+});
 </script>
 
 <style type="text/css">
@@ -47,12 +42,6 @@ function dialogClickEvent(event) {
 	color: lightgrey;
 }
 </style>
-
-<script>
-$(function() {
-    $("#tabs").tabs();
-});
-</script>
 
 </head>
 

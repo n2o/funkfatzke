@@ -1,3 +1,15 @@
+<script type="text/javascript" src="js/articles/add.js"></script>
+<script type="text/javascript">
+// What to do if an item from the dialog was clicked
+function dialogClickEvent(event) {
+    var clicked = event.target.innerHTML;
+    $('#photo').val(clicked);
+    $('#dialog-message').dialog('close');
+    $('#show-photo img').attr('src', 'sites/funk/files/t-' + clicked);
+    $('#show-photo a').attr('href', 'sites/funk/files/' + clicked);
+}
+</script>
+
 <div class="row">
   <div class="col col-md-7">
     <!-- Changes in this form affect the JS below and the file todb.php -->
@@ -94,7 +106,7 @@
     </div>
 
     <!-- Generate Dialog -->
-    <div id="dialog-message" class="" data-bind="foreach: files">
+    <div id="dialog-message" data-bind="foreach: files">
       <div class="listItem" data-bind="css: {'has-thumb': isImage==true}">
         <span class="image" data-bind="if: isImage"><img height="75" width="75" data-bind="attr:{'src':thumbUrl}"></span>
         <h2><a id="4" class="photo-url" data-bind="text:filename" onclick="dialogClickEvent(event); return false;"></a></h2>

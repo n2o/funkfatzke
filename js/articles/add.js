@@ -2,6 +2,13 @@
 (function() {
   $(document).ready(function() {
     var photoUrl;
+    $("#dialog-message").dialog({
+      height: 600,
+      width: 800,
+      autoOpen: false,
+      resizable: true,
+      modal: true
+    });
     $("#button").click(function() {
       var category, channel, description, name, photo, price, quantity, subcategory, transmission, weight;
       name = $("#name").val();
@@ -37,13 +44,6 @@
     $("#open-dialog").click(function() {
       $("#dialog-message").dialog("open");
       return false;
-    });
-    $("#dialog-message").dialog({
-      height: 600,
-      width: 800,
-      autoOpen: false,
-      resizable: true,
-      modal: true
     });
   });
 
