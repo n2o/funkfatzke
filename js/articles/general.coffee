@@ -1,6 +1,9 @@
 root = exports ? this
+
+# Selected article<D-1>
 root.selected = -1
 
+# When editting an article, the form needs to be upgraded
 updateForm = (data) ->
     photo = data.PhotoURL
     $('#id-edit').val(data.id)
@@ -23,6 +26,21 @@ updateForm = (data) ->
     else
         $("#show-photo-edit img").attr "src", ""
         $("#show-photo-edit a").attr "href", ""
+
+# OnScreen Notifications
+root.growl = (message, type) ->
+    $.bootstrapGrowl message,
+        ele: "body" # which element to append to
+        type: type # (null, 'info', 'error', 'success')
+        offset: # 'top', or 'bottom'
+            from: "bottom"
+            amount: 20
+
+        align: "center" # ('left', 'right', or 'center')
+        width: "auto" # (integer, or 'auto')
+        delay: 4000
+        allow_dismiss: true
+        stackup_spacing: 10 # spacing between consecutively stacked growls.
 
 $ ->
     $("#tabs").tabs show:

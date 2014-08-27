@@ -1,3 +1,5 @@
+root = exports ? this
+
 $ ->
     # Define the dialog
     $("#dialog-message").dialog
@@ -22,18 +24,16 @@ $ ->
         quantity = $("#quantity").val()
         
         if name is "" or description is ""
-            $("#info").attr "class", "alert alert-danger"
-            $("#info").html "Bitte alle benötigten Felder ausfüllen."
+            root.growl "Bitte alle erforderlichen Felder ausfüllen.", "info"
         else
             # Pass it to the database
             $.ajax
                 type: "post"
                 url: "aux/articles/todb.php"
                 data: "name=" + name + "&description=" + description + "&transmission=" + transmission + "&category=" + category + "&subcategory=" + subcategory + "&photo=" + photo + "&weight=" + weight + "&channel=" + channel + "&price=" + price + "&quantity=" + quantity
-
-            $("form").trigger "reset"
-            $("#info").attr "class", "alert alert-success"
-            $("#info").html "Artikel erfolgreich hinzugefügt."
+                success: ->
+                    $("form").trigger "reset"
+                    root.growl "Artikel erfolgreich hinzugefügt.", "success"
         return
 
     # Initial picture if image is available

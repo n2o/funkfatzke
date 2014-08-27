@@ -31,6 +31,22 @@
     }
   };
 
+  root.growl = function(message, type) {
+    return $.bootstrapGrowl(message, {
+      ele: "body",
+      type: type,
+      offset: {
+        from: "bottom",
+        amount: 20
+      },
+      align: "center",
+      width: "auto",
+      delay: 4000,
+      allow_dismiss: true,
+      stackup_spacing: 10
+    });
+  };
+
   $(function() {
     $("#tabs").tabs({
       show: {

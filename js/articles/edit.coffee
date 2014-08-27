@@ -1,3 +1,5 @@
+root = exports ? this
+
 $ ->
     # Define the dialog
     $("#dialog-message-edit").dialog
@@ -23,8 +25,7 @@ $ ->
         quantity = $("#quantity-edit").val()
         
         if name is "" or description is ""
-            $("#info-edit").attr "class", "alert alert-danger"
-            $("#info-edit").html "Bitte alle benötigten Felder ausfüllen."
+            root.growl "Bitte alle erforderlichen Felder ausfüllen.", "info"
         else
             # Pass it to the database
             $.ajax
@@ -32,8 +33,7 @@ $ ->
                 url: "aux/articles/sql-update.php"
                 data: "id=" + id + "&name=" + name + "&description=" + description + "&transmission=" + transmission + "&category=" + category + "&subcategory=" + subcategory + "&photo=" + photo + "&weight=" + weight + "&channel=" + channel + "&price=" + price + "&quantity=" + quantity
                 success: ->
-                    $("#info-edit").attr "class", "alert alert-success"
-                    $("#info-edit").html "Artikel erfolgreich bearbeitet."
+                    root.growl "Artikel erfolgreich bearbeitet.", "success"
         return
 
     # Initial picture if image is available

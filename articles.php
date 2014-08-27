@@ -22,6 +22,7 @@
 <link type="text/css" href="css/dropzone.css?v=<?php print VERSION; ?>" rel="stylesheet">
 
 <?php include 'modules/js.php'; ?>
+<script type="text/javascript" src="js/jquery.bootstrap-growl.min.js"></script>
 <script type="text/javascript" src="js/articles/general.js"></script>
 
 <style type="text/css">

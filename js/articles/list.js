@@ -10,6 +10,14 @@
       id = event.target.nextSibling.innerText;
     }
     console.log(id);
+    $.ajax({
+      type: "post",
+      url: "aux/articles/sql-remove.php",
+      data: "id=" + id,
+      success: function() {
+        return root.growl("Artikel erfolgreich gelöscht.", "success");
+      }
+    });
   };
 
   root.editSelectedArticle = function(event) {

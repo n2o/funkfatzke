@@ -100,8 +100,6 @@ function dialogClickEventEdit(event) {
         </div>
       </div>
 
-      <div id="info-edit" style="padding-bottom: 1em;"></div><br>
-
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <input type="button" id="button-edit" class="btn btn-default" value="Artikel bearbeiten">
