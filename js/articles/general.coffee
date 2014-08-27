@@ -20,6 +20,9 @@ updateForm = (data) ->
     if photo isnt null and photo isnt "" and photo isnt undefined
         $("#show-photo-edit img").attr "src", "sites/funk/files/t-" + photo
         $("#show-photo-edit a").attr "href", "sites/funk/files/" + photo
+    else
+        $("#show-photo-edit img").attr "src", ""
+        $("#show-photo-edit a").attr "href", ""
 
 $ ->
     $("#tabs").tabs show:

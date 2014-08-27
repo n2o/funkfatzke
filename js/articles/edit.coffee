@@ -32,7 +32,6 @@ $ ->
                 url: "aux/articles/sql-update.php"
                 data: "id=" + id + "&name=" + name + "&description=" + description + "&transmission=" + transmission + "&category=" + category + "&subcategory=" + subcategory + "&photo=" + photo + "&weight=" + weight + "&channel=" + channel + "&price=" + price + "&quantity=" + quantity
                 success: ->
-                    $("#myForm-edit").trigger "reset"
                     $("#info-edit").attr "class", "alert alert-success"
                     $("#info-edit").html "Artikel erfolgreich bearbeitet."
         return

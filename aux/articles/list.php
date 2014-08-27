@@ -5,7 +5,7 @@ $res = $db->query('SELECT * FROM `Articles` ORDER BY Name');
 $articles = $res->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<script type="text/javascript" src="js/articles/edit.js"></script>
+<script type="text/javascript" src="js/articles/list.js"></script>
 
 <style>
 /* Modify article list */
@@ -44,8 +44,8 @@ foreach($articles as $article) {
     print("<td class='shelf-price' data-currency='€' data-price='".$article['Price']."'>".$article['Price']." €</td>");
     print("<td class='shelf-quantity'>".$article['Quantity']."</td>");
     print("<td>
-        <a class='edit' onclick='editSelectedArticle(event); return false;' href='".$article['id']."'><i class='fa fa-pencil fa-lg'></i><span style='display:none;'>".$article['id']."</span></a>    
-        <a class='remove'><i class='fa fa-minus-circle fa-lg'></i></a>
+        <a class='edit' onclick='editSelectedArticle(event); return false;'><i class='fa fa-pencil fa-lg'></i><span style='display:none;'>".$article['id']."</span></a>    
+        <a class='remove' onclick='removeArticle(event);'><i class='fa fa-minus-circle fa-lg'></i><span style='display:none;'>".$article['id']."</span></a>
         </td>");
     print("</tr>");
 }
@@ -54,14 +54,3 @@ foreach($articles as $article) {
     </table>
   </div> <!-- /.col -->
 </div> <!-- /.row -->
-
-<script type="text/javascript">
-// What to do if an item from the dialog was clicked
-function editSelectedArticle(event) {
-    selected = event.target.nextSibling.innerText;
-    $('#tabs').tabs('enable');
-    $("#tabs").tabs("option", "active", "2");
-    return false;
-}
-</script>
-

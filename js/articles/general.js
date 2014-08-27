@@ -25,6 +25,9 @@
     if (photo !== null && photo !== "" && photo !== void 0) {
       $("#show-photo-edit img").attr("src", "sites/funk/files/t-" + photo);
       return $("#show-photo-edit a").attr("href", "sites/funk/files/" + photo);
+    } else {
+      $("#show-photo-edit img").attr("src", "");
+      return $("#show-photo-edit a").attr("href", "");
     }
   };
 

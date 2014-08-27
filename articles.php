@@ -35,6 +35,10 @@
 .form-control::-webkit-input-placeholder {
 	color: lightgrey;
 }
+#articles > tbody > tr > td > a > i {
+    padding-right: 0.5em;
+}
+
 </style>
 
 </head>
