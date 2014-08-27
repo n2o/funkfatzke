@@ -17,7 +17,7 @@ updateForm = (data) ->
     $('#created-edit').val(data.Created)
     $('#modified-edit').val(data.Modified)
     
-    if photo isnt null and photo isnt ""
+    if photo isnt null and photo isnt "" and photo isnt undefined
         $("#show-photo-edit img").attr "src", "sites/funk/files/t-" + photo
         $("#show-photo-edit a").attr "href", "sites/funk/files/" + photo
 
