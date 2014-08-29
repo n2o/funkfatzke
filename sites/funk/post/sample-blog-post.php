@@ -224,7 +224,7 @@ include '../site.php';
         <span class="photo" style="background-image: url(../files/funk_logo_100px.png)"></span>
         <?php print _("Last modified by"); ?>
         <span class="author">Christian Meter</span>
-        <span class="last-modified-date">Thu, Aug 14 14 07:21 pm</span>
+        <span class="last-modified-date">Thu, Aug 14 14 12:21 pm</span>
       </p>
     </div> 
 </div>
@@ -296,10 +296,10 @@ include '../site.php';
 </footer>
 
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.17.5/js/jquery.tablesorter.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 <link href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
 <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<br /><b>Notice</b>:  Use of undefined constant GROWL_NOTIFICATION - assumed 'GROWL_NOTIFICATION' in <b>/Users/cmeter/Cloud/Sites/funkfatzke/sites/common/modules/js.php</b> on line <b>5</b><br />GROWL_NOTIFICATION"></script>
 <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment-with-langs.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
