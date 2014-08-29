@@ -22,7 +22,7 @@ $ ->
         price = $("#price").val()
         price = price.replace(/,/g, ".")
         quantity = $("#quantity").val()
-        
+
         if name is "" or description is ""
             root.growl "Bitte alle erforderlichen Felder ausfüllen.", "info"
         else
@@ -43,7 +43,7 @@ $ ->
         $("#show-photo img").attr "src", "sites/funk/files/t-" + photoUrl
         $("#show-photo a").attr "href", "sites/funk/files/" + photoUrl
 
-    # Listener to open dialog on button click    
+    # Listener to open dialog on button click
     $("#open-dialog").click ->
         $("#dialog-message").dialog "open"
         false
