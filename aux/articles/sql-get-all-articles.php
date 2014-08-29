@@ -7,5 +7,3 @@ $res = $db->query('SELECT * FROM `Articles` ORDER BY Name');
 $article = $res->fetchAll(PDO::FETCH_ASSOC);
 echo json_encode($article);
 ?>
-
-
