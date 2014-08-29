@@ -1,10 +1,3 @@
-<?php
-# Establish connection and get all articles
-$db = DB::get();
-$res = $db->query('SELECT * FROM `Articles` ORDER BY Name');
-$articles = $res->fetchAll(PDO::FETCH_ASSOC);
-?>
-
 <script type="text/javascript" src="js/articles/list.js"></script>
 
 <style>
@@ -30,26 +23,7 @@ $articles = $res->fetchAll(PDO::FETCH_ASSOC);
           <th>&nbsp;</th>
         </tr>
       </thead>
-      <tbody>
-<?php
-foreach($articles as $article) {
-    print("<tr class='shelf-item'>");
-
-    if(!empty($article['PhotoURL'])) {
-        print("<td class='articlelist'><img class='articlelist' src='sites/funk/files/t-".$article['PhotoURL']."'><span class='shelf-duration' style='display:none;'><input type='number' value='1'></span></td>");
-    } else {
-        print("<td><span class='shelf-duration' style='display:none;'><input type='number' value='1'></span></td>");
-    }
-    print("<td><strong><span class='shelf-sku'>".$article['Name']."</span></strong><br><span class='shelf-description'>".$article['Description']."</span></td>");
-    print("<td class='shelf-price' data-currency='€' data-price='".$article['Price']."'>".$article['Price']." €</td>");
-    print("<td class='shelf-quantity'>".$article['Quantity']."</td>");
-    print("<td>
-        <a class='edit' onclick='editSelectedArticle(event); return false;'><i class='fa fa-pencil fa-lg'></i><span style='display:none;'>".$article['id']."</span></a>    
-        <a class='remove' onclick='removeArticle(event);'><i class='fa fa-minus-circle fa-lg'></i><span style='display:none;'>".$article['id']."</span></a>
-        </td>");
-    print("</tr>");
-}
-?>
+      <tbody id="list">
       </tbody>
     </table>
   </div> <!-- /.col -->

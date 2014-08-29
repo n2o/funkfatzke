@@ -35,7 +35,8 @@
           url: "aux/articles/sql-update.php",
           data: "id=" + id + "&name=" + name + "&description=" + description + "&transmission=" + transmission + "&category=" + category + "&subcategory=" + subcategory + "&photo=" + photo + "&weight=" + weight + "&channel=" + channel + "&price=" + price + "&quantity=" + quantity,
           success: function() {
-            return root.growl("Artikel erfolgreich bearbeitet.", "success");
+            root.growl("Artikel erfolgreich bearbeitet.", "success");
+            return root.getList();
           }
         });
       }

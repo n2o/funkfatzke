@@ -35,7 +35,8 @@
           data: "name=" + name + "&description=" + description + "&transmission=" + transmission + "&category=" + category + "&subcategory=" + subcategory + "&photo=" + photo + "&weight=" + weight + "&channel=" + channel + "&price=" + price + "&quantity=" + quantity,
           success: function() {
             $("form").trigger("reset");
-            return root.growl("Artikel erfolgreich hinzugefügt.", "success");
+            root.growl("Artikel erfolgreich hinzugefügt.", "success");
+            return root.getList();
           }
         });
       }

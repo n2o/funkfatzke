@@ -3,14 +3,13 @@ root = exports ? this
 # remove article on click
 root.removeArticle = (event) ->
     id = event.target.nextSibling.innerText if confirm("Artikel wirklich löschen?")
-    console.log id
-    
     $.ajax
         type: "post"
         url: "aux/articles/sql-remove.php"
         data: "id=" + id
         success: ->
             root.growl "Artikel erfolgreich gelöscht.", "success"
+            root.getList()
     return
 
 # switch to different tab and edit article on click

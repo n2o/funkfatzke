@@ -36,3 +36,5 @@ $res->bindParam(':price', $price, PDO::PARAM_STR, strlen($price));
 $res->bindParam(':quantity', $quantity, PDO::PARAM_STR, strlen($quantity));
 $res->execute();
 ?>
+
+

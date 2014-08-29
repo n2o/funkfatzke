@@ -34,6 +34,7 @@ $ ->
                 success: ->
                     $("form").trigger "reset"
                     root.growl "Artikel erfolgreich hinzugefügt.", "success"
+                    root.getList()
         return
 
     # Initial picture if image is available

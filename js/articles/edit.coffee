@@ -34,6 +34,7 @@ $ ->
                 data: "id=" + id + "&name=" + name + "&description=" + description + "&transmission=" + transmission + "&category=" + category + "&subcategory=" + subcategory + "&photo=" + photo + "&weight=" + weight + "&channel=" + channel + "&price=" + price + "&quantity=" + quantity
                 success: ->
                     root.growl "Artikel erfolgreich bearbeitet.", "success"
+                    root.getList()
         return
 
     # Initial picture if image is available
