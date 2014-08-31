@@ -1,5 +1,8 @@
-<script type="text/javascript" src="../../../plugins/inquiry/deploy/inquiry.js"></script>
+<?php
 
+ ?>
+
+<script type="text/javascript" src="../../../plugins/inquiry/deploy/inquiry.js"></script>
 <form id="myForm" class="form-horizontal" role="form">
   <div class="form-group" id="div-company">
     <label for="company" class="col-sm-2 control-label">Firma</label>
@@ -37,7 +40,7 @@
     <div class="col-sm-3">
       <input type="number" class="form-control" id="zip" placeholder="PLZ" required>
     </div>
-    <div class="col-sm-7" id="div-city">
+    <div class="col-sm-7">
       <input type="text" class="form-control" id="city" placeholder="Stadt" required>
     </div>
   </div>

@@ -47,16 +47,13 @@ $(function() {
     } else {
       $("#div-email").removeClass("has-error");
     }
-    if (title === void 0 || firstname === "" || lastname === "" || street === "" || zip === "" || phone === "" || email === "") {
-      error = true;
-    }
     if (!error) {
       $.ajax({
         type: "post",
         url: "../../../plugins/inquiry/deploy/sendmail.php",
-        data: "name=" + name + "&description=" + description + "&transmission=" + transmission + "&category=" + category + "&subcategory=" + subcategory + "&photo=" + photo + "&weight=" + weight + "&channel=" + channel + "&price=" + price + "&quantity=" + quantity,
+        data: "company=" + company + "&title=" + title + "&firstname=" + firstname + "&lastname=" + lastname + "&street=" + street + "&zip=" + zip + "&phone=" + phone + "&email=" + email + "&comment=" + comment + "&data=" + localStorage,
         success: function(data) {
-          $("#info").html(data);
+          $("#myForm").hide();
         }
       });
     }
