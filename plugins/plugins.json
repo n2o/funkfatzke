@@ -19,5 +19,12 @@
     "desc":"Erstelle neuen Artikel.",
     "render":"runtime",
     "config":"true"
+  },
+  {
+    "type":"inquiry",
+    "name":"Anfrage abschicken",
+    "desc":"Erzeugt ein Formular und schickt die Anfrage ab.",
+    "render":"runtime",
+    "config":"false"
   }
 ]

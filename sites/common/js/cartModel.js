@@ -8,9 +8,9 @@ var CartItem = function(description, sku, price, shippingType, weight, quantity,
     self.shippingType = ko.observable(shippingType);
     self.weight = ko.observable(weight);
     self.quantity = ko.observable(quantity);
-  self.duration = ko.observable(duration);
+    self.duration = ko.observable(duration);
 
-  self.priceFriendly = ko.computed(function(){
+    self.priceFriendly = ko.computed(function(){
         var p = self.price() + ' ' + cartModel.currency;
 
         if(cartModel.currency == 'USD'){
@@ -197,10 +197,10 @@ var cartModel = {
             //var match = false;
             //match = ko.utils.arrayFirst(cartModel.items(), function (curr) {
             //                if(curr.sku().toUpperCase() == item.sku().toUpperCase()){
-            //                    // get new quantity 
+            //                    // get new quantity
             //                    var q = parseInt(curr.quantity()) + parseInt(quantity);
 
-            //                    // update quantity 
+            //                    // update quantity
             //                    curr.quantity(q);
 
             //                    return true;
@@ -369,7 +369,6 @@ var cartModel = {
         }
 
         data['no_shipping'] = noshipping; // 1 = do not prompt, 2 = prompt for address and require it
-        data['no_shipping'] = 2;
         data['weight_unit'] = cartModel.weightUnit;
         data['handling_cart'] = cartModel.shipping().toFixed(2);
         data['tax_cart'] = cartModel.tax().toFixed(2);

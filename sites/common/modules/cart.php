@@ -1,4 +1,4 @@
-<section id="cart" class="panel panel-default" 
+<section id="cart" class="panel panel-default"
 	data-paypalid="{{payPalId}}"
 	data-usesandbox="{{payPalUseSandbox}}"
 	data-logo="{{payPalLogoUrl}}"
@@ -12,7 +12,7 @@
 	<div class="panel-heading"><?php print _("Warenkorb"); ?> <span class="badge" data-bind="text:count"></span></div>
 
 	<div class="cart-items" data-bind="foreach:items">
-	
+
 		<div class="cart-item">
             <div class="cart-group1">
                 <span class="cart-add" style="float:left;">
@@ -33,45 +33,45 @@
             </div><div class="cart-group4">
 				<span class="cart-subtotal" data-bind="text:totalFriendly"></span>
 			</div>
-		</div>
-		<!-- /.cart-item -->
-	
-	</div>
-	<!-- /.cart-items -->
-	
+		</div> <!-- /.cart-item -->
+
+	</div> <!-- /.cart-items -->
+
 	<div class="subtotal">
 		<label><?php print _("Zwischensumme:"); ?></label>
-		<strong data-bind="text:subtotalFriendly"></strong> 
+		<strong data-bind="text:subtotalFriendly"></strong>
 	</div>
-	
+
 	<div class="weight" data-bind="visible: totalWeight() > 0">
 		<label><?php print _("Gesamtgewicht:"); ?></label>
-		<strong data-bind="text:totalWeightFriendly"></strong> 
+		<strong data-bind="text:totalWeightFriendly"></strong>
 	</div>
-	
+
 	<div class="shipping" data-bind="visible: shipping() > 0">
 		<label><?php print _("Versandkosten:"); ?></label>
-		<strong data-bind="text:shippingFriendly"></strong> 
+		<strong data-bind="text:shippingFriendly"></strong>
 	</div>
-	
+
 	<div class="tax" data-bind="visible: tax() > 0">
 		<label><?php print _("MwSt.:"); ?></label>
-		<strong data-bind="text:taxFriendly"></strong> 
+		<strong data-bind="text:taxFriendly"></strong>
 	</div>
-	
+
 	<div class="total">
 		<label><?php print _("Gesamtsumme inkl. MwSt.:"); ?></label>
-		<strong data-bind="text:totalFriendly"></strong> 
+		<strong data-bind="text:totalFriendly"></strong>
 	</div>
-	
+
 	<div class="checkout">
-		<button 
-			class="btn btn-default" 
-			data-email="{{email}}"
-			data-bind="click:checkoutWithPayPal"><?php print _("Angebot anfragen"); ?></button>
+		<a href="anfragen"><button class="btn btn-default"><?php print _("Angebot anfragen"); ?></button></a>
 	</div>
-	
-</section>
-<!-- /#cart -->
+	<!-- <div class="checkout">
+		<button
+			class="btn btn-default"
+			data-email="{{email}}"
+			data-bind="click:checkoutWithPayPal"><?php #print _("Angebot anfragen"); ?></button>
+	</div> -->
+
+</section> <!-- /#cart -->
 
 
