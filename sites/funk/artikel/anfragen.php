@@ -1,4 +1,4 @@
-<?php 
+<?php
 $rootPrefix="../";
 $formPublicId="";
 $pageUrl="artikel/anfragen";
@@ -33,7 +33,6 @@ include '../site.php';
 <script type="text/javascript" src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 <link href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
 <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<br /><b>Notice</b>:  Use of undefined constant GROWL_NOTIFICATION - assumed 'GROWL_NOTIFICATION' in <b>/Users/cmeter/Cloud/Sites/funkfatzke/sites/common/modules/js.php</b> on line <b>5</b><br />GROWL_NOTIFICATION"></script>
 <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment-with-langs.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
@@ -54,29 +53,29 @@ include '../site.php';
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="../css/prettify.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
 
-    
+
 </head>
 
 <body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="54030ae518ebd" data-pagefriendlyid="anfragen" data-pagetypeuniqid="53ec8ee686b46" data-api="http://n2o.local/funkfatzke" id="anfragen">
 
 <section class="settings">
-	
+
 	<?php
 	if(isset($_SESSION[$siteFriendlyId.'.UserId'])){ ?>
 <span class="welcome-message">
 	<?php print _("Welcome"); ?> <?php print $_SESSION[$siteFriendlyId.'.FirstName']; ?> <?php print $_SESSION[$siteFriendlyId.'.LastName']; ?>
 	<a href="<?php print $rootPrefix; ?>logout"><?php print _("Logout"); ?></a>
 </span>
-<?php	
+<?php
 	}else{ ?>
 <span class="welcome-message">
 	<a href="<?php print $rootPrefix; ?>login"><?php print _("Sign in"); ?></a>
-</span>		
-<?php		
+</span>
+<?php
 	} ?>
 
 
-	
+
 	<!--<ul class="respond-select-language">
 		<li><?php print _("Language:"); ?></li>
 		<li><a data-lang="en-us">English</a></li>
@@ -84,12 +83,12 @@ include '../site.php';
 	</ul>-->
 
 </section>
-<!-- /.settings -->  
+<!-- /.settings -->
 
 <header role="banner">
 
 	<nav class="navbar navbar-default" role="navigation">
-	  
+
 	  <div class="navbar-header">
 	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 	      <span class="sr-only">Toggle navigation</span>
@@ -97,12 +96,12 @@ include '../site.php';
 	      <span class="icon-bar"></span>
 	      <span class="icon-bar"></span>
 	    </button>
-        
+
         <a class="navbar-brand" href="//n2o.local/funkfatzke/sites/funk"><img src="../themes/advanced/resources/images/funk_logo_100px.png"></a>
 	  </div>
 	  <!-- /.navbar-header -->
-	
-	  
+
+
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right nav-pills">
 			<li><a href="../index">Home</a></li><li><a href="../artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li>
@@ -111,8 +110,8 @@ include '../site.php';
       <div class="input-group">
         <input type="text" class="form-control">
         <button class="input-group-addon"><i class="fa fa-search"></i></button>
-      </div>  
-    </form>  
+      </div>
+    </form>
   	<ul class="dropdown-menu">
 	  	<li class="searching"><i class="fa fa-spinner fa-spin"></i> <?php print _("Searching..."); ?></li>
 	  	<li class="no-results"><?php print _("No results found"); ?></li>
@@ -121,10 +120,10 @@ include '../site.php';
           	<li><a class="cart-toggle"><i class="fa fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
           	<li><a class="settings-toggle"><i class="fa fa-cog"></i></a></li>
 	    </ul>
-        
+
 	  </div>
 	  <!-- /.navbar-collapse -->
-      
+
 	</nav>
 
 	<section id="cart" class="panel panel-default"
@@ -207,66 +206,66 @@ include '../site.php';
 
 
 </header>
-  
+
 <div id="content" class="container" role="main">
     <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1409485544"><?php print _("Anfrage abschicken"); ?></h1><p id="anfragen-paragraph-1"><?php print _("Schicken Sie uns unverbindlich und kostenfrei eine Anfrage! Wir werden unsere Bestände prüfen und uns zügig bei Ihnen melden. Bei dieser Anfrage werden alle Artikel berücksichtigt, die sich in Ihrem Warenkorb befinden."); ?></p><?php $id="p-1409485560";$type="inquiry";$name="Anfrage abschicken";$render="runtime";$config="false";include "../plugins/inquiry/render.php"; ?></div></div>
 </div>
 
 <footer role="contentinfo">
-  
+
   <div class="container">
 
 		<div class="row">
-		
+
           <div class="col-md-6">
-            
+
             <h4><?php print _("Contact"); ?></h4>
-            
+
             <p>
               <?php print _("Call us at (555) 555-5555 or reach out via the website:"); ?> <a href="../page/contact"><?php print _("Contact"); ?></a>
             </p>
-            
+
             <p class="social">
               <a href="#"><i class="fa fa-facebook"></i></a>
               <a href="#"><i class="fa fa-twitter"></i></a>
               <a href="#"><i class="fa fa-google-plus"></i></a>
               <a href="#"><i class="fa fa-envelope-o"></i></a>
             </p>
-            
+
           </div>
           <!-- /.col-md-4 -->
-          
+
           <div class="col-md-6">
-            
+
             <h4><?php print _("About"); ?></h4>
-            
+
             <p>
               Funkfatzke <?php print _("powered by"); ?> <a href="http://respondcms.com">Respond</a>. <?php print _("Respond is an open source, responsive content management system that you can use to build responsive sites.  The latest version features Bootstrap 3.0, Bootswatch themes, a complete REST API, and a beautiful UI."); ?>
             </p>
-            
+
           </div>
 			<!-- /.col-md-4 -->
-			
+
 		</div>
 		<!-- /.row -->
-    
+
     	<div class="row">
-        
+
           <div class="col-md-12 menu">
-              
+
               <ul>
                 <li><?php print _("Menu:"); ?></li>
                 <li><a href="../index">Home</a></li><li><a href="../artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li>
               </ul>
-              
+
           </div>
           <!-- /.col-md-12 -->
-          
+
     	</div>
-		
+
   	</div>
   	<!-- /.container -->
-  
+
 </footer>
 
 <script type="text/javascript" src="../js/cartModel.js"></script>
