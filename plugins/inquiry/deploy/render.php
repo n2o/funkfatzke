@@ -1,7 +1,3 @@
-<?php
-
- ?>
-
 <script type="text/javascript" src="../../../plugins/inquiry/deploy/inquiry.js"></script>
 <form id="myForm" class="form-horizontal" role="form">
   <div class="form-group" id="div-company">
@@ -13,8 +9,8 @@
   <div class="form-group" id="div-title">
     <label for="title" class="col-sm-2 control-label">Anrede *</label>
     <div class="col-sm-10">
-      <input type="radio" name="title" value="woman"> Frau&nbsp;&nbsp;
-      <input type="radio" name="title" value="man"> Herr<br>
+      <input type="radio" name="title" value="Frau"> Frau&nbsp;&nbsp;
+      <input type="radio" name="title" value="Herr"> Herr<br>
     </div>
   </div>
   <div class="form-group" id="div-firstname">
