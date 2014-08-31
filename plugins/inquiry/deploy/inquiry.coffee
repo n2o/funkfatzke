@@ -24,8 +24,8 @@ $ ->
         if phone        is "" then $("#div-phone").addClass "has-error"         else $("#div-phone").removeClass "has-error"
         if email        is "" then $("#div-email").addClass "has-error"         else $("#div-email").removeClass "has-error"
 
-        # if title is undefined or firstname is "" or lastname is "" or street is "" or zip is "" or phone is "" or email is ""
-        #     error = true
+        if title is undefined or firstname is "" or lastname is "" or street is "" or zip is "" or phone is "" or email is ""
+            error = true
 
         if not error
             $.ajax

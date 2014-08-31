@@ -49,6 +49,9 @@ $(function() {
     } else {
       $("#div-email").removeClass("has-error");
     }
+    if (title === void 0 || firstname === "" || lastname === "" || street === "" || zip === "" || phone === "" || email === "") {
+      error = true;
+    }
     if (!error) {
       $.ajax({
         type: "post",
