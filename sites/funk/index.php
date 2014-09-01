@@ -35,7 +35,7 @@ include 'site.php';
 <script type="text/javascript" src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 <link href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
 <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<br /><b>Notice</b>:  Use of undefined constant GROWL_NOTIFICATION - assumed 'GROWL_NOTIFICATION' in <b>/Users/cmeter/Cloud/Sites/funkfatzke/sites/common/modules/js.php</b> on line <b>5</b><br />GROWL_NOTIFICATION"></script>
+<script type="text/javascript" src=""></script>
 <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment-with-langs.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>

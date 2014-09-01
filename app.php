@@ -72,6 +72,7 @@
     define('JQUERY_JS', '//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js');
 	define('JQUERYUI_JS', '//code.jquery.com/ui/1.11.1/jquery-ui.js');
 	define('JQUERYUI_CSS', '//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css');
+	define('GROWL_NOTIFICATION', '');
 	define('KNOCKOUT_JS', '//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js');
 	define('MOMENT_JS', '//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment-with-langs.min.js');
     define('TIMEZONEDETECT_JS', '//cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js');

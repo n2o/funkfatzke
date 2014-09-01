@@ -1,3 +1,20 @@
+<style type="text/css">
+  .glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+  }
+
+  @-webkit-keyframes spin2 {
+      from { -webkit-transform: rotate(0deg);}
+      to { -webkit-transform: rotate(360deg);}
+  }
+
+  @keyframes spin {
+      from { transform: scale(1) rotate(0deg);}
+      to { transform: scale(1) rotate(360deg);}
+  }
+</style>
+
 <script type="text/javascript" src="../../../plugins/inquiry/deploy/inquiry.js"></script>
 <form id="myForm" class="form-horizontal" role="form">
   <div class="form-group" id="div-company">
@@ -59,11 +76,14 @@
     </div>
   </div>
 
-  <div id="info"></div>
-
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <input type="button" id="button" class="btn btn-default" value="Anfrage abschicken">
     </div>
   </div>
 </form>
+
+<div id="info"></div>
+<div id="loading" style="">
+  <span class="btn"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Anfrage wird bearbeitet...</span>
+</div>

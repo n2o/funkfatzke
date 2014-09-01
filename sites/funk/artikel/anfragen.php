@@ -33,7 +33,7 @@ include '../site.php';
 <script type="text/javascript" src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 <link href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
 <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<br /><b>Notice</b>:  Use of undefined constant GROWL_NOTIFICATION - assumed 'GROWL_NOTIFICATION' in <b>/Users/cmeter/Cloud/Sites/funkfatzke/sites/common/modules/js.php</b> on line <b>5</b><br />GROWL_NOTIFICATION"></script>
+<script type="text/javascript" src=""></script>
 <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment-with-langs.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
@@ -209,7 +209,7 @@ include '../site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1409485544"><?php print _("Anfrage abschicken"); ?></h1><p id="anfragen-paragraph-1" class="hide-after-post"><?php print _("Schicken Sie uns unverbindlich und kostenfrei eine Anfrage! Wir werden unsere Bestände prüfen und uns zügig bei Ihnen melden. Bei dieser Anfrage werden alle Artikel berücksichtigt, die sich in Ihrem Warenkorb befinden."); ?></p><p id="1409506989" class="show-after-post"><?php print _("Vielen Dank für Ihre Nachricht! Wir werden uns schnellstmöglich bei Ihnen melden."); ?></p><?php $id="p-1409485560";$type="inquiry";$name="Anfrage abschicken";$render="runtime";$config="false";include "../plugins/inquiry/render.php"; ?></div></div>
+    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1409485544"><?php print _("Anfrage abschicken"); ?></h1><p id="anfragen-paragraph-1" class="hide-after-post"><?php print _("Schicken Sie uns unverbindlich und kostenfrei eine Anfrage! Wir werden unsere Bestände prüfen und uns zügig bei Ihnen melden. Bei dieser Anfrage werden alle Artikel berücksichtigt, die sich in Ihrem Warenkorb befinden."); ?></p><?php $id="p-1409485560";$type="inquiry";$name="Anfrage abschicken";$render="runtime";$config="false";include "../plugins/inquiry/render.php"; ?></div></div>
 </div>
 
 <footer role="contentinfo">

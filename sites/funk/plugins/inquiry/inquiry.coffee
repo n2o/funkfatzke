@@ -1,5 +1,5 @@
 $ ->
-    $("#show-after-post").hide()
+    $("#loading").hide()
 
     $("#button").click ->
         error = false
@@ -28,18 +28,25 @@ $ ->
 
         if title is undefined or firstname is "" or lastname is "" or street is "" or zip is "" or phone is "" or email is ""
             error = true
+            $("#info").html("<div class='alert alert-warning' role='alert'>Bitte füllen Sie alle notwendigen Felder aus.</div>")
 
         if not error
+            $("#myForm").hide()
+            $("#anfragen-paragraph-1").hide()
+            $("#info").html("")
+            $("#loading").show()
             $.ajax
                 type: "post"
                 url: "../../../plugins/inquiry/deploy/sendmail.php"
-
                 data: "company=" + company + "&title=" + title + "&firstname=" + firstname + "&lastname=" + lastname + "&street=" + street + "&zip=" + zip + "&city=" + city + "&phone=" + phone + "&email=" + email + "&comment=" + comment + "&localStorage=" + storage
                 success: (data) ->
-                    $("#myForm").hide()
-                    $("#hide-after-post").hide()
-                    $("#show-after-post").show()
+                    $("#loading").hide()
+                    $("#info").html("<div class='alert alert-success' role='alert'>Ihre Anfrage wurde erfolgreich verschickt! Wir werden uns schnellstmöglich bei Ihnen melden.</div>")
                     localStorage.removeItem "respond-cart"
+                    return
+                error: ->
+                    $("#loading").hide()
+                    $("#info").html("<div class='alert alert-warning' role='alert'>Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal oder kontaktieren Sie uns telefonisch.</div>")
                     return
 
         error = false
