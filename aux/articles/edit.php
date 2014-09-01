@@ -115,11 +115,11 @@ function dialogClickEventEdit(event) {
     <span id="show-photo-edit"><a href=""><img src=""></a></span>
 
     <!-- Add new picture -->
-    <div id="drop-edit" class="dropzone dark" style="min-height:220px;">
+    <!--<div id="drop-edit" class="dropzone dark" style="min-height:220px;">
       <span class="dz-message">
         <i class="fa fa-cloud-upload fa-4x"></i> <?php print _("Drag file here or click to upload"); ?></span>
       </span>
-    </div>
+    </div>-->
 
     <!-- Generate Dialog -->
     <div id="dialog-message-edit" data-bind="foreach: files">

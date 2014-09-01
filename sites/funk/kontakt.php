@@ -59,33 +59,6 @@ include 'site.php';
 
 <body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53fc461fed991" data-pagefriendlyid="kontakt" data-pagetypeuniqid="-1" data-api="http://n2o.local/funkfatzke" id="kontakt">
 
-<section class="settings">
-	
-	<?php
-	if(isset($_SESSION[$siteFriendlyId.'.UserId'])){ ?>
-<span class="welcome-message">
-	<?php print _("Welcome"); ?> <?php print $_SESSION[$siteFriendlyId.'.FirstName']; ?> <?php print $_SESSION[$siteFriendlyId.'.LastName']; ?>
-	<a href="<?php print $rootPrefix; ?>logout"><?php print _("Logout"); ?></a>
-</span>
-<?php	
-	}else{ ?>
-<span class="welcome-message">
-	<a href="<?php print $rootPrefix; ?>login"><?php print _("Sign in"); ?></a>
-</span>		
-<?php		
-	} ?>
-
-
-	
-	<!--<ul class="respond-select-language">
-		<li><?php print _("Language:"); ?></li>
-		<li><a data-lang="en-us">English</a></li>
-		<li><a data-lang="es-es">Español</a></li>
-	</ul>-->
-
-</section>
-<!-- /.settings -->
-
 <header role="banner">
 
 	<nav class="navbar navbar-default" role="navigation">
@@ -119,7 +92,6 @@ include 'site.php';
   	</ul>
 </li>
           	<li><a class="cart-toggle"><i class="fa fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
-          	<li><a class="settings-toggle"><i class="fa fa-cog"></i></a></li>
 	    </ul>
 	  </div>
 	  <!-- /.navbar-collapse -->
