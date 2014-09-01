@@ -1,0 +1,9 @@
+{
+  "articlesingle":{
+    "type":"articlesingle",
+    "name":"Einzelner Artikel",
+    "desc":"Erzeuge Formular für einen einzelnen Artikel, um ihn in den Warenkorb hinzuzufügen.",
+    "render":"runtime",
+    "config":"true"
+  }
+}
