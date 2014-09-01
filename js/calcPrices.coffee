@@ -1,7 +1,7 @@
 $ ->
     discount = 5 # give x % discount on values
 
-# Initial calc prices of articles
+    # Initial calc prices of articles
     discountValues = new Array()
     $(".shelf-price").each (index) ->
         current = parseFloat($(this).text().slice(0, -2)).toFixed(2)
@@ -43,5 +43,5 @@ $ ->
 
     $("#amount").val $("#slider").slider("value") + " Tag"   # write initial value
 
-return
+    return
 
