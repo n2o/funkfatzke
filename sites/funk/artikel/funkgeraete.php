@@ -1,17 +1,17 @@
 <?php 
-$rootPrefix="";
+$rootPrefix="../";
 $formPublicId="";
-$pageUrl="ueber-uns";
+$pageUrl="artikel/funkgeraete";
 $isSecure=false;
 $siteUniqId="53ec8db6e654f";
 $siteFriendlyId="funk";
-$pageUniqId="53fc462a1888c";
-$pageFriendlyId="ueber-uns";
-$pageTypeUniqId="-1";
+$pageUniqId="53f7abaf6c773";
+$pageFriendlyId="funkgeraete";
+$pageTypeUniqId="53ec8ee686b46";
 $language="de";
-include '../../libs/Utilities.php';
-include 'libs/SiteAuthUser.php';
-include 'site.php';
+include '../../../libs/Utilities.php';
+include '../libs/SiteAuthUser.php';
+include '../site.php';
 ?><!doctype html>
 
 <html lang="<?php print $language; ?>">
@@ -19,7 +19,7 @@ include 'site.php';
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Funkfatzke - Über uns</title>
+<title>Funkfatzke - Funkgeräte</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="callout" content="">
@@ -37,27 +37,27 @@ include 'site.php';
 <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment-with-langs.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
-<script type="text/javascript" src="js/respond.Map.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Form.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Calendar.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.List.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Featured.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Login.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Registration.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Search.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/pageModel.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/prettify.js"></script>
+<script type="text/javascript" src="../js/respond.Map.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Form.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Calendar.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.List.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Featured.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Login.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Registration.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/respond.Search.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/pageModel.js?v=2.11.3"></script>
+<script type="text/javascript" src="../js/prettify.js"></script>
 
 <!-- css -->
-<link href="css/content.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
+<link href="../css/content.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
 <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" type="text/css" rel="stylesheet" media="screen">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="css/prettify.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
+<link href="../css/prettify.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
 
     
 </head>
 
-<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53fc462a1888c" data-pagefriendlyid="ueber-uns" data-pagetypeuniqid="-1" data-api="http://n2o.local/funkfatzke" id="ueber-uns">
+<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53f7abaf6c773" data-pagefriendlyid="funkgeraete" data-pagetypeuniqid="53ec8ee686b46" data-api="http://n2o.local/funkfatzke" id="funkgeraete">
 
 <section class="settings">
 	
@@ -98,14 +98,14 @@ include 'site.php';
 	      <span class="icon-bar"></span>
 	    </button>
         
-        <a class="navbar-brand" href="//n2o.local/funkfatzke/sites/funk"><img src="themes/advanced/resources/images/funk_logo_100px.png"></a>
+        <a class="navbar-brand" href="//n2o.local/funkfatzke/sites/funk"><img src="../themes/advanced/resources/images/funk_logo_100px.png"></a>
 	  </div>
 	  <!-- /.navbar-header -->
 	
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right nav-pills">
-			<li><a href="index">Home</a></li><li><a href="artikel/funkgeraete">Funkgeräte</a></li><li><a href="kontakt">Kontakt</a></li>
+			<li><a href="../index">Home</a></li><li class="active"><a href="../artikel/funkgeraete">Funkgeräte</a></li><li><a href="../kontakt">Kontakt</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -208,7 +208,7 @@ include 'site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1409578060"><?php print _("Über uns"); ?></h1><p id="p-1409578060"><?php print _("Hier wird bald ein Text über uns stehen. Oder die Seite wird gelöscht... Mal schauen."); ?></p></div></div>
+    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1408740273"><?php print _("Funkgeräte"); ?></h1><?php $id="p-1408740281";$type="articlelist";$name="Artikelliste";$render="runtime";$config="true";$var1="";include "../plugins/articlelist/render.php"; ?></div></div>
 </div>
 
 <footer role="contentinfo">
@@ -231,7 +231,7 @@ include 'site.php';
             
             <p class="social">
               <a href="#"><i class="fa fa-google-plus"></i></a>
-              <a href="page/kontakt"><i class="fa fa-envelope-o"></i></a>
+              <a href="../page/kontakt"><i class="fa fa-envelope-o"></i></a>
             </p>
 
           </div>
@@ -242,7 +242,7 @@ include 'site.php';
             <h4><?php print _("Allgemeine Informationen"); ?></h4>
 
             <p>
-              	<li><a href="index">Home</a></li><li><a href="kontakt">Kontakt</a></li><li class="active"><a href="ueber-uns">Über uns</a></li><li><a href="impressum">Impressum</a></li>
+              	<li><a href="../index">Home</a></li><li><a href="../kontakt">Kontakt</a></li><li><a href="../ueber-uns">Über uns</a></li><li><a href="../impressum">Impressum</a></li>
             </p>
             
             <p>
@@ -260,9 +260,9 @@ include 'site.php';
 
 </footer>
 
-<script type="text/javascript" src="js/cartModel.js"></script>
+<script type="text/javascript" src="../js/cartModel.js"></script>
 
-<script type="text/javascript" src="themes/advanced/resources/advanced.js"></script>
+<script type="text/javascript" src="../themes/advanced/resources/advanced.js"></script>
 
 
 

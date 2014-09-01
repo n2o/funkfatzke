@@ -86,7 +86,7 @@ include 'site.php';
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right nav-pills">
-			<li><a href="index">Home</a></li><li><a href="artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li>
+			<li><a href="index">Home</a></li><li><a href="artikel/funkgeraete">Funkgeräte</a></li><li><a href="kontakt">Kontakt</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -208,7 +208,7 @@ include 'site.php';
         </div>
 </div>
 
-<p data-bind="visible: list1Loading()" class="list-loading"><i class="fa fa-spinner fa-spin"></i> Loading...</p>
+<p data-bind="visible: list1Loading()" class="list-loading"><i class="fa fa-spinner fa-spin"></i> Lade...</p>
 
 	<div class="page-results">
 		<button id="pager-list1" class="btn btn-default" data-id="list1"><?php print _("Older posts"); ?></button>
@@ -260,7 +260,7 @@ include 'site.php';
               
               <ul>
                 <li><?php print _("Menu:"); ?></li>
-                <li><a href="index">Home</a></li><li><a href="artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li>
+                <li><a href="index">Home</a></li><li><a href="artikel/funkgeraete">Funkgeräte</a></li><li><a href="kontakt">Kontakt</a></li>
               </ul>
               
           </div>

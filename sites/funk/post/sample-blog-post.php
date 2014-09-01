@@ -98,7 +98,7 @@ include '../site.php';
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right">
-			<li><a href="../index">Home</a></li><li><a href="../artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li>
+			<li><a href="../index">Home</a></li><li><a href="../artikel/funkgeraete">Funkgeräte</a></li><li><a href="../kontakt">Kontakt</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -224,7 +224,7 @@ include '../site.php';
         <span class="photo" style="background-image: url(../files/funk_logo_100px.png)"></span>
         <?php print _("Last modified by"); ?>
         <span class="author">Christian Meter</span>
-        <span class="last-modified-date">Thu, Aug 14 14 07:21 pm</span>
+        <span class="last-modified-date">Thu, Aug 14 14 12:21 pm</span>
       </p>
     </div> 
 </div>
@@ -282,7 +282,7 @@ include '../site.php';
               
               <ul>
                 <li><?php print _("Menu:"); ?></li>
-                <li><a href="../index">Home</a></li><li><a href="../artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li>
+                <li><a href="../index">Home</a></li><li><a href="../artikel/funkgeraete">Funkgeräte</a></li><li><a href="../kontakt">Kontakt</a></li>
               </ul>
               
           </div>

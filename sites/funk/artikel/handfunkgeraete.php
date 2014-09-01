@@ -84,7 +84,7 @@ include '../site.php';
 	</ul>-->
 
 </section>
-<!-- /.settings -->  
+<!-- /.settings -->
 
 <header role="banner">
 
@@ -105,7 +105,7 @@ include '../site.php';
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right nav-pills">
-			<li><a href="../index">Home</a></li><li><a href="../artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li class="active"><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li>
+			<li><a href="../index">Home</a></li><li><a href="../artikel/funkgeraete">Funkgeräte</a></li><li><a href="../kontakt">Kontakt</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -121,7 +121,6 @@ include '../site.php';
           	<li><a class="cart-toggle"><i class="fa fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
           	<li><a class="settings-toggle"><i class="fa fa-cog"></i></a></li>
 	    </ul>
-        
 	  </div>
 	  <!-- /.navbar-collapse -->
       
@@ -213,60 +212,52 @@ include '../site.php';
 </div>
 
 <footer role="contentinfo">
-  
+
   <div class="container">
 
 		<div class="row">
-		
+
           <div class="col-md-6">
-            
-            <h4><?php print _("Contact"); ?></h4>
+
+            <h4><?php print _("Funkfatzke"); ?></h4>
             
             <p>
-              <?php print _("Call us at (555) 555-5555 or reach out via the website:"); ?> <a href="../page/contact"><?php print _("Contact"); ?></a>
+              Straße<br>
+              PLZ Berlin
+            </p>
+            <p>
+              Telefon: ...
             </p>
             
             <p class="social">
-              <a href="#"><i class="fa fa-facebook"></i></a>
-              <a href="#"><i class="fa fa-twitter"></i></a>
               <a href="#"><i class="fa fa-google-plus"></i></a>
-              <a href="#"><i class="fa fa-envelope-o"></i></a>
+              <a href="../page/kontakt"><i class="fa fa-envelope-o"></i></a>
             </p>
-            
+
           </div>
           <!-- /.col-md-4 -->
-          
+
           <div class="col-md-6">
-            
-            <h4><?php print _("About"); ?></h4>
-            
+
+            <h4><?php print _("Allgemeine Informationen"); ?></h4>
+
             <p>
-              Funkfatzke <?php print _("powered by"); ?> <a href="http://respondcms.com">Respond</a>. <?php print _("Respond is an open source, responsive content management system that you can use to build responsive sites.  The latest version features Bootstrap 3.0, Bootswatch themes, a complete REST API, and a beautiful UI."); ?>
+              	<li><a href="../index">Home</a></li><li><a href="../kontakt">Kontakt</a></li><li><a href="../ueber-uns">Über uns</a></li><li><a href="../impressum">Impressum</a></li>
             </p>
             
+            <p>
+            	Diese Seite verwendet Google Analytics
+            </p>
+
           </div>
-			<!-- /.col-md-4 -->
-			
+		  <!-- /.col-md-4 -->
+
 		</div>
 		<!-- /.row -->
-    
-    	<div class="row">
-        
-          <div class="col-md-12 menu">
-              
-              <ul>
-                <li><?php print _("Menu:"); ?></li>
-                <li><a href="../index">Home</a></li><li><a href="../artikel/alle-funkgeraete">Alle Funkgeräte</a></li><li class="active"><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li>
-              </ul>
-              
-          </div>
-          <!-- /.col-md-12 -->
-          
-    	</div>
-		
+
   	</div>
   	<!-- /.container -->
-  
+
 </footer>
 
 <script type="text/javascript" src="../js/cartModel.js"></script>
