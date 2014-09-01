@@ -18,7 +18,11 @@ $localStorage = json_decode($_POST["localStorage"], true);
 $articles = json_decode($localStorage["respond-cart"], true);
 
 # Define some mailing stuff
-$recipient = "christian.meter@hhu.de";
+if (isset($var1)) {
+    $recipient = filter_var($var1, FILTER_VALIDATE_EMAIL);  # from admin panel
+} else {
+    $recipient = "cmeter@googlemail.com";
+}
 $subject = "Funkfatzke - Anfrage ".$company;
 
 $content =
