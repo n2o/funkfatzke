@@ -1,4 +1,6 @@
 $ ->
+    $("#show-after-post").hide()
+
     $("#button").click ->
         error = false
 
@@ -31,11 +33,12 @@ $ ->
             $.ajax
                 type: "post"
                 url: "../../../plugins/inquiry/deploy/sendmail.php"
-
                 data: "company=" + company + "&title=" + title + "&firstname=" + firstname + "&lastname=" + lastname + "&street=" + street + "&zip=" + zip + "&city=" + city + "&phone=" + phone + "&email=" + email + "&comment=" + comment + "&localStorage=" + storage
                 success: (data) ->
                     $("#myForm").hide()
-                    #$("#info").html data
+                    $("#hide-after-post").hide()
+                    $("#show-after-post").show()
+                    localStorage.removeItem "respond-cart"
                     return
 
         error = false

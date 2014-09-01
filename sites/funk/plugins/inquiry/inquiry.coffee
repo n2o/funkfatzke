@@ -1,4 +1,6 @@
 $ ->
+    $("#show-after-post").hide()
+
     $("#button").click ->
         error = false
 
@@ -24,8 +26,8 @@ $ ->
         if phone        is "" then $("#div-phone").addClass "has-error"         else $("#div-phone").removeClass "has-error"
         if email        is "" then $("#div-email").addClass "has-error"         else $("#div-email").removeClass "has-error"
 
-        # if title is undefined or firstname is "" or lastname is "" or street is "" or zip is "" or phone is "" or email is ""
-        #     error = true
+        if title is undefined or firstname is "" or lastname is "" or street is "" or zip is "" or phone is "" or email is ""
+            error = true
 
         if not error
             $.ajax
@@ -35,7 +37,9 @@ $ ->
                 data: "company=" + company + "&title=" + title + "&firstname=" + firstname + "&lastname=" + lastname + "&street=" + street + "&zip=" + zip + "&city=" + city + "&phone=" + phone + "&email=" + email + "&comment=" + comment + "&localStorage=" + storage
                 success: (data) ->
                     $("#myForm").hide()
-                    #$("#info").html data
+                    $("#hide-after-post").hide()
+                    $("#show-after-post").show()
+                    localStorage.removeItem "respond-cart"
                     return
 
         error = false
