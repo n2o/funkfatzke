@@ -1,4 +1,4 @@
-<?php 
+<?php
 $rootPrefix="";
 $formPublicId="";
 $pageUrl="index";
@@ -26,8 +26,8 @@ include 'site.php';
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">  
+
+<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 
@@ -56,25 +56,25 @@ include 'site.php';
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="css/prettify.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
 
-    
+
 </head>
 
 <body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53ec8db7055ba" data-pagefriendlyid="index" data-pagetypeuniqid="-1" data-api="http://n2o.local/funkfatzke">
 
 <section class="settings">
-	
+
 	<?php
 	if(isset($_SESSION[$siteFriendlyId.'.UserId'])){ ?>
 <span class="welcome-message">
 	<?php print _("Welcome"); ?> <?php print $_SESSION[$siteFriendlyId.'.FirstName']; ?> <?php print $_SESSION[$siteFriendlyId.'.LastName']; ?>
 	<a href="<?php print $rootPrefix; ?>logout"><?php print _("Logout"); ?></a>
 </span>
-<?php	
+<?php
 	}else{ ?>
 <span class="welcome-message">
 	<a href="<?php print $rootPrefix; ?>login"><?php print _("Sign in"); ?></a>
-</span>		
-<?php		
+</span>
+<?php
 	} ?>
 
 
@@ -86,12 +86,12 @@ include 'site.php';
 	</ul>-->
 
 </section>
-<!-- /.settings -->  
+<!-- /.settings -->
 
 <header role="banner">
 
 	<nav class="navbar navbar-default" role="navigation">
-	  
+
 	  <div class="navbar-header">
 	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 	      <span class="sr-only">Toggle navigation</span>
@@ -99,12 +99,12 @@ include 'site.php';
 	      <span class="icon-bar"></span>
 	      <span class="icon-bar"></span>
 	    </button>
-        
+
         <a class="navbar-brand" href="//n2o.local/funkfatzke/sites/funk"><img src="themes/advanced/resources/images/funk_logo_100px.png"></a>
 	  </div>
 	  <!-- /.navbar-header -->
-	
-	  
+
+
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right nav-pills">
 			<li class="active"><a href="index">Home</a></li><li><a href="artikel/funkgeraete">Funkgeräte</a></li><li><a href="kontakt">Kontakt</a></li>
@@ -113,8 +113,8 @@ include 'site.php';
       <div class="input-group">
         <input type="text" class="form-control">
         <button class="input-group-addon"><i class="fa fa-search"></i></button>
-      </div>  
-    </form>  
+      </div>
+    </form>
   	<ul class="dropdown-menu">
 	  	<li class="searching"><i class="fa fa-spinner fa-spin"></i> <?php print _("Searching..."); ?></li>
 	  	<li class="no-results"><?php print _("No results found"); ?></li>
@@ -123,10 +123,10 @@ include 'site.php';
           	<li><a class="cart-toggle"><i class="fa fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
           	<li><a class="settings-toggle"><i class="fa fa-cog"></i></a></li>
 	    </ul>
-        
+
 	  </div>
 	  <!-- /.navbar-collapse -->
-      
+
 	</nav>
 
 	<section id="cart" class="panel panel-default"
@@ -223,7 +223,7 @@ include 'site.php';
           <div class="col-md-6">
 
             <h4><?php print _("Funkfatzke"); ?></h4>
-            
+
             <p>
               Straße<br>
               PLZ Berlin
@@ -231,7 +231,7 @@ include 'site.php';
             <p>
               Telefon: ...
             </p>
-            
+
             <p class="social">
               <a href="#"><i class="fa fa-google-plus"></i></a>
               <a href="page/kontakt"><i class="fa fa-envelope-o"></i></a>
@@ -247,7 +247,7 @@ include 'site.php';
             <p>
               	<li class="active"><a href="index">Home</a></li><li><a href="kontakt">Kontakt</a></li><li><a href="ueber-uns">Über uns</a></li><li><a href="impressum">Impressum</a></li>
             </p>
-            
+
             <p>
             	Diese Seite verwendet Google Analytics
             </p>
@@ -262,7 +262,7 @@ include 'site.php';
   	<!-- /.container -->
 
 </footer>
-  
+
 <script type="text/javascript" src="js/cartModel.js"></script>
 
 <script type="text/javascript" src="themes/advanced/resources/advanced.js"></script>
