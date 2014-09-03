@@ -127,7 +127,7 @@ include 'site.php';
             <div class="cart-group1">
                 <span class="cart-add" style="float:left;">
 					<button class="btn btn-default" data-bind="click: $parent.removeFromCart">
-						<i class="fa fa-minus-circle"></i> <span><?php print _(""); ?></span>
+						<i class="fa fa-minus-circle"></i></span>
 					</button>
 				</span>
                 <span class="cart-sku" data-bind="text:sku"></span>
@@ -208,7 +208,7 @@ include 'site.php';
         </div>
 </div>
 
-<p data-bind="visible: list1Loading()" class="list-loading"><i class="fa fa-spinner fa-spin"></i> Lade...</p>
+<p data-bind="visible: list1Loading()" class="list-loading"><i class="fa fa-spinner fa-spin"></i> Loading...</p>
 
 	<div class="page-results">
 		<button id="pager-list1" class="btn btn-default" data-id="list1"><?php print _("Older posts"); ?></button>

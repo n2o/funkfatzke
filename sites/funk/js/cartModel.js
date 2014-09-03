@@ -11,11 +11,7 @@ var CartItem = function(description, sku, price, shippingType, weight, quantity,
     self.duration = ko.observable(duration);
 
     self.priceFriendly = ko.computed(function(){
-        var p = self.price() + ' ' + cartModel.currency;
-
-        if(cartModel.currency == 'USD'){
-            p = '$' + p;
-        }
+        var p = Number(self.price()).toFixed(2) + ' €';
 
         return p;
     });
@@ -40,11 +36,7 @@ var CartItem = function(description, sku, price, shippingType, weight, quantity,
 
         var total = parseFloat(self.price()) * parseInt(self.quantity()) * parseInt(self.duration());
 
-        var p = Number(total).toFixed(2) + ' ' + cartModel.currency;
-
-        if(cartModel.currency == 'USD'){
-            p = '$' + p;
-        }
+        var p = Number(total).toFixed(2) + ' €';
 
         return p;
     });
@@ -444,11 +436,7 @@ cartModel.subtotalShipped = ko.computed(function() {
 
 // subtotal display
 cartModel.subtotalFriendly = ko.computed(function() {
-    var p = cartModel.subtotal().toFixed(2) + ' ' + cartModel.currency;
-
-    if(cartModel.currency == 'USD'){
-        p = '$' + p;
-    }
+    var p = cartModel.subtotal().toFixed(2) + ' €';
 
     return p;
 }, cartModel);
@@ -460,11 +448,7 @@ cartModel.tax = ko.computed(function() {
 
 // tax display
 cartModel.taxFriendly = ko.computed(function() {
-    var p = cartModel.tax().toFixed(2) + ' ' + cartModel.currency;
-
-    if(cartModel.currency == 'USD'){
-        p = '$' + p;
-    }
+    var p = cartModel.tax().toFixed(2) + ' €';
 
     p = '(' + cartModel.taxRate + '%) ' + p;
 
@@ -569,11 +553,7 @@ cartModel.total = ko.computed(function() {
 // total display
 cartModel.totalFriendly = ko.computed(function() {
 
-    var p = cartModel.total().toFixed(2) + ' ' + this.currency;
-
-    if(this.currency == 'USD'){
-        p = '$' + p;
-    }
+    var p = cartModel.total().toFixed(2) + ' €';
 
     return p;
 }, cartModel);

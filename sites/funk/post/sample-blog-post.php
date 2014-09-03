@@ -139,7 +139,7 @@ include '../site.php';
             <div class="cart-group1">
                 <span class="cart-add" style="float:left;">
 					<button class="btn btn-default" data-bind="click: $parent.removeFromCart">
-						<i class="fa fa-minus-circle"></i> <span><?php print _(""); ?></span>
+						<i class="fa fa-minus-circle"></i></span>
 					</button>
 				</span>
                 <span class="cart-sku" data-bind="text:sku"></span>
@@ -224,7 +224,7 @@ include '../site.php';
         <span class="photo" style="background-image: url(../files/funk_logo_100px.png)"></span>
         <?php print _("Last modified by"); ?>
         <span class="author">Christian Meter</span>
-        <span class="last-modified-date">Thu, Aug 14 14 12:21 pm</span>
+        <span class="last-modified-date">Thu, Aug 14 14 07:21 pm</span>
       </p>
     </div> 
 </div>

@@ -117,7 +117,7 @@ include 'site.php';
             <div class="cart-group1">
                 <span class="cart-add" style="float:left;">
 					<button class="btn btn-default" data-bind="click: $parent.removeFromCart">
-						<i class="fa fa-minus-circle"></i> <span><?php print _(""); ?></span>
+						<i class="fa fa-minus-circle"></i></span>
 					</button>
 				</span>
                 <span class="cart-sku" data-bind="text:sku"></span>
