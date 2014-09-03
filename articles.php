@@ -1,16 +1,16 @@
-<?php	
+<?php
 	include 'app.php'; // import php files
-	
+
 	$authUser = new AuthUser(); // get auth user
 	$authUser->Authenticate('All');
-	
+
 	Utilities::SetLanguage($authUser->Language); // set language
 ?>
 <!DOCTYPE html>
 <html lang="<?php print str_replace('_', '-', $authUser->Language) ?>">
 
 <head>
-	
+
 <title><?php print("Artikel"); ?>&mdash;<?php print $authUser->SiteName; ?></title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -45,7 +45,7 @@
 </head>
 
 <body id="profile-page" data-currpage="profile" data-sitefriendlyid="<?php print $authUser->SiteFriendlyId; ?>">
-	
+
 <?php include 'modules/menu.php'; ?>
 
 <section class="main">
@@ -56,25 +56,30 @@
         </ul>
     </nav>
     <!-- /nav -->
-    
+
     <div id="tabs">
       <ul>
         <li><a href="#list">Anzeigen</a></li>
         <li><a href="#add">Hinzufügen</a></li>
         <li><a href="#edit">Bearbeiten</a></li>
+        <li><a href="#cats">Kategorien</a></li>
       </ul>
 
       <div id="list">
         <?php include('aux/articles/list.php'); ?>
-      </div> <!-- /tabs-2 -->
+      </div>
 
       <div id="add">
         <?php include('aux/articles/add.php'); ?>
-      </div><!-- /tabs-1 -->
-      
+      </div>
+
       <div id="edit">
         <?php include('aux/articles/edit.php'); ?>
-      </div> <!-- /tabs-3 --> 
+      </div>
+
+      <div id="cats">
+        <?php include('aux/articles/cats.php'); ?>
+      </div>
     </div>
 
 </section>

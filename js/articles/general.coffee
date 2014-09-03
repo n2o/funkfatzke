@@ -19,7 +19,7 @@ updateForm = (data) ->
     $('#quantity-edit').val(data.Quantity)
     $('#created-edit').val(data.Created)
     $('#modified-edit').val(data.Modified)
-    
+
     if photo isnt null and photo isnt "" and photo isnt undefined
         $("#show-photo-edit img").attr "src", "sites/funk/files/t-" + photo
         $("#show-photo-edit a").attr "href", "sites/funk/files/" + photo
@@ -54,18 +54,18 @@ root.getList = ->
         success: (response) ->
             createArticleList response
             return
-    
+
 
 createArticleList = (data) ->
     console.log "DrawTable"
-    
+
     # Remove existing rows
     $("tbody#list tr").remove()
 
     # Fill table with article data
     for article in data
         photo = article.PhotoURL
-        
+
         row = $("<tr>")
         $("tbody#list").append row
 
@@ -73,7 +73,7 @@ createArticleList = (data) ->
             row.append "<td class='articlelist'><img class='articlelist' src='sites/funk/files/t-#{photo}'></td>"
         else
             row.append "<td></td>"
-            
+
         row.append "<td><strong>#{article.Name}</strong><br>#{article.Description}</td>"
         row.append "<td>#{article.Price} €</td>"
         row.append "<td>#{article.Quantity}</td>"
@@ -87,7 +87,7 @@ createArticleList = (data) ->
 $ ->
     $("#tabs").tabs show:
         effect: "fade"
-        
+
     # Deactivate Edit function until an article was selected
     $("#tabs").tabs "option", "disabled", [2]
 
@@ -109,8 +109,10 @@ $ ->
                 success: (response) ->
                     updateForm response[0]
                     return
-        
+
         # Create List of Articles
         if newIndex is 0
             root.getList()
+
+        return
     return
