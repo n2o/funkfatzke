@@ -10,8 +10,6 @@ updateForm = (data) ->
     $('#name-edit').val(data.Name)
     $('#description-edit').val(data.Description)
     $('#transmission-edit').val(data.Transmission)
-    $('#category-edit').val(data.Category)
-    $('#subcategory-edit').val(data.Subcategory)
     $('#photo-edit').val(photo)
     $('#weight-edit').val(data.Weight)
     $('#channel-edit').val(data.Channel)
@@ -57,8 +55,6 @@ root.getList = ->
 
 
 createArticleList = (data) ->
-    console.log "DrawTable"
-
     # Remove existing rows
     $("tbody#list tr").remove()
 

@@ -12,8 +12,6 @@ updateForm = function(data) {
   $('#name-edit').val(data.Name);
   $('#description-edit').val(data.Description);
   $('#transmission-edit').val(data.Transmission);
-  $('#category-edit').val(data.Category);
-  $('#subcategory-edit').val(data.Subcategory);
   $('#photo-edit').val(photo);
   $('#weight-edit').val(data.Weight);
   $('#channel-edit').val(data.Channel);
@@ -60,7 +58,6 @@ root.getList = function() {
 
 createArticleList = function(data) {
   var article, photo, row, _i, _len;
-  console.log("DrawTable");
   $("tbody#list tr").remove();
   for (_i = 0, _len = data.length; _i < _len; _i++) {
     article = data[_i];

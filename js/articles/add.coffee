@@ -14,8 +14,6 @@ $ ->
         name = $("#name").val()
         description = $("#description").val()
         transmission = $("#transmission").val()
-        category = $("#category").val()
-        subcategory = $("#subcategory").val()
         photo = $("#photo").val()
         weight = $("#weight").val()
         channel = $("#channel").val()
@@ -30,7 +28,7 @@ $ ->
             $.ajax
                 type: "post"
                 url: "aux/articles/todb.php"
-                data: "name=" + name + "&description=" + description + "&transmission=" + transmission + "&category=" + category + "&subcategory=" + subcategory + "&photo=" + photo + "&weight=" + weight + "&channel=" + channel + "&price=" + price + "&quantity=" + quantity
+                data: "name=" + name + "&description=" + description + "&transmission=" + transmission + "&photo=" + photo + "&weight=" + weight + "&channel=" + channel + "&price=" + price + "&quantity=" + quantity
                 success: ->
                     $("form").trigger "reset"
                     root.growl "Artikel erfolgreich hinzugefügt.", "success"

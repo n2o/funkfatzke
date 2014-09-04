@@ -34,18 +34,6 @@ function dialogClickEvent(event) {
         </div>
       </div>
       <div class="form-group">
-        <label for="category" class="col-sm-2 control-label">Kategorie</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="category" placeholder="Kategorie">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="subcategory" class="col-sm-2 control-label">Unterkategorie</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="subcategory" placeholder="Unterkategorie">
-        </div>
-      </div>
-      <div class="form-group">
         <label for="photo" class="col-sm-2 control-label">Foto URL</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="photo" placeholder="krasses_funkgeraet.png">
