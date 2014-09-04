@@ -44,7 +44,7 @@
 
 </head>
 
-<body id="profile-page" data-currpage="profile" data-sitefriendlyid="<?php print $authUser->SiteFriendlyId; ?>">
+<body id="articles-page" data-currpage="articles" data-sitefriendlyid="<?php print $authUser->SiteFriendlyId; ?>">
 
 <?php include 'modules/menu.php'; ?>
 
