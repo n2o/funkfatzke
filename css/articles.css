@@ -21,17 +21,21 @@
 }
 
 /* Categories */
-#selectableArticles .ui-selecting { background: #3299bb; }
-#selectableArticles .ui-selected { background: #3299bb; color: white; }
-#selectableArticles {
+.selectable .ui-selecting {
+  background: #3299bb;
+}
+.selectable .ui-selected {
+  background: #3299bb;
+  color: white;
+}
+.selectable {
   list-style-type: none;
   border-style: solid;
   border-width: 1px;
   border-color: #ccc;
-
   margin: 0;
   padding: 0;
 }
-#selectableArticles li {
+.selectable li {
   padding: 0.25em;
 }

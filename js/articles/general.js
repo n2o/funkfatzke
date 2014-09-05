@@ -104,7 +104,7 @@ $(function() {
       root.getList();
     }
     if (newIndex === 3) {
-      root.catsArticles();
+      root.catsInit();
     }
   });
 });

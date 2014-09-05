@@ -5,6 +5,11 @@ $ ->
         addCat()
         return
 
+# Init function to be called when tab is active
+catsInit = ->
+    sqlGetArticles()
+    sqlGetCats()
+
 # remove article on click
 removeCat = (event) ->
     id = event.target.nextSibling.innerText if confirm("Kategorie wirklich löschen?")
@@ -41,11 +46,21 @@ $ ->
             result.append " #" + (index + 1)
             return
         return
+
+    $("#selectableCats").selectable stop: ->
+        result = $("#select-result-cats").empty()
+        $(".ui-selected", this).each ->
+            index = $("#selectableCats li").index(this)
+            result.append " #" + (index + 1)
+            return
+        return
+    return
+
     return
 
 
 # Post AJAX request and create table
-catsArticles = ->
+sqlGetArticles = ->
     $.ajax
         url: "aux/articles/sql-get-all-articles.php"
         type: "POST"
@@ -60,8 +75,31 @@ articleItem = (data) ->
     # Remove existing rows
     $("#selectableArticles li").remove()
 
-    # Fill table with article data
+    # Fill list with article data
     for article in data
-        content = "<li class=''>#{article.Name}</li>"
+        content = "<li class='' data-id='#{article.id}'>#{article.Name}</li>"
         $("#selectableArticles").append content
+    return
+
+
+# Post AJAX request and create table
+sqlGetCats = ->
+    $.ajax
+        url: "aux/articles/sql-get-all-cats.php"
+        type: "POST"
+        data: ""
+        dataType: "json"
+        success: (response) ->
+            catItem response
+        error: ->
+
+# Add all categories to the list of categories
+catItem = (data) ->
+    # Remove existing rows
+    $("#selectableCats li").remove()
+
+    # Fill list with categories
+    for cat in data
+        content = "<li class='' data-id='#{cat.id}'>#{cat.Name}</li>"
+        $("#selectableCats").append content
     return

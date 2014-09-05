@@ -112,7 +112,7 @@ $ ->
 
         # On Tab 3: Create List of Articles
         if newIndex is 3
-            root.catsArticles()
+            root.catsInit()
 
         return
     return
