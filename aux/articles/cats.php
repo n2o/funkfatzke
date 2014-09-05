@@ -1,14 +1,5 @@
 <script type="text/javascript" src="js/articles/cats.js"></script>
-
-<style>
-/* Modify article list */
-#cats > tbody > tr > td.articlelist > img {
-  max-width: 100px;
-}
-#cats > tbody > tr > td.articlelist {
-  width: 100px;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="css/admin.css">
 
 <div class="row">
   <div class="col">
@@ -19,19 +10,19 @@
       </div>
       <button id="cat-add" type="button" class="btn btn-default btn-lg">Hinzufügen</button>
     </form>
-    <!-- <table id="cats" class="table table-striped table-hover table-condensed">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Name</th>
-          <th>Preis *</th>
-          <th>Geräte</th>
-          <th>&nbsp;</th>
-        </tr>
-      </thead>
-      <tbody id="catlist">
-      </tbody>
-    </table> -->
+  </div>
+</div>
+
+<div class="row">
+  <div class="col col-md-6">
+    <p id="feedback">
+      <span>You've selected:</span> <span id="select-result">none</span>.
+    </p>
+
+    <h3>Artikel</h3>
+    <ul id="selectableArticles">
+      <li class=""><span class="btn"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Anfrage wird bearbeitet...</span></li>
+    </ul>
   </div> <!-- /.col -->
 </div> <!-- /.row -->
 

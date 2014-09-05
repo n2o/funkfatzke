@@ -25,22 +25,7 @@
 <script type="text/javascript" src="js/articles/general.js"></script>
 <script type="text/javascript" src="js/bootstrap-growl.min.js"></script>
 
-<style type="text/css">
-/* Color of placeholder text */
-.form-control::-moz-placeholder {
-    color: lightgrey;
-}
-.form-control:-ms-input-placeholder {
-    color: lightgrey;
-}
-.form-control::-webkit-input-placeholder {
-	color: lightgrey;
-}
-#articles > tbody > tr > td > a > i {
-    padding-right: 0.5em;
-}
-
-</style>
+<link rel="stylesheet" type="text/css" href="css/articles.css">
 
 </head>
 

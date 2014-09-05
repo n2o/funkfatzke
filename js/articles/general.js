@@ -103,5 +103,8 @@ $(function() {
     if (newIndex === 0) {
       root.getList();
     }
+    if (newIndex === 3) {
+      root.catsArticles();
+    }
   });
 });

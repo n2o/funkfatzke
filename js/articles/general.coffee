@@ -106,9 +106,13 @@ $ ->
                     updateForm response[0]
                     return
 
-        # Create List of Articles
+        # On Tab 0: Create List of Articles
         if newIndex is 0
             root.getList()
+
+        # On Tab 3: Create List of Articles
+        if newIndex is 3
+            root.catsArticles()
 
         return
     return

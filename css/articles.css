@@ -1,0 +1,37 @@
+/* Color of placeholder text */
+.form-control::-moz-placeholder {
+  color: lightgrey;
+}
+.form-control:-ms-input-placeholder {
+  color: lightgrey;
+}
+.form-control::-webkit-input-placeholder {
+  color: lightgrey;
+}
+#articles > tbody > tr > td > a > i {
+  padding-right: 0.5em;
+}
+
+/* List articles */
+#articles > tbody > tr > td.articlelist > img {
+  max-width: 100px;
+}
+#articles > tbody > tr > td.articlelist {
+  width: 100px;
+}
+
+/* Categories */
+#selectableArticles .ui-selecting { background: #3299bb; }
+#selectableArticles .ui-selected { background: #3299bb; color: white; }
+#selectableArticles {
+  list-style-type: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ccc;
+
+  margin: 0;
+  padding: 0;
+}
+#selectableArticles li {
+  padding: 0.25em;
+}
