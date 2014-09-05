@@ -23,8 +23,10 @@
   <div class="col">
     <p>
       Wähle einen oder mehrere Artikel aus. Dann wähle beliebig viele Kategorien aus der Liste aus.
-      Die Zuordnung wird sofort gespeichert, nachdem die Kategorie ausgewählt wurde. Mehrere Artikel
-      können mit gedrückter STRG /  Taste markiert werden. </p>
+      Um die Zuordnung zu speichern, muss der entsprechende Button geklickt werden. Alte Zuordnungen
+      der ausgewählten Artikel werden dadurch ersetzt.<br>
+      Mehrere Artikel können mit gedrückter STRG /  Taste oder gedrückter linker Maustaste markiert werden.
+    </p>
   </div>
 </div>
 
@@ -42,4 +44,12 @@
     </ul>
   </div> <!-- /.col -->
 </div> <!-- /.row -->
+
+<div class="row">
+  <div class="col">
+    <form id="cat-assign-form" class="navbar-form navbar-left">
+      <button id="cat-assign" type="button" class="btn btn-default btn-lg">Zuordnung speichern</button>
+    </form>
+  </div>
+</div>
 

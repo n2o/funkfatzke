@@ -35,28 +35,27 @@ addCat = (event) ->
             success: ->
                 root.growl "Kategorie erfolgreich erstellt.", "success"
                 $("#cat-add-form").trigger("reset")
+                sqlGetCats()
 
 
 # Enabe multiselect to assign categories to articles
 $ ->
+    selectedArticles = []
+    selectedCats = []
+
     $("#selectableArticles").selectable stop: ->
         result = $("#select-result").empty()
+        selectedArticles = []
         $(".ui-selected", this).each ->
-            index = $("#selectableArticles li").index(this)
-            result.append " #" + (index + 1)
-            return
-        return
+            selectedArticles.push $(this).attr("data-id")
+            result.html selectedArticles
 
     $("#selectableCats").selectable stop: ->
         result = $("#select-result-cats").empty()
+        selectedCats = []
         $(".ui-selected", this).each ->
-            index = $("#selectableCats li").index(this)
-            result.append " #" + (index + 1)
-            return
-        return
-    return
-
-    return
+            selectedCats.push $(this).attr("data-id")
+            result.html selectedCats
 
 
 # Post AJAX request and create table

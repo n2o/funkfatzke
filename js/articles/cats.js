@@ -42,36 +42,39 @@ addCat = function(event) {
       data: "name=" + name,
       success: function() {
         root.growl("Kategorie erfolgreich erstellt.", "success");
-        return $("#cat-add-form").trigger("reset");
+        $("#cat-add-form").trigger("reset");
+        return sqlGetCats();
       }
     });
   }
 };
 
 $(function() {
+  var selectedArticles, selectedCats;
+  selectedArticles = [];
+  selectedCats = [];
   $("#selectableArticles").selectable({
     stop: function() {
       var result;
       result = $("#select-result").empty();
-      $(".ui-selected", this).each(function() {
-        var index;
-        index = $("#selectableArticles li").index(this);
-        result.append(" #" + (index + 1));
+      selectedArticles = [];
+      return $(".ui-selected", this).each(function() {
+        selectedArticles.push($(this).attr("data-id"));
+        return result.html(selectedArticles);
       });
     }
   });
-  $("#selectableCats").selectable({
+  return $("#selectableCats").selectable({
     stop: function() {
       var result;
       result = $("#select-result-cats").empty();
-      $(".ui-selected", this).each(function() {
-        var index;
-        index = $("#selectableCats li").index(this);
-        result.append(" #" + (index + 1));
+      selectedCats = [];
+      return $(".ui-selected", this).each(function() {
+        selectedCats.push($(this).attr("data-id"));
+        return result.html(selectedCats);
       });
     }
   });
-  return;
 });
 
 sqlGetArticles = function() {
