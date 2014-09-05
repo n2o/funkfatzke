@@ -1,5 +1,5 @@
 <script type="text/javascript" src="js/articles/cats.js"></script>
-<link rel="stylesheet" type="text/css" href="css/admin.css">
+<link rel="stylesheet" type="text/css" href="css/snippets.css">
 
 <div class="row">
   <div class="col">
@@ -16,11 +16,17 @@
 <div class="row">
   <div class="col col-md-6">
     <p id="feedback">
-      <span>You've selected:</span> <span id="select-result">none</span>.
+      <span>Ausgewählt:</span> <span id="select-result">none</span>.
     </p>
 
     <h3>Artikel</h3>
     <ul id="selectableArticles">
+      <li class=""><span class="btn"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Anfrage wird bearbeitet...</span></li>
+    </ul>
+  </div> <!-- /.col -->
+  <div class="col col-md-6">
+    <h3>Kategorien</h3>
+    <ul id="selectableCats">
       <li class=""><span class="btn"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Anfrage wird bearbeitet...</span></li>
     </ul>
   </div> <!-- /.col -->

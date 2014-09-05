@@ -31,6 +31,7 @@ addCat = (event) ->
                 root.growl "Kategorie erfolgreich erstellt.", "success"
                 $("#cat-add-form").trigger("reset")
 
+
 # Enabe multiselect to assign categories to articles
 $ ->
     $("#selectableArticles").selectable stop: ->
@@ -41,6 +42,7 @@ $ ->
             return
         return
     return
+
 
 # Post AJAX request and create table
 catsArticles = ->
@@ -53,7 +55,7 @@ catsArticles = ->
             articleItem response
             return
 
-
+# Add all articles to the list of articles
 articleItem = (data) ->
     # Remove existing rows
     $("#selectableArticles li").remove()
