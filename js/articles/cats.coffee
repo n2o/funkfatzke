@@ -2,6 +2,7 @@ root = exports ? this
 
 selectedArticles = []
 selectedCats = []
+assignedCats = []
 
 $ ->
     ### Listener ###
@@ -21,15 +22,12 @@ $ ->
             root.growl "So kann ich keine Zuordnung erstellen...", "info"
 
     $("#selectableArticles").selectable stop: ->
-        updateCatsOnArticleClick()
         selectedArticles = []
         $(".ui-selected", this).each ->
             selectedArticles.push $(this).attr("data-id")
 
         if selectedArticles.length is 1
-            console.log "one"
-        else
-            console.log "more"
+            sqlGetAssignedCats()
 
     $("#selectableCats").selectable stop: ->
         selectedCats = []
@@ -42,19 +40,19 @@ catsInit = ->
     sqlGetArticles()
     sqlGetCats()
 
+
 # remove article on click
 removeCat = (event) ->
     if confirm "Wirklich die gewählte Kategorie(n) löschen?"
         query = "DELETE FROM `Article_Category_Rel` WHERE (Category) IN ("
         queryOther = "DELETE FROM `ArticleCategories` WHERE (id) in ("
-        count = 0
         for cat in selectedCats
             query += "(#{cat}),"
             queryOther += "(#{cat}),"
         query = query[..-2] + ");"
         queryOther = queryOther[..-2] + ");"
-        sql_query query, "", "", "", false
-        sql_query queryOther, "Kategorie erfolgreich gelöscht.", "", true
+        sqlQuery query, "", "", "", false
+        sqlQuery queryOther, "Kategorie erfolgreich gelöscht.", "", true
         sqlGetCats()
 
 
@@ -82,15 +80,28 @@ assignCats = ->
     for article in selectedArticles
         for cat in selectedCats
             query += "(#{article},#{cat}),"
-        sql_query "DELETE FROM `Article_Category_Rel` WHERE Article = #{article}", "", toggleInfo, false
+        sqlQuery "DELETE FROM `Article_Category_Rel` WHERE Article = #{article}", "", toggleInfo, false
         count++
         if count == selectedArticles.length
             query = query[..-2] + ";"
-            callback = -> sql_query query, "Zuordnung erfolgreich erstellt.", toggleInfo, true
+            callback = -> sqlQuery query, "Zuordnung erfolgreich erstellt.", toggleInfo, true
             setTimeout callback, 500
 
 
-sql_query = (query, message, toggleInfo, toggle) ->
+showAssignments = (data) ->
+    assigned = []
+    for item in data
+        assigned.push item.Category
+    $("#selectableCats li").each ->
+        # Reset selected Categories
+        $(this).removeClass "ui-selected"
+        selectedCats = []
+        if $(this).attr("data-id") in assigned
+            $(this).addClass "ui-selected"
+
+
+# Submit your query as a string
+sqlQuery = (query, message, toggleInfo, toggle) ->
     $.ajax
         type: "post"
         url: "aux/articles/sql-query.php"
@@ -104,15 +115,7 @@ sql_query = (query, message, toggleInfo, toggle) ->
             $(toggleInfo).html ""
 
 
-updateCatsOnArticleClick = ->
-    $("#selectableCats li").each ->
-        # Reset selected Categories
-        $(this).removeClass "ui-selected"
-        selectedCats = []
-        #console.log $(this).attr "data-id"
-
-
-# Post AJAX request and create table
+# Post AJAX request and create list
 sqlGetArticles = ->
     $.ajax
         url: "aux/articles/sql-get-all-articles.php"
@@ -134,7 +137,7 @@ articleItem = (data) ->
         $("#selectableArticles").append content
 
 
-# Post AJAX request and create table
+# Post AJAX request and create list
 sqlGetCats = ->
     $.ajax
         url: "aux/articles/sql-get-all-cats.php"
@@ -144,6 +147,20 @@ sqlGetCats = ->
         success: (response) ->
             catItem response
         error: ->
+            root.growl "Kategorien konnten nicht abgerufen werden.", "info"
+
+# Get Categories assigned to Articles
+sqlGetAssignedCats = ->
+    $.ajax
+        url: "aux/articles/sql-get-assigned-cats.php"
+        type: "POST"
+        data: "id=" + selectedArticles[0]
+        dataType: "json"
+        success: (response) ->
+            showAssignments response
+        error: ->
+            root.growl "Zugeordnete Kategorien konnten nicht abgerufen werden.", "info"
+
 
 # Add all categories to the list of categories
 catItem = (data) ->

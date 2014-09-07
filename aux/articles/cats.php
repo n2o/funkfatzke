@@ -11,7 +11,10 @@
   <div class="col col-md-12">
     <p>
       Mehrere Artikel und Kategorien können mit gedrückter STRG /  Taste oder gedrückter linker Maustaste markiert werden.
-      Eine zuvor erstellte Zuordnung wird überschrieben.
+      Eine zuvor erstellte Zuordnung wird beim markierten Artikel überschrieben.
+    </p>
+    <p>
+      Wird nur ein Artikel ausgewählt, wird seine Zuordnung auf der rechten Seite angezeigt.
     </p>
   </div>
 </div>
