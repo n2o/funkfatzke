@@ -152,5 +152,5 @@ catItem = (data) ->
 
     # Fill list with categories
     for cat in data
-        content = "<li class='' data-id='#{cat.id}'>#{cat.Name} <a class='remove' onclick='alert(event);' style='float: right;'><i class='fa fa-minus-circle fa-lg'></i></a></li>"
+        content = "<li class='' data-id='#{cat.id}'>#{cat.Name}</li>"
         $("#selectableCats").append content

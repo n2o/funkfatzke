@@ -190,7 +190,7 @@ catItem = function(data) {
   _results = [];
   for (_i = 0, _len = data.length; _i < _len; _i++) {
     cat = data[_i];
-    content = "<li class='' data-id='" + cat.id + "'>" + cat.Name + " <a class='remove' onclick='alert(event);' style='float: right;'><i class='fa fa-minus-circle fa-lg'></i></a></li>";
+    content = "<li class='' data-id='" + cat.id + "'>" + cat.Name + "</li>";
     _results.push($("#selectableCats").append(content));
   }
   return _results;
