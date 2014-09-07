@@ -14,11 +14,17 @@ $(function() {
     return addCat();
   });
   $("#cat-remove").click(function() {
-    return removeCat();
+    if (selectedCats.length !== 0) {
+      return removeCat();
+    } else {
+      return root.growl("Bitte zuerst mindestens eine Kategorie auswählen.", "info");
+    }
   });
   $("#cat-assign").click(function() {
     if (selectedArticles.length !== 0 && selectedCats.length !== 0) {
       return assignCats();
+    } else {
+      return root.growl("So kann ich keine Zuordnung erstellen...", "info");
     }
   });
   $("#selectableArticles").selectable({
@@ -52,19 +58,21 @@ catsInit = function() {
 
 removeCat = function(event) {
   var cat, count, query, queryOther, _i, _len;
-  query = "DELETE FROM `Article_Category_Rel` WHERE (Category) IN (";
-  queryOther = "DELETE FROM `ArticleCategories` WHERE (id) in (";
-  count = 0;
-  for (_i = 0, _len = selectedCats.length; _i < _len; _i++) {
-    cat = selectedCats[_i];
-    query += "(" + cat + "),";
-    queryOther += "(" + cat + "),";
+  if (confirm("Wirklich die gewählte Kategorie(n) löschen?")) {
+    query = "DELETE FROM `Article_Category_Rel` WHERE (Category) IN (";
+    queryOther = "DELETE FROM `ArticleCategories` WHERE (id) in (";
+    count = 0;
+    for (_i = 0, _len = selectedCats.length; _i < _len; _i++) {
+      cat = selectedCats[_i];
+      query += "(" + cat + "),";
+      queryOther += "(" + cat + "),";
+    }
+    query = query.slice(0, -1) + ");";
+    queryOther = queryOther.slice(0, -1) + ");";
+    sql_query(query, "", "", "", false);
+    sql_query(queryOther, "Kategorie erfolgreich gelöscht.", "", true);
+    return sqlGetCats();
   }
-  query = query.slice(0, -1) + ");";
-  queryOther = queryOther.slice(0, -1) + ");";
-  sql_query(query, "", "", "", false);
-  sql_query(queryOther, "Kategorie erfolgreich gelöscht", "", true);
-  return sqlGetCats();
 };
 
 addCat = function(event) {

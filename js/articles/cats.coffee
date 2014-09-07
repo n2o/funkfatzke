@@ -9,11 +9,16 @@ $ ->
         addCat()
 
     $("#cat-remove").click ->
-        removeCat()
+        if selectedCats.length != 0
+            removeCat()
+        else
+            root.growl "Bitte zuerst mindestens eine Kategorie auswählen.", "info"
 
     $("#cat-assign").click ->
         if selectedArticles.length != 0 and selectedCats.length != 0
             assignCats()
+        else
+            root.growl "So kann ich keine Zuordnung erstellen...", "info"
 
     $("#selectableArticles").selectable stop: ->
         updateCatsOnArticleClick()
@@ -39,17 +44,18 @@ catsInit = ->
 
 # remove article on click
 removeCat = (event) ->
-    query = "DELETE FROM `Article_Category_Rel` WHERE (Category) IN ("
-    queryOther = "DELETE FROM `ArticleCategories` WHERE (id) in ("
-    count = 0
-    for cat in selectedCats
-        query += "(#{cat}),"
-        queryOther += "(#{cat}),"
-    query = query[..-2] + ");"
-    queryOther = queryOther[..-2] + ");"
-    sql_query query, "", "", "", false
-    sql_query queryOther, "Kategorie erfolgreich gelöscht", "", true
-    sqlGetCats()
+    if confirm "Wirklich die gewählte Kategorie(n) löschen?"
+        query = "DELETE FROM `Article_Category_Rel` WHERE (Category) IN ("
+        queryOther = "DELETE FROM `ArticleCategories` WHERE (id) in ("
+        count = 0
+        for cat in selectedCats
+            query += "(#{cat}),"
+            queryOther += "(#{cat}),"
+        query = query[..-2] + ");"
+        queryOther = queryOther[..-2] + ");"
+        sql_query query, "", "", "", false
+        sql_query queryOther, "Kategorie erfolgreich gelöscht.", "", true
+        sqlGetCats()
 
 
 # Add new category
