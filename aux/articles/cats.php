@@ -10,7 +10,8 @@
 <div class="row">
   <div class="col col-md-12">
     <p>
-      Mehrere Artikel können mit gedrückter STRG /  Taste oder gedrückter linker Maustaste markiert werden.
+      Mehrere Artikel und Kategorien können mit gedrückter STRG /  Taste oder gedrückter linker Maustaste markiert werden.
+      Eine zuvor erstellte Zuordnung wird überschrieben.
     </p>
   </div>
 </div>
@@ -26,9 +27,6 @@
     <div class="row">
       <div class="col col-md-6">
         <h3>Kategorien</h3>
-      </div>
-      <div class="col col-md-6">
-        <h3>foo</h3>
       </div>
     </div>
     <ul class="selectable" id="selectableCats">
@@ -46,11 +44,19 @@
 
 <div class="row">
   <div class="col col-md-6">
+    <h3>Kategorien hinzufügen</h3>
     <form id="cat-add-form" class="navbar-form navbar-left" style="padding-left: 0; margin-left: 0;">
       <div class="form-group">
         <input id="new-cat-name" type="text" class="form-control" placeholder="Handfunkgeräte">
       </div>
       <button id="cat-add" type="button" class="btn btn-default btn-lg">Hinzufügen</button>
     </form>
+  </div>
+  <div class="col col-md-6">
+    <h3>Kategorien löschen</h3>
+    <p>
+      Die markierten Kategorien werden beim Klick auf den Button gelöscht.
+    </p>
+    <button id="cat-remove" type="button" class="btn btn-default btn-lg">Löschen</button>
   </div>
 </div>

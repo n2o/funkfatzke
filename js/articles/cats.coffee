@@ -4,8 +4,12 @@ selectedArticles = []
 selectedCats = []
 
 $ ->
+    ### Listener ###
     $("#cat-add").click ->
         addCat()
+
+    $("#cat-remove").click ->
+        removeCat()
 
     $("#cat-assign").click ->
         if selectedArticles.length != 0 and selectedCats.length != 0
@@ -34,16 +38,18 @@ catsInit = ->
     sqlGetCats()
 
 # remove article on click
-root.removeCat = (event) ->
-    alert "Foo"
-    # id = event.target.nextSibling.innerText if confirm("Kategorie wirklich löschen?")
-    # $.ajax
-    #     type: "post"
-    #     url: "aux/articles/sql-remove-cat.php"
-    #     data: "id=" + id
-    #     success: ->
-    #         root.growl "Kategorie erfolgreich gelöscht.", "success"
-    #         sqlGetCats()
+removeCat = (event) ->
+    query = "DELETE FROM `Article_Category_Rel` WHERE (Category) IN ("
+    queryOther = "DELETE FROM `ArticleCategories` WHERE (id) in ("
+    count = 0
+    for cat in selectedCats
+        query += "(#{cat}),"
+        queryOther += "(#{cat}),"
+    query = query[..-2] + ");"
+    queryOther = queryOther[..-2] + ");"
+    sql_query query, "", "", "", false
+    sql_query queryOther, "Kategorie erfolgreich gelöscht", "", true
+    sqlGetCats()
 
 
 # Add new category
@@ -70,25 +76,25 @@ assignCats = ->
     for article in selectedArticles
         for cat in selectedCats
             query += "(#{article},#{cat}),"
-        sql_query "DELETE FROM `Article_Category_Rel` WHERE Article = #{article}", toggleInfo, false
+        sql_query "DELETE FROM `Article_Category_Rel` WHERE Article = #{article}", "", toggleInfo, false
         count++
         if count == selectedArticles.length
             query = query[..-2] + ";"
-            callback = -> sql_query query, toggleInfo, true
+            callback = -> sql_query query, "Zuordnung erfolgreich erstellt.", toggleInfo, true
             setTimeout callback, 500
 
 
-sql_query = (query, toggleInfo, toggle) ->
+sql_query = (query, message, toggleInfo, toggle) ->
     $.ajax
         type: "post"
         url: "aux/articles/sql-query.php"
         data: "query=" + query
         success: ->
             if toggle
-                root.growl "Zuordnung erfolgreich erstellt.", "success"
+                root.growl message, "success"
                 $(toggleInfo).html ""
         error: ->
-            root.growl "Es ist etwas schief gegangen...", "info"
+            root.growl "Es ist etwas schiefgegangen...", "info"
             $(toggleInfo).html ""
 
 
