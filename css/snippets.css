@@ -1,5 +1,5 @@
 /* Rotating loading icon */
-.glyphicon-refresh-animate {
+.glyphicon-refresh {
   -animation: spin .7s infinite linear;
   -webkit-animation: spin2 .7s infinite linear;
 }

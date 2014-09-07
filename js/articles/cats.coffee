@@ -11,7 +11,7 @@ catsInit = ->
     sqlGetCats()
 
 # remove article on click
-removeCat = (event) ->
+root.removeCat = (event) ->
     id = event.target.nextSibling.innerText if confirm("Kategorie wirklich löschen?")
     $.ajax
         type: "post"
@@ -19,7 +19,7 @@ removeCat = (event) ->
         data: "id=" + id
         success: ->
             root.growl "Kategorie erfolgreich gelöscht.", "success"
-            root.getList()
+            sqlGetCats()
 
 
 # Add new category
@@ -99,6 +99,6 @@ catItem = (data) ->
 
     # Fill list with categories
     for cat in data
-        content = "<li class='' data-id='#{cat.id}'>#{cat.Name}</li>"
+        content = "<li class='' data-id='#{cat.id}'>#{cat.Name} <a class='remove' onclick='removeCat(event);' style='float: right;'><i class='fa fa-minus-circle fa-lg'></i></a></li>"
         $("#selectableCats").append content
     return
