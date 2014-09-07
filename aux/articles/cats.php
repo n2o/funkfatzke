@@ -2,16 +2,8 @@
 <link rel="stylesheet" type="text/css" href="css/snippets.css">
 
 <div class="row">
-  <div class="col col-md-7">
+  <div class="col col-md-12">
     <h1>Kategorien verwalten</h1>
-  </div>
-  <div class="col col-md-5">
-    <form id="cat-add-form" class="navbar-form navbar-left">
-      <div class="form-group">
-        <input id="new-cat-name" type="text" class="form-control" placeholder="Handfunkgeräte">
-      </div>
-      <button id="cat-add" type="button" class="btn btn-default btn-lg">Hinzufügen</button>
-    </form>
   </div>
 </div>
 
@@ -31,7 +23,14 @@
     </ul>
   </div> <!-- /.col -->
   <div class="col col-md-6">
-    <h3>Kategorien</h3>
+    <div class="row">
+      <div class="col col-md-6">
+        <h3>Kategorien</h3>
+      </div>
+      <div class="col col-md-6">
+        <h3>foo</h3>
+      </div>
+    </div>
     <ul class="selectable" id="selectableCats">
       <li class=""><span class="btn"><span class="glyphicon glyphicon-refresh"></span> Anfrage wird bearbeitet...</span></li>
     </ul>
@@ -39,14 +38,19 @@
 </div> <!-- /.row -->
 
 <div class="row">
-  <div class="col">
-    <form id="cat-assign-form" class="navbar-form navbar-left">
-      <button id="cat-assign" type="button" class="btn btn-default btn-lg">Zuordnung speichern</button>
-    </form>
+  <div class="col col-md-12" style="padding: 1em;">
+    <button id="cat-assign" type="button" class="btn btn-default btn-lg">Zuordnung speichern</button>
+    <span id="assign-info"></span>
   </div>
 </div>
 
-<p id="feedback">
-  <span>Ausgewählt:</span> <span id="select-result">none</span><br><br>
-  <span>Ausgewählt:</span> <span id="select-result-cats">none</span>
-</p>
+<div class="row">
+  <div class="col col-md-6">
+    <form id="cat-add-form" class="navbar-form navbar-left" style="padding-left: 0; margin-left: 0;">
+      <div class="form-group">
+        <input id="new-cat-name" type="text" class="form-control" placeholder="Handfunkgeräte">
+      </div>
+      <button id="cat-add" type="button" class="btn btn-default btn-lg">Hinzufügen</button>
+    </form>
+  </div>
+</div>

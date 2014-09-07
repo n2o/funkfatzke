@@ -34,39 +34,38 @@
 <?php include 'modules/menu.php'; ?>
 
 <section class="main">
-    <nav>
-        <a class="show-menu"><i class="fa fa-bars fa-lg"></i></a>
-        <ul>
-            <li class="static active"><a><?php print("Artikel"); ?></a></li>
-        </ul>
-    </nav>
-    <!-- /nav -->
+  <nav>
+    <a class="show-menu"><i class="fa fa-bars fa-lg"></i></a>
+    <ul>
+      <li class="static active"><a><?php print("Artikel"); ?></a></li>
+    </ul>
+  </nav>
+  <!-- /nav -->
 
-    <div id="tabs">
-      <ul>
-        <li><a href="#list">Anzeigen</a></li>
-        <li><a href="#add">Hinzufügen</a></li>
-        <li><a href="#edit">Bearbeiten</a></li>
-        <li><a href="#cats">Kategorien</a></li>
-      </ul>
+  <div id="tabs">
+    <ul>
+      <li><a href="#list">Anzeigen</a></li>
+      <li><a href="#add">Hinzufügen</a></li>
+      <li><a href="#edit">Bearbeiten</a></li>
+      <li><a href="#cats">Kategorien</a></li>
+    </ul>
 
-      <div id="list">
-        <?php include('aux/articles/list.php'); ?>
-      </div>
-
-      <div id="add">
-        <?php include('aux/articles/add.php'); ?>
-      </div>
-
-      <div id="edit">
-        <?php include('aux/articles/edit.php'); ?>
-      </div>
-
-      <div id="cats">
-        <?php include('aux/articles/cats.php'); ?>
-      </div>
+    <div id="list">
+      <?php include('aux/articles/list.php'); ?>
     </div>
 
+    <div id="add">
+      <?php include('aux/articles/add.php'); ?>
+    </div>
+
+    <div id="edit">
+      <?php include('aux/articles/edit.php'); ?>
+    </div>
+
+    <div id="cats">
+      <?php include('aux/articles/cats.php'); ?>
+    </div>
+  </div>
 </section>
 <!-- /.main -->
 

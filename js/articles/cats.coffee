@@ -1,9 +1,32 @@
 root = exports ? this
 
+selectedArticles = []
+selectedCats = []
+
 $ ->
     $("#cat-add").click ->
         addCat()
-        return
+
+    $("#cat-assign").click ->
+        if selectedArticles.length != 0 and selectedCats.length != 0
+            assignCats()
+
+    $("#selectableArticles").selectable stop: ->
+        updateCatsOnArticleClick()
+        selectedArticles = []
+        $(".ui-selected", this).each ->
+            selectedArticles.push $(this).attr("data-id")
+
+        if selectedArticles.length is 1
+            console.log "one"
+        else
+            console.log "more"
+
+    $("#selectableCats").selectable stop: ->
+        selectedCats = []
+        $(".ui-selected", this).each ->
+            selectedCats.push $(this).attr("data-id")
+
 
 # Init function to be called when tab is active
 catsInit = ->
@@ -12,14 +35,15 @@ catsInit = ->
 
 # remove article on click
 root.removeCat = (event) ->
-    id = event.target.nextSibling.innerText if confirm("Kategorie wirklich löschen?")
-    $.ajax
-        type: "post"
-        url: "aux/articles/sql-remove-cat.php"
-        data: "id=" + id
-        success: ->
-            root.growl "Kategorie erfolgreich gelöscht.", "success"
-            sqlGetCats()
+    alert "Foo"
+    # id = event.target.nextSibling.innerText if confirm("Kategorie wirklich löschen?")
+    # $.ajax
+    #     type: "post"
+    #     url: "aux/articles/sql-remove-cat.php"
+    #     data: "id=" + id
+    #     success: ->
+    #         root.growl "Kategorie erfolgreich gelöscht.", "success"
+    #         sqlGetCats()
 
 
 # Add new category
@@ -38,24 +62,42 @@ addCat = (event) ->
                 sqlGetCats()
 
 
-# Enabe multiselect to assign categories to articles
-$ ->
-    selectedArticles = []
-    selectedCats = []
+assignCats = ->
+    toggleInfo = "#assign-info"
+    $(toggleInfo).html "<span class='btn'><span class='glyphicon glyphicon-refresh'></span> Speichere...</span>"
+    query = "INSERT INTO `Article_Category_Rel` (Article, Category) VALUES "
+    count = 0
+    for article in selectedArticles
+        for cat in selectedCats
+            query += "(#{article},#{cat}),"
+        sql_query "DELETE FROM `Article_Category_Rel` WHERE Article = #{article}", toggleInfo, false
+        count++
+        if count == selectedArticles.length
+            query = query[..-2] + ";"
+            callback = -> sql_query query, toggleInfo, true
+            setTimeout callback, 500
 
-    $("#selectableArticles").selectable stop: ->
-        result = $("#select-result").empty()
-        selectedArticles = []
-        $(".ui-selected", this).each ->
-            selectedArticles.push $(this).attr("data-id")
-            result.html selectedArticles
 
-    $("#selectableCats").selectable stop: ->
-        result = $("#select-result-cats").empty()
+sql_query = (query, toggleInfo, toggle) ->
+    $.ajax
+        type: "post"
+        url: "aux/articles/sql-query.php"
+        data: "query=" + query
+        success: ->
+            if toggle
+                root.growl "Zuordnung erfolgreich erstellt.", "success"
+                $(toggleInfo).html ""
+        error: ->
+            root.growl "Es ist etwas schief gegangen...", "info"
+            $(toggleInfo).html ""
+
+
+updateCatsOnArticleClick = ->
+    $("#selectableCats li").each ->
+        # Reset selected Categories
+        $(this).removeClass "ui-selected"
         selectedCats = []
-        $(".ui-selected", this).each ->
-            selectedCats.push $(this).attr("data-id")
-            result.html selectedCats
+        #console.log $(this).attr "data-id"
 
 
 # Post AJAX request and create table
@@ -67,7 +109,7 @@ sqlGetArticles = ->
         dataType: "json"
         success: (response) ->
             articleItem response
-            return
+
 
 # Add all articles to the list of articles
 articleItem = (data) ->
@@ -78,7 +120,6 @@ articleItem = (data) ->
     for article in data
         content = "<li class='' data-id='#{article.id}'>#{article.Name}</li>"
         $("#selectableArticles").append content
-    return
 
 
 # Post AJAX request and create table
@@ -99,6 +140,5 @@ catItem = (data) ->
 
     # Fill list with categories
     for cat in data
-        content = "<li class='' data-id='#{cat.id}'>#{cat.Name} <a class='remove' onclick='removeCat(event);' style='float: right;'><i class='fa fa-minus-circle fa-lg'></i></a></li>"
+        content = "<li class='' data-id='#{cat.id}'>#{cat.Name} <a class='remove' onclick='alert(event);' style='float: right;'><i class='fa fa-minus-circle fa-lg'></i></a></li>"
         $("#selectableCats").append content
-    return
