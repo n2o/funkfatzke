@@ -48,6 +48,7 @@
       <li><a href="#add">Hinzufügen</a></li>
       <li><a href="#edit">Bearbeiten</a></li>
       <li><a href="#cats">Kategorien</a></li>
+      <li><a href="#equip">Zubehör</a></li>
     </ul>
 
     <div id="list">
@@ -64,6 +65,10 @@
 
     <div id="cats">
       <?php include('aux/articles/cats.php'); ?>
+    </div>
+
+    <div id="equip">
+      <?php include('aux/articles/equip.php'); ?>
     </div>
   </div>
 </section>
