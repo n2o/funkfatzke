@@ -13,13 +13,15 @@ $ ->
         # Get values from form
         name = $("#name").val()
         description = $("#description").val()
-        transmission = $("#transmission").val()
         photo = $("#photo").val()
         weight = $("#weight").val()
-        channel = $("#channel").val()
         price = $("#price").val()
         price = price.replace(/,/g, ".")
         quantity = $("#quantity").val()
+        if $("#is-equipment").is ":checked"
+            is_equipment = 1
+        else
+            is_equipment = 0
 
         if name is "" or description is ""
             root.growl "Bitte alle erforderlichen Felder ausfüllen.", "info"
@@ -28,7 +30,7 @@ $ ->
             $.ajax
                 type: "post"
                 url: "aux/articles/todb.php"
-                data: "name=" + name + "&description=" + description + "&transmission=" + transmission + "&photo=" + photo + "&weight=" + weight + "&channel=" + channel + "&price=" + price + "&quantity=" + quantity
+                data: "name=" + name + "&description=" + description + "&photo=" + photo + "&weight=" + weight + "&price=" + price + "&quantity=" + quantity + "&is_equipment=" + is_equipment
                 success: ->
                     $("form").trigger "reset"
                     root.growl "Artikel erfolgreich hinzugefügt.", "success"

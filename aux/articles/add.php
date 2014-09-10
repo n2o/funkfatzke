@@ -28,12 +28,6 @@ function dialogClickEvent(event) {
         </div>
       </div>
       <div class="form-group">
-        <label for="transmission" class="col-sm-2 control-label">Übertragung</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="transmission" placeholder="DMR digital">
-        </div>
-      </div>
-      <div class="form-group">
         <label for="photo" class="col-sm-2 control-label">Foto URL</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="photo" placeholder="krasses_funkgeraet.png">
@@ -46,12 +40,6 @@ function dialogClickEvent(event) {
             <input type="number" class="form-control" id="weight" placeholder="290">
             <span class="input-group-addon">g</span>
           </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="channel" class="col-sm-2 control-label">Kanäle, mit Komma getrennt</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="channel" placeholder="136 - 174 MHz, 400 - 527 MHz">
         </div>
       </div>
       <div class="form-group">
@@ -69,6 +57,12 @@ function dialogClickEvent(event) {
           <input type="text" class="form-control" id="quantity" placeholder="10">
         </div>
       </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" id="is-equipment"> Ist dies Zubehör?
+        </label>
+      </div>
+      <br>
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">

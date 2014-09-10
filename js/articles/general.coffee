@@ -17,6 +17,10 @@ updateForm = (data) ->
     $('#quantity-edit').val(data.Quantity)
     $('#created-edit').val(data.Created)
     $('#modified-edit').val(data.Modified)
+    if data.is_equipment == "1"
+        $('input[name=is_equipment-edit]').attr "checked", true
+    else
+        $('input[name=is_equipment-edit]').attr "checked", false
 
     if photo isnt null and photo isnt "" and photo isnt undefined
         $("#show-photo-edit img").attr "src", "sites/funk/files/t-" + photo
@@ -110,9 +114,13 @@ $ ->
         if newIndex is 0
             root.getList()
 
-        # On Tab 3: Create List of Articles
+        # On Tab 3: Init Categories
         if newIndex is 3
             root.catsInit()
+
+        # On Tab 4: Init Equipment
+        if newIndex is 4
+            root.equipInit()
 
         return
     return

@@ -1,4 +1,4 @@
-<script type="text/javascript" src="js/articles/cats.js"></script>
+<script type="text/javascript" src="js/articles/equip.js"></script>
 <link rel="stylesheet" type="text/css" href="css/snippets.css">
 
 <div class="row">
@@ -32,7 +32,7 @@
         <h3>Zubehör</h3>
       </div>
     </div>
-    <ul class="selectable" id="selectableCatsEquip">
+    <ul class="selectable" id="selectableEquip">
       <li class=""><span class="btn"><span class="glyphicon glyphicon-refresh"></span> Anfrage wird bearbeitet...</span></li>
     </ul>
   </div> <!-- /.col -->

@@ -34,12 +34,6 @@ function dialogClickEventEdit(event) {
         </div>
       </div>
       <div class="form-group">
-        <label for="transmission-edit" class="col-sm-2 control-label">Übertragung</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="transmission-edit" placeholder="DMR digital">
-        </div>
-      </div>
-      <div class="form-group">
         <label for="photo-edit" class="col-sm-2 control-label">Foto URL</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="photo-edit" placeholder="krasses_funkgeraet.png">
@@ -52,12 +46,6 @@ function dialogClickEventEdit(event) {
             <input type="number" class="form-control" id="weight-edit" placeholder="290">
             <span class="input-group-addon">g</span>
           </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="channel-edit" class="col-sm-2 control-label">Kanäle, mit Komma getrennt</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="channel-edit" placeholder="136 - 174 MHz, 400 - 527 MHz">
         </div>
       </div>
       <div class="form-group">
@@ -87,6 +75,12 @@ function dialogClickEventEdit(event) {
           <input type="text" class="form-control" id="modified-edit" placeholder="" readonly>
         </div>
       </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" id="is-equipment-edit" name="is-equipment-edit"> Ist dies Zubehör?
+        </label>
+      </div>
+      <br>
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">

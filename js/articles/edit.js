@@ -13,24 +13,27 @@ $(function() {
     modal: true
   });
   $("#button-edit").click(function() {
-    var channel, description, id, name, photo, price, quantity, transmission, weight;
+    var description, id, is_equipment, name, photo, price, quantity, weight;
     id = $("#id-edit").val();
     name = $("#name-edit").val();
     description = $("#description-edit").val();
-    transmission = $("#transmission-edit").val();
     photo = $("#photo-edit").val();
-    weight = $("#weight-edit").val();
-    channel = $("#channel-edit").val();
+    weight = $("#weight").val();
     price = $("#price-edit").val();
     price = price.replace(/,/g, ".");
     quantity = $("#quantity-edit").val();
+    if ($("#is-equipment-edit").is(":checked")) {
+      is_equipment = 1;
+    } else {
+      is_equipment = 0;
+    }
     if (name === "" || description === "") {
       root.growl("Bitte alle erforderlichen Felder ausfüllen.", "info");
     } else {
       $.ajax({
         type: "post",
         url: "aux/articles/sql-update.php",
-        data: "id=" + id + "&name=" + name + "&description=" + description + "&transmission=" + transmission + "&photo=" + photo + "&weight=" + weight + "&channel=" + channel + "&price=" + price + "&quantity=" + quantity,
+        data: "id=" + id + "&name=" + name + "&description=" + description + "&photo=" + photo + "&weight=" + weight + "&price=" + price + "&quantity=" + quantity + "&is_equipment=" + is_equipment,
         success: function() {
           root.growl("Artikel erfolgreich bearbeitet.", "success");
           return root.getList();

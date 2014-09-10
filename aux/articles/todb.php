@@ -2,12 +2,11 @@
 # Get variables
 $name = $_POST['name'];
 $description = $_POST['description'];
-$transmission = $_POST['transmission'];
 $photo = $_POST['photo'];
 $weight = $_POST['weight'];
-$channel = $_POST['channel'];
 $price = $_POST['price'];
 $quantity = $_POST['quantity'];
+$is_equipment = $_POST['is_equipment'];
 
 # Include app.php for DB connection
 include("../../app.php");
@@ -15,18 +14,15 @@ include("../../app.php");
 $db = DB::get();
 
 $res = $db->prepare("INSERT INTO `Articles`
-  (Name, Description, Transmission, PhotoURL, Weight, Channel, Price, Quantity)
+  (Name, Description, PhotoURL, Weight, Price, Quantity, is_equipment)
   VALUES
-  (:name, :description, :transmission, :photo, :weight, :channel, :price, :quantity)");
+  (:name, :description, :photo, :weight, :price, :quantity, :is_equipment)");
 $res->bindParam(':name', $name, PDO::PARAM_STR, strlen($name));
 $res->bindParam(':description', $description, PDO::PARAM_STR, strlen($description));
-$res->bindParam(':transmission', $transmissions, PDO::PARAM_STR, strlen($transmission));
 $res->bindParam(':photo', $photo, PDO::PARAM_STR, strlen($photo));
 $res->bindParam(':weight', $weight, PDO::PARAM_INT);
-$res->bindParam(':channel', $channel, PDO::PARAM_STR, strlen($channel));
 $res->bindParam(':price', $price, PDO::PARAM_STR, strlen($price));
 $res->bindParam(':quantity', $quantity, PDO::PARAM_STR, strlen($quantity));
+$res->bindParam(':is_equipment', $is_equipment, PDO::PARAM_STR, strlen($is_equipment));
 $res->execute();
 ?>
-
-

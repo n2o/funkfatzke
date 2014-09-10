@@ -14,13 +14,15 @@ $ ->
         id = $("#id-edit").val()
         name = $("#name-edit").val()
         description = $("#description-edit").val()
-        transmission = $("#transmission-edit").val()
         photo = $("#photo-edit").val()
-        weight = $("#weight-edit").val()
-        channel = $("#channel-edit").val()
+        weight = $("#weight").val()
         price = $("#price-edit").val()
         price = price.replace(/,/g, ".")
         quantity = $("#quantity-edit").val()
+        if $("#is-equipment-edit").is ":checked"
+            is_equipment = 1
+        else
+            is_equipment = 0
 
         if name is "" or description is ""
             root.growl "Bitte alle erforderlichen Felder ausfüllen.", "info"
@@ -29,7 +31,7 @@ $ ->
             $.ajax
                 type: "post"
                 url: "aux/articles/sql-update.php"
-                data: "id=" + id + "&name=" + name + "&description=" + description + "&transmission=" + transmission + "&photo=" + photo + "&weight=" + weight + "&channel=" + channel + "&price=" + price + "&quantity=" + quantity
+                data: "id=" + id + "&name=" + name + "&description=" + description + "&photo=" + photo + "&weight=" + weight + "&price=" + price + "&quantity=" + quantity + "&is_equipment=" + is_equipment
                 success: ->
                     root.growl "Artikel erfolgreich bearbeitet.", "success"
                     root.getList()
