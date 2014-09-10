@@ -19,10 +19,10 @@ updateForm = function(data) {
   $('#quantity-edit').val(data.Quantity);
   $('#created-edit').val(data.Created);
   $('#modified-edit').val(data.Modified);
-  if (data.is_equipment === "1") {
-    $('input[name=is_equipment-edit]').attr("checked", true);
+  if (data.is_equipment === "1" || data.is_equipment === 1) {
+    $('input[name="is-equipment-edit"]').attr("checked", true);
   } else {
-    $('input[name=is_equipment-edit]').attr("checked", false);
+    $('input[name="is-equipment-edit"]').attr("checked", false);
   }
   if (photo !== null && photo !== "" && photo !== void 0) {
     $("#show-photo-edit img").attr("src", "sites/funk/files/t-" + photo);

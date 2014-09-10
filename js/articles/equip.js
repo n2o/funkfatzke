@@ -42,7 +42,8 @@ $(function() {
 });
 
 equipInit = function() {
-  return sqlGetArticlesEquip();
+  sqlGetArticlesEquip();
+  return sqlGetEquip();
 };
 
 assignEquip = function() {

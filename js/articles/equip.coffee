@@ -29,7 +29,7 @@ $ ->
 # Init function to be called when tab is active
 equipInit = ->
     sqlGetArticlesEquip()
-    #sqlGetEquip()
+    sqlGetEquip()
 
 
 assignEquip = ->
