@@ -78,7 +78,7 @@ sqlQuery = (query, message, toggleInfo, toggle) ->
 # Post AJAX request and create list
 sqlGetArticlesEquip = ->
     $.ajax
-        url: "aux/articles/sql-get-all-articles.php"
+        url: "aux/articles/sql-get-all-articles-no-equip.php"
         type: "POST"
         data: ""
         dataType: "json"

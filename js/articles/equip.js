@@ -111,7 +111,7 @@ sqlQuery = function(query, message, toggleInfo, toggle) {
 
 sqlGetArticlesEquip = function() {
   return $.ajax({
-    url: "aux/articles/sql-get-all-articles.php",
+    url: "aux/articles/sql-get-all-articles-no-equip.php",
     type: "POST",
     data: "",
     dataType: "json",
