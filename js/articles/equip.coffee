@@ -12,7 +12,7 @@ $ ->
         else
             root.growl "So kann ich keine Zuordnung erstellen...", "info"
 
-    $("#selectableArticles").selectable stop: ->
+    $("#selectableArticlesEquip").selectable stop: ->
         selectedArticlesEquip = []
         $(".ui-selected", this).each ->
             selectedArticlesEquip.push $(this).attr("data-id")

@@ -20,7 +20,7 @@ $(function() {
       return root.growl("So kann ich keine Zuordnung erstellen...", "info");
     }
   });
-  $("#selectableArticles").selectable({
+  $("#selectableArticlesEquip").selectable({
     stop: function() {
       selectedArticlesEquip = [];
       $(".ui-selected", this).each(function() {
