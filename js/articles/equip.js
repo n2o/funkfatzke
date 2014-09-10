@@ -155,7 +155,7 @@ sqlGetAssignedEquip = function() {
     data: "id=" + selectedArticlesEquip[0],
     dataType: "json",
     success: function(response) {
-      return showAssignments(response);
+      return showAssignmentsEquip(response);
     },
     error: function() {
       return root.growl("Zugeordnetes Zubehör konnte nicht abgerufen werden.", "info");

@@ -117,7 +117,7 @@ sqlGetAssignedEquip = ->
         data: "id=" + selectedArticlesEquip[0]
         dataType: "json"
         success: (response) ->
-            showAssignments response
+            showAssignmentsEquip response
         error: ->
             root.growl "Zugeordnetes Zubehör konnte nicht abgerufen werden.", "info"
 
