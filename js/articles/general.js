@@ -33,6 +33,14 @@ updateForm = function(data) {
   }
 };
 
+root.save_info = function(spanid) {
+  return $(spanid).html("<span class='btn'><span class='glyphicon glyphicon-refresh'></span> Speichere...</span>");
+};
+
+root.save_info_clear = function(spanid) {
+  return $(spanid).html("");
+};
+
 root.growl = function(message, type) {
   $.bootstrapGrowl(message, {
     ele: "body",

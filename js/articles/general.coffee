@@ -29,6 +29,12 @@ updateForm = (data) ->
         $("#show-photo-edit img").attr "src", ""
         $("#show-photo-edit a").attr "href", ""
 
+# Show save text while processing
+root.save_info = (spanid) ->
+    $(spanid).html "<span class='btn'><span class='glyphicon glyphicon-refresh'></span> Speichere...</span>"
+
+root.save_info_clear = (spanid) ->
+    $(spanid).html ""
 
 # OnScreen Notifications
 root.growl = (message, type) ->

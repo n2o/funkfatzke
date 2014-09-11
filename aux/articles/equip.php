@@ -10,7 +10,7 @@
 <div class="row">
   <div class="col col-md-12">
     <p>
-      Mehrere Artikel und Kategorien können mit gedrückter STRG /  Taste oder gedrückter linker Maustaste markiert werden.
+      Mehrere Artikel und Zubehörartikel können mit gedrückter STRG /  Taste oder gedrückter linker Maustaste markiert werden.
       Eine zuvor erstellte Zuordnung wird beim markierten Artikel überschrieben.
     </p>
     <p>
@@ -23,7 +23,7 @@
   <div class="col col-md-6">
     <h3>Artikel</h3>
     <ul class="selectable" id="selectableArticlesEquip">
-      <li class=""><span class="btn"><span class="glyphicon glyphicon-refresh"></span> Anfrage wird bearbeitet...</span></li>
+      <li><span class="btn"><span class="glyphicon glyphicon-refresh"></span> Anfrage wird bearbeitet...</span></li>
     </ul>
   </div> <!-- /.col -->
   <div class="col col-md-6">
@@ -33,7 +33,7 @@
       </div>
     </div>
     <ul class="selectable" id="selectableEquip">
-      <li class=""><span class="btn"><span class="glyphicon glyphicon-refresh"></span> Anfrage wird bearbeitet...</span></li>
+      <li><span class="btn"><span class="glyphicon glyphicon-refresh"></span> Anfrage wird bearbeitet...</span></li>
     </ul>
   </div> <!-- /.col -->
 </div> <!-- /.row -->

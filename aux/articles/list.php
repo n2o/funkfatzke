@@ -14,6 +14,9 @@
         </tr>
       </thead>
       <tbody id="list">
+        <tr>
+          <td><span class="btn"><span class="glyphicon glyphicon-refresh"></span> Anfrage wird bearbeitet...</span></td>
+        </tr>
       </tbody>
     </table>
   </div> <!-- /.col -->

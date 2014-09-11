@@ -29,6 +29,7 @@ $(function() {
     if (name === "" || description === "") {
       root.growl("Bitte alle erforderlichen Felder ausfüllen.", "info");
     } else {
+      $("#button").html("<span class='btn'><span class='glyphicon glyphicon-refresh'></span> Anfrage wird bearbeitet...</span>");
       $.ajax({
         type: "post",
         url: "aux/articles/todb.php",
@@ -36,7 +37,11 @@ $(function() {
         success: function() {
           $("form").trigger("reset");
           root.growl("Artikel erfolgreich hinzugefügt.", "success");
-          return root.getList();
+          root.getList();
+          return $("#button").html("Artikel hinzufügen");
+        },
+        error: function() {
+          return $("#button").html("Artikel hinzufügen");
         }
       });
     }

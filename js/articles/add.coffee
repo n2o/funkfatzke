@@ -26,6 +26,7 @@ $ ->
         if name is "" or description is ""
             root.growl "Bitte alle erforderlichen Felder ausfüllen.", "info"
         else
+            $("#button").html "<span class='btn'><span class='glyphicon glyphicon-refresh'></span> Anfrage wird bearbeitet...</span>"
             # Pass it to the database
             $.ajax
                 type: "post"
@@ -35,6 +36,9 @@ $ ->
                     $("form").trigger "reset"
                     root.growl "Artikel erfolgreich hinzugefügt.", "success"
                     root.getList()
+                    $("#button").html "Artikel hinzufügen"
+                error: ->
+                    $("#button").html "Artikel hinzufügen"
         return
 
     # Initial picture if image is available

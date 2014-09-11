@@ -49,7 +49,7 @@ equipInit = function() {
 assignEquip = function() {
   var article, callback, count, equip, query, toggleInfo, _i, _j, _len, _len1, _results;
   toggleInfo = "#equip-assign-info";
-  $(toggleInfo).html("<span class='btn'><span class='glyphicon glyphicon-refresh'></span> Speichere...</span>");
+  root.save_info(toggleInfo);
   query = "INSERT INTO `Article_Equipment_Rel` (Article, Equipment) VALUES ";
   count = 0;
   _results = [];

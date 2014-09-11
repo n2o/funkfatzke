@@ -23,6 +23,6 @@ $res->bindParam(':photo', $photo, PDO::PARAM_STR, strlen($photo));
 $res->bindParam(':weight', $weight, PDO::PARAM_INT);
 $res->bindParam(':price', $price, PDO::PARAM_STR, strlen($price));
 $res->bindParam(':quantity', $quantity, PDO::PARAM_STR, strlen($quantity));
-$res->bindParam(':is_equipment', $is_equipment, PDO::PARAM_STR, strlen($is_equipment));
+$res->bindParam(':is_equipment', $is_equipment, PDO::PARAM_INT);
 $res->execute();
 ?>

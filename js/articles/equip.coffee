@@ -34,7 +34,7 @@ equipInit = ->
 
 assignEquip = ->
     toggleInfo = "#equip-assign-info"
-    $(toggleInfo).html "<span class='btn'><span class='glyphicon glyphicon-refresh'></span> Speichere...</span>"
+    root.save_info toggleInfo
     query = "INSERT INTO `Article_Equipment_Rel` (Article, Equipment) VALUES "
     count = 0
     for article in selectedArticlesEquip

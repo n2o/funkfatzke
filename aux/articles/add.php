@@ -67,6 +67,7 @@ function dialogClickEvent(event) {
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <input type="button" id="button" class="btn btn-default" value="Artikel hinzufügen">
+          <span id="add-article-info"></span>
         </div>
       </div>
     </form>
@@ -81,7 +82,7 @@ function dialogClickEvent(event) {
     <!-- Add new picture -->
     <div id="drop" class="dropzone dark" style="min-height:220px;">
       <span class="dz-message">
-        <i class="fa fa-cloud-upload fa-4x"></i> <?php print _("Drag file here or click to upload"); ?></span>
+        <i class="fa fa-cloud-upload fa-4x"></i> Ziehe das Bild hier rein oder klicke zum Uploaden</span>
       </span>
     </div>
 
