@@ -1,22 +1,8 @@
 [
   {
-    "type":"samplepub",
-    "name":"Sample Published",
-    "desc":"A simple sample that demonstates plugins rendered at publish time.",
-    "render":"publish",
-    "config":"true"
-  },
-  {
     "type":"articlelist",
     "name":"Artikelliste",
     "desc":"Auflistung aller Artikel. Ein Filter über die Kategorie kann definiert werden.",
-    "render":"runtime",
-    "config":"true"
-  },
-  {
-    "type":"articleadd",
-    "name":"Artikel hinzufügen",
-    "desc":"Erstelle neuen Artikel.",
     "render":"runtime",
     "config":"true"
   },
