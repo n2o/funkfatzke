@@ -80,7 +80,7 @@ include 'site.php';
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right nav-pills">
-			<li class="active"><a href="index">Home</a></li><li><a href="artikel/funkgeraete">Funkgeräte</a></li><li><a href="kontakt">Kontakt</a></li>
+			<li class="active"><a href="index">Home</a></li><li><a href="artikel/funkgeraete">Funkgeräte</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="kontakt">Kontakt</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -183,7 +183,7 @@ include 'site.php';
 </header>
 
 <div id="content" class="container" role="main">
-	<div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-2"><?php print _("Funkfatzke"); ?></h1><p id="paragraph-2"><?php print _("Jippi, ein erster Entwurf!"); ?></p></div></div>
+	
 </div>
 
 <footer role="contentinfo">

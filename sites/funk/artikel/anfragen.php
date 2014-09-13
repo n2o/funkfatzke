@@ -78,7 +78,7 @@ include '../site.php';
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right nav-pills">
-			<li><a href="../index">Home</a></li><li><a href="../artikel/funkgeraete">Funkgeräte</a></li><li><a href="../kontakt">Kontakt</a></li>
+			<li><a href="../index">Home</a></li><li><a href="../artikel/funkgeraete">Funkgeräte</a></li><li><a href="../artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="../kontakt">Kontakt</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -180,7 +180,7 @@ include '../site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1409485544"><?php print _("Anfrage abschicken"); ?></h1><p id="anfragen-paragraph-1" class="hide-after-post"><?php print _("Schicken Sie uns unverbindlich und kostenfrei eine Anfrage! Wir werden unsere Bestände prüfen und uns zügig bei Ihnen melden. Bei dieser Anfrage werden alle Artikel berücksichtigt, die sich in Ihrem Warenkorb befinden."); ?></p><?php $id="p-1409562090";$type="inquiry";$name="Anfrage abschicken";$render="runtime";$config="true";include "../plugins/inquiry/render.php"; ?></div></div>
+    
 </div>
 
 <footer role="contentinfo">

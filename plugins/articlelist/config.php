@@ -1,7 +1,7 @@
 <?php
     include "../../app.php";
     $db = DB::get();
-    $res = $db->query('SELECT `Category` FROM `Articles`');
+    $res = $db->query('SELECT `Name` FROM `ArticleCategories`');
     $res = $res->fetchAll(PDO::FETCH_ASSOC);
 
     $categories = array();
@@ -21,7 +21,7 @@
     <label for="articlelist-var1" class="control-label">Kategorie:</label>
     <select id="articlelist-var1" class="form-control">
         <option value="">Ohne Einschränkung</option>
-<?php 
+<?php
     foreach($categories as $category) {
        echo '<option value="'. $category .'">'. $category .'</option>';
     }

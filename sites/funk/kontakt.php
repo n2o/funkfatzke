@@ -78,7 +78,7 @@ include 'site.php';
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right nav-pills">
-			<li><a href="index">Home</a></li><li><a href="artikel/funkgeraete">Funkgeräte</a></li><li class="active"><a href="kontakt">Kontakt</a></li>
+			<li><a href="index">Home</a></li><li><a href="artikel/funkgeraete">Funkgeräte</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li class="active"><a href="kontakt">Kontakt</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -180,11 +180,7 @@ include 'site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1409578108"><?php print _("Kontakt"); ?></h1><form id="kontakt-form-1" role="form" class="respond-form">
-	<div class="alert alert-success"><?php print _("Nachricht erfolgreich abgeschickt!"); ?></div><div class="alert alert-danger"><?php print _("You are missing required fields."); ?></div><div class="form-group" data-type="text" data-required="true"><label for="name"><?php print _("Name"); ?></label><input id="name" name="name" type="text" class="form-control" placeholder="Ihr Name"></div><div class="form-group" data-type="text" data-required="true"><label for="email"><?php print _("E-Mail"); ?></label><input id="email" name="email" type="text" class="form-control" placeholder="mail@example.com"></div><div class="form-group" data-type="text"><label for="telefon"><?php print _("Telefon"); ?></label><input id="telefon" name="telefon" type="text" class="form-control"></div><div class="form-group" data-type="textarea" data-required="true"><label for="ihre-nachricht"><?php print _("Ihre Nachricht"); ?></label><textarea id="ihre-nachricht" name="ihre-nachricht" class="form-control"></textarea>
-</div><button type="submit" class="btn btn-default btn-lg"><?php print _("Abschicken"); ?> <i class="fa fa-spinner fa-spin icon-spinner"></i></button></form>
-
-</div></div>
+    
 </div>
 
 <footer role="contentinfo">

@@ -1,1 +1,0 @@
-<div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-2">Funkfatzke</h1><p id="paragraph-2">Jippi, ein erster Entwurf!</p></div></div>

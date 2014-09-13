@@ -78,7 +78,7 @@ include 'site.php';
 	  
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-right nav-pills">
-			<li><a href="index">Home</a></li><li><a href="artikel/funkgeraete">Funkgeräte</a></li><li><a href="kontakt">Kontakt</a></li>
+			<li><a href="index">Home</a></li><li><a href="artikel/funkgeraete">Funkgeräte</a></li><li><a href="artikel/handfunkgeraete">Handfunkgeräte</a></li><li><a href="kontakt">Kontakt</a></li>
           	<li class="nav-search dropdown"> <!-- .open to show -->
 	<form class="respond-search" data-for="resultsmenu">
       <div class="input-group">
@@ -180,7 +180,7 @@ include 'site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1409578060"><?php print _("Über uns"); ?></h1><p id="p-1409578060"><?php print _("Hier wird bald ein Text über uns stehen. Oder die Seite wird gelöscht... Mal schauen."); ?></p></div></div>
+    
 </div>
 
 <footer role="contentinfo">
