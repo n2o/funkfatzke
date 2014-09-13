@@ -180,7 +180,7 @@ include '../site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1410449736"><?php print _("Handfunkgeräte"); ?></h1><?php $id="p-1410449742";$type="articlelist";$name="Artikelliste";$render="runtime";$config="true";include "../plugins/articlelist/render.php"; ?></div></div>
+    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1410449736"><?php print _("Handfunkgeräte"); ?></h1><?php $id="p-1410449742";$var1="Handfunkgeräte";$type="articlelist";$name="Artikelliste";$render="runtime";$config="true";include "../plugins/articlelist/render.php"; ?></div></div>
 </div>
 
 <footer role="contentinfo">

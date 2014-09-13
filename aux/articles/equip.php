@@ -10,7 +10,7 @@
 <div class="row">
   <div class="col col-md-12">
     <p>
-      Mehrere Artikel und Zubehörartikel können mit gedrückter STRG /  Taste oder gedrückter linker Maustaste markiert werden.
+      Mehrere Artikel und Zubehörartikel können mit gedrückter STRG / CMD Taste oder gedrückter linker Maustaste markiert werden.
       Eine zuvor erstellte Zuordnung wird beim markierten Artikel überschrieben.
     </p>
     <p>
