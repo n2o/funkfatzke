@@ -9,6 +9,16 @@ $price = $_POST['price'];
 $quantity = $_POST['quantity'];
 $is_equipment = $_POST['is_equipment'];
 
+if ($weight == "") {
+    $weight = 0;
+}
+if ($price == "") {
+    $price = 0;
+}
+if ($quantity == "") {
+    $quantity = 0;
+}
+
 # Include app.php for DB connection
 include("../../app.php");
 
