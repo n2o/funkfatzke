@@ -1,9 +1,9 @@
-<?php 
+<?php
   include("../../../app.php");
   $db = DB::get();
   if (isset($var1) and $var1 != '') {
     # Sanitize input
-    $res = $db->prepare('SELECT * FROM `Articles` WHERE `Category` LIKE :category ORDER BY Name');
+    $res = $db->prepare('SELECT * FROM `Articles` JOIN `Article_Category_Rel` ON Article_Category_Rel.Article=Articles.id WHERE Article_Category_Rel.Category=:category');
     $res->bindParam(':category', $var1, PDO::PARAM_STR, strlen($var1));
     $res->execute();
   } else {

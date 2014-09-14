@@ -1,19 +1,18 @@
 <?php
     include "../../app.php";
     $db = DB::get();
-    $res = $db->query('SELECT `Name` FROM `ArticleCategories`');
+    $res = $db->query('SELECT `id`, `Name` FROM `ArticleCategories`');
     $res = $res->fetchAll(PDO::FETCH_ASSOC);
 
     $categories = array();
 
     # Get all categories
     foreach ($res as $cats) {
-        foreach ($cats as $cat => $val)
-            array_push($categories, $val);
+        array_push($categories, $cats);
     }
 
     # Make them unique
-    $categories = array_unique($categories);
+    #$categories = array_unique($categories);
 
 ?>
 
@@ -22,8 +21,8 @@
     <select id="articlelist-var1" class="form-control">
         <option value="">Ohne Einschränkung</option>
 <?php
-    foreach($categories as $category) {
-       echo '<option value="'. $category .'">'. $category .'</option>';
+    foreach($categories as $cat) {
+       echo '<option value="'. $cat["id"] .'">'. $cat["Name"] .'</option>';
     }
 ?>
     </select>

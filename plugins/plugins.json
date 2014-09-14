@@ -1,23 +1,23 @@
 [
   {
-    "type":"articlelist",
-    "name":"Artikelliste",
-    "desc":"Auflistung aller Artikel. Ein Filter über die Kategorie kann definiert werden.",
-    "render":"runtime",
-    "config":"true"
+    "type": "articlesingle",
+    "name": "Einzelner Artikel",
+    "desc": "Details zu Artikel inkl. Funktion ihn zum Warenkorb hinzuzufügen.",
+    "render": "runtime",
+    "config": "true"
   },
   {
-    "type":"inquiry",
-    "name":"Anfrage abschicken",
-    "desc":"Erzeugt ein Formular und schickt die Anfrage ab.",
-    "render":"runtime",
-    "config":"true"
+    "type": "articlelist",
+    "name": "Artikelliste",
+    "desc": "Auflistung aller Artikel. Ein Filter über die Kategorie kann definiert werden.",
+    "render": "runtime",
+    "config": "true"
   },
   {
-    "type":"articlesingle",
-    "name":"Einzelner Artikel",
-    "desc":"Erzeuge Formular für einen einzelnen Artikel, um ihn in den Warenkorb hinzuzufügen.",
-    "render":"runtime",
-    "config":"true"
+    "type": "inquiry",
+    "name": "Anfrage abschicken",
+    "desc": "Erzeugt ein Formular und schickt die Anfrage ab.",
+    "render": "runtime",
+    "config": "true"
   }
 ]
