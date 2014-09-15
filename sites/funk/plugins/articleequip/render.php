@@ -3,7 +3,7 @@
   $db = DB::get();
 
   # Get all categories and create a map Name => id
-  $equips = $db->prepare("SELECT id, Name FROM `Articles` WHERE is_equipment=1");
+  $equips = $db->prepare("SELECT id, Name FROM `Articles` WHERE is_equipment=0");
   $equips->execute();
   $equips = $equips->fetchAll(PDO::FETCH_ASSOC);
   $equipsmap = Array();
@@ -12,10 +12,9 @@
   }
 
   if (isset($var1) and $var1 != '') {
-    var_dump($equipsmap);
     $equipment = $equipsmap[$var1];
     # Sanitize input
-    $res = $db->prepare('SELECT * FROM `Articles` JOIN `Article_Equipment_Rel` ON Article_Equipment_Rel.Article=Articles.id WHERE Article_Equipment_Rel.Equipment=:equipment');
+    $res = $db->prepare('SELECT * FROM Articles JOIN Article_Equipment_Rel ON Article_Equipment_Rel.Equipment=Articles.id WHERE Article=:equipment');
     $res->bindParam(':equipment', $equipment, PDO::PARAM_STR, strlen($equipment));
     $res->execute();
     $articles = $res->fetchAll(PDO::FETCH_ASSOC);
