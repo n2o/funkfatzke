@@ -1,10 +1,21 @@
 <?php
   include("../../../app.php");
   $db = DB::get();
+
+  # Get all categories and create a map Name => id
+  $cats = $db->prepare("SELECT id, Name FROM `ArticleCategories`");
+  $cats->execute();
+  $cats = $cats->fetchAll(PDO::FETCH_ASSOC);
+  $catsmap = Array();
+  foreach ($cats as $cat) {
+    $catsmap[$cat["Name"]] = $cat["id"];
+  }
+
   if (isset($var1) and $var1 != '') {
+    $category = $catsmap[$var1];
     # Sanitize input
     $res = $db->prepare('SELECT * FROM `Articles` JOIN `Article_Category_Rel` ON Article_Category_Rel.Article=Articles.id WHERE Article_Category_Rel.Category=:category');
-    $res->bindParam(':category', $var1, PDO::PARAM_STR, strlen($var1));
+    $res->bindParam(':category', $category, PDO::PARAM_STR, strlen($category));
     $res->execute();
   } else {
     $res = $db->query('SELECT * FROM `Articles` ORDER BY Name');

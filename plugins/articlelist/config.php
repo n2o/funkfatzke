@@ -10,10 +10,6 @@
     foreach ($res as $cats) {
         array_push($categories, $cats);
     }
-
-    # Make them unique
-    #$categories = array_unique($categories);
-
 ?>
 
 <div class="form-group">
@@ -22,7 +18,8 @@
         <option value="">Ohne Einschränkung</option>
 <?php
     foreach($categories as $cat) {
-       echo '<option value="'. $cat["id"] .'">'. $cat["Name"] .'</option>';
+        var_dump($cat);
+        echo '<option value="'. $cat["id"] .'">'. $cat["Name"] .'</option>';
     }
 ?>
     </select>
