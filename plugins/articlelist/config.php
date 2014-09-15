@@ -1,7 +1,7 @@
 <?php
     include "../../app.php";
     $db = DB::get();
-    $res = $db->query('SELECT `id`, `Name` FROM `ArticleCategories`');
+    $res = $db->query('SELECT `Name` FROM `ArticleCategories`');
     $res = $res->fetchAll(PDO::FETCH_ASSOC);
 
     $categories = array();
@@ -18,8 +18,7 @@
         <option value="">Ohne Einschränkung</option>
 <?php
     foreach($categories as $cat) {
-        var_dump($cat);
-        echo '<option value="'. $cat["id"] .'">'. $cat["Name"] .'</option>';
+        echo '<option>'. $cat["Name"] .'</option>';
     }
 ?>
     </select>

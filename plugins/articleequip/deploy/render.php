@@ -3,24 +3,25 @@
   $db = DB::get();
 
   # Get all categories and create a map Name => id
-  $cats = $db->prepare("SELECT id, Name FROM `ArticleCategories`");
-  $cats->execute();
-  $cats = $cats->fetchAll(PDO::FETCH_ASSOC);
-  $catsmap = Array();
-  foreach ($cats as $cat) {
-    $catsmap[$cat["Name"]] = $cat["id"];
+  $equips = $db->prepare("SELECT id, Name FROM `Articles` WHERE is_equipment=1");
+  $equips->execute();
+  $equips = $equips->fetchAll(PDO::FETCH_ASSOC);
+  $equipsmap = Array();
+  foreach ($equips as $equip) {
+    $equipsmap[$equip["Name"]] = $equip["id"];
   }
 
   if (isset($var1) and $var1 != '') {
-    $category = $catsmap[$var1];
+    var_dump($equipsmap);
+    $equipment = $equipsmap[$var1];
     # Sanitize input
-    $res = $db->prepare('SELECT * FROM `Articles` JOIN `Article_Category_Rel` ON Article_Category_Rel.Article=Articles.id WHERE Article_Category_Rel.Category=:category');
-    $res->bindParam(':category', $category, PDO::PARAM_STR, strlen($category));
+    $res = $db->prepare('SELECT * FROM `Articles` JOIN `Article_Equipment_Rel` ON Article_Equipment_Rel.Article=Articles.id WHERE Article_Equipment_Rel.Equipment=:equipment');
+    $res->bindParam(':equipment', $equipment, PDO::PARAM_STR, strlen($equipment));
     $res->execute();
+    $articles = $res->fetchAll(PDO::FETCH_ASSOC);
   } else {
-    $res = $db->query('SELECT * FROM `Articles` WHERE is_equipment=0 ORDER BY Name');
+    echo "An error occured.";
   }
-  $articles = $res->fetchAll(PDO::FETCH_ASSOC);
 
   function seoUrl($string) {
     //Lower case everything

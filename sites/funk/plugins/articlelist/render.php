@@ -18,7 +18,7 @@
     $res->bindParam(':category', $category, PDO::PARAM_STR, strlen($category));
     $res->execute();
   } else {
-    $res = $db->query('SELECT * FROM `Articles` ORDER BY Name');
+    $res = $db->query('SELECT * FROM `Articles` WHERE is_equipment=0 ORDER BY Name');
   }
   $articles = $res->fetchAll(PDO::FETCH_ASSOC);
 

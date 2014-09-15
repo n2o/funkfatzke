@@ -14,6 +14,13 @@
     "config": "true"
   },
   {
+    "type":"articleequip",
+    "name":"Zubehör für Artikel",
+    "desc":"Generiert einen Liste, welche die Zubehörartikel für einen bestimmten Artikel anzeigt.",
+    "render":"runtime",
+    "config":"true"
+  },
+  {
     "type": "inquiry",
     "name": "Anfrage abschicken",
     "desc": "Erzeugt ein Formular und schickt die Anfrage ab.",
