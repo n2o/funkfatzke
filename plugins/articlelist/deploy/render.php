@@ -66,7 +66,7 @@
     print("<tr class='shelf-item'>");
 
     if(!empty($article['PhotoURL'])) {
-      print("<td class='articlelist'><img class='articlelist' src='../files/t-".$article['PhotoURL']."'><span class='shelf-duration' style='display:none;'><input type='number' value='1'></span></td>");
+      print("<td class='articlelist'><a href='".$link."'><img class='articlelist' src='../files/t-".$article['PhotoURL']."'></a><span class='shelf-duration' style='display:none;'><input type='number' value='1'></span></td>");
     } else {
       print("<td><span class='shelf-duration' style='display:none;'><input type='number' value='1'></span></td>");
     }
