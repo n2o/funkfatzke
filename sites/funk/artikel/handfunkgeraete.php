@@ -57,7 +57,7 @@ include '../site.php';
     
 </head>
 
-<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53f74de924d0b" data-pagefriendlyid="handfunkgeraete" data-pagetypeuniqid="53ec8ee686b46" data-api="http://n2o.local/funkfatzke" id="handfunkgeraete">
+<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53f74de924d0b" data-pagefriendlyid="handfunkgeraete" data-pagetypeuniqid="53ec8ee686b46" data-api="https://christian-meter.de/funkfatzke" id="handfunkgeraete">
 
 <header role="banner">
 
@@ -180,7 +180,7 @@ include '../site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1410449736"><?php print _("Handfunkgeräte"); ?></h1><?php $id="p-1410449742";$var1="Handfunkgeräte";$type="articlelist";$name="Artikelliste";$render="runtime";$config="true";include "../plugins/articlelist/render.php"; ?></div></div>
+    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1410794170"><?php print _("Handfunkgeräte"); ?></h1><?php $id="p-1410794185";$var1="Handfunkgeräte";$type="articlelist";$name="Artikelliste";$render="runtime";$config="true";include "../plugins/articlelist/render.php"; ?></div></div>
 </div>
 
 <footer role="contentinfo">
