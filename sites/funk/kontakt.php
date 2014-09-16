@@ -57,7 +57,7 @@ include 'site.php';
     
 </head>
 
-<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53fc461fed991" data-pagefriendlyid="kontakt" data-pagetypeuniqid="-1" data-api="http://n2o.local/funkfatzke" id="kontakt">
+<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53fc461fed991" data-pagefriendlyid="kontakt" data-pagetypeuniqid="-1" data-api="https://christian-meter.de/funkfatzke" id="kontakt">
 
 <header role="banner">
 
@@ -180,7 +180,7 @@ include 'site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1410629068"><?php print _("Kontakt"); ?></h1><p id="p-1410629068"></p></div></div>
+    <div id="block-1" class="block row" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1410794260"><?php print _("Kontakt"); ?></h1><p id="p-1410794260"></p></div></div>
 </div>
 
 <footer role="contentinfo">

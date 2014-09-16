@@ -1,1 +1,1 @@
-<div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1410629068">Kontakt</h1><p id="p-1410629068"></p></div></div>
+<div id="block-1" class="block row" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1410794260">Kontakt</h1><p id="p-1410794260"></p></div></div>
