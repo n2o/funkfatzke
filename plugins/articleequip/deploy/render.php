@@ -19,17 +19,17 @@
     $res->execute();
     $articles = $res->fetchAll(PDO::FETCH_ASSOC);
   } else {
-    echo "An error occured.";
+    echo "<blink>Es wurde kein Artikel ausgewählt, für den Zubehör angezeigt werden soll.</blink>";
   }
 
   function seoUrl($string) {
-    //Lower case everything
+    # Lower case everything
     $string = strtolower($string);
-    //Make alphanumeric (removes all other characters)
+    # Make alphanumeric (removes all other characters)
     $string = preg_replace("/[^a-z0-9_\s-]/", "", $string);
-    //Clean up multiple dashes or whitespaces
+    # Clean up multiple dashes or whitespaces
     $string = preg_replace("/[\s-]+/", " ", $string);
-    //Convert whitespaces and underscore to dash
+    # Convert whitespaces and underscore to dash
     $string = preg_replace("/[\s_]/", "-", $string);
     return $string;
   }
@@ -42,14 +42,14 @@
     <div class="col-md-4">
       <p>
         <label for="amount" class="control-label shelf-duration">Anzahl der Miettage:</label>
-        <input type="text" id="amount" readonly style="border:0; font-weight:bold;">
+        <input type="text" class="amount" readonly style="border:0; font-weight:bold;">
       </p>
-      <div id="slider"></div>
+      <div class="slider"></div>
     </div>
   </div>
 </div>
 
-<table id="articles" class="table table-striped table-hover table-condensed">
+<table id="articleEquip" class="table table-striped table-hover table-condensed">
   <thead>
     <tr>
       <th></th>

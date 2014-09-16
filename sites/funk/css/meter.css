@@ -119,9 +119,11 @@ span.shelf-duration > input {
 .form-control::-webkit-input-placeholder {
   color: lightgrey;
 }
+#articleEquip > tbody > tr > td.articlelist > a > img,
 #articles > tbody > tr > td.articlelist > a > img {
   max-width: 100px;
 }
+#articleEquip > tbody > tr > td.articlelist,
 #articles > tbody > tr > td.articlelist {
   width: 100px;
 }

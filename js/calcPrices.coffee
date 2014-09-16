@@ -19,29 +19,33 @@ $ ->
             i++
         return
 
-    $("#slider").slider
-        range: "max"
-        min: 1
-        max: 30
-        value: 1
-        slide: (event, ui) -> # on change do:
-            if ui.value is 1
-                $("#amount").val ui.value + " Tag"
-            else
-                $("#amount").val ui.value + " Tage"
+    $(".slider").each ->
+        $(this).slider
+            range: "max"
+            width: 200
+            min: 1
+            max: 30
+            value: 1
+            slide: (event, ui) -> # on change do:
+                if ui.value is 1
+                    $(".amount").val ui.value + " Tag"
+                else
+                    $(".amount").val ui.value + " Tage"
 
-            $(".shelf-price").each (index) ->
-                price = discountValues[index][ui.value - 1]
-                $(this).html price + " €"
-                $(this).attr "data-price", price
-                return
+                $(".shelf-price").each (index) ->
+                    price = discountValues[index][ui.value - 1]
+                    $(this).html price + " €"
+                    $(this).attr "data-price", price
 
-            $(".shelf-duration").each (index) ->
-                $(this).find("input").val(ui.value)
+                $(".shelf-duration").each (index) ->
+                    $(this).find("input").val(ui.value)
 
-            return
+                $(".slider").each ->
+                    $(this).slider "option", "value", ui.value
 
-    $("#amount").val $("#slider").slider("value") + " Tag"   # write initial value
+
+
+    $(".amount").val $(".slider").slider("value") + " Tag"   # write initial value
 
     return
 
