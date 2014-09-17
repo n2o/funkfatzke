@@ -27,7 +27,7 @@
   </div>
 </div>
 
-<table id="articles" class="table table-striped table-hover table-condensed table-price-cart">
+<table id="articles" class="table table-striped table-hover table-condensed">
   <thead>
     <tr>
       <th>Name</th>

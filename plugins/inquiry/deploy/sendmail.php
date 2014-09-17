@@ -10,6 +10,7 @@ $city = $_POST["city"];
 $phone = $_POST["phone"];
 $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 $comment = $_POST["comment"];
+$recipient = filter_var($_POST['recipient'], FILTER_VALIDATE_EMAIL);
 
 # Get complete JSON String and convert first layer to array
 $localStorage = json_decode($_POST["localStorage"], true);
@@ -18,13 +19,7 @@ $localStorage = json_decode($_POST["localStorage"], true);
 $articles = json_decode($localStorage["respond-cart"], true);
 
 # Define some mailing stuff
-if (isset($var1)) {
-    $recipient = filter_var($var1, FILTER_VALIDATE_EMAIL);  # from admin panel
-} else {
-    $recipient = "cmeter@googlemail.com";
-}
 $subject = "Funkfatzke - Anfrage ".$company;
-
 $content =
 "
 <!DOCTYPE html>
