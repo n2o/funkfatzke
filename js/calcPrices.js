@@ -4,21 +4,23 @@ $(function() {
   discount = 5;
   discountValues = new Array();
   $(".shelf-price").each(function(index) {
-    var current, i, temp;
+    var current, i, temp, _results;
     current = parseFloat($(this).text().slice(0, -2)).toFixed(2);
     $(this).html(current + " €");
     discountValues[index] = new Array();
     discountValues[index][0] = current;
     temp = 0;
     i = 1;
+    _results = [];
     while (i < 30) {
       if (i === 5) {
         discount = discount / 1.5;
       }
       temp = discountValues[index][i - 1] * (1 - discount / 100);
       discountValues[index][i] = temp.toFixed(2);
-      i++;
+      _results.push(i++);
     }
+    return _results;
   });
   $(".slider").each(function() {
     return $(this).slider({
@@ -33,6 +35,7 @@ $(function() {
         } else {
           $(".amount").val(ui.value + " Tage");
         }
+        localStorage.setItem("duration", ui.value);
         $(".shelf-price").each(function(index) {
           var price;
           price = discountValues[index][ui.value - 1];
@@ -48,5 +51,5 @@ $(function() {
       }
     });
   });
-  $(".amount").val($(".slider").slider("value") + " Tag");
+  return $(".amount").val($(".slider").slider("value") + " Tag");
 });

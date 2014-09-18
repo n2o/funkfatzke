@@ -17,7 +17,7 @@ $ ->
             temp = discountValues[index][i - 1] * (1 - discount / 100)
             discountValues[index][i] = temp.toFixed(2)
             i++
-        return
+
 
     $(".slider").each ->
         $(this).slider
@@ -32,6 +32,9 @@ $ ->
                 else
                     $(".amount").val ui.value + " Tage"
 
+                # Write to localstorage
+                localStorage.setItem "duration", ui.value
+
                 $(".shelf-price").each (index) ->
                     price = discountValues[index][ui.value - 1]
                     $(this).html price + " €"
@@ -43,9 +46,4 @@ $ ->
                 $(".slider").each ->
                     $(this).slider "option", "value", ui.value
 
-
-
     $(".amount").val $(".slider").slider("value") + " Tag"   # write initial value
-
-    return
-
