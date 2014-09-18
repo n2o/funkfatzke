@@ -18,6 +18,29 @@ $ ->
             discountValues[index][i] = temp.toFixed(2)
             i++
 
+    updatePrice = (duration) ->
+        $(".shelf-price").each (index) ->
+            price = discountValues[index][duration - 1]
+            $(this).html price + " €"
+            $(this).attr "data-price", price
+
+        $(".shelf-duration").each (index) ->
+            $(this).find("input").val(duration)
+
+
+    # Get duration from localstorage
+    if not localStorage.duration
+        storageDuration = 1
+    else
+        storageDuration = localStorage.duration
+
+    if storageDuration > 1
+        $(".amount").val storageDuration + " Tage"
+    else
+        $(".amount").val storageDuration + " Tag"
+
+    # Update prices
+    updatePrice storageDuration
 
     $(".slider").each ->
         $(this).slider
@@ -25,7 +48,7 @@ $ ->
             width: 200
             min: 1
             max: 30
-            value: 1
+            value: storageDuration
             slide: (event, ui) -> # on change do:
                 if ui.value is 1
                     $(".amount").val ui.value + " Tag"
@@ -35,15 +58,7 @@ $ ->
                 # Write to localstorage
                 localStorage.setItem "duration", ui.value
 
-                $(".shelf-price").each (index) ->
-                    price = discountValues[index][ui.value - 1]
-                    $(this).html price + " €"
-                    $(this).attr "data-price", price
-
-                $(".shelf-duration").each (index) ->
-                    $(this).find("input").val(ui.value)
+                updatePrice ui.value
 
                 $(".slider").each ->
                     $(this).slider "option", "value", ui.value
-
-    $(".amount").val $(".slider").slider("value") + " Tag"   # write initial value

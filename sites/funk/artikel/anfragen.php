@@ -180,7 +180,7 @@ include '../site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1410794525"><?php print _("Anfrage abschicken"); ?></h1><?php $id="p-1410794545";$var1="gblauel@gmx.de";$type="inquiry";$name="Anfrage abschicken";$render="runtime";$config="true";include "../plugins/inquiry/render.php"; ?></div></div>
+    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1410794525"><?php print _("Anfrage abschicken"); ?></h1><?php $id="p-1410794545";$var1="info@christian-meter.de";$type="inquiry";$name="Anfrage abschicken";$render="runtime";$config="true";include "../plugins/inquiry/render.php"; ?></div></div>
 </div>
 
 <footer role="contentinfo">
