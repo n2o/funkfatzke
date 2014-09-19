@@ -40,12 +40,8 @@
 <section class="main">
 
     <nav>
-        <a class="show-menu"><i class="fa fa-bars fa-lg"></i></a>
-
-        <ul>
-            <li class="static active"><a><?php print _("Profile"); ?></a></li>
-        </ul>
-
+        <a class="show-menu"></a>
+        <h1><?php print _("Profile"); ?></h1>
     </nav>
     <!-- /nav -->
 
@@ -56,15 +52,15 @@
 
         <div class="profile-readable">
 
-        <h2><span data-bind="text: firstName"></span> <span data-bind="text: lastName"></span></h2>
+            <h2><span data-bind="text: firstName"></span> <span data-bind="text: lastName"></span></h2>
 
-        <p>
-            <span data-bind="text: email"></span>
-        </p>
+            <p>
+                <span data-bind="text: email"></span>
+            </p>
 
-        <p>
-            <a data-bind="click: $parent.showEditDialog">Edit Profile</a>
-        </p>
+            <p>
+                <a data-bind="click: $parent.showEditDialog">Edit Profile</a>
+            </p>
 
         </div>
 
