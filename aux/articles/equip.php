@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col col-md-12">
-    <h1>Zubehör verwalten</h1>
+    <h1 class="articles">Zubehör verwalten</h1>
   </div>
 </div>
 
