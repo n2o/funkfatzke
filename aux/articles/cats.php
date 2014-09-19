@@ -47,7 +47,7 @@
 
 <div class="row">
   <div class="col col-md-6">
-    <h3>Kategorien hinzufügen</h3>
+    <h3>Kategorie hinzufügen</h3>
     <form id="cat-add-form" class="navbar-form navbar-left" style="padding-left: 0; margin-left: 0;">
       <div class="form-group">
         <input id="new-cat-name" type="text" class="form-control" placeholder="Handfunkgeräte">
