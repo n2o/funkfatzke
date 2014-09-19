@@ -1,16 +1,16 @@
-<?php	
-	include 'app.php'; // import php files
+<?php
+    include 'app.php'; // import php files
 
-	$authUser = new AuthUser(); // get auth user
-	$authUser->Authenticate('Admin');
-	
-	Utilities::SetLanguage($authUser->Language); // set language
+    $authUser = new AuthUser(); // get auth user
+    $authUser->Authenticate('Admin');
+
+    Utilities::SetLanguage($authUser->Language); // set language
 ?>
 <!DOCTYPE html>
 <html lang="<?php print str_replace('_', '-', $authUser->Language) ?>">
 
 <head>
-	
+
 <title><?php print _("Color Configuration"); ?>&mdash;<?php print $authUser->SiteName; ?></title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -23,7 +23,7 @@
 </head>
 
 <body id="colors-page" data-currpage="colors">
-	
+
 <?php include 'modules/menu.php'; ?>
 
 <!-- messages -->
@@ -35,22 +35,35 @@
 <section class="main">
 
     <nav>
-        <a class="show-menu"><i class="fa fa-bars fa-lg"></i></a>
-        
-		 <ul>
-		    <li class="static"><a href="branding"><?php print _("Branding"); ?></a></li>
-		    <li class="static active"><a href="colors"><?php print _("Colors"); ?></a></li>
-        </ul>
-		
-    </nav>
-	
-	<p data-bind="visible: filesLoading()" class="list-loading"><i class="fa fa-spinner fa-spin"></i> <?php print _("Loading..."); ?></p>
-	
-	<p data-bind="css: {'hidden': (showInstructions()==false)}" class="hidden list-instructions"><?php print _("No color variables (e.g. @background-color: #888;) available for your themes.  Learn m"); ?></p>
+        <a class="show-menu"></a>
 
-	<form class="form-vertical">
-		<div id="variable-def"></div>
-	</form>
+        <h1><?php print _("Colors"); ?></h1>
+    </nav>
+
+    <menu>
+
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="page-types" data-toggle="dropdown">
+            <?php print _("Colors"); ?>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="branding"><?php print _("Branding"); ?></a></li>
+            <li><a href="colors"><?php print _("Colors"); ?></a></li>
+          </ul>
+
+        </div>
+
+
+   </menu>
+
+    <p data-bind="visible: filesLoading()" class="list-loading"><i class="fa fa-spinner fa-spin"></i> <?php print _("Loading..."); ?></p>
+
+    <p data-bind="css: {'hidden': (showInstructions()==false)}" class="hidden list-instructions"><?php print _("No color variables (e.g. @background-color: #888;) available for your themes.  Learn m"); ?></p>
+
+    <form class="form-vertical">
+        <div id="variable-def"></div>
+    </form>
 
     <div class="actions">
         <button class="primary-button" data-bind="click: save"><?php print _("Save"); ?></button>

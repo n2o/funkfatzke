@@ -1,19 +1,19 @@
 .dropzone{
     position: absolute;
-    top: 50px;
+    top: 65px;
     right: 0;
     text-align: center;
     z-index: 100;
     width: 200px;
     height: 100%;
 }
-    
+
 
 .dropzone .dz-message{
   cursor: pointer;
   display: block;
   color: #888;
-  padding: 0 20px;	
+  padding: 0 20px;
   color: #fff;
   font-family: "Roboto Condensed", sans-serif;
   font-size: 1.1em;
@@ -33,21 +33,21 @@
     .dropzone.dark .dz-message, .dropzone.dark .dz-message i{
         color: #888;
     }
-    
+
     .dropzone:hover .dz-message, .dropzone:hover .dz-message i{
-        color: #ff9900;   
+        color: #ff9900;
     }
-    
+
     /* edit-mode */
     .dropzone.edit-mode .dz-message, .dropzone.edit-mode .dz-message i{
 	    color: #ff9900;
     }
-    
+
     .dropzone.edit-mode{
 	    background-color: #ffe5bf;
     }
-    
-    
+
+
 /* The MIT License */
 .dropzone,
 .dropzone *,

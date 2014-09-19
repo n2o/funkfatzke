@@ -1,6 +1,6 @@
 /* begin list */
 div.list.has-dropzone{
-    margin-right: 200px;    
+    margin-right: 200px;
     border-right: 1px solid #eee;
     min-height: 400px;
 }
@@ -47,7 +47,7 @@ div.listItem .draft-tag{
 	position: absolute;
 	top: 19px;
 	right: 85px;
-	font-size: 0.7em;
+	font-size: 11px;
 	text-transform: uppercase;
 	color: #fff;
 	background-color: #FF9900;
@@ -82,7 +82,7 @@ div.placeholder{
 	height: 40px;
 	border: 1px solid #fbec5d !important;
 	background: #fbec5d !important;
-} 
+}
 
 div.listItem.sortable{
 	padding-left: 40px;
@@ -118,7 +118,7 @@ div.listItem span.image{
 	position: absolute;
 	top: 20px;
 	left: 20px;
-} 
+}
 
 div.listItem span.image img{
     width: 75px;
@@ -138,7 +138,7 @@ div#pageFileList div.listItem span.icon{
 div.listItem a.switchSite{
 	position: absolute;
 	top: 15px;
-	right: 15px;  
+	right: 15px;
 	display: block;
 	width: 20px;
 	height: 50px;
@@ -289,7 +289,7 @@ div#imageList div.listItem img{
 .edit-mode .edit, .edit-mode .remove{
 	display: none !important;
 }
-	
+
 
 /* handles statuses */
 div.listItem span.status{
@@ -303,27 +303,27 @@ div.listItem span.status{
 }
 
 	div.listItem span.status i.published{
-		color: #7ec57e;
+		color: #7EA501;
 		font-size: 20px;
 	}
-	
+
 	div.listItem span.status i.not-published{
 		color: #A4110A;
 		font-size: 20px;
 	}
-	
+
 	div.listItem span.status.published i.not-published{
 		display: none;
 	}
-	
+
 	div.listItem span.status.not-published i.published{
 		display: none;
 	}
-	
+
 /* list-menu */
 .list-menu{
 	position: relative;
-	border: 1px solid #f0f0f0;	
+	border: 1px solid #f0f0f0;
 	margin: 20px 20px 0 20px;
 	padding: 10px 10px;
 	min-height: 40px;
@@ -337,20 +337,20 @@ div.listItem span.status{
 
 	.list-menu i{
 		margin-left: 5px;
-		color: #aaa;	
+		color: #aaa;
 		padding: 4px 5px 0 5px;
 		font-size: 16px;
 	}
-	
+
 	.list-menu .active i{
 		background-color: #fff;
 		color: #FF9900;
 	}
-	
+
 	.list-menu a:hover i{
 		background-color: #fff;
 	}
-	
+
 	.list-menu p{
 		margin: 0;
 		padding: 0;
@@ -359,16 +359,16 @@ div.listItem span.status{
 		max-width: 80%;
 		text-align: left;
 	}
-	
+
 	.list-menu p a{
 		margin-left: 5px;
 	}
-	
+
 		.list-menu .categories .caret{
 			border-top-color: #888;
 			margin-left: 3px;
 		}
-	
+
 		.list-menu .categories .btn-default{
 			border: none;
 			padding: 0 5px;
@@ -379,18 +379,18 @@ div.listItem span.status{
 			box-shadow: 0;
 			border-radius: 0;
 		}
-		
+
 	.list-menu .dropdown-menu{
 		border-radius: 0;
 		box-shadow: none;
 		border: 1px solid #f0f0f0;
 	}
-	
+
 		.list-menu .dropdown-menu a{
 			color: #aaa;
 			font-size: 13px;
 		}
-		
+
 /* menuItemsList */
 .nested-left, .nested-right{
 	font-size: 18px;
@@ -406,7 +406,7 @@ div.listItem span.status{
 	.nested-left .fa-spin, .nested-right .fa-spin{
 		display: none;
 	}
-	
+
 	.nested-left.active .fa-spin, .nested-right.active .fa-spin{
 		display: inline-block;
 	}
@@ -414,32 +414,32 @@ div.listItem span.status{
 	.nested-left.active .arrow, .nested-right.active .arrow{
 		display: none;
 	}
-	
+
 	.nested-left i, .nested-right i{
 		color: #aaa;
 	}
-	
+
 	.nested-left:hover, .nested-right:hover{
 		background-color: #FF9900;
 	}
-	
+
 	.nested-left:hover i, .nested-right:hover i{
 		color: #fff;
 	}
-	
+
 	.nested-left{
 		display: none;
 		margin-left: 35px;
 	}
-	
+
 	.nested-right{
 		display: inline-block;
 	}
-	
+
 	.is-nested .nested-left{
 		display: inline-block;
 	}
-	
+
 	.is-nested .nested-right{
 		display: none;
 	}
@@ -454,7 +454,7 @@ div.listItem span.status{
 
 /* image-list */
 .image-list{
-	margin: 0 15px;	
+	margin: 0 15px;
 }
 
 .image-item{
@@ -485,7 +485,7 @@ div.listItem span.status{
 		color: #888;
 		text-transform: uppercase;
 	}
-	
+
 	.image-item img{
 		position: absolute;
 		top: 0;
@@ -510,33 +510,33 @@ div.listItem span.status{
 		z-index: 2;
 		cursor: pointer;
 	}
-	
+
 	.image-item div.secondary{
 		background-color: #f0f0f0;
 		color: #555;
 	}
-	
+
 		.image-item div:hover{
 			background-color: #fff;
 			color: #555;
 		}
-		
+
 	.image-item .active-button{
 		display: none;
 	}
-	
+
 	.image-item .inactive-button{
 		display: block;
 	}
-	
+
 	.image-item.active .active-button{
 		display: block;
 	}
-	
+
 	.image-item.active .inactive-button{
 		display: none;
 	}
-	
+
 	.image-item.active h2{
 		background-color: #81b841;
 		color: #fff;
@@ -557,7 +557,7 @@ div.listItem span.status{
 	#usersList .role.admin{
 		background-color: #D25F37;
 	}
-	
+
 	#usersList .role.contributor{
 		background-color: #94D237;
 	}

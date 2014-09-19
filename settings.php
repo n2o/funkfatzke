@@ -1,16 +1,16 @@
-<?php	
+<?php
 	include 'app.php'; // import php files
-	
+
 	$authUser = new AuthUser(); // get auth user
 	$authUser->Authenticate('Admin');
-	
+
 	Utilities::SetLanguage($authUser->Language); // set language
 ?>
 <!DOCTYPE html>
 <html lang="<?php print str_replace('_', '-', $authUser->Language) ?>">
 
 <head>
-	
+
 <title><?php print _("Settings"); ?>&mdash;<?php print $authUser->SiteName; ?></title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -22,7 +22,7 @@
 </head>
 
 <body id="settings-page" data-currpage="settings">
-	
+
 <?php include 'modules/menu.php'; ?>
 
 <!-- messages -->
@@ -37,15 +37,11 @@
 <section class="main">
 
     <nav>
-        <a class="show-menu"><i class="fa fa-bars fa-lg"></i></a>
-    
-        <ul>
-            <li class="static active"><a><?php print _("Settings"); ?></a></li>
-        </ul>
-        
+        <a class="show-menu"></a>
+
+        <h1><?php print _("Settings"); ?></h1>
     </nav>
-    <!-- /nav -->
-    
+
     <div class="list-menu hidden">
 		<p>
 			<?php print _("Updates to settings will not be reflected until the site is re-published."); ?>
@@ -53,7 +49,7 @@
 		</p>
 	</div>
 	<!-- /.list-menu -->
-   
+
 	<ul class="segmented-control">
 		<li class="active" data-navigate="site"><a><?php print _("Site"); ?></a></li>
 		<li data-navigate="payments"><a><?php print _("Payments"); ?></a></li>
@@ -62,18 +58,18 @@
 		<li data-navigate=formscaptcha><a><?php print _("Forms"); ?></a></li>
 	</ul>
 	<!-- /.segmented-control -->
-	
-    <form class="form-vertical" data-bind="with: site">
-	
+
+	<form class="form-vertical" data-bind="with: site">
+
 		<div class="section-site">
-	
+
 			<div class="form-group">
 				<label for="name" class="control-label"><?php print _("Site Name:"); ?></label>
 				<div>
 					<input id="name" type="text" data-bind="value: name" class="form-control">
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="domain" class="control-label"><?php print _("Domain:"); ?></label>
 				<div>
@@ -81,7 +77,7 @@
 					<span class="help-block"><?php print _("e.g. domain.com, sub.domain.com (leave off www, http://, and trailing /)"); ?></span>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="primaryEmail" class="control-label"><?php print _("Primary Email:"); ?></label>
 				<div>
@@ -89,7 +85,7 @@
 					<span class="help-block"><?php print _("Forms submitted on your site will be sent to this email address"); ?></span>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="timeZone" class="control-label"><?php print _("Time Zone:"); ?></label>
 				<div>
@@ -187,175 +183,175 @@
 					</select>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="language" class="control-label"><?php print _("Default Language:"); ?></label>
 				<div>
 					<select id="language-select" class="form-control">
-						<option value="">Other</option> 
-						<option value="aa">Afar (aa)</option> 
-						<option value="ab">Abkhazian (ab)</option> 
-						<option value="af">Afrikaans (af)</option> 
-						<option value="am">Amharic (am)</option> 
-						<option value="ar">Arabic (ar)</option> 
-						<option value="as">Assamese (as)</option> 
-						<option value="ay">Aymara (ay)</option> 
-						<option value="az">Azerbaijani (az)</option> 
-						<option value="ba">Bashkir (ba)</option> 
-						<option value="be">Byelorussian (be)</option> 
-						<option value="bg">Bulgarian (bg)</option> 
-						<option value="bh">Bihari (bh)</option> 
-						<option value="bi">Bislama (bi)</option> 
-						<option value="bn">Bengali/Bangla (bn)</option> 
-						<option value="bo">Tibetan (bo)</option> 
-						<option value="br">Breton (br)</option> 
-						<option value="ca">Catalan (ca)</option> 
-						<option value="co">Corsican (co)</option> 
-						<option value="cs">Czech (cs)</option>  
-						<option value="cs-cs">Czech (cs-cs)</option> 
-						<option value="cy">Welsh (cy)</option> 
-						<option value="da">Danish (da)</option> 
-						<option value="da-dk">Danish (da-dk)</option> 
+						<option value="">Other</option>
+						<option value="aa">Afar (aa)</option>
+						<option value="ab">Abkhazian (ab)</option>
+						<option value="af">Afrikaans (af)</option>
+						<option value="am">Amharic (am)</option>
+						<option value="ar">Arabic (ar)</option>
+						<option value="as">Assamese (as)</option>
+						<option value="ay">Aymara (ay)</option>
+						<option value="az">Azerbaijani (az)</option>
+						<option value="ba">Bashkir (ba)</option>
+						<option value="be">Byelorussian (be)</option>
+						<option value="bg">Bulgarian (bg)</option>
+						<option value="bh">Bihari (bh)</option>
+						<option value="bi">Bislama (bi)</option>
+						<option value="bn">Bengali/Bangla (bn)</option>
+						<option value="bo">Tibetan (bo)</option>
+						<option value="br">Breton (br)</option>
+						<option value="ca">Catalan (ca)</option>
+						<option value="co">Corsican (co)</option>
+						<option value="cs">Czech (cs)</option>
+						<option value="cs-cs">Czech (cs-cs)</option>
+						<option value="cy">Welsh (cy)</option>
+						<option value="da">Danish (da)</option>
+						<option value="da-dk">Danish (da-dk)</option>
 						<option value="de">German (de)</option>
-						<option value="de-at">German (de-at)</option>  
-						<option value="de-ch">German (de-ch)</option> 
-						<option value="de-de">German (de-de)</option> 
-						<option value="dz">Bhutani (dz)</option> 
-						<option value="el">Greek (el)</option> 
-						<option value="el-gr">Greek (el-gr)</option> 
+						<option value="de-at">German (de-at)</option>
+						<option value="de-ch">German (de-ch)</option>
+						<option value="de-de">German (de-de)</option>
+						<option value="dz">Bhutani (dz)</option>
+						<option value="el">Greek (el)</option>
+						<option value="el-gr">Greek (el-gr)</option>
 						<option value="en">English (en)</option>
 						<option value="en-au">English (en-au)</option>
 						<option value="en-gb">English (en-gb)</option>
 						<option value="en-us">English (en-us)</option>
 						<option value="en-za">English (en-za)</option>
-						<option value="eo">Esperanto (eo)</option> 
-						<option value="es">Spanish (es)</option> 
+						<option value="eo">Esperanto (eo)</option>
+						<option value="es">Spanish (es)</option>
 						<option value="es-ar">Spanish (es-ar)</option>
 						<option value="es-cl">Spanish (es-cl)</option>
 						<option value="es-es">Spanish (es-es)</option>
 						<option value="es-mx">Spanish (es-mx)</option>
 						<option value="es-419">Spanish (es-419)</option>
-						<option value="et">Estonian (et)</option> 
-						<option value="eu">Basque (eu)</option> 
-						<option value="fa">Persian (fa)</option> 
-						<option value="fi">Finnish (fi)</option> 
-						<option value="fi-fi">Finnish (fi-fi)</option> 
-						<option value="fj">Fiji (fj)</option> 
-						<option value="fo">Faeroese (fo)</option> 
+						<option value="et">Estonian (et)</option>
+						<option value="eu">Basque (eu)</option>
+						<option value="fa">Persian (fa)</option>
+						<option value="fi">Finnish (fi)</option>
+						<option value="fi-fi">Finnish (fi-fi)</option>
+						<option value="fj">Fiji (fj)</option>
+						<option value="fo">Faeroese (fo)</option>
 						<option value="fr">French (fr)</option>
-						<option value="fr-be">French (fr-be)</option> 
-						<option value="fr-fr">French (fr-fr)</option> 
-						<option value="fy">Frisian (fy)</option> 
-						<option value="ga">Irish (ga)</option> 
-						<option value="gd">Scots/Gaelic (gd)</option> 
-						<option value="gl">Galician (gl)</option> 
-						<option value="gn">Guarani (gn)</option> 
-						<option value="gu">Gujarati (gu)</option> 
-						<option value="ha">Hausa (ha)</option> 
-						<option value="hi">Hindi (hi)</option> 
-						<option value="hr">Croatian (hr)</option> 
-						<option value="hu">Hungarian (hu)</option> 
-						<option value="hu-hu">Hungarian (hu-hu)</option> 
-						<option value="hy">Armenian (hy)</option> 
-						<option value="ia">Interlingua (ia)</option> 
-						<option value="ie">Interlingue (ie)</option> 
-						<option value="ik">Inupiak (ik)</option> 
-						<option value="in">Indonesian (in)</option> 
-						<option value="is">Icelandic (is)</option> 
-						<option value="it">Italian (it)</option>  
-						<option value="it-it">Italian (it-it)</option> 
-						<option value="iw">Hebrew (iw)</option> 
-						<option value="ja">Japanese (ja)</option> 
-						<option value="ji">Yiddish (ji)</option> 
-						<option value="jw">Javanese (jw)</option> 
-						<option value="ka">Georgian (ka)</option> 
-						<option value="kk">Kazakh (kk)</option> 
-						<option value="kl">Greenlandic (kl)</option> 
-						<option value="km">Cambodian (km)</option> 
-						<option value="kn">Kannada (kn)</option> 
-						<option value="ko">Korean (ko)</option> 
-						<option value="ko-kr">Korean (ko-kr)</option> 
-						<option value="ks">Kashmiri (ks)</option> 
-						<option value="ku">Kurdish (ku)</option> 
-						<option value="ky">Kirghiz (ky)</option> 
-						<option value="la">Latin (la)</option> 
-						<option value="ln">Lingala (ln)</option> 
-						<option value="lo">Laothian (lo)</option> 
-						<option value="lt">Lithuanian (lt)</option> 
-						<option value="lv">Latvian/Lettish (lv)</option> 
-						<option value="mg">Malagasy (mg)</option> 
-						<option value="mi">Maori (mi)</option> 
-						<option value="mk">Macedonian (mk)</option> 
-						<option value="ml">Malayalam (ml)</option> 
-						<option value="mn">Mongolian (mn)</option> 
-						<option value="mo">Moldavian (mo)</option> 
-						<option value="mr">Marathi (mr)</option> 
-						<option value="ms">Malay (ms)</option> 
-						<option value="mt">Maltese (mt)</option> 
-						<option value="my">Burmese (my)</option> 
-						<option value="na">Nauru (na)</option> 
-						<option value="ne">Nepali (ne)</option> 
+						<option value="fr-be">French (fr-be)</option>
+						<option value="fr-fr">French (fr-fr)</option>
+						<option value="fy">Frisian (fy)</option>
+						<option value="ga">Irish (ga)</option>
+						<option value="gd">Scots/Gaelic (gd)</option>
+						<option value="gl">Galician (gl)</option>
+						<option value="gn">Guarani (gn)</option>
+						<option value="gu">Gujarati (gu)</option>
+						<option value="ha">Hausa (ha)</option>
+						<option value="hi">Hindi (hi)</option>
+						<option value="hr">Croatian (hr)</option>
+						<option value="hu">Hungarian (hu)</option>
+						<option value="hu-hu">Hungarian (hu-hu)</option>
+						<option value="hy">Armenian (hy)</option>
+						<option value="ia">Interlingua (ia)</option>
+						<option value="ie">Interlingue (ie)</option>
+						<option value="ik">Inupiak (ik)</option>
+						<option value="in">Indonesian (in)</option>
+						<option value="is">Icelandic (is)</option>
+						<option value="it">Italian (it)</option>
+						<option value="it-it">Italian (it-it)</option>
+						<option value="iw">Hebrew (iw)</option>
+						<option value="ja">Japanese (ja)</option>
+						<option value="ji">Yiddish (ji)</option>
+						<option value="jw">Javanese (jw)</option>
+						<option value="ka">Georgian (ka)</option>
+						<option value="kk">Kazakh (kk)</option>
+						<option value="kl">Greenlandic (kl)</option>
+						<option value="km">Cambodian (km)</option>
+						<option value="kn">Kannada (kn)</option>
+						<option value="ko">Korean (ko)</option>
+						<option value="ko-kr">Korean (ko-kr)</option>
+						<option value="ks">Kashmiri (ks)</option>
+						<option value="ku">Kurdish (ku)</option>
+						<option value="ky">Kirghiz (ky)</option>
+						<option value="la">Latin (la)</option>
+						<option value="ln">Lingala (ln)</option>
+						<option value="lo">Laothian (lo)</option>
+						<option value="lt">Lithuanian (lt)</option>
+						<option value="lv">Latvian/Lettish (lv)</option>
+						<option value="mg">Malagasy (mg)</option>
+						<option value="mi">Maori (mi)</option>
+						<option value="mk">Macedonian (mk)</option>
+						<option value="ml">Malayalam (ml)</option>
+						<option value="mn">Mongolian (mn)</option>
+						<option value="mo">Moldavian (mo)</option>
+						<option value="mr">Marathi (mr)</option>
+						<option value="ms">Malay (ms)</option>
+						<option value="mt">Maltese (mt)</option>
+						<option value="my">Burmese (my)</option>
+						<option value="na">Nauru (na)</option>
+						<option value="ne">Nepali (ne)</option>
 						<option value="nl">Dutch (nl)</option>
 						<option value="nl-be">Dutch (nl-be)</option>
-						<option value="nl-nl">Dutch (nl-nl)</option>  
-						<option value="no">Norwegian (no)</option> 
-						<option value="oc">Occitan (oc)</option> 
-						<option value="om">(Afan)/Oromoor/Oriya (om)</option> 
-						<option value="pa">Punjabi (pa)</option> 
-						<option value="pl">Polish (pl)</option> 
-						<option value="pl-pl">Polish (pl-pl)</option> 
-						<option value="ps">Pashto/Pushto (ps)</option> 
-						<option value="pt">Portuguese (pt)</option> 
-						<option value="pt-br">Portuguese (pt-br)</option> 
-						<option value="pt-pt">Portuguese (pt-pt)</option> 
-						<option value="qu">Quechua (qu)</option> 
-						<option value="rm">Rhaeto-Romance (rm)</option> 
-						<option value="rn">Kirundi (rn)</option> 
-						<option value="ro">Romanian (ro)</option> 
-						<option value="ro-ro">Romanian (ro-ro)</option> 
-						<option value="ru">Russian (ru)</option> 
-						<option value="ru-ru">Russian (ru-ru)</option> 
-						<option value="rw">Kinyarwanda (rw)</option> 
-						<option value="sa">Sanskrit (sa)</option> 
-						<option value="sd">Sindhi (sd)</option> 
-						<option value="sg">Sangro (sg)</option> 
-						<option value="sh">Serbo-Croatian (sh)</option> 
-						<option value="si">Singhalese (si)</option> 
-						<option value="sk">Slovak (sk)</option> 
-						<option value="sl">Slovenian (sl)</option> 
-						<option value="sm">Samoan (sm)</option> 
-						<option value="sn">Shona (sn)</option> 
-						<option value="so">Somali (so)</option> 
-						<option value="sq">Albanian (sq)</option> 
-						<option value="sr">Serbian (sr)</option> 
-						<option value="ss">Siswati (ss)</option> 
-						<option value="st">Sesotho (st)</option> 
-						<option value="su">Sundanese (su)</option> 
-						<option value="sv">Swedish (sv)</option>  
-						<option value="sv-se">Swedish (sv-se)</option> 
-						<option value="sw">Swahili (sw)</option> 
-						<option value="ta">Tamil (ta)</option> 
-						<option value="te">Tegulu (te)</option> 
-						<option value="tg">Tajik (tg)</option> 
-						<option value="th">Thai (th)</option> 
-						<option value="ti">Tigrinya (ti)</option> 
-						<option value="tk">Turkmen (tk)</option> 
-						<option value="tl">Tagalog (tl)</option> 
-						<option value="tn">Setswana (tn)</option> 
-						<option value="to">Tonga (to)</option> 
-						<option value="tr">Turkish (tr)</option> 
-						<option value="ts">Tsonga (ts)</option> 
-						<option value="tt">Tatar (tt)</option> 
-						<option value="tw">Twi (tw)</option> 
-						<option value="uk">Ukrainian (uk)</option> 
-						<option value="ur">Urdu (ur)</option> 
-						<option value="uz">Uzbek (uz)</option> 
-						<option value="vi">Vietnamese (vi)</option> 
-						<option value="vo">Volapuk (vo)</option> 
-						<option value="wo">Wolof (wo)</option> 
-						<option value="xh">Xhosa (xh)</option> 
-						<option value="yo">Yoruba (yo)</option> 
-						<option value="zh">Chinese (zh)</option> 
+						<option value="nl-nl">Dutch (nl-nl)</option>
+						<option value="no">Norwegian (no)</option>
+						<option value="oc">Occitan (oc)</option>
+						<option value="om">(Afan)/Oromoor/Oriya (om)</option>
+						<option value="pa">Punjabi (pa)</option>
+						<option value="pl">Polish (pl)</option>
+						<option value="pl-pl">Polish (pl-pl)</option>
+						<option value="ps">Pashto/Pushto (ps)</option>
+						<option value="pt">Portuguese (pt)</option>
+						<option value="pt-br">Portuguese (pt-br)</option>
+						<option value="pt-pt">Portuguese (pt-pt)</option>
+						<option value="qu">Quechua (qu)</option>
+						<option value="rm">Rhaeto-Romance (rm)</option>
+						<option value="rn">Kirundi (rn)</option>
+						<option value="ro">Romanian (ro)</option>
+						<option value="ro-ro">Romanian (ro-ro)</option>
+						<option value="ru">Russian (ru)</option>
+						<option value="ru-ru">Russian (ru-ru)</option>
+						<option value="rw">Kinyarwanda (rw)</option>
+						<option value="sa">Sanskrit (sa)</option>
+						<option value="sd">Sindhi (sd)</option>
+						<option value="sg">Sangro (sg)</option>
+						<option value="sh">Serbo-Croatian (sh)</option>
+						<option value="si">Singhalese (si)</option>
+						<option value="sk">Slovak (sk)</option>
+						<option value="sl">Slovenian (sl)</option>
+						<option value="sm">Samoan (sm)</option>
+						<option value="sn">Shona (sn)</option>
+						<option value="so">Somali (so)</option>
+						<option value="sq">Albanian (sq)</option>
+						<option value="sr">Serbian (sr)</option>
+						<option value="ss">Siswati (ss)</option>
+						<option value="st">Sesotho (st)</option>
+						<option value="su">Sundanese (su)</option>
+						<option value="sv">Swedish (sv)</option>
+						<option value="sv-se">Swedish (sv-se)</option>
+						<option value="sw">Swahili (sw)</option>
+						<option value="ta">Tamil (ta)</option>
+						<option value="te">Tegulu (te)</option>
+						<option value="tg">Tajik (tg)</option>
+						<option value="th">Thai (th)</option>
+						<option value="ti">Tigrinya (ti)</option>
+						<option value="tk">Turkmen (tk)</option>
+						<option value="tl">Tagalog (tl)</option>
+						<option value="tn">Setswana (tn)</option>
+						<option value="to">Tonga (to)</option>
+						<option value="tr">Turkish (tr)</option>
+						<option value="ts">Tsonga (ts)</option>
+						<option value="tt">Tatar (tt)</option>
+						<option value="tw">Twi (tw)</option>
+						<option value="uk">Ukrainian (uk)</option>
+						<option value="ur">Urdu (ur)</option>
+						<option value="uz">Uzbek (uz)</option>
+						<option value="vi">Vietnamese (vi)</option>
+						<option value="vo">Volapuk (vo)</option>
+						<option value="wo">Wolof (wo)</option>
+						<option value="xh">Xhosa (xh)</option>
+						<option value="yo">Yoruba (yo)</option>
+						<option value="zh">Chinese (zh)</option>
 						<option value="zh-cn">Chinese (zh-cn)</option>
 						<option value="zh-tw">Chinese (zh-tw)</option>
 						<option value="zu">Zulu (zu)</option>
@@ -363,19 +359,19 @@
 					<input id="language" type="text" class="form-control form-stacked-bottom hidden" placeholder="us-us">
 				</div>
 			</div>
-		
-		</div>	
+
+		</div>
 		<!-- /.section-site -->
 
 		<div class="section-payments hidden">
-		
+
 			<div class="form-group">
 				<label for="payPalId" class="control-label"><?php print _("PayPal ID:"); ?></label>
 				<div>
 					<input id="payPalId" type="text"  data-bind="value: payPalId" class="form-control">
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="payPalId" class="control-label"><?php print _("Use PayPal Sandbox (for testing):"); ?></label>
 				<div>
@@ -385,19 +381,19 @@
 					</select>
 				</div>
 			</div>
-		
+
 			<div class="form-group">
 				<label for="currency" class="control-label"><?php print _("Currency:"); ?></label>
 				<div>
 					<select id="currency" class="form-control" data-bind="
 					    options: $parent.currencies,
 					    optionsText: 'text',
-					    optionsValue: 'code', 
+					    optionsValue: 'code',
 					    value: currency">
 						</select>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="weightUnit" class="control-label"><?php print _("Weight Unit:"); ?></label>
 				<div>
@@ -408,14 +404,14 @@
 					<span class="help-block"><?php print _("Optionally used to calculate shipping costs"); ?></span>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="taxRate" class="control-label"><?php print _("Tax Rate:"); ?></label>
 				<div>
 					<input id="taxRate" type="number" class="form-control" data-bind="value:taxRate">
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="shippingCalculation" class="control-label"><?php print _("Shipping Calculation:"); ?></label>
 				<div>
@@ -427,7 +423,7 @@
 					</select>
 				</div>
 			</div>
-			
+
 			<div class="form-group flat-rate" data-bind="visible: shippingCalculation()=='flat-rate'">
 				<label for="shippingRate" class="control-label"><?php print _("Shipping Rate:"); ?></label>
 			    <div class="input-group">
@@ -435,8 +431,8 @@
 				 	<span class="input-group-addon"><?php print $authUser->Currency; ?></span>
 				</div>
 			</div>
-			
-			
+
+
 			<div class="form-group weight" data-bind="visible: shippingCalculation()=='weight'">
 				<table class="table">
 					<col width="33.3%">
@@ -478,7 +474,7 @@
 					</tbody>
 				</table>
 			</div>
-			
+
 			<div class="form-group amount" data-bind="visible: shippingCalculation()=='amount'">
 				<table class="table">
 					<col width="33.3%">
@@ -520,12 +516,12 @@
 					</tbody>
 				</table>
 			</div>
-			
-		</div>	
+
+		</div>
 		<!-- /.section-payments -->
 
 		<div class="section-social hidden">
-			
+
 			<div class="form-group">
 				<label for="facebookAppId" class="control-label"><?php print _("Facebook App ID:"); ?></label>
 				<div>
@@ -533,10 +529,10 @@
 					<span class="help-block"><?php print _("Allows you to moderate comments on your site, create here:"); ?> <a href="https://developers.facebook.com/apps/">https://developers.facebook.com/apps/</a></span>
 				</div>
 			</div>
-		
-		</div>	
+
+		</div>
 		<!-- /.section-social -->
-		
+
 		<div class="section-analytics hidden">
 
 			<div class="form-group">
@@ -546,7 +542,7 @@
 					<span class="help-block"><?php print _("Google Analytics Web Property Id (adds analytics to all pages on your site)"); ?></span>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="analyticssubdomain" class="checkbox">
 					<input id="analyticssubdomain" type="checkbox" data-bind="checked: analyticssubdomain">
@@ -554,35 +550,35 @@
 				</label>
 				<span class="help-block"><?php print _("Control Sub-domains; e.g. www.your_domain.com, apps.your_domain.com, and store.your_domain.com."); ?></span>
 			</div>
-			
+
 			<div class="form-group" data-bind="visible: analyticssubdomain">
 				<label for="analyticsdomain" class="control-label"><?php print _("Google Analytics Domain:"); ?></label>
 				<div>
 					<input id="analyticsdomain" type="text" data-bind="value: analyticsdomain, enable: analyticssubdomain" class="form-control">
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 					<label for="analyticsmultidomain" class="checkbox">
 						<input id="analyticsmultidomain" type="checkbox" data-bind="checked: analyticsmultidomain">
 						<?php print _("Google Analytics Multi-Domain"); ?>
 					</label>
-					
+
 					<span class="help-block"><?php print _("Control Top Level Domains, e.g. your_domain.com, your_domain.org, your_domain.es "); ?></span>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="sitemap" class="control-label"><?php print _("Sitemap:"); ?></label>
 				<div>
 					<span class="read-only" data-bind="text: $parent.siteMap"></span> <a data-bind="click: $parent.showVerificationDialog"><?php print _("Generate Verification File"); ?></a>
 				</div>
 			</div>
-		
-		</div>	
+
+		</div>
 		<!-- /.section-analytics -->
-		
+
 		<div class="section-formscaptcha hidden">
-			
+
 			<div class="form-group">
 				<label for="formPublicId" class="control-label"><?php print _("reCaptcha Public ID:"); ?></label>
 				<div>
@@ -597,13 +593,13 @@
 					<span class="help-block"><?php print _("Allows you to validate a reCaptcha field from your forms, create here:"); ?> <a href="https://www.google.com/recaptcha/">https://www.google.com/recaptcha/</a></span>
 				</div>
 			</div>
-			
-		</div>	
+
+		</div>
 		<!-- /.section-social -->
-		
+
     </form>
     <!-- /.form-horizontal -->
-    
+
     <div class="actions" data-bind="with: site">
         <button class="primary-button" type="button" data-bind="click: $parent.save"><?php print _("Save"); ?></button>
     </div>
@@ -614,7 +610,7 @@
 <div class="modal fade" id="verificationDialog">
 
 	<div class="modal-dialog">
-	
+
 		<div class="modal-content">
 
 			<div class="modal-header">
@@ -624,34 +620,34 @@
 			<!-- /.modal-header -->
 
 			<div class="modal-body">
-			
+
 				<div class="form-group">
 					<label for="fileName"><?php print _("File Name:"); ?></label>
 					<input id="fileName" type="text" value="" maxlength="255" class="form-control">
 					<span class="help-block">e.g. google12345678910abc123.html</span>
 				</div>
-				
+
 				<div class="form-group">
 					<label for="fileContent"><?php print _("File Contents:"); ?></label>
 					<textarea id="fileContent" class="form-control"></textarea>
 					<span class="help-block">e.g. google-site-verification: google12345678910abc123.html</span>
 				</div>
-			
+
 			</div>
 			<!-- /.modal-body -->
-			
+
 			<div class="modal-footer">
 				<button class="secondary-button" data-dismiss="modal"><?php print _("Close"); ?></button>
 				<button class="primary-button" data-bind="click: generateVerification"><?php print _("Generate Verification File"); ?></button>
 			</div>
 			<!-- /.modal-footer -->
-			
+
 		</div>
 		<!-- /.modal-content -->
-		
+
 	</div>
 	<!-- /.modal-dialog -->
-			
+
 </div>
 <!-- /.modal -->
 
