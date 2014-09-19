@@ -11,34 +11,34 @@ var pagesModel = {
 	pageTypeUniqId: ko.observable('-1'),
 	typeS: ko.observable('Page'),
 	typeP: ko.observable('Pages'),
-	
+
 	pageTypes: ko.observableArray([]),
 	pages: ko.observableArray([]), // observables
 	pagesLoading: ko.observable(false),
-	
+
 	categories: ko.observableArray([]), // observables
 	categoriesLoading: ko.observable(false),
-	
+
 	stylesheets: ko.observableArray([]),
     stylesheetsLoading: ko.observable(false),
-    
+
     layouts: ko.observableArray([]),
     layoutsLoading: ko.observable(false),
-    
+
     categoryUniqId: ko.observable('-1'),
 
 	toBeRemoved:null,
-	
+
 	systemReserved:['api','css','data','files','fragments','js','libs','plugins','themes', 'emails'],
 	typeReserved:[],
 	pageReserved:[],
-	
+
 	currentXHR: null,
 
 	init:function(){ // initializes the model
-	
+
 		if(window.localStorage){
-		
+
 			if(window.localStorage['show-account-message'] == 'true'){
 				window.localStorage['show-account-message'] = 'false';
 				$('#account-message').show();
@@ -46,64 +46,64 @@ var pagesModel = {
 			else{
 				$('#account-message').hide();
 			}
-	    	
+
     	}
-        
+
         pagesModel.hash = location.hash;
         pagesModel.canCreate = $('#can-create').val();
-        
+
         if(pagesModel.hash!=''){
         	pagesModel.hash = pagesModel.hash.substr(1);
             pagesModel.friendlyId(pagesModel.hash);
         }
-        
+
     	pagesModel.updatePageTypes();
     	pagesModel.updateLayouts();
     	pagesModel.updateStylesheets();
-    	
+
     	$('#name').keyup(function(){
     		var keyed = $(this).val().toLowerCase().replace(/[^a-zA-Z 0-9]+/g,'').replace(/\s/g, '-');
 			keyed = keyed.substring(0,25);
-			
+
 			// for root pages, check against system names and page type names already created
 			if(pagesModel.pageTypeUniqId() == '-1'){
-			
+
 				if($.inArray(keyed, pagesModel.systemReserved) != -1){
 					keyed = keyed + '1';
 				}
-				
+
 				if($.inArray(keyed, pagesModel.typeReserved) != -1){
 					keyed = keyed + '1';
 				}
-				
+
 			}
-			
+
 			// for non-root pages, check against other pages
 			if($.inArray(keyed, pagesModel.pageReserved) != -1){
 				keyed = keyed + '1';
 			}
-			
+
 			$('#friendlyId').val(keyed);
 		});
-		
+
 		$('#typeS').keyup(function(){
     		var keyed = $(this).val().toLowerCase().replace(/[^a-zA-Z 0-9]+/g,'').replace(/\s/g, '-');
 			keyed = keyed.substring(0,25);
-			
+
 			// check typeS against system reserved words and other page types
 			if($.inArray(keyed, pagesModel.systemReserved) != -1){
 				keyed = keyed + '1';
 			}
-			
+
 			if($.inArray(keyed, pagesModel.typeReserved) != -1){
 				keyed = keyed + '1';
 			}
-			
+
 			$('#typeFriendlyId').val(keyed);
 		});
 
 		ko.applyBindings(pagesModel);  // apply bindings
-		
+
 	},
 
 	// updates the page types
@@ -126,33 +126,33 @@ var pagesModel = {
 
 				// find a default if there is not root or hash specified
 				if($('#root-item').length == 0 && pagesModel.hash==''){
-					
+
 					if(data.length > 0){
 						pagesModel.friendlyId(data[0]['FriendlyId']);
 					}
 					else{
 						loadPages = false; // do not load pages
 					}
-					
+
 				}
-				
+
 				// build model
 				for(x in data){
-				
+
 					// push page type reserved
 					pagesModel.typeReserved.push(data[x]['FriendlyId']);
 
 					var pageType = PageType.create(data[x]);
-					
+
 					if(pageType.friendlyId() == pagesModel.friendlyId()){
-					
+
 						pagesModel.pageTypeUniqId(pageType.pageTypeUniqId());
 						pagesModel.typeS(pageType.typeS());
 						pagesModel.typeP(pageType.typeP());
-						
+
 					}
 
-					pagesModel.pageTypes.push(pageType); 
+					pagesModel.pageTypes.push(pageType);
 
 				}
 
@@ -161,9 +161,7 @@ var pagesModel = {
 					pagesModel.updatePages();
 					pagesModel.updateCategories();
 				}
-				
-				global.setupFs();
-				
+
 			}
 		});
 
@@ -171,23 +169,23 @@ var pagesModel = {
 
 	// updates the pages
 	updatePages:function(){  // updates the page arr
-	
+
 		//if there is a current request, then cancel it
 		if(pagesModel.pagesLoading() && pagesModel.currentXhr){
 			pagesModel.currentXhr.abort();
 		}
 		pagesModel.pages.removeAll();
 		pagesModel.pagesLoading(true);
-        
+
         var sort = pagesModel.sort() + ' ' + pagesModel.order();
-        
+
         // set data
         var data = {friendlyId: pagesModel.friendlyId(), sort: sort};
-        
+
         if(pagesModel.categoryUniqId() != '-1'){
 	        data = {friendlyId: pagesModel.friendlyId(), sort: sort, categoryUniqId: pagesModel.categoryUniqId()};
         }
-        
+
         if(pagesModel.canCreate.indexOf(pagesModel.pageTypeUniqId())>-1 || pagesModel.canCreate == 'All'){
 			$('#add-page').show();
 			$('nav .fs-container').removeClass('full');
@@ -196,23 +194,23 @@ var pagesModel = {
 			$('#add-page').hide();
 			$('nav .fs-container').addClass('full');
 		}
-        
+
 		pagesModel.currentXhr = $.ajax({
 			url: 'api/page/list/sorted',
 			type: 'POST',
 			data: data,
 			dataType: 'json',
 			success: function(data){
-			
+
 				pagesModel.pageReserved = [];
 
 				for(x in data){
-				
+
 					pagesModel.pageReserved.push(data[x]['FriendlyId']);
-				
+
 					var page = Page.create(data[x]);
 					page.hasDraft = ko.observable(data[x]['HasDraft']);
-					
+
 					pagesModel.pages.push(page); // push an event to the model
 
 				}
@@ -224,28 +222,26 @@ var pagesModel = {
 		});
 
 	},
-	
+
 	// updates the categories
 	updateCategories:function(){  // updates the categories array
 
 		pagesModel.categories.removeAll();
 		pagesModel.categoriesLoading(true);
-        
+
 		$.ajax({
 			url: 'api/category/list/all',
 			type: 'POST',
 			data: {pageTypeUniqId:pagesModel.pageTypeUniqId()},
 			dataType: 'json',
 			success: function(data){
-			
-				console.log(data[x]);
 
 				for(x in data){
-				
+
 					var category = Category.create(data[x]);
-					
+
 					console.log(category);
-					
+
 					pagesModel.categories.push(category); // push a category to the model
 				}
 
@@ -255,7 +251,7 @@ var pagesModel = {
 		});
 
 	},
-	
+
 	// updates the stylesheets
 	updateStylesheets:function(){ // gets the stylesheets for the current theme
 
@@ -292,7 +288,7 @@ var pagesModel = {
 
 	// switches page types
 	switchPageType:function(o, e){  // switches b/w page types
-	
+
 		$('#account-message').fadeOut();
 
 		var curr = $(e.target);
@@ -304,13 +300,13 @@ var pagesModel = {
 		var typeP = curr.attr('data-typep');
 		var layout = curr.attr('data-layout');
 		var stylesheet = curr.attr('data-stylesheet');
-		
+
         location.hash = friendlyId;
-        
+
 		if(friendlyId=='root'){
 			url = '';
 		}
-		
+
 		pagesModel.friendlyId(friendlyId);
 		pagesModel.url(url);
 		pagesModel.pageTypeUniqId(pageTypeUniqId);
@@ -327,7 +323,7 @@ var pagesModel = {
 
 		var id = o.pageUniqId();
 		var name = o.name();
-		
+
 		$('#removeName').html(name);  // show remove dialog
 		$('#deleteDialog').data('id', id);
 		$('#deleteDialog').modal('show');
@@ -341,23 +337,23 @@ var pagesModel = {
 		$('#friendlyId').val('');
 		$('#description').val('');
 		$('.categories-list input[type=checkbox]').attr('checked', false);
-	
+
 		$('#addDialog').modal('show');
 
 		return false;
 	},
-    
+
     // adds a page
     showAddPageTypeDialog:function(o, e){ // shows a dialog to add a page
     	$('#typeS').val('');
 		$('#typeP').val('');
 		$('#typeFriendlyId').val('');
-	
+
 		$('#pageTypeDialog').modal('show');
-		
+
 		$('#pageTypeDialog').find('.add').show();
 		$('#pageTypeDialog').find('.edit').hide();
-		
+
 		// init data
 		$('#typeS').val('');
 		$('#typeP').val('');
@@ -368,24 +364,24 @@ var pagesModel = {
 
 		return false;
 	},
-	
+
 	// edits a page
     showEditPageTypeDialog:function(o, e){ // shows a dialog to add a page
-    	
+
     	$('#pageTypeDialog').modal('show');
-    	
+
     	$('#pageTypeDialog').find('.edit').show();
 		$('#pageTypeDialog').find('.add').hide();
 
 		// init data
 		var curr = $('nav li.active a');
-				
+
 		var typeS = curr.attr('data-types');
 		var typeP = curr.attr('data-typep');
 		var layout = curr.attr('data-layout');
 		var stylesheet = curr.attr('data-stylesheet');
 		var isSecure = curr.attr('data-issecure');
-		
+
 		$('#typeS').val(typeS);
 		$('#typeP').val(typeP);
 		$('#layout').val(layout);
@@ -396,30 +392,30 @@ var pagesModel = {
 	},
 
 	// adds a page
-	addPage:function(){  
+	addPage:function(){
 
 		var pageTypeUniqId = pagesModel.pageTypeUniqId();
-		
+
 		var name = $.trim($('#name').val());
         var friendlyId = $.trim($('#friendlyId').val());
         var description = $.trim($('#description').val());
-        
+
         if(name=='' || friendlyId==''){
             message.showMessage('error', $('#msg-add-error').val());
             return;
         }
-        
+
         var checks = $('.categories-list input[type=checkbox]:checked');
 		var categories = '';
-      
+
 		for(var x=0; x<checks.length; x++){
 			categories += $(checks[x]).val() + ',';
 		}
 
 		if(categories.length>0)categories=categories.substring(0,categories.length-1);
-		
+
         message.showMessage('progress', $('#msg-adding').val());
-        
+
         $.ajax({
           url: 'api/page/add',
           type: 'POST',
@@ -429,13 +425,13 @@ var pagesModel = {
           	pagesModel.updatePages();
 
     	    $('#addDialog').modal('hide');
-            
+
             message.showMessage('success', $('#msg-added').val());
           }
         });
 
 	},
-	
+
 	// removes a page
 	removePage:function(){
 
@@ -459,7 +455,7 @@ var pagesModel = {
 		});
 
 	},
-    
+
     // adds a page type
     addPageType:function(){
 
@@ -469,7 +465,7 @@ var pagesModel = {
         var layout = $.trim($('#layout').val());
         var stylesheet = $.trim($('#stylesheet').val());
         var isSecure = $.trim($('#isSecure').val());
-        
+
         if(typeFriendlyId == '' || typeS == '' || typeP == ''){
             message.showMessage('error', $('#msg-all-required').val());
             return;
@@ -485,17 +481,17 @@ var pagesModel = {
           success: function(data){
 
           	var pageType = PageType.create(data);
-          	
+
           	pagesModel.pageTypes.push(pageType);
 
     	    $('#pageTypeDialog').modal('hide');
-            
+
             message.showMessage('success', $('#msg-type-added').val());
           }
         });
 
 	},
-	
+
 	 // edits a page type
     editPageType:function(){
 
@@ -504,7 +500,7 @@ var pagesModel = {
         var layout = $.trim($('#layout').val());
         var stylesheet = $.trim($('#stylesheet').val());
         var isSecure = $.trim($('#isSecure').val());
-        
+
         if(typeFriendlyId == '' || typeS == '' || typeP == ''){
             message.showMessage('error', $('#msg-all-required').val());
             return;
@@ -518,39 +514,39 @@ var pagesModel = {
 			dataType: 'json',
 			data: {pageTypeUniqId: pagesModel.pageTypeUniqId(), typeS: typeS, typeP: typeP, layout: layout, stylesheet: stylesheet, isSecure: isSecure},
 			success: function(data){
-			
+
 				pagesModel.typeS(typeS);
 				pagesModel.typeP(typeP);
-				
+
 				var curr = $('nav li.active a');
-				
+
 				curr.attr('data-types', typeS);
 				curr.attr('data-typep', typeP);
 				curr.attr('data-layout', layout);
 				curr.attr('data-stylesheet', stylesheet);
-				
+
 				message.showMessage('success', $('#msg-type-updated').val());
-				
+
 				$('#pageTypeDialog').modal('hide');
 			}
         });
 
 	},
-    
+
     // shows a dialog to remove a pagetype
     showRemovePageTypeDialog:function(o, e){
 		pagesModel.toBeRemoved = o;
 
 		var id = o.pageTypeUniqId();
 		var name = o.typeP();
-		
+
 		$('#removePageTypeName').html(name);  // show remove dialog
 		$('#deletePageTypeDialog').data('id', id);
 		$('#deletePageTypeDialog').modal('show');
 
 		return false;
 	},
-	
+
 	// removes a page type
 	removePageType:function(){  // removes a page
 
@@ -605,51 +601,51 @@ var pagesModel = {
 			}
 		});
 	},
-	
+
 	// sort
 	sortName:function(o,e){
 		pagesModel.sort('name');
 		pagesModel.order('asc');
-		
+
 		pagesModel.updatePages();
 		$('.list-menu-actions a').removeClass('active');
 		$(e.target).parent().addClass('active');
 	},
-	
+
 	sortDate:function(o,e){
 		pagesModel.sort('date');
 		pagesModel.order('desc');
-		
+
 		pagesModel.updatePages();
 		$('.list-menu-actions a').removeClass('active');
 		$(e.target).parent().addClass('active');
 	},
-	
+
 	// shows add category dialog
 	showAddCategoryDialog:function(o, e){ // shows a dialog to add a page
 		$('#categoryName').val('');
 		$('#categoryFriendlyId').val('');
-		
+
 		$('#addCategoryDialog').modal('show');
 
 		return false;
 	},
-	
+
 	// adds a category
-	addCategory:function(){  
+	addCategory:function(){
 
 		var pageTypeUniqId = pagesModel.pageTypeUniqId();
-		
+
 		var name = $.trim($('#categoryName').val());
         var friendlyId = $.trim($('#categoryFriendlyId').val());
-        
+
         if(name=='' || friendlyId==''){
             message.showMessage('error', $('#msg-add-error').val());
             return;
         }
-        
+
         message.showMessage('progress', $('#msg-category-adding').val());
-        
+
         $.ajax({
           url: 'api/category/add',
           type: 'POST',
@@ -659,28 +655,28 @@ var pagesModel = {
           	pagesModel.updateCategories();
 
     	    $('#addCategoryDialog').modal('hide');
-            
+
             message.showMessage('success', $('#msg-category-added').val());
           }
         });
 
 	},
-	
+
 	// shows a dialog to remove a category
 	showRemoveCategoryDialog:function(o, e){
-	
+
 		pagesModel.toBeRemoved = o;
 
 		console.log(o);
 
 		var name = pagesModel.toBeRemoved.name();
-		
+
 		$('#removeCategoryName').html(name);  // show remove dialog
 		$('#deleteCategoryDialog').modal('show');
 
 		return false;
 	},
-	
+
 	// removes a category
 	removeCategory:function(){  // removes a page
 
@@ -704,14 +700,14 @@ var pagesModel = {
 		});
 
 	},
-	
+
 	// sets the categoryUniqId
 	setCategory:function(o, e){
 		$('#categories .current-category').text(o.name());
 		pagesModel.categoryUniqId(o.categoryUniqId);
 		pagesModel.updatePages();
 	},
-	
+
 	// resets the categoryUniqId
 	resetCategory:function(o, e){
 		$('#categories .current-category').text($(e.target).text());

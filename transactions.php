@@ -1,16 +1,16 @@
-<?php	
-	include 'app.php'; // import php files
-	
-	$authUser = new AuthUser(); // get auth user
-	$authUser->Authenticate('All');
-	
-	Utilities::SetLanguage($authUser->Language); // set language
+<?php
+    include 'app.php'; // import php files
+
+    $authUser = new AuthUser(); // get auth user
+    $authUser->Authenticate('All');
+
+    Utilities::SetLanguage($authUser->Language); // set language
 ?>
 <!DOCTYPE html>
 <html lang="<?php print str_replace('_', '-', $authUser->Language) ?>">
 
 <head>
-	
+
 <title><?php print _("Transactions"); ?>&mdash;<?php print $authUser->SiteName; ?></title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -37,45 +37,42 @@
 <section class="main">
 
     <nav>
-        <a class="show-menu"><i class="fa fa-bars fa-lg"></i></a>
-    
-        <ul>
-            <li class="static active"><a><?php print _("Transactions"); ?></a></li>
-        </ul>
-       
+        <a class="show-menu"></a>
+
+        <h1><?php print _("Transactions"); ?></h1>
     </nav>
 
     <div class="container">
-    
-	    <table id="transactionsList" class="table table-striped table-bordered">
-    		<thead>
-    			<tr>
-	    			<th><?php print _("Id"); ?></th>
-	    			<th><?php print _("Processor"); ?></th>
-	    			<th><?php print _("Customer"); ?></th>
-	    			<th><?php print _("Invoice"); ?></th>
-    			</tr>
-    		</thead>
-    		<tbody data-bind="foreach:transactions">
+
+        <table id="transactionsList" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th><?php print _("Id"); ?></th>
+                    <th><?php print _("Processor"); ?></th>
+                    <th><?php print _("Customer"); ?></th>
+                    <th><?php print _("Invoice"); ?></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach:transactions">
                 <tr>
                     <td data-bind="text:transactionUniqId"></td>
                     <td>
-                    	<span data-bind="text:processor"></span><br>
-                    	<small data-bind="text:processorTransactionId"></small><br>
-                    	<small data-bind="text:processorStatus"></small>
+                        <span data-bind="text:processor"></span><br>
+                        <small data-bind="text:processorTransactionId"></small><br>
+                        <small data-bind="text:processorStatus"></small>
                     </td>
                     <td>
-                    	<span data-bind="text:name"></span><br>
-                    	<small data-bind="text:email"></small><br>
-                    	<small data-bind="text:payerId"></small>
+                        <span data-bind="text:name"></span><br>
+                        <small data-bind="text:email"></small><br>
+                        <small data-bind="text:payerId"></small>
                     </td>
                     <td data-bind="html:invoice"></td>
                 </tr>
-    		</tbody>
-    	</table>
-    	
-    	<p data-bind="visible: transactionsLoading()" class="table-loading"><i class="fa fa-spinner fa-spin"></i> <?php print _("Loading..."); ?></p>
-	</div>
+            </tbody>
+        </table>
+
+        <p data-bind="visible: transactionsLoading()" class="table-loading"><i class="fa fa-spinner fa-spin"></i> <?php print _("Loading..."); ?></p>
+    </div>
 
 </section>
 <!-- /.main -->

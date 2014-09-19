@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col">
-    <h1>Artikelliste</h1>
+    <h1 class="articles">Artikelliste</h1>
     <table id="articles" class="table table-striped table-hover table-condensed">
       <thead>
         <tr>

@@ -7,100 +7,111 @@ var contentModel = {
     toPagePrefix: ko.observable(''),
     domain: ko.observable(''),
     appUrl: ko.observable(''),
-    
+    title: ko.observable(''),
+
     content: ko.observable(''),
     contentLoading: ko.observable(false),
     pageTypes: ko.observableArray([]),
-    
+
     categories: ko.observableArray([]), // observables
     categoriesForPage: ko.observable(), // comma separated list of current categories
-	categoriesLoading: ko.observable(false),
-    
+    categoriesLoading: ko.observable(false),
+
     pages: ko.observableArray([]),
     pagesLoading: ko.observable(false),
-    
+
     themePages: ko.observableArray([]),
-	themePagesLoading: ko.observable(false),
-    
+    themePagesLoading: ko.observable(false),
+
     plugins: ko.observableArray([]),
     pluginsLoading: ko.observable(false),
-    
+
     stylesheets: ko.observableArray([]),
     stylesheetsLoading: ko.observable(false),
-    
+
     layouts: ko.observableArray([]),
     layoutsLoading: ko.observable(false),
-    
+
     images: ko.observableArray([]),
     imagesLoading: ko.observable(false),
-    
+
     newimages: ko.observableArray([]),
-    
+
     files: ko.observableArray([]),
     filesLoading: ko.observable(false),
-    
+
     icons: ko.observableArray([]),
     iconsLoading: ko.observable(false),
-    
+
     fullUrl: ko.observable(''),
-    
+
     previewUrl: '',
 
-	init:function(){ // initializes the model
-		var p = global.getQueryStringByName('p');
-		var d = $('body').attr('data-domain');
-		var a = $('body').attr('data-appurl');
-		
-		contentModel.domain(d);
-		contentModel.appUrl(a);
-		contentModel.pageUniqId(p);
+    init:function(){ // initializes the model
+        var p = global.getQueryStringByName('p');
+        var d = $('body').attr('data-domain');
+        var a = $('body').attr('data-appurl');
 
-		contentModel.updateContent();
-		contentModel.updatePage();
-		contentModel.updatePageTypes();
-		
+        contentModel.domain(d);
+        contentModel.appUrl(a);
+        contentModel.pageUniqId(p);
 
-		ko.applyBindings(contentModel);  // apply bindings
-	},
+        contentModel.updateContent();
+        contentModel.updatePage();
+        contentModel.updatePageTypes();
 
-	updateContent:function(){ // retrieves the content for the page
-		
-		contentModel.contentLoading(true);
+        // create sticky header for editor
+        $('section.main').scroll(function() {
 
-		$.ajax({
-			url: 'api/page/content/'+contentModel.pageUniqId(),
-			type: 'GET',
-			data: {},
-			success: function(data){
-			
-				contentModel.content(data);
-				contentModel.contentLoading(false);
-                
+            if ($(this).scrollTop() > 63){
+                $('#editor-menu').addClass("sticky");
+            }
+            else{
+                $('#editor-menu').removeClass("sticky");
+            }
+        });
+
+        ko.applyBindings(contentModel);  // apply bindings
+    },
+
+    updateContent:function(){ // retrieves the content for the page
+
+        contentModel.contentLoading(true);
+
+        $.ajax({
+            url: 'api/page/content/'+contentModel.pageUniqId(),
+            type: 'GET',
+            data: {},
+            success: function(data){
+
+                contentModel.content(data);
+                contentModel.contentLoading(false);
+
                 // setup editor
-    			var editor = $('#desc').get(0);
-    			
-    			// create editor
-    			new respond.Editor({
-	    			el: editor
-    			});
-    			
-    			
+                var editor = $('#desc').get(0);
+
+                // create editor
+                new respond.Editor({
+                    el: editor
+                });
+
+
                 // oh so pretty
                 prettyPrint();
-                
+
                 // setup flipsnap
-			    var fs = Flipsnap('.editor-actions div', {distance: 400, maxPoint:3});
-                
+                var fs = Flipsnap('.editor-actions div', {distance: 400, maxPoint:3});
+
                 $('.fs-next').on('click', function(){
-                    fs.toNext(); 
-                    
+                    fs.toNext();
+
                     if(fs.hasPrev()){
                         $('.fs-prev').show();
                     }
                     else{
                         $('.fs-prev').hide();
                     }
-                    
+
                     if(fs.hasNext()){
                         $('.fs-next').show();
                     }
@@ -108,17 +119,17 @@ var contentModel = {
                         $('.fs-next').hide();
                     }
                 });
-                
+
                 $('.fs-prev').on('click', function(){
-                    fs.toPrev(); 
-                    
+                    fs.toPrev();
+
                     if(fs.hasPrev()){
                         $('.fs-prev').show();
                     }
                     else{
                         $('.fs-prev').hide();
                     }
-                    
+
                     if(fs.hasNext()){
                         $('.fs-next').show();
                     }
@@ -126,512 +137,514 @@ var contentModel = {
                         $('.fs-next').hide();
                     }
                 });
-            
+
             }
-		});
+        });
 
-	},
-	
-	// updates the categories
-	updateCategories:function(){  // updates the categories array
+    },
 
-		contentModel.categories.removeAll();
-		contentModel.categoriesLoading(true);
-		
-		$.ajax({
-			url: 'api/category/list/all',
-			type: 'POST',
-			data: {pageTypeId: contentModel.page().pageTypeId},
-			dataType: 'json',
-			success: function(data){
-			
-				for(x in data){
-				
-					var category = Category.create(data[x]);
-					
-					contentModel.categories.push(category); // push a category to the model
-				}
+    // updates the categories
+    updateCategories:function(){  // updates the categories array
 
-				contentModel.categoriesLoading(false);
+        contentModel.categories.removeAll();
+        contentModel.categoriesLoading(true);
 
-			}
-		});
+        $.ajax({
+            url: 'api/category/list/all',
+            type: 'POST',
+            data: {pageTypeId: contentModel.page().pageTypeId},
+            dataType: 'json',
+            success: function(data){
 
-	},
-	
-	// updates the categories
-	updateCategoriesForPage:function(){  // updates the categories array
-	
-		contentModel.categories.removeAll();
-		contentModel.categoriesLoading(true);
-		
-		$.ajax({
-			url: 'api/category/list/page',
-			type: 'POST',
-			data: {pageId: contentModel.page().pageId},
-			dataType: 'json',
-			success: function(data){
-			
-				var c = '';
+                for(x in data){
 
-				for(x in data){
-				
-					c += data[x]['CategoryUniqId'] + ',';
-				}
-				
-				c = c.replace(/,+$/, "");
-				
-				contentModel.categoriesForPage(c);
+                    var category = Category.create(data[x]);
 
-			}
-		});
+                    contentModel.categories.push(category); // push a category to the model
+                }
 
-	},
-	
-	// updates the categories
-	updateCategoriesWithFriendlyId:function(friendlyId, callback){  // updates the categories array
+                contentModel.categoriesLoading(false);
 
-		contentModel.categories.removeAll();
-		contentModel.categoriesLoading(true);
-		
-		$.ajax({
-			url: 'api/category/list/all',
-			type: 'POST',
-			data: {friendlyId: friendlyId},
-			dataType: 'json',
-			success: function(data){
-			
-				console.log(data[x]);
+            }
+        });
 
-				for(x in data){
-				
-					var category = Category.create(data[x]);
-					
-					console.log(category);
-					
-					contentModel.categories.push(category); // push a category to the model
-				}
+    },
 
-				contentModel.categoriesLoading(false);
-				
-				callback();
+    // updates the categories
+    updateCategoriesForPage:function(){  // updates the categories array
 
-			}
-		});
+        contentModel.categories.removeAll();
+        contentModel.categoriesLoading(true);
 
-	},
-	
-	// updates the categories
-	updateCategoriesWithPageTypeUniqId:function(pageTypeUniqId, callback){  // updates the categories array
+        $.ajax({
+            url: 'api/category/list/page',
+            type: 'POST',
+            data: {pageId: contentModel.page().pageId},
+            dataType: 'json',
+            success: function(data){
 
-		contentModel.categories.removeAll();
-		contentModel.categoriesLoading(true);
-		
-		$.ajax({
-			url: 'api/category/list/all',
-			type: 'POST',
-			data: {pageTypeUniqId: pageTypeUniqId},
-			dataType: 'json',
-			success: function(data){
-			
-				console.log(data);
+                var c = '';
 
-				for(x in data){
-				
-					var category = Category.create(data[x]);
-					
-					console.log(category);
-					
-					contentModel.categories.push(category); // push a category to the model
-				}
+                for(x in data){
 
-				contentModel.categoriesLoading(false);
-				
-				callback();
+                    c += data[x]['CategoryUniqId'] + ',';
+                }
 
-			}
-		});
+                c = c.replace(/,+$/, "");
 
-	},
-	
-	// update the page types
-	updatePageTypes:function(){  // updates the page types arr
+                contentModel.categoriesForPage(c);
 
-		contentModel.pageTypes.removeAll();
+            }
+        });
 
-		$.ajax({
-			url: 'api/pagetype/list/all',
-			type: 'GET',
-			data: {},
-			dataType: 'json',
-			success: function(data){
+    },
 
-				for(x in data){
+    // updates the categories
+    updateCategoriesWithFriendlyId:function(friendlyId, callback){  // updates the categories array
 
-					var pageType = PageType.create(data[x]);
+        contentModel.categories.removeAll();
+        contentModel.categoriesLoading(true);
 
-					contentModel.pageTypes.push(pageType); 
+        $.ajax({
+            url: 'api/category/list/all',
+            type: 'POST',
+            data: {friendlyId: friendlyId},
+            dataType: 'json',
+            success: function(data){
 
-				}
+                console.log(data[x]);
 
-			}
-		});
+                for(x in data){
 
-	},
+                    var category = Category.create(data[x]);
 
-	// updates the pages
-	updatePages:function(){ 
+                    console.log(category);
 
-		contentModel.pages.removeAll();
-		contentModel.pagesLoading(true);
+                    contentModel.categories.push(category); // push a category to the model
+                }
 
-		$.ajax({
-			url: 'api/page/list/all',
-			type: 'GET',
-			data: {},
-			dataType: 'json',
-			success: function(data){
+                contentModel.categoriesLoading(false);
 
-				for(x in data){
+                callback();
+
+            }
+        });
+
+    },
+
+    // updates the categories
+    updateCategoriesWithPageTypeUniqId:function(pageTypeUniqId, callback){  // updates the categories array
+
+        contentModel.categories.removeAll();
+        contentModel.categoriesLoading(true);
+
+        $.ajax({
+            url: 'api/category/list/all',
+            type: 'POST',
+            data: {pageTypeUniqId: pageTypeUniqId},
+            dataType: 'json',
+            success: function(data){
+
+                console.log(data);
+
+                for(x in data){
+
+                    var category = Category.create(data[x]);
+
+                    console.log(category);
+
+                    contentModel.categories.push(category); // push a category to the model
+                }
+
+                contentModel.categoriesLoading(false);
+
+                callback();
+
+            }
+        });
+
+    },
+
+    // update the page types
+    updatePageTypes:function(){  // updates the page types arr
+
+        contentModel.pageTypes.removeAll();
+
+        $.ajax({
+            url: 'api/pagetype/list/all',
+            type: 'GET',
+            data: {},
+            dataType: 'json',
+            success: function(data){
+
+                for(x in data){
+
+                    var pageType = PageType.create(data[x]);
+
+                    contentModel.pageTypes.push(pageType);
+
+                }
+
+            }
+        });
+
+    },
+
+    // updates the pages
+    updatePages:function(){
+
+        contentModel.pages.removeAll();
+        contentModel.pagesLoading(true);
+
+        $.ajax({
+            url: 'api/page/list/all',
+            type: 'GET',
+            data: {},
+            dataType: 'json',
+            success: function(data){
+
+                for(x in data){
                     console.log(data[x]);
-					var page = Page.create(data[x]);
-					contentModel.pages.push(page); 
-				}
+                    var page = Page.create(data[x]);
+                    contentModel.pages.push(page);
+                }
 
-				contentModel.pagesLoading(false);
+                contentModel.pagesLoading(false);
 
-			}
-		});
+            }
+        });
 
-	},
-	
-	// updates the pages in the current theme
-	updateThemePages:function(){  // updates the page arr
+    },
 
-		contentModel.themePages.removeAll();
-		contentModel.themePagesLoading(true);
-        
-		$.ajax({
-			url: 'api/theme/pages/list',
-			type: 'GET',
-			dataType: 'json',
-			success: function(data){
+    // updates the pages in the current theme
+    updateThemePages:function(){  // updates the page arr
 
-				for(x in data){
-				
-					var page = {
-						'name':data[x]['name'],
-						'fileName':data[x]['fileName'],
-						'location':data[x]['location']
-					}
-                    
-					contentModel.themePages.push(page); // push an event to the model
+        contentModel.themePages.removeAll();
+        contentModel.themePagesLoading(true);
 
-				}
+        $.ajax({
+            url: 'api/theme/pages/list',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data){
 
-				contentModel.themePagesLoading(false);
+                for(x in data){
 
-			}
-		});
+                    var page = {
+                        'name':data[x]['name'],
+                        'fileName':data[x]['fileName'],
+                        'location':data[x]['location']
+                    }
 
-	},
+                    contentModel.themePages.push(page); // push an event to the model
 
-	// updates the plugins
-	updatePlugins:function(){
+                }
 
-		contentModel.pluginsLoading(true);
+                contentModel.themePagesLoading(false);
 
-		$.ajax({
-			url: 'api/plugin/',
-			type: 'GET',
-			data: {},
-			dataType: 'json',
-			success: function(data){
-				contentModel.plugins(data);
-				contentModel.pluginsLoading(false);
-			}
-		});
-	},
+            }
+        });
 
-	// updates the stylesheets for the current template
-	updateStylesheets:function(){ 
+    },
 
-		contentModel.stylesheetsLoading(true);
+    // updates the plugins
+    updatePlugins:function(){
 
-		$.ajax({
-			url: 'api/stylesheet/list',
-			type: 'GET',
-			data: {},
-			dataType: 'json',
-			success: function(data){
-				contentModel.stylesheets(data);
-				contentModel.stylesheetsLoading(false);
-			}
-		});
-	},
+        contentModel.pluginsLoading(true);
 
-	// updates the layouts for the current template
-	updateLayouts:function(){ 
+        $.ajax({
+            url: 'api/plugin/',
+            type: 'GET',
+            data: {},
+            dataType: 'json',
+            success: function(data){
+                contentModel.plugins(data);
+                contentModel.pluginsLoading(false);
+            }
+        });
+    },
 
-		contentModel.layoutsLoading(true);
+    // updates the stylesheets for the current template
+    updateStylesheets:function(){
 
-		$.ajax({
-			url: 'api/layout/list',
-			type: 'GET',
-			data: {},
-			dataType: 'json',
-			success: function(data){
-				contentModel.layouts(data);
-				contentModel.layoutsLoading(false);
-			}
-		});
-	},
+        contentModel.stylesheetsLoading(true);
 
-	// saves the settings for the page
-	saveSettings:function(i,e){ 
+        $.ajax({
+            url: 'api/stylesheet/list',
+            type: 'GET',
+            data: {},
+            dataType: 'json',
+            success: function(data){
+                contentModel.stylesheets(data);
+                contentModel.stylesheetsLoading(false);
+            }
+        });
+    },
 
-		message.showMessage('progress', $('#msg-settings-saving').val());
+    // updates the layouts for the current template
+    updateLayouts:function(){
 
-		var name = $('#name').val();
-		var friendlyId = $('#friendlyId').val();
-		var description = $('#description').val();
-		var keywords = $('#keywords').val();
-		var callout = $('#callout').val();
-		var layout = $('#layout').val();
-		var stylesheet = $('#stylesheet').val();
-		
-		// begin 
-		var beginDate = $('#beginDate').val();
-		var beginTime = $('#beginTime').val();
-		
-		var beginDateTime = beginDate + ' ' + beginTime;
-		
-		// end
-		var endDate = $('#endDate').val();
-		var endTime = $('#endTime').val();
-		
-		var endDateTime = endDate + ' ' + endTime;
-		
-		var timeZone = $('#pageSettingsDialog').attr('data-timezone');
-		
-		// location
-		var location = $('#location').val();
-		var latitude = $('#lat').val();
-		var longitude = $('#long').val();
-		
-		
-		var checks = $('input.rss:checked');
-		var rss = '';
-      
-		for(var x=0; x<checks.length; x++){
-			rss += $(checks[x]).val() + ',';
-		}
+        contentModel.layoutsLoading(true);
 
-		if(rss.length>0)rss=rss.substring(0,rss.length-1);
-		
-		var checks = $('.categories-list input[type=checkbox]:checked');
-		var categories = '';
-      
-		for(var x=0; x<checks.length; x++){
-			categories += $(checks[x]).val() + ',';
-		}
+        $.ajax({
+            url: 'api/layout/list',
+            type: 'GET',
+            data: {},
+            dataType: 'json',
+            success: function(data){
+                contentModel.layouts(data);
+                contentModel.layoutsLoading(false);
+            }
+        });
+    },
 
-		if(categories.length>0)categories=categories.substring(0,categories.length-1);
+    // saves the settings for the page
+    saveSettings:function(i,e){
 
-		$.ajax({
-			url: 'api/page/'+contentModel.pageUniqId(),
-			type: 'POST',
-			data: {name:name, friendlyId:friendlyId, description:description, keywords:keywords, 
-				   callout:callout, rss:rss, layout:layout, stylesheet:stylesheet, categories:categories,
-				   beginDate: beginDateTime, endDate: endDateTime, timeZone: timeZone,
-				   location: location, latitude: latitude, longitude: longitude},
-			success: function(data){
-				message.showMessage('success', $('#msg-settings-saved').val());
-				contentModel.updateCategoriesForPage();
-			},
-			error: function(data){
-				message.showMessage('error', $('#msg-settings-error').val());
-			}
-		});
-        
+        message.showMessage('progress', $('#msg-settings-saving').val());
+
+        var name = $('#name').val();
+        var friendlyId = $('#friendlyId').val();
+        var description = $('#description').val();
+        var keywords = $('#keywords').val();
+        var callout = $('#callout').val();
+        var layout = $('#layout').val();
+        var stylesheet = $('#stylesheet').val();
+
+        // begin
+        var beginDate = $('#beginDate').val();
+        var beginTime = $('#beginTime').val();
+
+        var beginDateTime = beginDate + ' ' + beginTime;
+
+        // end
+        var endDate = $('#endDate').val();
+        var endTime = $('#endTime').val();
+
+        var endDateTime = endDate + ' ' + endTime;
+
+        var timeZone = $('#pageSettingsDialog').attr('data-timezone');
+
+        // location
+        var location = $('#location').val();
+        var latitude = $('#lat').val();
+        var longitude = $('#long').val();
+
+
+        var checks = $('input.rss:checked');
+        var rss = '';
+
+        for(var x=0; x<checks.length; x++){
+            rss += $(checks[x]).val() + ',';
+        }
+
+        if(rss.length>0)rss=rss.substring(0,rss.length-1);
+
+        var checks = $('.categories-list input[type=checkbox]:checked');
+        var categories = '';
+
+        for(var x=0; x<checks.length; x++){
+            categories += $(checks[x]).val() + ',';
+        }
+
+        if(categories.length>0)categories=categories.substring(0,categories.length-1);
+
+        $.ajax({
+            url: 'api/page/'+contentModel.pageUniqId(),
+            type: 'POST',
+            data: {name:name, friendlyId:friendlyId, description:description, keywords:keywords,
+                   callout:callout, rss:rss, layout:layout, stylesheet:stylesheet, categories:categories,
+                   beginDate: beginDateTime, endDate: endDateTime, timeZone: timeZone,
+                   location: location, latitude: latitude, longitude: longitude},
+            success: function(data){
+                message.showMessage('success', $('#msg-settings-saved').val());
+                contentModel.updateCategoriesForPage();
+            },
+            error: function(data){
+                message.showMessage('error', $('#msg-settings-error').val());
+            }
+        });
+
         $('#pageSettingsDialog').modal('hide');
 
-	},
+    },
 
-	saveContent:function(i,e){ // saves the content for the page
+    saveContent:function(i,e){ // saves the content for the page
 
-		message.showMessage('progress', $('#msg-saving').val());
-		
-		var editor = $('#desc');
-		
-		// get the content and image from the editor
-		var content = respond.Editor.GetContent(editor);
-		var image = respond.Editor.GetPrimaryImage(editor);
-        
+        message.showMessage('progress', $('#msg-saving').val());
+
+        var editor = $('#desc');
+
+        // get the content and image from the editor
+        var content = respond.Editor.GetContent(editor);
+        var image = respond.Editor.GetPrimaryImage(editor);
+
         if(contentModel.previewUrl != ''){
             contentModel.hidePreview();
         }
 
-		$.ajax({
-			url: 'api/page/content/'+contentModel.pageUniqId(),
-			type: 'POST',
-			data: {content:content, status:'publish', image:image},
-			success: function(data){
-				message.showMessage('success', $('#msg-saved').val());
-                
-			},
-			error: function(data){
-				message.showMessage('error', $('#msg-saving-error').val());
-			}
-		});
+        $.ajax({
+            url: 'api/page/content/'+contentModel.pageUniqId(),
+            type: 'POST',
+            data: {content:content, status:'publish', image:image},
+            success: function(data){
+                message.showMessage('success', $('#msg-saved').val());
 
-	},
-    
+            },
+            error: function(data){
+                message.showMessage('error', $('#msg-saving-error').val());
+            }
+        });
+
+    },
+
     saveDraft:function(i,e){ // saves the content for the page
 
-    	message.showMessage('progress', $('#msg-draft-saving').val());
+        message.showMessage('progress', $('#msg-draft-saving').val());
 
-		var editor = $('#desc');
-		
-		// get the content and image from the editor
-		var content = respond.Editor.GetContent(editor);
-		var image = respond.Editor.GetPrimaryImage(editor);
-        
+        var editor = $('#desc');
+
+        // get the content and image from the editor
+        var content = respond.Editor.GetContent(editor);
+        var image = respond.Editor.GetPrimaryImage(editor);
+
         if(contentModel.previewUrl != ''){
             contentModel.hidePreview();
         }
 
-		$.ajax({
-			url: 'api/page/content/'+contentModel.pageUniqId(),
-			type: 'POST',
-			data: {content:content, status:'draft', image:image},
-			success: function(data){
-				message.showMessage('success', $('#msg-draft-saved').val());
-                
-			},
-			error: function(data){
-				message.showMessage('error', $('#msg-draft-error').val());
-			}
-		});
+        $.ajax({
+            url: 'api/page/content/'+contentModel.pageUniqId(),
+            type: 'POST',
+            data: {content:content, status:'draft', image:image},
+            success: function(data){
+                message.showMessage('success', $('#msg-draft-saved').val());
 
-	},
+            },
+            error: function(data){
+                message.showMessage('error', $('#msg-draft-error').val());
+            }
+        });
 
-	// updates the page
-	updatePage:function(){
+    },
 
-		$.ajax({
-			url: 'api/page/'+contentModel.pageUniqId(),
-			type: 'GET',
-			data: {},
-			dataType: 'json',
-			success: function(data){
+    // updates the page
+    updatePage:function(){
 
-				var page = Page.create(data);
-				
-				// build URL
-				var domain = $('body').attr('data-domain');
-				var url = 'http://'+domain+'/'+data.Url;
-				
-				// set fullUrl
-				contentModel.fullUrl(url);
-				
-				// set the prefix for ids created with respond.Editor.js
-				respond.prefix = page.friendlyId() + '-';
+        $.ajax({
+            url: 'api/page/'+contentModel.pageUniqId(),
+            type: 'GET',
+            data: {},
+            dataType: 'json',
+            success: function(data){
 
-				contentModel.page(page);
-				
-				var prefix = '';
-				
-				if(page.pageTypeId()!='-1'){
-					prefix = '../';
-				}
+                var page = Page.create(data);
 
-				contentModel.toPagePrefix(prefix);
-				contentModel.updateCategoriesForPage();
-				
-				// setup fallback for html5 date
-				if (!Modernizr.inputtypes.date) {
+                contentModel.title(page.name());
 
-					$('input[type=date]').datepicker({
-					    dateFormat: 'yy-mm-dd'
-					});
-					
-				}
+                // build URL
+                var domain = $('body').attr('data-domain');
+                var url = 'http://'+domain+'/'+data.Url;
 
-			}
-		});
+                // set fullUrl
+                contentModel.fullUrl(url);
 
-	},
+                // set the prefix for ids created with respond.Editor.js
+                respond.prefix = page.friendlyId() + '-';
 
-	// previews the content
-	preview:function(){ 
-		message.showMessage('progress', $('#msg-saving-draft').val());
+                contentModel.page(page);
 
-		var editor = $('#desc');
-		
-		// get the content and image from the editor
-		var content = respond.Editor.GetContent(editor);
+                var prefix = '';
 
-		$.ajax({
-			url: 'api/page/content/preview/'+contentModel.pageUniqId(),
-			type: 'POST',
-			data: {content:content},
-			success: function(data){
-				message.showMessage('success', $('#msg-draft-saved-preview').val());
+                if(page.pageTypeId()!='-1'){
+                    prefix = '../';
+                }
 
-				var url = data;
-                
+                contentModel.toPagePrefix(prefix);
+                contentModel.updateCategoriesForPage();
+
+                // setup fallback for html5 date
+                if (!Modernizr.inputtypes.date) {
+
+                    $('input[type=date]').datepicker({
+                        dateFormat: 'yy-mm-dd'
+                    });
+
+                }
+
+            }
+        });
+
+    },
+
+    // previews the content
+    preview:function(){
+        message.showMessage('progress', $('#msg-saving-draft').val());
+
+        var editor = $('#desc');
+
+        // get the content and image from the editor
+        var content = respond.Editor.GetContent(editor);
+
+        $.ajax({
+            url: 'api/page/content/preview/'+contentModel.pageUniqId(),
+            type: 'POST',
+            data: {content:content},
+            success: function(data){
+                message.showMessage('success', $('#msg-draft-saved-preview').val());
+
+                var url = data;
+
                 contentModel.previewUrl = data;
 
-		        $('#preview').attr('src', url);
-		        $('#editorContainer').hide();
-		        $('#actions').hide();
-		        $('#previewContainer').fadeIn();
-		        $('#previewMessage').slideDown('fast');
-			},
-			error: function(data){
-				message.showMessage('error', $('#msg-draft-error').val());
-			}
-		});
-		
-		return false;
-	},
-    
+                $('#preview').attr('src', url);
+                $('#editorContainer').hide();
+                $('#actions').hide();
+                $('#previewContainer').fadeIn();
+                $('#previewMessage').slideDown('fast');
+            },
+            error: function(data){
+                message.showMessage('error', $('#msg-draft-error').val());
+            }
+        });
+
+        return false;
+    },
+
     // hides the preview
     hidePreview:function(){
         $('#editorContainer').show();
         $('#actions').show();
         $('#previewContainer').hide();
         $('#previewMessage').hide('fast');
-        
+
         contentModel.previewUrl = '';
-        
+
         // clean-up preview directory
         $.ajax({
-    		url: 'api/page/content/preview/remove',
-			type: 'DELETE',
-			data: {},
-			success: function(data){}
-		});
+            url: 'api/page/content/preview/remove',
+            type: 'DELETE',
+            data: {},
+            success: function(data){}
+        });
     },
-    
+
     // updates the images for the site
     updateImages:function(){
-        
+
         contentModel.images.removeAll();
         contentModel.imagesLoading(true);
 
-		$.ajax({
-			url: 'api/image/list/all',
-			type: 'GET',
-			data: {},
-			dataType: 'json',
-			success: function(data){
-     
+        $.ajax({
+            url: 'api/image/list/all',
+            type: 'GET',
+            data: {},
+            dataType: 'json',
+            success: function(data){
+
                 for(x in data){
-            
-    				var image = {
-        			    'filename': data[x].filename,
+
+                    var image = {
+                        'filename': data[x].filename,
                         'fullUrl': data[x].fullUrl,
                         'thumbUrl': data[x].thumbUrl,
                         'extension': data[x].extension,
@@ -639,40 +652,40 @@ var contentModel = {
                         'isImage': data[x].isImage,
                         'width': data[x].width,
                         'height': data[x].height
-    				};
-                
-					contentModel.images.push(image); 
-				}
-                
-                
+                    };
+
+                    contentModel.images.push(image);
+                }
+
+
                 contentModel.imagesLoading(false);
 
-			}
-		});
+            }
+        });
     },
-    
+
     // sets the image
     setImage:function(o, e){
-    	imagesDialog.addImage(o.fullUrl, o.thumbUrl, o.filename);
+        imagesDialog.addImage(o.fullUrl, o.thumbUrl, o.filename);
     },
-    
+
     // update files for the site
     updateFiles:function(){
-        
+
         contentModel.files.removeAll();
         contentModel.filesLoading(true);
 
-    	$.ajax({
-			url: 'api/file/list/all',
-			type: 'GET',
-			data: {},
-			dataType: 'json',
-			success: function(data){
-     
+        $.ajax({
+            url: 'api/file/list/all',
+            type: 'GET',
+            data: {},
+            dataType: 'json',
+            success: function(data){
+
                 for(x in data){
-            
-    				var file = {
-        			    'filename': data[x].filename,
+
+                    var file = {
+                        'filename': data[x].filename,
                         'fullUrl': data[x].fullUrl,
                         'thumbUrl': data[x].thumbUrl,
                         'extension': data[x].extension,
@@ -680,56 +693,56 @@ var contentModel = {
                         'isImage': data[x].isImage,
                         'width': data[x].width,
                         'height': data[x].height
-    				};
-            
-					contentModel.files.push(file); 
-				}
-                
-                
+                    };
+
+                    contentModel.files.push(file);
+                }
+
+
                 contentModel.filesLoading(false);
 
-			}
-		});
+            }
+        });
     },
-    
+
     // update icons (from json)
     updateIcons:function(){
-        
+
         contentModel.icons.removeAll();
         contentModel.iconsLoading(true);
 
-    	$.ajax({
-			url: 'data/icons.json',
-			type: 'GET',
-			data: {},
-			dataType: 'json',
-			success: function(data){
-	
+        $.ajax({
+            url: 'data/icons.json',
+            type: 'GET',
+            data: {},
+            dataType: 'json',
+            success: function(data){
+
                 for(x in data.icons){
-    
-    				var icon = {
-        			    'icon': 'fa fa-'+data.icons[x]['id'],
+
+                    var icon = {
+                        'icon': 'fa fa-'+data.icons[x]['id'],
                         'name': data.icons[x]['name']
-    				};
-                
-					contentModel.icons.push(icon); 
-				}
-                
-                
+                    };
+
+                    contentModel.icons.push(icon);
+                }
+
+
                 contentModel.iconsLoading(false);
 
-			}
-		});
+            }
+        });
     },
-    
+
     // add a file
     addFile:function(o, e){
         filesDialog.addFile();
     },
-    
+
     // add an icon
     addIcon: function(o, e){
-	    fontAwesomeDialog.addIcon();
+        fontAwesomeDialog.addIcon();
     }
 
 }

@@ -13,7 +13,7 @@ function dialogClickEvent(event) {
 <div class="row">
   <div class="col col-md-7">
     <!-- Changes in this form affect the JS below and the file todb.php -->
-    <h1>Artikel hinzufügen</h1>
+    <h1 class="articles">Artikel hinzufügen</h1>
     <form id="myForm" class="form-horizontal" role="form">
       <div class="form-group">
         <label for="name" class="col-sm-2 control-label">Name *</label>

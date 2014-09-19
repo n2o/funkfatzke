@@ -24,7 +24,7 @@
 }
 
 #message.message-progress span{
-	background: #fbec5d;   
+	background: #fbec5d;
 }
 
 #message.message-progress a.close{
@@ -33,12 +33,12 @@
 
 #message.message-error span{
 	background-color: #A4110A;
-	color: #fff;   	
+	color: #fff;
 }
 
 #message.message-success span{
-	background-color: #7ec57e;
-	color: #fff;   	
+	background-color: #7EA501;
+	color: #fff;
 }
 
 #message.message-success a.close{

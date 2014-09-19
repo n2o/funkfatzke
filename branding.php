@@ -1,16 +1,16 @@
-<?php    
+<?php
    	include 'app.php'; // import php files
-	
+
 	$authUser = new AuthUser(); // get auth user
 	$authUser->Authenticate('Admin');
-	
+
 	Utilities::SetLanguage($authUser->Language); // set language
 ?>
 <!DOCTYPE html>
 <html lang="<?php print str_replace('_', '-', $authUser->Language) ?>">
 
 <head>
-	
+
 <title><?php print _("Branding"); ?>&mdash;<?php print $authUser->SiteName; ?></title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -35,34 +35,46 @@
 
 <section class="main">
 
-    <nav>
-        <a class="show-menu"><i class="fa fa-bars fa-lg"></i></a>
-    
-        <ul>
-		    <li class="static active"><a href="branding"><?php print _("Branding"); ?></a></li>
-		    <li class="static"><a href="colors"><?php print _("Colors"); ?></a></li>
-        </ul>
-        
+	<nav>
+        <a class="show-menu"></a>
+
+        <h1><?php print _("Branding"); ?></h1>
     </nav>
+
+    <menu>
+
+    	<div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="page-types" data-toggle="dropdown">
+		    <?php print _("Branding"); ?>
+			<span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu">
+		  	<li><a href="branding"><?php print _("Branding"); ?></a></li>
+		    <li><a href="colors"><?php print _("Colors"); ?></a></li>
+		  </ul>
+
+		</div>
+
+   </menu>
 
   <div class="row-fluid">
     <div class="span12">
-	
+
 		<form class="form-horizontal">
 
 			<div class="form-group">
 				<label class="col-lg-2 control-label"><?php print _("Site:"); ?></label>
-	
+
 				<div class="col-lg-10">
 	                <span id="logo" class="placeholder" data-bind="click: showImagesDialog">
 	                    <img data-type="logo" data-bind="attr:{'src': fullLogoUrl, 'logo-url': logoUrl}">
 	                </span>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label class="col-lg-2 control-label"><?php print _("PayPal:"); ?></label>
-	
+
 				<div class="col-lg-10">
 	                <span id="payPalLogo" class="placeholder paypal" data-bind="click: showImagesDialog">
 	                    <img data-type="paypal" data-bind="attr:{'src': fullPayPalLogoUrl, 'logo-url': payPalLogoUrl}">
@@ -70,10 +82,10 @@
 	                <small><?php print _("PayPal recommends 150px x 50px"); ?></small>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label class="col-lg-2 control-label"><?php print _("Touch / Tile / Favorite:"); ?></label>
-	
+
 				<div class="col-lg-10">
 	                <span id="favIcon" class="placeholder touch" data-bind="click: showImagesDialog">
 	                    <img data-type="icon" data-bind="attr:{'src': fullIconUrl, 'logo-url': iconUrl}">
@@ -81,23 +93,23 @@
 	                <small>200px x 200px (<?php print _("PNG format, we will convert it to .ico)"); ?></small>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label class="col-lg-2 control-label"><?php print _("Tile Background:"); ?></label>
-	
+
 				<div class="col-lg-10">
 					<input id="iconBg" type="text" data-bind="value: iconBg" class="form-control inline">
 					<button class="btn btn-default" data-bind="click: updateIconBg"><?php print _("Update"); ?></button>
 	                <small><?php print _("The background color for a pinned Windows 8 tile"); ?></small>
 				</div>
 			</div>
-	
+
 		</form>
 		<!-- /.form-horizontal -->
-		
+
 	</div>
-	<!-- /.span12 -->	
-	
+	<!-- /.span12 -->
+
   </div>
   <!-- /.row-fluid -->
 

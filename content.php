@@ -1,10 +1,10 @@
 <?php
-	include 'app.php'; // import php files
+  include 'app.php'; // import php files
 
-	$authUser = new AuthUser(); // get auth user
-	$authUser->Authenticate('All');
+  $authUser = new AuthUser(); // get auth user
+  $authUser->Authenticate('All');
 
-	Utilities::SetLanguage($authUser->Language); // set language
+  Utilities::SetLanguage($authUser->Language); // set language
 ?>
 <!DOCTYPE html>
 <html lang="<?php print str_replace('_', '-', $authUser->Language) ?>">
@@ -48,8 +48,26 @@
 
 <section class="main">
 
-	<div id="editor-menu"></div>
-	<!-- /#editor-menu -->
+  <nav>
+        <a class="back" onclick="javascript:history.back()"></a>
+
+        <h1 data-bind="text: title"></h1>
+
+    <div class="dropdown more">
+      <button class="dropdown-toggle" type="button" id="more-menu" data-toggle="dropdown">
+        <i class="fa fa-ellipsis-v"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="more-menu">
+        <li><a class="live" data-bind="attr:{'href':fullUrl}" target="_blank"><?php print _("Live"); ?></a></li>
+        <li><a class="preview" data-bind="click:preview" target="_blank"><?php print _("Preview"); ?></a></li>
+        <li><a class="page-settings"><?php print _("Settings"); ?></a></li>
+      </ul>
+    </div>
+
+    </nav>
+
+  <menu id="editor-menu" class="editor-menu"></menu>
+  <!-- /#editor-menu -->
 
     <div id="editor-container">
         <div id="desc" class="container" data-bind="html: content"></div>
@@ -58,18 +76,13 @@
 
     <div id="actions">
 
-    	<!-- ko with:page -->
+      <!-- ko with:page -->
 
         <button class="primary-button" type="button" data-bind="click: $parent.saveContent, visible: canPublish"><?php print _("Save and Publish"); ?></button>
         <button class="secondary-button" type="button" data-bind="click: $parent.saveDraft, visible: canEdit"><?php print _("Save Draft"); ?></button>
 
-        <button class="tertiary-button offset-left" type="button" onclick="javascript:history.back()"><i class="fa fa-reply"></i> <?php print _("Return"); ?></button>
 
-		<!-- /ko -->
-
-		<div class="alternate">
-			<a class="live" data-bind="attr:{'href':fullUrl}" target="_blank"><?php print _("Live"); ?></a><a class="preview" data-bind="click:preview" target="_blank"><?php print _("Preview"); ?></a>
-		</div>
+    <!-- /ko -->
     </div>
     <!-- /#actions -->
 
@@ -144,7 +157,7 @@
 <script type="text/javascript" src="js/helper/prettify.js?v=<?php print VERSION; ?>"></script>
 <script type="text/javascript" src="js/helper/dropzone.js?v=<?php print VERSION; ?>"></script>
 <script type="text/javascript" src="js/helper/beautify-html.js?v=<?php print VERSION; ?>"></script>
-<script type="text/javascript" src="js/feather.js"></script>
+<script type="text/javascript" src="http://feather.aviary.com/js/feather.js"></script>
 
 <?php if(GOOGLE_MAPS_API_KEY != '' && GOOGLE_MAPS_API_KEY != 'YOUR GOOGLE MAPS API KEY'){ ?>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php print GOOGLE_MAPS_API_KEY; ?>&sensor=false"></script>

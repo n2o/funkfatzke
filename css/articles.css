@@ -39,3 +39,12 @@
 .selectable li {
   padding: 0.25em;
 }
+
+div > div > h1.articles {
+  color: #000;
+  font-size: 30px;
+  padding: 0;
+}
+#list > div > div > h1 {
+  padding-left: 0.5em;
+}

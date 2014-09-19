@@ -35,10 +35,8 @@
 
 <section class="main">
   <nav>
-    <a class="show-menu"><i class="fa fa-bars fa-lg"></i></a>
-    <ul>
-      <li class="static active"><a><?php print("Artikel"); ?></a></li>
-    </ul>
+    <a class="show-menu"></a>
+    <h1>Artikel</h1>
   </nav>
   <!-- /nav -->
 

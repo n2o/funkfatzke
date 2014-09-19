@@ -1,16 +1,16 @@
-<?php	
+<?php
 	include 'app.php'; // import php files
-	
+
 	$authUser = new AuthUser(); // get auth user
 	$authUser->Authenticate('Admin');
-	
+
 	Utilities::SetLanguage($authUser->Language); // set language
 ?>
 <!DOCTYPE html>
 <html lang="<?php print str_replace('_', '-', $authUser->Language) ?>">
 
 <head>
-	
+
 <title><?php print _("Account"); ?>&mdash;<?php print $authUser->SiteName; ?></title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -49,23 +49,23 @@
 
     <nav>
         <a class="show-menu"><i class="fa fa-bars fa-lg"></i></a>
-    
+
         <ul>
             <li class="static active"><a><?php print _("Account"); ?></a></li>
         </ul>
-        
+
     </nav>
     <!-- /nav -->
 
 	<div class="container">
-	
+
 		<div class="row">
-		
+
 			<div class="col-md-12">
-			
+
 				<table class="read-only-table table table-bordered">
 					<col width="20%">
-				
+
 					<tr>
 						<th><?php print _("Type:"); ?></th>
 						<td>
@@ -98,55 +98,55 @@
 					<tr data-bind="visible: hasCard">
 						<th><?php print _("Payment:"); ?></th>
 						<td>
-							<span data-bind="text:cardReadable"></span> 
+							<span data-bind="text:cardReadable"></span>
 							<small data-bind="text:cardExpires"></small>
 							<a class="btn btn-default" data-bind="click:showUpdatePayment">Update Payment</a>
 						</td>
 					</tr>
-					
+
 				</table>
 				<!-- /.table -->
-	
+
 			</div>
 			<!-- /.col-md-12 -->
-			
+
 		</div>
 		<!-- /.row -->
-	
+
 	</div>
 	<!-- /.container -->
-   
+
 </section>
 <!-- /.main -->
 
 <div class="modal fade" id="unsubscribeDialog">
 
 	<div class="modal-dialog">
-	
+
 		<div class="modal-content">
-		
+
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">×</button>
 				<h3><?php print _("Unsubscribe"); ?></h3>
 			</div>
-			
+
 			<div class="modal-body">
-			
+
 				<p>
 					<?php print _("Are you sure that you want to unsubscribe?"); ?>
 				</p>
-				
+
 			</div>
-			
+
 			<div class="modal-footer">
 				<button class="secondary-button" data-dismiss="modal"><?php print _("Close"); ?></button>
 				<button class="primary-button" data-bind="click: unsubscribe"><?php print _("Unsubscribe"); ?></button>
 			</div>
 			<!-- /.modal-footer -->
-			
+
 		</div>
 		<!-- /.modal-content -->
-		
+
 	</div>
 	<!-- /.modal-dialog -->
 
@@ -156,44 +156,44 @@
 <div class="modal fade" id="changePlanDialog">
 
 	<div class="modal-dialog">
-	
+
 		<div class="modal-content">
-		
+
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">×</button>
 				<h3><?php print _("Change Plan"); ?></h3>
 			</div>
-			
+
 			<div class="modal-body">
-			
+
 				<p class="modal-info">
 					<?php print _("Select your new plan from the list below."); ?>
 				</p>
-				
+
 				<div class="form-group separator">
 					<div>
 					<!-- ko foreach: plans -->
 						<label class="radio">
 							<input type="radio" name="plan" data-bind="value:id, checked:$parent.planId()">
 							<span data-bind="text:name"></span><br>
-							<small data-bind="text:readable"></small> 
+							<small data-bind="text:readable"></small>
 						</label>
 					<!-- /ko -->
 					<span class="loading" data-bind="visible: plansLoading()"><i class="fa fa-refresh fa-spin"></i> <?php print _("Loading plans..."); ?></span>
 					</div>
 				</div>
-				
+
 			</div>
-			
+
 			<div class="modal-footer">
 				<button class="secondary-button" data-dismiss="modal"><?php print _("Close"); ?></button>
 				<button class="primary-button" data-bind="click: changePlan"><?php print _("Change Plan"); ?></button>
 			</div>
 			<!-- /.modal-footer -->
-			
+
 		</div>
 		<!-- /.modal-content -->
-		
+
 	</div>
 	<!-- /.modal-dialog -->
 
@@ -203,79 +203,79 @@
 <div class="modal fade" id="updatePaymentDialog">
 
 	<div class="modal-dialog">
-	
+
 		<div class="modal-content">
-		
+
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">×</button>
 				<h3><?php print _("Update Payment"); ?></h3>
 			</div>
-			
+
 			<div class="modal-body">
-			
+
 				<form data-bind="visible: (showNewCard() == false)">
-				
+
 					<p class="modal-info">
 						<?php print _("Update the expiration date for your card. If you want to add a new card, click the New Card button."); ?>
 					</p>
-		
+
 				   <div class="form-group">
-						<div>							
+						<div>
 							<span class="read-only">
-								<span data-bind="text:cardReadable"></span> 
+								<span data-bind="text:cardReadable"></span>
 								<small data-bind="text:cardExpires"></small>
 							</span>
 						</div>
 					</div>
-					
+
 					<div class="form-group">
 						<label for="expires"><?php print _("Expires:"); ?></label>
 						<div>
 						<input id="changeMM" type="number" placeholder="MM" class="inline form-control input-2" maxlength="2" data-bind="value: cardExpiredMonth"> / <input id="changeYY" type="number" maxlength="4" placeholder="YYYY" class="inline form-control input-4" data-bind="value: cardExpiredYear">
 						</div>
 					</div>
-					
+
 			    </form>
 			    <!-- /.form-horizontal -->
-			    
+
 			    <form action="" method="POST" id="newcard-form" data-bind="visible: showNewCard">
-			    
+
 			    	<p class="modal-info">
 						<?php print _("Enter the details for your new credit card."); ?>
 					</p>
-					
+
 				    <div class="form-group">
 						<label for="update-cc"><?php print _("Credit Card #:"); ?></label>
 						<input id="update-cc" type="text" maxlength="20" data-stripe="number" class="form-control">
 					</div>
-					
+
 					<div class="form-group">
 						<label for="update-cvc"><?php print _("Card Code (CVC):"); ?></label>
 						<input id="update-cvc" type="text" placeholder="CVC" class="form-control input-4" maxlength="4" data-stripe="cvc">
 					</div>
-					
+
 					<div class="form-group separator">
 						<label for="update-expiresMM"><?php print _("Expires:"); ?></label>
 						<div>
 						<input id="update-expiresMM" type="text" placeholder="MM" class="inline form-control input-2" maxlength="2" data-stripe="exp-month"> / <input id="update-expiresYY" type="text" maxlength="4" placeholder="YYYY" class="inline form-control input-4" data-stripe="exp-year">
 						</div>
 					</div>
-				    
+
 			    </form>
 			    <!-- /.form-horizontal -->
-				
+
 			</div>
-			
+
 			<div class="modal-footer">
 				<button class="tertiary-button" data-bind="click: newCard, visible: (showNewCard()==false)"><?php print _("New Card"); ?></button>
 				<button class="secondary-button" data-dismiss="modal"><?php print _("Close"); ?></button>
 				<button class="primary-button" data-bind="click: updatePayment"><?php print _("Update Payment"); ?></button>
 			</div>
 			<!-- /.modal-footer -->
-			
+
 		</div>
 		<!-- /.modal-content -->
-		
+
 	</div>
 	<!-- /.modal-dialog -->
 
@@ -285,66 +285,66 @@
 <div class="modal fade" id="subscribeDialog">
 
 	<div class="modal-dialog">
-	
+
 		<div class="modal-content">
-		
+
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">×</button>
 				<h3><?php print _("Subscribe"); ?></h3>
 			</div>
-			
+
 			<div class="modal-body">
-			
+
 				<form action="" method="POST" id="subscribe-form">
-		
+
 					<p class="modal-info">
 						<?php print _("Select a plan and enter your credit card information to subscribe."); ?>
 					</p>
-		
+
 					<div class="form-group separator">
 						<div>
 						<!-- ko foreach: plans -->
 							<label class="radio">
 								<input type="radio" name="plan" data-bind="value:id, checked:$parent.planId()">
 								<span data-bind="text:name"></span><br>
-								<small data-bind="text:readable"></small> 
+								<small data-bind="text:readable"></small>
 							</label>
 						<!-- /ko -->
 						</div>
 					</div>
-			
+
 				    <div class="form-group">
 						<label for="address"><?php print _("Credit Card #:"); ?></label>
 						<input id="cc" type="text" maxlength="20" data-stripe="number" class="form-control">
 					</div>
-					
+
 					<div class="form-group">
 						<label for="cvc"><?php print _("Card Code (CVC):"); ?></label>
 						<input id="cvc" type="text" placeholder="CVC" class="form-control input-4" maxlength="4" data-stripe="cvc">
 					</div>
-					
+
 					<div class="form-group">
 						<label for="expires"><?php print _("Expires:"); ?></label>
 						<div>
 							<input id="expiresMM" type="text" placeholder="MM" class="inline form-control input-2" maxlength="2" data-stripe="exp-month"> / <input id="expiresYY" type="text" maxlength="4" placeholder="YYYY" class="inline form-control input-4" data-stripe="exp-year">
 						</div>
 					</div>
-					
-				    
+
+
 			    </form>
 			    <!-- /.form-horizontal -->
-			
+
 			</div>
-			
+
 			<div class="modal-footer">
 				<button class="secondary-button" data-dismiss="modal"><?php print _("Close"); ?></button>
 				<button class="primary-button" data-bind="click: subscribe"><?php print _("Subscribe"); ?></button>
 			</div>
 			<!-- /.modal-footer -->
-			
+
 		</div>
 		<!-- /.modal-content -->
-		
+
 	</div>
 	<!-- /.modal-dialog -->
 
