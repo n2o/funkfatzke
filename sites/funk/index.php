@@ -27,7 +27,7 @@ include 'site.php';
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">  
+<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">  
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 
@@ -183,7 +183,7 @@ include 'site.php';
 </header>
 
 <div id="content" class="container" role="main">
-	<div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1410794250"><?php print _("Home"); ?></h1><p id="p-1410794250"><?php print _("Funk?"); ?></p></div></div>
+	<div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1410794250"><?php print _("Home"); ?></h1><p id="p-1410794250"><?php print _("Funk?!"); ?></p></div></div>
 </div>
 
 <footer role="contentinfo">
