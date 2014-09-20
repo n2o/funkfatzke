@@ -39,7 +39,6 @@ $ ->
                     $("#button").html "Artikel hinzufügen"
                 error: ->
                     $("#button").html "Artikel hinzufügen"
-        return
 
     # Initial picture if image is available
     photoUrl = $("#photo").val()
@@ -51,6 +50,3 @@ $ ->
     $("#open-dialog").click ->
         $("#dialog-message").dialog "open"
         false
-        return
-
-    return

@@ -27,10 +27,10 @@ $(function() {
       is_equipment = 0;
     }
     if (name === "" || description === "") {
-      root.growl("Bitte alle erforderlichen Felder ausfüllen.", "info");
+      return root.growl("Bitte alle erforderlichen Felder ausfüllen.", "info");
     } else {
       $("#button").html("<span class='btn'><span class='glyphicon glyphicon-refresh'></span> Anfrage wird bearbeitet...</span>");
-      $.ajax({
+      return $.ajax({
         type: "post",
         url: "aux/articles/todb.php",
         data: "name=" + name + "&description=" + description + "&photo=" + photo + "&weight=" + weight + "&price=" + price + "&quantity=" + quantity + "&is_equipment=" + is_equipment,
@@ -51,8 +51,8 @@ $(function() {
     $("#show-photo img").attr("src", "sites/funk/files/t-" + photoUrl);
     $("#show-photo a").attr("href", "sites/funk/files/" + photoUrl);
   }
-  $("#open-dialog").click(function() {
+  return $("#open-dialog").click(function() {
     $("#dialog-message").dialog("open");
-    false;
+    return false;
   });
 });
