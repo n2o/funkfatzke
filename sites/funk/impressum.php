@@ -37,27 +37,27 @@ include 'site.php';
 <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment-with-langs.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
-<script type="text/javascript" src="js/respond.Map.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Form.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Calendar.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.List.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Featured.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Login.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Registration.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Search.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/pageModel.js?v=2.11.3"></script>
+<script type="text/javascript" src="js/respond.Map.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Form.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Calendar.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.List.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Featured.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Login.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Registration.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Search.js?v=3.0"></script>
+<script type="text/javascript" src="js/pageModel.js?v=3.0"></script>
 <script type="text/javascript" src="js/prettify.js"></script>
 
 <!-- css -->
-<link href="css/content.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
+<link href="css/content.css?v=3.0" type="text/css" rel="stylesheet" media="screen">
 <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" type="text/css" rel="stylesheet" media="screen">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="css/prettify.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
+<link href="css/prettify.css?v=3.0" type="text/css" rel="stylesheet" media="screen">
 
     
 </head>
 
-<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="5404758ea2065" data-pagefriendlyid="impressum" data-pagetypeuniqid="-1" data-api="https://christian-meter.de/funkfatzke" id="impressum">
+<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="5404758ea2065" data-pagefriendlyid="impressum" data-pagetypeuniqid="-1" data-api="http://n2o.local/funkfatzke" id="impressum">
 
 <header role="banner">
 
@@ -180,7 +180,7 @@ include 'site.php';
 </header>
   
 <div id="content" class="container" role="main">
-    <div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1410794267"><?php print _("Impressum"); ?></h1><p id="p-1410794267"><?php print _("Ich bin ein Text und möchte in einem separatem Container erscheinen."); ?></p></div></div><div id="impressum-block-2" class="block row container-white-top" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="impressum-h1-2"><?php print _("Impressum"); ?></h1></div></div><div id="impressum-block-3" class="block row container-white-bottom" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-9"><p id="1411054323"><?php print _("Dieser Text hat eine separate Überschrift, die über den ganzen Container geht und einen separaten Body Teil, welcher in 70% links und 30% rechts eingeteilt ist. Rechts kann man dann beispielsweise ein Bild platzieren"); ?></p></div><div class="col col-md-3"><div id="imagecontainer1" class="o-image"><img id="image1" src="files/funk_logo_100px.png"></div></div></div><div id="impressum-block-4" class="block row container-white-top" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="impressum-h1-3"><?php print _("Impressum"); ?></h1></div></div><div id="block-7" class="block row container-white-mid" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-4"><p id="1411054323"><?php print _("Dieser Text hat eine separate Überschrift und der Body"); ?></p></div><div class="col col-md-4"><p id="1411054323"><?php print _("ist in 3 gleich großen Teilen eingeteilt."); ?></p></div><div class="col col-md-4"><p id="1411054323"><?php print _("Wofür man das auch immer benötigen könnte..."); ?></p></div></div><div id="impressum-block-6" class="block row container-white-bottom" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><p id="1411054323"><?php print _("Und der Text geht über die ganze Breite. Das skaliert übrigens alles vollkommen automatisch mit verschiedenen Bildschirmen."); ?></p></div></div>
+    <div id="block-1" class="block row" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1410794267"><?php print _("Impressum"); ?></h1><p id="p-1410794267"></p></div></div>
 </div>
 
 <footer role="contentinfo">

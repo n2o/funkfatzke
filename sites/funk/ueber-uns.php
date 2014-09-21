@@ -37,27 +37,27 @@ include 'site.php';
 <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment-with-langs.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
-<script type="text/javascript" src="js/respond.Map.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Form.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Calendar.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.List.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Featured.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Login.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Registration.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Search.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/pageModel.js?v=2.11.3"></script>
+<script type="text/javascript" src="js/respond.Map.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Form.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Calendar.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.List.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Featured.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Login.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Registration.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Search.js?v=3.0"></script>
+<script type="text/javascript" src="js/pageModel.js?v=3.0"></script>
 <script type="text/javascript" src="js/prettify.js"></script>
 
 <!-- css -->
-<link href="css/content.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
+<link href="css/content.css?v=3.0" type="text/css" rel="stylesheet" media="screen">
 <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" type="text/css" rel="stylesheet" media="screen">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="css/prettify.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
+<link href="css/prettify.css?v=3.0" type="text/css" rel="stylesheet" media="screen">
 
     
 </head>
 
-<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53fc462a1888c" data-pagefriendlyid="ueber-uns" data-pagetypeuniqid="-1" data-api="https://christian-meter.de/funkfatzke" id="ueber-uns">
+<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53fc462a1888c" data-pagefriendlyid="ueber-uns" data-pagetypeuniqid="-1" data-api="http://n2o.local/funkfatzke" id="ueber-uns">
 
 <header role="banner">
 

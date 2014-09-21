@@ -39,27 +39,27 @@ include 'site.php';
 <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment-with-langs.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
-<script type="text/javascript" src="js/respond.Map.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Form.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Calendar.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.List.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Featured.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Login.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Registration.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/respond.Search.js?v=2.11.3"></script>
-<script type="text/javascript" src="js/pageModel.js?v=2.11.3"></script>
+<script type="text/javascript" src="js/respond.Map.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Form.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Calendar.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.List.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Featured.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Login.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Registration.js?v=3.0"></script>
+<script type="text/javascript" src="js/respond.Search.js?v=3.0"></script>
+<script type="text/javascript" src="js/pageModel.js?v=3.0"></script>
 <script type="text/javascript" src="js/prettify.js"></script>
 
 <!-- css -->
-<link href="css/home.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
+<link href="css/home.css?v=3.0" type="text/css" rel="stylesheet" media="screen">
 <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" type="text/css" rel="stylesheet" media="screen">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="css/prettify.css?v=2.11.3" type="text/css" rel="stylesheet" media="screen">
+<link href="css/prettify.css?v=3.0" type="text/css" rel="stylesheet" media="screen">
 
     
 </head>
 
-<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53ec8db7055ba" data-pagefriendlyid="index" data-pagetypeuniqid="-1" data-api="https://christian-meter.de/funkfatzke">
+<body data-siteuniqid="53ec8db6e654f" data-sitefriendlyid="funk" data-domain="n2o.local/funkfatzke/sites/funk" data-pageuniqid="53ec8db7055ba" data-pagefriendlyid="index" data-pagetypeuniqid="-1" data-api="http://n2o.local/funkfatzke">
 
 <header role="banner">
 
@@ -183,7 +183,7 @@ include 'site.php';
 </header>
 
 <div id="content" class="container" role="main">
-	<div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1410794250"><?php print _("Home"); ?></h1><p id="p-1410794250"><?php print _("Funk?!"); ?></p></div></div>
+	<div id="block-1" class="block row container-white" data-nested="not-nested" data-containerid="" data-containercssclass=""><div class="col col-md-12"><h1 id="h1-1410794250"><?php print _("Home"); ?></h1><p id="p-1410794250"><?php print _("Funk?"); ?></p></div></div>
 </div>
 
 <footer role="contentinfo">
