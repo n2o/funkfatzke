@@ -68,7 +68,7 @@
 
 	// js libraries
 	define('BOOTSTRAP_JS', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js');
-	define('FONTAWESOME_CSS', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
+	define('FONTAWESOME_CSS', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
     define('JQUERY_JS', '//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js');
 	define('JQUERYUI_JS', '//code.jquery.com/ui/1.11.1/jquery-ui.js');
 	define('JQUERYUI_CSS', '//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css');
