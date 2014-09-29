@@ -110,11 +110,13 @@
 	</div>
 	<!-- /.list -->
 
+	<button class="secondary-button" style="margin-left: 20px" data-bind="click: showAddDialog"><?php print _("Add Menu Item"); ?></button>
+
     <p data-bind="visible: menuLoading()" class="list-loading"><i class="fa fa-spinner fa-spin"></i> <?php print _("Loading..."); ?></p>
 
     <p data-bind="visible: menuLoading()==false && menuItems().length < 1" class="list-none"><?php print _("No menu items here. Click Add Menu Item to get started."); ?></p>
 
-    <button id="save" class="primary-button"style="display: none; margin-left: 20px" data-bind="click:saveOrder"><?php print _("Save Order"); ?></button>
+    <button id="save" class="primary-button" style="display: none; margin-left: 10px" data-bind="click:saveOrder"><?php print _("Save Order"); ?></button>
 
 </section>
 <!-- /.main -->
