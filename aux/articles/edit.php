@@ -11,37 +11,37 @@ function dialogClickEventEdit(event) {
 </script>
 
 <div class="row">
-  <div class="col col-md-7">
+  <div class="col col-md-8">
     <!-- Changes in this form affect the JS below and the file todb.php -->
     <h1 class="articles">Artikel bearbeiten</h1>
     <form id="myForm-edit" class="form-horizontal" role="form">
       <div class="form-group">
-        <label for="id-edit" class="col-sm-2 control-label">Id</label>
-        <div class="col-sm-10">
+        <label for="id-edit" class="col-md-3 control-label">Id</label>
+        <div class="col-md-9">
           <input type="number" class="form-control" id="id-edit" placeholder="-1" readonly>
         </div>
       </div>
       <div class="form-group">
-        <label for="name-edit" class="col-sm-2 control-label">Name *</label>
-        <div class="col-sm-10">
+        <label for="name-edit" class="col-md-3 control-label">Name *</label>
+        <div class="col-md-9">
           <input type="text" class="form-control" id="name-edit" placeholder="Name" required>
         </div>
       </div>
       <div class="form-group">
-        <label for="description-edit" class="col-sm-2 control-label">Beschreibung *</label>
-        <div class="col-sm-10">
-          <textarea class="form-control" id="description-edit" placeholder="Beschreibung" required></textarea>
+        <label for="description-edit" class="col-md-3 control-label">Kurzbeschreibung *</label>
+        <div class="col-md-9">
+          <textarea class="form-control" id="description-edit" placeholder="Kurzbeschreibung" rows="5" required></textarea>
         </div>
       </div>
       <div class="form-group">
-        <label for="photo-edit" class="col-sm-2 control-label">Foto URL</label>
-        <div class="col-sm-10">
+        <label for="photo-edit" class="col-md-3 control-label">Foto URL</label>
+        <div class="col-md-9">
           <input type="text" class="form-control" id="photo-edit" placeholder="krasses_funkgeraet.png">
         </div>
       </div>
       <div class="form-group">
-        <label for="weight-edit" class="col-sm-2 control-label">Gewicht</label>
-        <div class="col-sm-10">
+        <label for="weight-edit" class="col-md-3 control-label">Gewicht</label>
+        <div class="col-md-9">
           <div class="input-group">
             <input type="number" class="form-control" id="weight-edit" placeholder="290">
             <span class="input-group-addon">g</span>
@@ -49,8 +49,8 @@ function dialogClickEventEdit(event) {
         </div>
       </div>
       <div class="form-group">
-        <label for="price-edit" class="col-sm-2 control-label">Grundpreis</label>
-        <div class="col-sm-10">
+        <label for="price-edit" class="col-md-3 control-label">Grundpreis</label>
+        <div class="col-md-9">
           <div class="input-group">
             <input type="text" class="form-control" id="price-edit" placeholder="6,75">
             <span class="input-group-addon">€</span>
@@ -58,39 +58,40 @@ function dialogClickEventEdit(event) {
         </div>
       </div>
       <div class="form-group">
-        <label for="quantity-edit" class="col-sm-2 control-label">Anzahl der Geräte</label>
-        <div class="col-sm-10">
+        <label for="quantity-edit" class="col-md-3 control-label">Anzahl der Geräte</label>
+        <div class="col-md-9">
           <input type="text" class="form-control" id="quantity-edit" placeholder="10">
         </div>
       </div>
       <div class="form-group">
-        <label for="created-edit" class="col-sm-2 control-label">Erstellt am</label>
-        <div class="col-sm-10">
+        <label for="created-edit" class="col-md-3 control-label">Erstellt am</label>
+        <div class="col-md-9">
           <input type="text" class="form-control" id="created-edit" placeholder="" readonly>
         </div>
       </div>
       <div class="form-group">
-        <label for="modified-edit" class="col-sm-2 control-label">Zuletzt geändert am</label>
-        <div class="col-sm-10">
+        <label for="modified-edit" class="col-md-3 control-label">Zuletzt geändert am</label>
+        <div class="col-md-9">
           <input type="text" class="form-control" id="modified-edit" placeholder="" readonly>
         </div>
       </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" id="is-equipment-edit" name="is-equipment-edit"> Ist dies Zubehör?
-        </label>
+      <div class="form-group">
+        <label for="equipment" class="col-md-3 control-label">Ist dies Zubehör?</label>
+        <div class="col-md-9">
+          <input type="checkbox" id="is-equipment">
+        </div>
       </div>
       <br>
 
       <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <input type="button" id="button-edit" class="btn btn-default" value="Artikel bearbeiten">
+        <div class="col-md-offset-3 col-md-9">
+          <input type="button" id="button-edit" class="btn btn-default" value="Artikel speichern">
         </div>
       </div>
     </form>
 
   </div> <!-- /col -->
-  <div class="col col-md-5">
+  <div class="col col-md-4">
     <h1>&nbsp;</h1>
     <button id="open-dialog-edit" type="button" class="btn btn-default">Bild auswählen</button>
     <br><br>
