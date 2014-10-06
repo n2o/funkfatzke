@@ -3,7 +3,10 @@
 <div class="row">
   <div class="col">
     <h1 class="articles">Artikelliste</h1>
-    <table id="articles" class="table table-striped table-hover table-condensed">
+    <p style="padding-left: 1em;">
+      Klicke einen Artikel an, um die Kurzbeschreibung anzuzeigen.
+    </p>
+    <table id="articles" class="table table-hover table-condensed table-responsive">
       <thead>
         <tr>
           <th></th>

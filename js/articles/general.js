@@ -70,26 +70,36 @@ root.getList = function() {
 };
 
 createArticleList = function(data) {
-  var article, photo, row, _i, _len;
+  var article, photo, row, rowData, _i, _len;
   $("tbody#list tr").remove();
   for (_i = 0, _len = data.length; _i < _len; _i++) {
     article = data[_i];
     photo = article.PhotoURL;
-    row = $("<tr>");
-    $("tbody#list").append(row);
+    row = $("<tr class='row-header'>");
     if (photo !== "" &&  photo !== void 0 && photo !== null) {
       row.append("<td class='articlelist'><img class='articlelist' src='sites/funk/files/t-" + photo + "'></td>");
     } else {
       row.append("<td></td>");
     }
-    row.append("<td><strong>" + article.Name + "</strong><br>" + article.Description + "</td>");
+    row.append("<td><strong>" + article.Name + "</strong></td>");
     row.append("<td>" + article.Price + " €</td>");
     row.append("<td>" + article.Quantity + "</td>");
     row.append("<td> <a class='edit' onclick='editSelectedArticle(event); return false;'><i class='fa fa-pencil fa-lg'></i><span style='display:none;'>" + article.id + "</span></a> <a class='remove' onclick='removeArticle(event);'><i class='fa fa-minus-circle fa-lg'></i><span style='display:none;'>" + article.id + "</span></a> </td>");
+    rowData = $("<tr class='row-data' style=''>");
+    rowData.append("<td class='active'>&nbsp;</td><td class='active' colspan='4'>" + article.Description + "</td>");
+    rowData.hide();
+    row.click(function() {
+      return $(this).nextUntil("tr.row-header").slideToggle(0);
+    });
+    $("tbody#list").append(row);
+    $("tbody#list").append(rowData);
   }
 };
 
 $(function() {
+  $("#list > tr.row-header").click(function() {
+    return console.log("foo");
+  });
   $("#tabs").tabs({
     show: {
       effect: "fade"
