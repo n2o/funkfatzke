@@ -84,10 +84,11 @@ createArticleList = function(data) {
     row.append("<td><strong>" + article.Name + "</strong></td>");
     row.append("<td>" + article.Price + " €</td>");
     row.append("<td>" + article.Quantity + "</td>");
-    row.append("<td> <a class='edit' onclick='editSelectedArticle(event); return false;'><i class='fa fa-pencil fa-lg'></i><span style='display:none;'>" + article.id + "</span></a> <a class='remove' onclick='removeArticle(event);'><i class='fa fa-minus-circle fa-lg'></i><span style='display:none;'>" + article.id + "</span></a> </td>");
+    row.append("<td> <a class='edit tips' data-toggle='tooltip' title='Diesen Artikel editieren' onclick='editSelectedArticle(event); return false;'><i class='fa fa-pencil fa-lg'></i><span style='display:none;'>" + article.id + "</span></a> <a class='remove tips' data-toggle='tooltip' title='Diesen Artikel unwiderruflich löschen' onclick='removeArticle(event);'><i class='fa fa-minus-circle fa-lg'></i><span style='display:none;'>" + article.id + "</span></a> </td>");
     rowData = $("<tr class='row-data'>");
     rowData.append("<td class='active'>&nbsp;</td><td class='active' colspan='4'>" + article.Description + "</td>");
     rowData.hide();
+    $(".tips").tooltip();
     row.click(function() {
       return $(this).nextUntil("tr.row-header").slideToggle(0);
     });
