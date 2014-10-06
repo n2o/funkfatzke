@@ -4,7 +4,7 @@
   <div class="col">
     <h1 class="articles">Artikelliste</h1>
     <p style="padding-left: 1em;">
-      Klicke einen Artikel an, um die Kurzbeschreibung anzuzeigen.
+      Klicke einen Artikel an, um die Kurzbeschreibung anzuzeigen. <button id="doc">Doc</button>
     </p>
     <table id="articles" class="table table-hover table-condensed table-responsive">
       <thead>

@@ -88,7 +88,7 @@ createArticleList = (data) ->
             <a class='remove' onclick='removeArticle(event);'><i class='fa fa-minus-circle fa-lg'></i><span style='display:none;'>#{article.id}</span></a>
             </td>"
 
-        rowData = $("<tr class='row-data' style=''>")
+        rowData = $("<tr class='row-data'>")
         rowData.append "<td class='active'>&nbsp;</td><td class='active' colspan='4'>#{article.Description}</td>"
 
         rowData.hide()

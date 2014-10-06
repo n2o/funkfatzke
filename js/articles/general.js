@@ -85,7 +85,7 @@ createArticleList = function(data) {
     row.append("<td>" + article.Price + " €</td>");
     row.append("<td>" + article.Quantity + "</td>");
     row.append("<td> <a class='edit' onclick='editSelectedArticle(event); return false;'><i class='fa fa-pencil fa-lg'></i><span style='display:none;'>" + article.id + "</span></a> <a class='remove' onclick='removeArticle(event);'><i class='fa fa-minus-circle fa-lg'></i><span style='display:none;'>" + article.id + "</span></a> </td>");
-    rowData = $("<tr class='row-data' style=''>");
+    rowData = $("<tr class='row-data'>");
     rowData.append("<td class='active'>&nbsp;</td><td class='active' colspan='4'>" + article.Description + "</td>");
     rowData.hide();
     row.click(function() {

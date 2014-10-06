@@ -20,13 +20,12 @@
 <?php include 'modules/css.php'; ?>
 <link type="text/css" href="css/dialog.css?v=<?php print VERSION; ?>" rel="stylesheet">
 <link type="text/css" href="css/dropzone.css?v=<?php print VERSION; ?>" rel="stylesheet">
+<link type="text/css" href="css/articles.css" rel="stylesheet">
 
 <?php include 'modules/js.php'; ?>
 <script type="text/javascript" src="js/articles/general.js"></script>
+<script type="text/javascript" src="js/articles/doc.js"></script>
 <script type="text/javascript" src="js/bootstrap-growl.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="css/articles.css">
-
 </head>
 
 <body id="articles-page" data-currpage="articles" data-sitefriendlyid="<?php print $authUser->SiteFriendlyId; ?>">
