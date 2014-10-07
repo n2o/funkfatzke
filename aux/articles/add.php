@@ -11,9 +11,22 @@ function dialogClickEvent(event) {
 </script>
 
 <div class="row">
+  <div class="col col-md-12">
+    <h1 class="articles">Artikel hinzufügen</h1>
+
+    <p>
+      Hier kann ein neuer Artikel erstellt werden. Diese Artikel können dann den entsprechenden
+      Kategorien zugeordnet werden. Das Feld "Kurzbeschreibung" soll nur eine kurze Info zu dem
+      Artikel enthalten. <a href="pages#artikel"><u>Eine ausführliche Produktseite sollte hier erstellt werden.</u></a>
+      Für diese Produktseite muss <u>unbedingt</u> derselbe Name gewählt werden, wie hier auf der Seite,
+      damit die automatische Verlinkung von Artikel zur Produktseite möglich ist.
+    </p>
+  </div>
+</div>
+
+<div class="row">
   <div class="col col-md-7">
     <!-- Changes in this form affect the JS below and the file todb.php -->
-    <h1 class="articles">Artikel hinzufügen</h1>
     <form id="myForm" class="form-horizontal" role="form">
       <div class="form-group">
         <label for="name" class="col-md-3 control-label">Name *</label>
@@ -75,7 +88,7 @@ function dialogClickEvent(event) {
 
   </div> <!-- /col -->
   <div class="col col-md-2">
-    <h1>&nbsp;</h1>
+    <br>
     <button id="open-dialog" type="button" class="btn btn-default">Bild auswählen</button>
     <br><br>
     <span id="show-photo"><a href=""><img src=""></a></span>
@@ -90,18 +103,18 @@ function dialogClickEvent(event) {
     </div>
   </div>
 
-  <!-- Generate Dialog -->
-  <div id="dialog-message" data-bind="foreach: files">
-    <div class="listItem" data-bind="css: {'has-thumb': isImage==true}">
-      <span class="image" data-bind="if: isImage"><img height="75" width="75" data-bind="attr:{'src':thumbUrl}"></span>
-      <h2><a id="4" class="photo-url" data-bind="text:filename" onclick="dialogClickEvent(event); return false;"></a></h2>
-    </div>
-    <!-- /.listItem -->
-  </div>
-  <!-- /.list -->
-
-  <!-- Information if files are loading or can not be accessed -->
-  <p data-bind="visible: filesLoading()" class="list-loading"><i class="fa fa-spinner fa fa-spin"></i> <?php print _("Loading..."); ?></p>
-  <p data-bind="visible: filesLoading()==false && files().length < 1" class="list-none"><?php print _("No files here. Click Upload File to get started."); ?></p>
-
 </div> <!-- /row -->
+
+<!-- Generate Dialog -->
+<div id="dialog-message" data-bind="foreach: files">
+  <div class="listItem" data-bind="css: {'has-thumb': isImage==true}">
+    <span class="image" data-bind="if: isImage"><img height="75" width="75" data-bind="attr:{'src':thumbUrl}"></span>
+    <h2><a id="4" class="photo-url" data-bind="text:filename" onclick="dialogClickEvent(event); return false;"></a></h2>
+  </div>
+  <!-- /.listItem -->
+</div>
+<!-- /.list -->
+
+<!-- Information if files are loading or can not be accessed -->
+<p data-bind="visible: filesLoading()" class="list-loading"><i class="fa fa-spinner fa fa-spin"></i> <?php print _("Loading..."); ?></p>
+<p data-bind="visible: filesLoading()==false && files().length < 1" class="list-none"><?php print _("No files here. Click Upload File to get started."); ?></p>
