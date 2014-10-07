@@ -81,9 +81,9 @@ createArticleList = (data) ->
 
         #row.append "<td><strong>#{article.Name}</strong><br>#{article.Description}</td>"
         row.append "<td><strong>#{article.Name}</strong></td>"
-        row.append "<td>#{article.Price} €</td>"
-        row.append "<td>#{article.Quantity}</td>"
-        row.append "<td>
+        row.append "<td style='width: 150px;'>#{article.Price} €</td>"
+        row.append "<td style='width: 100px;'>#{article.Quantity}</td>"
+        row.append "<td style='width: 100px;'>
             <a class='edit tips' data-toggle='tooltip' title='Diesen Artikel editieren' onclick='editSelectedArticle(event); return false;'><i class='fa fa-pencil fa-lg'></i><span style='display:none;'>#{article.id}</span></a>
             <a class='remove tips' data-toggle='tooltip' title='Diesen Artikel unwiderruflich löschen' onclick='removeArticle(event);'><i class='fa fa-minus-circle fa-lg'></i><span style='display:none;'>#{article.id}</span></a>
             </td>"
